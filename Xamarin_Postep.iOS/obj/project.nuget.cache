@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "YvmcmNQ7IylKQqXT8TJEoJv7P36hlBf6DrQlDr0zF46Nh6IUzXMybg8S3xRgPm1ukMbwEuhHlaDuJ4OOn4m6Mg==",
+  "success": true,
+  "projectFilePath": "C:\\Repozytoria\\Xamarin_Postep\\Xamarin_Postep.iOS\\Xamarin_Postep.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kamil\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
