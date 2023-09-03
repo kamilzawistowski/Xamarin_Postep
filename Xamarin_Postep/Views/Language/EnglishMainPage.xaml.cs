@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin_Postep.DataBase;
+using Xamarin_Postep.Models;
 using Xamarin_Postep.ViewModels.Language;
 
 namespace Xamarin_Postep.Views.Language
@@ -22,7 +24,7 @@ namespace Xamarin_Postep.Views.Language
 
         private async void Click_AddWords(object sender, EventArgs e)
         {
-           // await Navigation.PushAsync(new EnglishNewWordsPage());
+
         }
 
         private async void Click_Test(object sender, EventArgs e)
@@ -33,6 +35,7 @@ namespace Xamarin_Postep.Views.Language
             //}
             //else
             //    await Navigation.PushAsync(new EnglishTestPage());
+
 
         }
 
