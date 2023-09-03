@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Postep.Views.Language.EnglishMainPage">
+
+        <Shell.BackButtonBehavior>
+            <BackButtonBehavior 
+            Command="{Binding BackButton}"/>
+        </Shell.BackButtonBehavior>
+
+        <ContentPage.ToolbarItems>
+            <ToolbarItem IconImageSource="icon_list.png" Command="{Binding SettingCommand}">
+            </ToolbarItem>
+        </ContentPage.ToolbarItems>
+
+        <ContentPage.Content>
+            <StackLayout Orientation="Vertical">
+                <Button HeightRequest="50" Text="Dodaj Slowka" Clicked="Click_AddWords" Margin="10"></Button>
+
+                <Button Text="Lista Słowek" Clicked="WordsEnglishList" Margin="10"></Button>
+
+                <Frame BorderColor="Black" Margin="15">
+                    <StackLayout HeightRequest="400">
+
+                        <ListView x:Name="categoryCollection"
+                        ItemsSource="{Binding Options}"
+                              MinimumHeightRequest="300"
+                    SelectedItem="{Binding SelectedOption}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding}" TextColor="Black" />
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <Button HeightRequest="50" BackgroundColor="Beige" Text="Test" Clicked="Click_Test"></Button>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

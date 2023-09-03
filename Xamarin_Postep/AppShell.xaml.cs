@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin_Postep.ViewModels;
 using Xamarin_Postep.Views;
+using Xamarin_Postep.Views.Language;
 
 namespace Xamarin_Postep
 {
@@ -13,6 +14,7 @@ namespace Xamarin_Postep
             InitializeComponent();
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            Routing.RegisterRoute(nameof(EnglishMainPage), typeof(EnglishMainPage));
         }
 
     }
