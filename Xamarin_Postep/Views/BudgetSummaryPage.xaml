@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Postep.Views.BudgetSummaryPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Wydatki" FontSize="Title" FontAttributes="Italic"  HorizontalTextAlignment="Center"/>
+
+            <Picker  x:DataType="vm:BudgetSumarryViewModel" FontSize="Title" FontAttributes="Bold"  Title="--Wybierz Miesiac--" x:Name="monthPicker" HorizontalTextAlignment="Center" SelectedIndexChanged="monthPicker_SelectedIndexChanged">
+            </Picker>
+
+            <StackLayout Orientation="Horizontal" HeightRequest="300">
+                <StackLayout Padding="5" BackgroundColor="#CA3431">
+                    <Label Text="Wydatek" FontSize="Large" HorizontalOptions="Center" FontAttributes="Italic" />
+
+                    <CollectionView x:Name="issueWydatek_cv" SelectedItem="{Binding AccMonth,Mode=TwoWay}"  >
+
+                        <CollectionView.ItemTemplate >
+                            <DataTemplate>
+                                <Frame x:DataType="dtomodel:DTOBudgetExpense" BackgroundColor="#CA3431" BorderColor="Black">
+
+                                    <StackLayout Orientation="Horizontal" >
+                                        <Label Text="{Binding Category}" 
+                                               FontSize="Small" FontAttributes="Bold" HorizontalOptions="Start" />
+                                        <Label Text="{Binding Price}" HorizontalOptions="EndAndExpand"  FontAttributes="Bold" />
+                                    </StackLayout>
+
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+
+                    </CollectionView>
+
+                </StackLayout>
+                <StackLayout Padding="5" BackgroundColor="#33CF33">
+                    <Label Text="Przychod"  FontSize="Large" HorizontalOptions="Center" FontAttributes="Italic"/>
+
+                    <CollectionView x:Name="issuePrzychod_cv" >
+
+                        <CollectionView.ItemTemplate >
+                            <DataTemplate>
+                                <Frame x:DataType="dtomodel:DTOBudgetExpense" BackgroundColor="#33CF33" BorderColor="Black">
+
+                                    <StackLayout Orientation="Horizontal" >
+                                        <Label Text="{Binding Category}" 
+                                               FontSize="Small" FontAttributes="Bold" HorizontalOptions="Start" />
+                                        <Label Text="{Binding Price}" HorizontalOptions="EndAndExpand" FontAttributes="Bold"/>
+                                    </StackLayout>
+
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
+
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="20" HorizontalOptions="Center">
+                <Label VerticalOptions="Center" FontSize="Medium" Text="Przychod :"/>
+                <Label VerticalOptions="Center" FontSize="Large" x:Name="lblPrzychod"/>
+            </StackLayout>
+            <Button Text="Spis Wydatkow"  Command="{Binding OnSummaryMonth}"/>
+
+            <Button VerticalOptions="EndAndExpand" Text="Back" BackgroundColor="#9D5B5B" Clicked="Button_Clicked" Command="{Binding OnBack}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
