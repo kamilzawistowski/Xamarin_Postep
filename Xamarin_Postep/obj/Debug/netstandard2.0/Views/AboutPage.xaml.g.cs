@@ -14,7 +14,7 @@ namespace Xamarin_Postep.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\AboutPage.xaml")]
-    public partial class AboutPage : global::Xamarin.Forms.ContentPage {
+    public partial class AboutPage : global::Xamarin.Forms.CarouselPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {

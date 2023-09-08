@@ -1,37 +1,59 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Xamarin_Postep.Views.AboutPage"
-             xmlns:vm="clr-namespace:Xamarin_Postep.ViewModels"
-             Title="{Binding Title}">
-    
-    <ContentPage.BindingContext>
-        <vm:AboutViewModel />
-    </ContentPage.BindingContext>
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Xamarin_Postep.Views.AboutPage">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="200" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+    <!--<CarouselPage.Children>
+        --><!-- Page 1 --><!--
+        <ContentPage>
+            <Grid>
+                --><!-- Przycisk dolny lewy --><!--
+                <Button  HorizontalOptions="Start" VerticalOptions="End" Margin="10" ImageSource="icon_list.png" CornerRadius="90" Clicked="ShowApp_Click">
 
-        
-        
-        <AbsoluteLayout Grid.Row="2" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" >
-            <Button ImageSource="icon_plus.png" CornerRadius="90" WidthRequest="50" Margin="10"   />
+                    --><!-- Dodaj obsługę kliknięcia przycisku --><!--
+                </Button>
 
-        </AbsoluteLayout>
+                --><!-- Przycisk dolny prawy --><!--
+                <Button  HorizontalOptions="End" VerticalOptions="End" Margin="10" ImageSource="icon_plus.png" CornerRadius="90" Clicked="AddNew_Click">
+                    --><!-- Dodaj obsługę kliknięcia przycisku --><!--
+                </Button>
 
-        <AbsoluteLayout Grid.Row="2" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" >
-            <Button ImageSource="icon_list.png" Clicked="ShowApp_Click"  CornerRadius="90" WidthRequest="50" Margin="10"/>
-        </AbsoluteLayout>
-    </Grid>
+            </Grid>
+        </ContentPage>
 
-</ContentPage>
+        <ContentPage x:Name="StartPage">
+            <Grid>
+                --><!-- Przycisk dolny lewy --><!--
+                <Button Text="Przycisk 1" HorizontalOptions="Start" VerticalOptions="End" Margin="10" ImageSource="icon_plus.png" CornerRadius="90">
+
+                    --><!-- Dodaj obsługę kliknięcia przycisku --><!--
+                </Button>
+
+                --><!-- Przycisk dolny prawy --><!--
+                <Button Text="Przycisk 2" HorizontalOptions="End" VerticalOptions="End" Margin="10" ImageSource="icon_list.png" Clicked="ShowApp_Click" CornerRadius="90">
+                    --><!-- Dodaj obsługę kliknięcia przycisku --><!--
+                </Button>
+
+
+                --><!-- Reszta zawartości strony --><!--
+            </Grid>
+        </ContentPage>
+
+        <ContentPage>
+            <Grid>
+                --><!-- Przycisk dolny lewy --><!--
+                <Button Text="Przycisk 1" HorizontalOptions="Start" VerticalOptions="End" Margin="10" ImageSource="icon_plus.png" CornerRadius="90">
+
+                    --><!-- Dodaj obsługę kliknięcia przycisku --><!--
+                </Button>
+
+                --><!-- Przycisk dolny prawy --><!--
+                <Button Text="Przycisk 2" HorizontalOptions="End" VerticalOptions="End" Margin="10" ImageSource="icon_list.png" Clicked="ShowApp_Click" CornerRadius="90">
+                    --><!-- Dodaj obsługę kliknięcia przycisku --><!--
+                </Button>
+
+                --><!-- Reszta zawartości strony --><!--
+            </Grid>
+        </ContentPage>
+
+        --><!-- Dodaj dodatkowe strony w CarouselPage --><!--
+    </CarouselPage.Children>-->
+</CarouselPage>

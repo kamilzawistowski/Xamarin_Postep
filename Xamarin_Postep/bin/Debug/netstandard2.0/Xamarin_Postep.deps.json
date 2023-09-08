@@ -13,6 +13,7 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.32",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.32",
           "NETStandard.Library": "2.0.3",
+          "Spire.Email": "6.5.7",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2196"
         },
@@ -284,6 +285,14 @@
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Spire.Email/6.5.7": {
+        "runtime": {
+          "lib/net40/Spire.Email.dll": {
+            "assemblyVersion": "6.5.7.0",
+            "fileVersion": "6.5.7.10040"
+          }
         }
       },
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.2": {
@@ -651,6 +660,13 @@
       "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Spire.Email/6.5.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GoppEz5q7Uu20epkBpUWVOfFPBMeRwt8cu8TtzXgoQ4zHAmJfD+Aa78TgeGPJzIrrdr7Hb8f2vINoSX7HK/3yA==",
+      "path": "spire.email/6.5.7",
+      "hashPath": "spire.email.6.5.7.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.2": {
       "type": "package",

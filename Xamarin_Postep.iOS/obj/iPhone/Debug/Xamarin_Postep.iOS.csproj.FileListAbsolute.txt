@@ -92,3 +92,6 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\obj\iPhone\Debug\Xamarin_Postep
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\obj\iPhone\Debug\Xamarin_Postep.iOS.csproj.CopyComplete
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\obj\iPhone\Debug\Xamarin_Postep.iOS.exe
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\obj\iPhone\Debug\Xamarin_Postep.iOS.pdb
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\SkiaSharp.dll
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Spire.Email.dll
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\System.Text.Encoding.CodePages.dll

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qF+mM0jLW4qVgeWpnR++E758N3uGLGH0mnTuUfRcbmK1hagPU+EMiYVnBcoLQKZxISbmapm0hgx1/k328PL+yA==",
+  "dgSpecHash": "YOJXdK6/85cE9VsO1wJWNtqzRZE2vLjBnYL6bUXHRpJhce1Rr7uqmDAGESWFKg2HfCFRozF7STLh8XYtM+To5w==",
   "success": true,
   "projectFilePath": "C:\\Repozytoria\\Xamarin_Postep\\Xamarin_Postep.iOS\\Xamarin_Postep.iOS.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,8 @@
     "C:\\Users\\Kamil\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.32\\microsoft.extensions.logging.abstractions.3.1.32.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\microsoft.extensions.options\\3.1.32\\microsoft.extensions.options.3.1.32.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.32\\microsoft.extensions.primitives.3.1.32.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\skiasharp\\1.68.0\\skiasharp.1.68.0.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\spire.email\\6.5.7\\spire.email.6.5.7.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.2\\sqlitepclraw.bundle_e_sqlite3.2.1.2.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\sqlitepclraw.core\\2.1.2\\sqlitepclraw.core.2.1.2.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3.ios\\2.1.2\\sqlitepclraw.lib.e_sqlite3.ios.2.1.2.nupkg.sha512",
@@ -37,6 +39,7 @@
     "C:\\Users\\Kamil\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\system.text.encoding.codepages\\4.6.0\\system.text.encoding.codepages.4.6.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",

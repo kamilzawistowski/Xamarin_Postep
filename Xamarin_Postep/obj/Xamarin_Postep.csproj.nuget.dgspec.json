@@ -65,6 +65,10 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Spire.Email": {
+              "target": "Package",
+              "version": "[6.5.7, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.7.0, )"

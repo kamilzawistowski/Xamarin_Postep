@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Xamarin_Postep.Views.TestowyPage">
+
+    <CarouselPage.Children>
+        <!-- Page 1 -->
+        <ContentPage>
+            <Grid>
+                <!-- Przycisk dolny lewy -->
+                <Button Text="Przycisk 1" HorizontalOptions="Start" VerticalOptions="End" Margin="10" ImageSource="icon_plus.png" CornerRadius="90">
+
+                    <!-- Dodaj obsługę kliknięcia przycisku -->
+                </Button>
+
+                <!-- Przycisk dolny prawy -->
+                <Button Text="Przycisk 2" HorizontalOptions="End" VerticalOptions="End" Margin="10" ImageSource="icon_list.png" CornerRadius="90">
+                    <!-- Dodaj obsługę kliknięcia przycisku -->
+                </Button>
+
+            </Grid>
+        </ContentPage>
+        
+        <ContentPage x:Name="Dwa">
+            <Grid>
+                <!-- Przycisk dolny lewy -->
+                <Button Text="Przycisk 1" HorizontalOptions="Start" VerticalOptions="End" Margin="10" ImageSource="icon_plus.png" CornerRadius="90">
+
+                    <!-- Dodaj obsługę kliknięcia przycisku -->
+                </Button>
+
+                <!-- Przycisk dolny prawy -->
+                <Button Text="Przycisk 2" HorizontalOptions="End" VerticalOptions="End" Margin="10" ImageSource="icon_list.png" CornerRadius="90">
+                    <!-- Dodaj obsługę kliknięcia przycisku -->
+                </Button>
+
+
+                <!-- Reszta zawartości strony -->
+            </Grid>
+        </ContentPage>
+
+        <ContentPage>
+            <Grid>
+                <!-- Przycisk dolny lewy -->
+                <Button Text="Przycisk 1" HorizontalOptions="Start" VerticalOptions="End" Margin="10" ImageSource="icon_plus.png" CornerRadius="90">
+                    
+                    <!-- Dodaj obsługę kliknięcia przycisku -->
+                </Button>
+
+                <!-- Przycisk dolny prawy -->
+                <Button Text="Przycisk 2" HorizontalOptions="End" VerticalOptions="End" Margin="10" ImageSource="icon_list.png" CornerRadius="90">
+                    <!-- Dodaj obsługę kliknięcia przycisku -->
+                </Button>
+
+                <!-- Reszta zawartości strony -->
+            </Grid>
+        </ContentPage>
+
+        <!-- Dodaj dodatkowe strony w CarouselPage -->
+    </CarouselPage.Children>
+</CarouselPage>

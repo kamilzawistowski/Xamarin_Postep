@@ -414,6 +414,19 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Spire.Email/6.5.7": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Spire.Email.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net40/Spire.Email.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
@@ -1367,6 +1380,28 @@
         "netstandard.library.nuspec"
       ]
     },
+    "Spire.Email/6.5.7": {
+      "sha512": "GoppEz5q7Uu20epkBpUWVOfFPBMeRwt8cu8TtzXgoQ4zHAmJfD+Aa78TgeGPJzIrrdr7Hb8f2vINoSX7HK/3yA==",
+      "type": "package",
+      "path": "spire.email/6.5.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/Spire.Email.dll",
+        "lib/MonoAndroid/Spire.Email.xml",
+        "lib/net40/Spire.Email.dll",
+        "lib/net40/Spire.Email.xml",
+        "lib/net6.0/Spire.Email.dll",
+        "lib/net6.0/Spire.Email.xml",
+        "lib/netcoreapp2.0/Spire.Email.dll",
+        "lib/netcoreapp2.0/Spire.Email.xml",
+        "lib/xamarinios/Spire.Email.dll",
+        "lib/xamarinios/Spire.Email.xml",
+        "license.txt",
+        "spire.email.6.5.7.nupkg.sha512",
+        "spire.email.nuspec"
+      ]
+    },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.2": {
       "sha512": "ilkvNhrTersLmIVAcDwwPqfhUFCg19Z1GVMvCSi3xk6Akq94f4qadLORQCq/T8+9JgMiPs+F/NECw5uauviaNw==",
       "type": "package",
@@ -2076,6 +2111,7 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.32",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.32",
       "NETStandard.Library >= 2.0.3",
+      "Spire.Email >= 6.5.7",
       "Xamarin.Essentials >= 1.7.0",
       "Xamarin.Forms >= 5.0.0.2196"
     ]
@@ -2145,6 +2181,10 @@
             "version": "[2.0.3, )",
             "autoReferenced": true
           },
+          "Spire.Email": {
+            "target": "Package",
+            "version": "[6.5.7, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.7.0, )"
@@ -2168,5 +2208,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Spire.Email 6.5.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Spire.Email",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

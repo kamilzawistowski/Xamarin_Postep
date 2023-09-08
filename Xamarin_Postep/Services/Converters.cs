@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Xamarin_Postep.Services
 {
@@ -147,6 +148,30 @@ namespace Xamarin_Postep.Services
                     return 11;
                 default:
                     return 0;
+
+            }
+        }
+        public static string ConvertDayToPolishNames(int day)
+        {
+            switch (day)
+            {
+                case 1:
+                    return "Poniedziałek";
+                case 2:
+                    return "Wtorek";
+                case 3:
+                    return "Środa";
+                case 4:
+                    return "Czwartek";
+                case 5:
+                    return "Piątek";
+                case 6:
+                    return "Sobota";
+                case 7:
+                    return "Niedziela";
+                default:
+                    return "Blad";
+
 
             }
         }

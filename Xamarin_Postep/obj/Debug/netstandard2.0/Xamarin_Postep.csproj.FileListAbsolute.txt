@@ -19,3 +19,7 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\refint\Xam
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Xamarin_Postep.pdb
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\ref\Xamarin_Postep.dll
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\Language\EnglishMainPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\TestowyPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\Main3Days\TodayPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\Main3Days\TomorrowPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\Main3Days\YesterdayPage.xaml.g.cs
