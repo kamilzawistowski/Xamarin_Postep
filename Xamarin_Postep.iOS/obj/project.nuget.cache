@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YOJXdK6/85cE9VsO1wJWNtqzRZE2vLjBnYL6bUXHRpJhce1Rr7uqmDAGESWFKg2HfCFRozF7STLh8XYtM+To5w==",
+  "dgSpecHash": "jVyWfyWiuVdklyzOkKrCD0KetTD+vPaoO4I/D4xZe7YvIgKGagzUmIszts9Dqna31UG87uBT2UYYCqeW3dzK/A==",
   "success": true,
   "projectFilePath": "C:\\Repozytoria\\Xamarin_Postep\\Xamarin_Postep.iOS\\Xamarin_Postep.iOS.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,7 @@
     "C:\\Users\\Kamil\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.32\\microsoft.extensions.logging.abstractions.3.1.32.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\microsoft.extensions.options\\3.1.32\\microsoft.extensions.options.3.1.32.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.32\\microsoft.extensions.primitives.3.1.32.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\plugin.xcalendar\\2.1.0\\plugin.xcalendar.2.1.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\skiasharp\\1.68.0\\skiasharp.1.68.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\spire.email\\6.5.7\\spire.email.6.5.7.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.2\\sqlitepclraw.bundle_e_sqlite3.2.1.2.nupkg.sha512",
@@ -43,8 +44,10 @@
     "C:\\Users\\Kamil\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.communitytoolkit\\1.3.0\\xamarin.communitytoolkit.1.3.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+    "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.plugin.calendar\\2.0.9699\\xamarin.plugin.calendar.2.0.9699.nupkg.sha512"
   ],
   "logs": []
 }

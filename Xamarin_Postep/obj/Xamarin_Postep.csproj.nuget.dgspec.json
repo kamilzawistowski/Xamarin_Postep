@@ -65,6 +65,10 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Plugin.XCalendar": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "Spire.Email": {
               "target": "Package",
               "version": "[6.5.7, )"
@@ -76,6 +80,10 @@
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[5.0.0.2196, )"
+            },
+            "Xamarin.Plugin.Calendar": {
+              "target": "Package",
+              "version": "[2.0.9699, )"
             }
           },
           "imports": [

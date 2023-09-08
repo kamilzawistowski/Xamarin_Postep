@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin_Postep.ViewModels;
 using Xamarin_Postep.Views;
 using Xamarin_Postep.Views.Language;
+using Xamarin_Postep.Views.ListToGO;
 
 namespace Xamarin_Postep
 {
@@ -15,7 +16,9 @@ namespace Xamarin_Postep
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             Routing.RegisterRoute(nameof(EnglishMainPage), typeof(EnglishMainPage)); 
-            Routing.RegisterRoute(nameof(TestowyPage), typeof(TestowyPage));
+            Routing.RegisterRoute(nameof(TestowyPage), typeof(TestowyPage)); 
+            Routing.RegisterRoute(nameof(CalendarPage), typeof(CalendarPage));
+
 
         }
 

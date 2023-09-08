@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xc="clr-namespace:XCalendar;assembly=XCalendar"
+             x:Class="Xamarin_Postep.Views.ListToGO.CalendarPage"
+            xmlns:controls="clr-namespace:Xamarin.Plugin.Calendar.Controls;assembly=Xamarin.Plugin.Calendar">
+    <ContentPage.Content>
+
+            <!--<xc:CalendarView ControlTemplate=""/>-->
+            <controls:Calendar 
+                MonthLabelColor="Red"
+YearLabelColor="Blue"
+EventIndicatorColor="Red"
+EventIndicatorSelectedColor="White"
+DaysTitleColor="Orange"
+DeselectedDayTextColor="Blue"
+OtherMonthDayColor="Gray"
+SelectedDayTextColor="Cyan"
+SelectedDayBackgroundColor="DarkCyan"
+SelectedDateColor="Red"
+SelectedTodayTextColor="Green"
+TodayOutlineColor="Blue"
+TodayFillColor="Silver"
+TodayTextColor="Yellow"
+                Day="14"
+        Month="5"
+        Year="2019"
+        VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand">
+                
+            </controls:Calendar>
+        
+    </ContentPage.Content>
+</ContentPage>

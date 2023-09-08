@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin_Postep.DataBase;
+using Xamarin_Postep.Models;
 using Xamarin_Postep.Services;
 using Xamarin_Postep.Views;
 
@@ -10,8 +13,7 @@ namespace Xamarin_Postep.ViewModels.Main3Days
     class TodayViewModel : BaseViewModel
     {
         public string dateTimeNowDay;
-       // public Command AddItemCommand { get; }
-
+      
         public string DateTimeNowDay
         {
             get => dateTimeNowDay;
@@ -20,8 +22,21 @@ namespace Xamarin_Postep.ViewModels.Main3Days
                 SetProperty(ref dateTimeNowDay, value);
             }
         }
+
+        public string test;
+
+        public string Test
+        {
+            get => test;
+            set
+            {
+                SetProperty(ref test, value);
+            }
+        }
+
+
         public string dateTimeNowNumberAndMonth;
-        // public Command AddItemCommand { get; }
+       
 
         public string DateTimeNowNumberAndMonth
         {
@@ -33,6 +48,8 @@ namespace Xamarin_Postep.ViewModels.Main3Days
         }
         public TodayViewModel()
         {
+            DataBaseContext dataBaseContext = new DataBaseContext();
+            var a = dataBaseContext.EnglishWords.ToList();
             //AddItemCommand = new Command(OnAddItem);
             DateTimeNowDay = Converters.ConvertDayToPolishNames((int)DateTime.Now.DayOfWeek);
             DateTimeNowNumberAndMonth = DateTime.Now.Day + " " + Converters.ConvertMonthToPolandNames(DateTime.Now.Month);

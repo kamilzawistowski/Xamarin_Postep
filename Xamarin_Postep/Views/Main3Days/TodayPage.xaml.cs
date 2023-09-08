@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin_Postep.ViewModels.Main3Days;
 using Xamarin_Postep.Views.Language;
+using Xamarin_Postep.Views.ListToGO;
 
 namespace Xamarin_Postep.Views.Main3Days
 {
@@ -17,6 +18,7 @@ namespace Xamarin_Postep.Views.Main3Days
         TodayViewModel viewModel;
 		public TodayPage()
 		{
+            
             BindingContext = viewModel = new TodayViewModel();
             InitializeComponent();
 		}
@@ -24,12 +26,15 @@ namespace Xamarin_Postep.Views.Main3Days
 
         private async void ShowApp_Click(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("Przejdz do:", "Wroc", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Urodziny i Rocznice");
+            Frame frame = new Frame();
+            frame.CornerRadius = 40;
+            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Urodziny i Rocznice");
+            
             //Debug.WriteLine("Action: " + action);
-            if (action == "Wydatki")
+            if (action == "Kalendarz Miesięczny")
             {
                 // await Shell.Current.GoToAsync($"{nameof(BudgetSummaryPage)}");
-                //await Navigation.PushAsync(new BudgetSummaryPage());
+                await Navigation.PushAsync(new CalendarPage());
 
             }
             else if (action == "Angielski")
@@ -46,7 +51,7 @@ namespace Xamarin_Postep.Views.Main3Days
 
         private async void AddNew_Click(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("Przejdz do:", "Wroc", null, "Zadanie", "Notatkę", "Wydatek/Przychód");
+            string action = await DisplayActionSheet("", "", null, "Zadanie", "Notatkę", "Wydatek/Przychód");
             //Debug.WriteLine("Action: " + action);
             if (action == "Wydatki")
             {
@@ -65,5 +70,7 @@ namespace Xamarin_Postep.Views.Main3Days
 
             }
         }
+
+   
     }
 }

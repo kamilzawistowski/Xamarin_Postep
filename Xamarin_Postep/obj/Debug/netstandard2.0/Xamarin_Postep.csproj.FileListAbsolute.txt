@@ -23,3 +23,4 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\Test
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\Main3Days\TodayPage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\Main3Days\TomorrowPage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\Main3Days\YesterdayPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\CalendarPage.xaml.g.cs

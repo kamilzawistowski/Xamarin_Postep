@@ -86,6 +86,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.AndroidX.VersionedParcelable.dll",
 		"Xamarin.AndroidX.ViewPager.dll",
 		"Xamarin.AndroidX.ViewPager2.dll",
+		"Xamarin.CommunityToolkit.dll",
 		"Xamarin.Essentials.dll",
 		"Xamarin.Forms.Core.dll",
 		"Xamarin.Forms.Platform.Android.dll",
@@ -93,7 +94,9 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Xaml.dll",
 		"Xamarin.Google.Android.Material.dll",
 		"Xamarin.Google.Guava.ListenableFuture.dll",
+		"Xamarin.Plugin.Calendar.dll",
 		"Xamarin_Postep.dll",
+		"XCalendar.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

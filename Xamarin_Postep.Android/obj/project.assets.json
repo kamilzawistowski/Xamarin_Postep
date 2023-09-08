@@ -347,6 +347,19 @@
           }
         }
       },
+      "Plugin.XCalendar/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.CommunityToolkit": "1.3.0",
+          "Xamarin.Forms": "5.0.0.2196"
+        },
+        "compile": {
+          "lib/netstandard2.0/XCalendar.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/XCalendar.dll": {}
+        }
+      },
       "SkiaSharp/1.68.0": {
         "type": "package",
         "compile": {
@@ -2244,6 +2257,28 @@
           "buildTransitive/monoandroid90/Xamarin.AndroidX.ViewPager2.targets": {}
         }
       },
+      "Xamarin.CommunityToolkit/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2125"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid10.0/Xamarin.CommunityToolkit.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/monoandroid10.0/Xamarin.CommunityToolkit.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/_._": {}
+        }
+      },
       "Xamarin.Essentials/1.7.0": {
         "type": "package",
         "dependencies": {
@@ -2373,15 +2408,36 @@
           "buildTransitive/monoandroid50/Xamarin.Google.Guava.ListenableFuture.targets": {}
         }
       },
+      "Xamarin.Plugin.Calendar/2.0.9699": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.8.0.1687"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid10.0/Xamarin.Plugin.Calendar.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/monoandroid10.0/Xamarin.Plugin.Calendar.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Xamarin_Postep/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.32",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.32",
+          "Plugin.XCalendar": "2.1.0",
           "Spire.Email": "6.5.7",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2196"
+          "Xamarin.Forms": "5.0.0.2196",
+          "Xamarin.Plugin.Calendar": "2.0.9699"
         },
         "compile": {
           "bin/placeholder/Xamarin_Postep.dll": {}
@@ -2759,6 +2815,19 @@
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
         "microsoft.extensions.primitives.3.1.32.nupkg.sha512",
         "microsoft.extensions.primitives.nuspec"
+      ]
+    },
+    "Plugin.XCalendar/2.1.0": {
+      "sha512": "+2o6g4N692RHRRb6+OIep5KbAiYJ7XU7acHHXqFwJrie4E4ID53sCAJQP36/KP0tarvCpUjsWqJ8SN8tlLejZg==",
+      "type": "package",
+      "path": "plugin.xcalendar/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "XCalendar Nuget Icon.png",
+        "lib/netstandard2.0/XCalendar.dll",
+        "plugin.xcalendar.2.1.0.nupkg.sha512",
+        "plugin.xcalendar.nuspec"
       ]
     },
     "SkiaSharp/1.68.0": {
@@ -4540,6 +4609,48 @@
         "xamarin.androidx.viewpager2.nuspec"
       ]
     },
+    "Xamarin.CommunityToolkit/1.3.0": {
+      "sha512": "sZwmH0zI1YVNOWRMUIIjrpqHJhWdkpZPhah8IehEFu2KUvCUToxXg+4Hk96JYHxzWlq1HJdgVbibtqOARCbBHw==",
+      "type": "package",
+      "path": "xamarin.communitytoolkit/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "build/PreserveXamarinCommunityToolkit.cs",
+        "build/Xamarin.CommunityToolkit.targets",
+        "icon.png",
+        "lib/monoandroid10.0/Xamarin.CommunityToolkit.dll",
+        "lib/monoandroid10.0/Xamarin.CommunityToolkit.xml",
+        "lib/net471/Xamarin.CommunityToolkit.dll",
+        "lib/net471/Xamarin.CommunityToolkit.xml",
+        "lib/net472/Xamarin.CommunityToolkit.dll",
+        "lib/net472/Xamarin.CommunityToolkit.xml",
+        "lib/netcoreapp3.1/Xamarin.CommunityToolkit.dll",
+        "lib/netcoreapp3.1/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard1.0/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard1.0/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard2.0/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard2.0/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard2.1/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard2.1/Xamarin.CommunityToolkit.xml",
+        "lib/tizen40/Xamarin.CommunityToolkit.dll",
+        "lib/tizen40/Xamarin.CommunityToolkit.xml",
+        "lib/uap10.0.19041/Xamarin.CommunityToolkit.dll",
+        "lib/uap10.0.19041/Xamarin.CommunityToolkit.pri",
+        "lib/uap10.0.19041/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinios10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinios10/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinmac20/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinmac20/Xamarin.CommunityToolkit.xml",
+        "lib/xamarintvos10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarintvos10/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinwatchos10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinwatchos10/Xamarin.CommunityToolkit.xml",
+        "xamarin.communitytoolkit.1.3.0.nupkg.sha512",
+        "xamarin.communitytoolkit.nuspec"
+      ]
+    },
     "Xamarin.Essentials/1.7.0": {
       "sha512": "xfUJNxtfMC05VBej7fVUg6Zd9VwM2kqW9LH0tcrSA6IsBTl0EsIGkYUOz1BoKT2rseWW8o3kTi5WH/yZV4GgJw==",
       "type": "package",
@@ -4839,6 +4950,26 @@
         "xamarin.google.guava.listenablefuture.nuspec"
       ]
     },
+    "Xamarin.Plugin.Calendar/2.0.9699": {
+      "sha512": "Yt1MHlv1uu9LiihnsyyCc/YagU2bJcQLi6XPtLneW8WiT8uLemgGDu0O75hFvdEtyk8uUOg/1pR9jNbnP+dzQw==",
+      "type": "package",
+      "path": "xamarin.plugin.calendar/2.0.9699",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid10.0/Xamarin.Plugin.Calendar.dll",
+        "lib/monoandroid10.0/Xamarin.Plugin.Calendar.pdb",
+        "lib/monoandroid10.0/Xamarin.Plugin.Calendar.xml",
+        "lib/netstandard2.0/Xamarin.Plugin.Calendar.dll",
+        "lib/netstandard2.0/Xamarin.Plugin.Calendar.pdb",
+        "lib/netstandard2.0/Xamarin.Plugin.Calendar.xml",
+        "lib/xamarinios10/Xamarin.Plugin.Calendar.dll",
+        "lib/xamarinios10/Xamarin.Plugin.Calendar.pdb",
+        "lib/xamarinios10/Xamarin.Plugin.Calendar.xml",
+        "xamarin.plugin.calendar.2.0.9699.nupkg.sha512",
+        "xamarin.plugin.calendar.nuspec"
+      ]
+    },
     "Xamarin_Postep/1.0.0": {
       "type": "project",
       "path": "../Xamarin_Postep/Xamarin_Postep.csproj",
@@ -4847,8 +4978,10 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v13.0": [
+      "Plugin.XCalendar >= 2.1.0",
       "Xamarin.Essentials >= 1.7.0",
       "Xamarin.Forms >= 5.0.0.2196",
+      "Xamarin.Plugin.Calendar >= 2.0.9699",
       "Xamarin_Postep >= 1.0.0"
     ]
   },
@@ -4894,6 +5027,10 @@
     "frameworks": {
       "monoandroid13.0": {
         "dependencies": {
+          "Plugin.XCalendar": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.7.0, )"
@@ -4901,6 +5038,10 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[5.0.0.2196, )"
+          },
+          "Xamarin.Plugin.Calendar": {
+            "target": "Package",
+            "version": "[2.0.9699, )"
           }
         }
       }
