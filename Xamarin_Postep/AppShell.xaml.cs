@@ -19,7 +19,8 @@ namespace Xamarin_Postep
             Routing.RegisterRoute(nameof(EnglishMainPage), typeof(EnglishMainPage)); 
             Routing.RegisterRoute(nameof(TestowyPage), typeof(TestowyPage)); 
             Routing.RegisterRoute(nameof(CalendarPage), typeof(CalendarPage));
-            Routing.RegisterRoute(nameof(NoticePage), typeof(NoticePage));
+            Routing.RegisterRoute(nameof(AddNoticePage), typeof(AddNoticePage));
+            Routing.RegisterRoute(nameof(AddQuestPage), typeof(AddQuestPage));
 
 
         }

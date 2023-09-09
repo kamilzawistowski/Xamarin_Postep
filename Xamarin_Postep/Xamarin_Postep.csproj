@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\ListToAdd\AddNoticePage.xaml.cs">
+      <DependentUpon>AddNoticePage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Main3Days\TodayPage.xaml.cs">
       <DependentUpon>TodayPage.xaml</DependentUpon>
     </Compile>
@@ -35,7 +38,10 @@
     <EmbeddedResource Update="Views\Language\EnglishMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ListToAdd\NoticePage.xaml">
+    <EmbeddedResource Update="Views\ListToAdd\AddQuestPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ListToAdd\AddNoticePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ListToGO\CalendarPage.xaml">
