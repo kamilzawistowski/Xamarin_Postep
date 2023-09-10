@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Postep.Views.ListToAdd.AddBudgetPage">
+    <ContentPage.Content>
+
+
+        <StackLayout Grid.Row="1"  Spacing="3" Padding="15" >
+            
+            <Label Text="Kategoria" FontSize="Large" HorizontalOptions="CenterAndExpand" />
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="10">
+                <Button Text="Wydatek" Clicked="Button_Clicked_Wydatek"  x:Name="btnWydatek" BackgroundColor="Gray" BorderColor="Black" BorderWidth="1" TextColor="Black"/>
+                <Button Text="Przychod" Clicked="Button_Clicked_Przychod" x:Name="btnPrzychod" BackgroundColor="Gray" BorderColor="Black" BorderWidth="1" TextColor="Black"/>
+            </StackLayout>
+            
+            <StackLayout x:Name="PickerStack">
+                <Picker Title="--Wybierz Kategorie--"  x:Name="PickerItems" SelectedItem="{Binding Kategoria, Mode=TwoWay}" />
+                <Label Text="Opis" FontSize="Medium" />
+                <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
+                <Label Text="Cena" FontSize="Medium" />
+                <Editor Text="{Binding Description, Mode=TwoWay}" FontSize="Medium" Margin="0" />
+                <Button Text="Dodaj" Command="{Binding AddNewSummary}" BackgroundColor="Gray"  Margin="20"></Button>
+            </StackLayout>
+            
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

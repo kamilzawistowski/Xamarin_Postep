@@ -17,7 +17,7 @@ namespace Xamarin_Postep.Views.Main3Days
 		YesterdayViewModel viewModel;
 		public YesterdayPage()
 		{
-			BindingContext = viewModel = new YesterdayViewModel();
+			BindingContext = viewModel = new YesterdayViewModel(DateTime.Now.AddDays(-1));
 			InitializeComponent ();
 		}
 

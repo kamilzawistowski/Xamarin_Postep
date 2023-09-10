@@ -52,7 +52,7 @@ namespace Xamarin_Postep.Views.Main3Days
 
         private async void AddNew_Click(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("", "", null, "Zadanie", "Notatka", "Wydatek/Przychód");
+            string action = await DisplayActionSheet("", "", null, "Zadanie", "Notatka", "Wydatek/Przychód","Lista");
             //Debug.WriteLine("Action: " + action);
             if (action == "Zadanie")
             {
@@ -67,7 +67,12 @@ namespace Xamarin_Postep.Views.Main3Days
             }
             else if (action == "Wydatek/Przychód")
             {
-                await Navigation.PushAsync(new TestowyPage());
+                await Navigation.PushAsync(new AddBudgetPage());
+
+            }
+            else if (action == "Lista")
+            {
+                await Navigation.PushAsync(new AddListPage());
 
             }
         }

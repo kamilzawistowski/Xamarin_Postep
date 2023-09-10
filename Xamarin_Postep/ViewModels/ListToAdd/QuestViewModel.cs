@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin_Postep.Models;
 
 namespace Xamarin_Postep.ViewModels.ListToAdd
 {
@@ -39,9 +40,14 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
 
         public void OnBtnQuestAdd()
         {
+            Quest quest = new Quest() { Date = date ,Name };
             var time = TimeContent;
             var QuestCon = QuestContent;
             var dateCon = date;
+
+
+            //App.Database.Add()
+
         }
     }
 }

@@ -175,5 +175,30 @@ namespace Xamarin_Postep.Services
 
             }
         }
+
+        public static string ConvertEnglishDayToPolishNames(string day)
+        {
+            switch (day)
+            {
+                case "Monday":
+                    return "Poniedziałek";
+                case "Thuesday":
+                    return "Wtorek";
+                case "Wednesday":
+                    return "Środa";
+                case "Thursday ":
+                    return "Czwartek";
+                case "Friday":
+                    return "Piątek";
+                case "Saturday":
+                    return "Sobota";
+                case "Sunday":
+                    return "Niedziela";
+                default:
+                    return "Blad";
+
+
+            }
+        }
     }
 }

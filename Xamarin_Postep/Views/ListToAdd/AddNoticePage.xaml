@@ -4,9 +4,9 @@
              x:Class="Xamarin_Postep.Views.ListToAdd.AddNoticePage">
     <ContentPage.Content>
         <StackLayout>
-        <Label Text="Dodaj Notatke" FontSize="Title" HorizontalOptions="Center" Margin="20" />
-        <Entry Text="{Binding NoticeContent}"/>
-        <Button Command="{Binding OnNoticeAdd}" BackgroundColor="Gray" VerticalOptions="EndAndExpand" Margin="20" Text="Dodaj"></Button>
+            <Label Text="Dodaj Notatke" FontSize="Title" HorizontalOptions="Center" Margin="20" />
+            <Editor Text="{Binding NoticeContent}" HeightRequest="300"/>
+            <Button Command="{Binding OnNoticeAdd}" BackgroundColor="Gray" VerticalOptions="EndAndExpand" Margin="20" Text="Dodaj"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

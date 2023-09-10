@@ -13,7 +13,6 @@ namespace Xamarin_Postep.ViewModels.Main3Days
     class TodayViewModel : BaseViewModel
     {
         public string dateTimeNowDay;
-      
         public string DateTimeNowDay
         {
             get => dateTimeNowDay;
@@ -23,8 +22,8 @@ namespace Xamarin_Postep.ViewModels.Main3Days
             }
         }
 
-        public string test;
 
+        public string test;
         public string Test
         {
             get => test;
@@ -36,8 +35,6 @@ namespace Xamarin_Postep.ViewModels.Main3Days
 
 
         public string dateTimeNowNumberAndMonth;
-       
-
         public string DateTimeNowNumberAndMonth
         {
             get => dateTimeNowNumberAndMonth;
@@ -46,21 +43,17 @@ namespace Xamarin_Postep.ViewModels.Main3Days
                 SetProperty(ref dateTimeNowNumberAndMonth, value);
             }
         }
+
+
+
         public TodayViewModel()
         {
-            DataBaseContext dataBaseContext = new DataBaseContext();
-            var a = dataBaseContext.EnglishWords.ToList();
-            //AddItemCommand = new Command(OnAddItem);
-            DateTimeNowDay = Converters.ConvertDayToPolishNames((int)DateTime.Now.DayOfWeek);
+            //DataBaseContext dataBaseContext = new DataBaseContext();
+            //var a = dataBaseContext.EnglishWords.ToList();
+
+            DateTimeNowDay = Converters.ConvertEnglishDayToPolishNames(DateTime.Now.DayOfWeek.ToString());
             DateTimeNowNumberAndMonth = DateTime.Now.Day + " " + Converters.ConvertMonthToPolandNames(DateTime.Now.Month);
         }
-
-        //private async void OnAddItem(object obj)
-        //{
-        //    obj = DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year;
-        //    await Shell.Current.GoToAsync($"{nameof(NewItemPage)}?{nameof(NewItemViewModel.ItemId)}={obj}");
-
-        //}
 
     }
 }

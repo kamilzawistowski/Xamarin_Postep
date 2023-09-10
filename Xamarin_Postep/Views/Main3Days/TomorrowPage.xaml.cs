@@ -17,7 +17,7 @@ namespace Xamarin_Postep.Views.Main3Days
 		TomorrowViewModel viewModel;
 		public TomorrowPage()
 		{
-			BindingContext = viewModel = new TomorrowViewModel();
+			BindingContext = viewModel = new TomorrowViewModel(DateTime.Now.AddDays(1));
 			InitializeComponent();
 		}
 

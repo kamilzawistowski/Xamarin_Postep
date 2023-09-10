@@ -8,8 +8,6 @@ namespace Xamarin_Postep.ViewModels.Main3Days
     class YesterdayViewModel : BaseViewModel
     {
         public string dateTimeNowDay;
-        // public Command AddItemCommand { get; }
-
         public string DateTimeNowDay
         {
             get => dateTimeNowDay;
@@ -18,9 +16,9 @@ namespace Xamarin_Postep.ViewModels.Main3Days
                 SetProperty(ref dateTimeNowDay, value);
             }
         }
-        public string dateTimeNowNumberAndMonth;
-        // public Command AddItemCommand { get; }
 
+
+        public string dateTimeNowNumberAndMonth;
         public string DateTimeNowNumberAndMonth
         {
             get => dateTimeNowNumberAndMonth;
@@ -29,10 +27,10 @@ namespace Xamarin_Postep.ViewModels.Main3Days
                 SetProperty(ref dateTimeNowNumberAndMonth, value);
             }
         }
-        public YesterdayViewModel()
+
+        public YesterdayViewModel(DateTime date)
         {
-            //AddItemCommand = new Command(OnAddItem);
-            DateTimeNowDay = Converters.ConvertDayToPolishNames((int)(DateTime.Now.DayOfWeek - 1));
+            DateTimeNowDay = Converters.ConvertEnglishDayToPolishNames(date.DayOfWeek.ToString());
             DateTimeNowNumberAndMonth = (DateTime.Now.Day - 1) + " " + Converters.ConvertMonthToPolandNames(DateTime.Now.Month);
         }
     }

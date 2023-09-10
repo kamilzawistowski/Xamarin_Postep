@@ -19,8 +19,8 @@
             </StackLayout>
 
 
-            <Button Grid.Row="2"  HorizontalOptions="Start" VerticalOptions="End" Margin="10" ImageSource="icon_list.png" CornerRadius="90" Clicked="ShowApp_Click"/>
-            <Button Grid.Row="2"  HorizontalOptions="End" VerticalOptions="End" Margin="10" ImageSource="icon_plus.png" CornerRadius="90" Clicked="AddNew_Click"/>
+            <Button Grid.Row="2"  HorizontalOptions="Start" VerticalOptions="End" Margin="20" ImageSource="icon_list.png" CornerRadius="90" Clicked="ShowApp_Click"/>
+            <Button Grid.Row="2"  HorizontalOptions="End" VerticalOptions="End" Margin="20" ImageSource="icon_plus.png" CornerRadius="90" Clicked="AddNew_Click"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

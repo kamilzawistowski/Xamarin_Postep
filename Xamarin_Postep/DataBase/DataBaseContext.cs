@@ -19,6 +19,7 @@ namespace Xamarin_Postep.DataBase
         }
         public DbSet<EnglishWord> EnglishWords { get; set; }
         public DbSet<LanguageCategory> LanguageCategories { get; set; }
+        public DbSet<Quest> Quest { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
