@@ -12,6 +12,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Plugin.LocalNotification" Version="9.2.0" />
     <PackageReference Include="Plugin.XCalendar" Version="2.1.0" />
     <PackageReference Include="Spire.Email" Version="6.5.7" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />  

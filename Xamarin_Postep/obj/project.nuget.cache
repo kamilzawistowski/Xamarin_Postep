@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qA+SeDfeyCPBUxeuz5YJEq3JtrUN3TDcZHB/iwxQ53uF6UMJHz/3DV92tB5isMwrnpeqeyOUu5l/3Oy0TWGVtg==",
+  "dgSpecHash": "UMtau7ENT8Rz8k/JkkpYlmnqcyULMs6mO5i/LRdRvrUs0VRkUli7ddV2e0UdsDHgD/Sj0OAxEJysiKisNLnNHg==",
   "success": true,
   "projectFilePath": "C:\\Repozytoria\\Xamarin_Postep\\Xamarin_Postep\\Xamarin_Postep.csproj",
   "expectedPackageFiles": [
@@ -31,6 +31,8 @@
     "C:\\Users\\Kamil\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.32\\microsoft.extensions.primitives.3.1.32.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\plugin.localnotification\\9.2.0\\plugin.localnotification.9.2.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\plugin.xcalendar\\2.1.0\\plugin.xcalendar.2.1.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\spire.email\\6.5.7\\spire.email.6.5.7.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.2\\sqlitepclraw.bundle_e_sqlite3.2.1.2.nupkg.sha512",

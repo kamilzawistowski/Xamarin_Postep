@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
@@ -22,6 +23,14 @@ namespace Xamarin_Postep.ViewModels.Main3Days
             }
         }
 
+        public bool IsComplete
+        {
+            get => isComplete;
+            set { 
+                SetProperty(ref isComplete, value);
+            }
+        }
+        private bool isComplete;
 
         public string test;
         public string Test
@@ -44,7 +53,16 @@ namespace Xamarin_Postep.ViewModels.Main3Days
             }
         }
 
+        private ObservableCollection<Quest> questList = new ObservableCollection<Quest>(App.Database.Quest.ToList());
 
+        public ObservableCollection<Quest> QuestList
+        {
+            get => questList;
+            set
+            {
+                SetProperty(ref questList, value);
+            }
+        }
 
         public TodayViewModel()
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Xamarin.Essentials;
 using Xamarin_Postep.Models;
 using Xamarin_Postep.Services;
@@ -20,13 +21,24 @@ namespace Xamarin_Postep.DataBase
         public DbSet<EnglishWord> EnglishWords { get; set; }
         public DbSet<LanguageCategory> LanguageCategories { get; set; }
         public DbSet<Quest> Quest { get; set; }
+        public DbSet<Summary> Summary { get; set; }
+        public DbSet<Notice> Note { get; set; }
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Language.db3");
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Testowa2.db3");
 
             optionsBuilder
                 .UseSqlite($"Filename={dbPath}");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Quest>()
+                .HasKey(x => x.ID);
+                
         }
     }
 }

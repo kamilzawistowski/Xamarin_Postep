@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Plugin.LocalNotification;
+using Plugin.LocalNotification.EventArgs;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin_Postep.ViewModels.Main3Days;
@@ -22,7 +23,9 @@ namespace Xamarin_Postep.Views.Main3Days
             
             BindingContext = viewModel = new TodayViewModel();
             InitializeComponent();
-		}
+            
+
+        }
 
 
         private async void ShowApp_Click(object sender, EventArgs e)
@@ -76,7 +79,41 @@ namespace Xamarin_Postep.Views.Main3Days
 
             }
         }
+        
 
-   
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            var notification = new NotificationRequest
+            {
+                BadgeNumber = 1,
+                Description = "Test Desc",
+                Title = "Notifiy",
+                ReturningData = "DUMMYDATA",
+                NotificationId = 1,
+                Schedule = new NotificationRequestSchedule
+                {
+                    NotifyTime = DateTime.Now.AddSeconds(10)
+                },
+                 
+            };
+            NotificationCenter.Current.Show(notification);
+        }
+
+        private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            var clickedCheckBox = viewModel.QuestList.Where(x => x.IsComplete == true);
+            if (clickedCheckBox.Count() > 0)
+            {
+                App.Database.Update(clickedCheckBox.First());
+                App.Database.SaveChanges();
+            }
+            var clickedCheckBox2 = viewModel.QuestList.Where(x => x.IsComplete == false);
+            if (clickedCheckBox2.Count() > 0)
+            {
+                App.Database.Update(clickedCheckBox2.First());
+                App.Database.SaveChanges();
+            }
+        }
     }
 }

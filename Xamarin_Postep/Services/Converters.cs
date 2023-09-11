@@ -182,11 +182,11 @@ namespace Xamarin_Postep.Services
             {
                 case "Monday":
                     return "Poniedziałek";
-                case "Thuesday":
+                case "Tuesday":
                     return "Wtorek";
                 case "Wednesday":
                     return "Środa";
-                case "Thursday ":
+                case "Thursday":
                     return "Czwartek";
                 case "Friday":
                     return "Piątek";

@@ -17,7 +17,7 @@ namespace Xamarin_Postep
             {
                 if (_database == null)
                 {
-                    DataBaseContext dataBase = new DataBaseContext();
+                    _database = new DataBaseContext();
                 }
                 return _database;
             }
