@@ -4,6 +4,8 @@ using Xamarin.Forms.Xaml;
 using Xamarin_Postep.DataBase;
 using Xamarin_Postep.Services;
 using Xamarin_Postep.Views;
+using Xamarin_Postep.Interfaces;
+using Xamarin_Postep.Models;
 
 namespace Xamarin_Postep
 {
@@ -26,7 +28,12 @@ namespace Xamarin_Postep
         {
             InitializeComponent();
 
+            DependencyService.Register<IDataStore<Inscription>>();
+            DependencyService.Register<IDataStore<Summary>>();
+            DependencyService.Register<IDataStore<Quest>>();
+
             DependencyService.Register<MockDataStore>();
+            DependencyService.Register<QuestRepository>();
             MainPage = new AppShell();
         }
 

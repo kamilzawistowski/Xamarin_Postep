@@ -22,13 +22,13 @@ namespace Xamarin_Postep.DataBase
         public DbSet<LanguageCategory> LanguageCategories { get; set; }
         public DbSet<Quest> Quest { get; set; }
         public DbSet<Summary> Summary { get; set; }
-        public DbSet<Notice> Note { get; set; }
+        public DbSet<Inscription> Inscription { get; set; }
 
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Testowa2.db3");
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Testowa3.db3");
 
             optionsBuilder
                 .UseSqlite($"Filename={dbPath}");

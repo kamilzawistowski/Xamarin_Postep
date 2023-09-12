@@ -15,7 +15,7 @@ namespace Xamarin_Postep.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            
             NotificationCenter.CreateNotificationChannel();
             NotificationCenter.NotifyNotificationTapped(Intent);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

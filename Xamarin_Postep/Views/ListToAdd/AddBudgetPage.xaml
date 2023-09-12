@@ -2,6 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin_Postep.Views.ListToAdd.AddBudgetPage">
+    
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icon_list.png" Command="{Binding SettingCommand}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
 
 
@@ -10,8 +17,8 @@
             <Label Text="Kategoria" FontSize="Large" HorizontalOptions="CenterAndExpand" />
             
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="10">
-                <Button Text="Wydatek" Clicked="Button_Clicked_Wydatek"  x:Name="btnWydatek" BackgroundColor="Gray" BorderColor="Black" BorderWidth="1" TextColor="Black"/>
-                <Button Text="Przychod" Clicked="Button_Clicked_Przychod" x:Name="btnPrzychod" BackgroundColor="Gray" BorderColor="Black" BorderWidth="1" TextColor="Black"/>
+                <Button Text="Wydatek" Clicked="Button_Clicked_Wydatek"  x:Name="btnWydatek" BackgroundColor="Gray" BorderColor="Black" BorderWidth="1" TextColor="Black" Command="{Binding WydatekBtn}"/>
+                <Button Text="Przychod" Clicked="Button_Clicked_Przychod" x:Name="btnPrzychod" BackgroundColor="Gray" BorderColor="Black" BorderWidth="1" TextColor="Black" Command="{Binding PrzychodBtn}"/>
             </StackLayout>
             
             <StackLayout x:Name="PickerStack">
@@ -19,7 +26,7 @@
                 <Label Text="Opis" FontSize="Medium" />
                 <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
                 <Label Text="Cena" FontSize="Medium" />
-                <Editor Text="{Binding Description, Mode=TwoWay}" FontSize="Medium" Margin="0" />
+                <Editor Text="{Binding Price, Mode=TwoWay}" FontSize="Medium" Margin="0" />
                 <Button Text="Dodaj" Command="{Binding AddNewSummary}" BackgroundColor="Gray"  Margin="20"></Button>
             </StackLayout>
             

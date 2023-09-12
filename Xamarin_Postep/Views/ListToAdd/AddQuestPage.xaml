@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Xamarin_Postep.Views.ListToAdd.AddQuestPage">
+             x:Class="Xamarin_Postep.Views.ListToAdd.AddQuestPage"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Dodaj Zadanie"/>
             <Entry Text="{Binding QuestContent}"/>
-            <DatePicker Date="{Binding DatePicker}"/>
+            <DatePicker Date="{Binding DatePicker}" MinimumDate="{Binding Source={x:Static sys:DateTime.Now}}"/>
             <TimePicker Time="{Binding TimeContent}" Format="HH:mm"/>
             <Button Command="{Binding OnQuestAdd}" BackgroundColor="Gray" VerticalOptions="EndAndExpand" Text="Dodaj" Margin="20"/>
         </StackLayout>

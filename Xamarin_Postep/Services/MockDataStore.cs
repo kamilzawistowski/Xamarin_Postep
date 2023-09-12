@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
 
 namespace Xamarin_Postep.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore 
     {
         readonly List<Item> items;
 

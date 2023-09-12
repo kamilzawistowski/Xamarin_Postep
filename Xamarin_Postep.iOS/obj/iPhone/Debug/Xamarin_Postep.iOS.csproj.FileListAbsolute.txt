@@ -95,3 +95,9 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\obj\iPhone\Debug\Xamarin_Postep
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\SkiaSharp.dll
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Spire.Email.dll
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\System.Text.Encoding.CodePages.dll
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Plugin.LocalNotification.dll
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\XCalendar.dll
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Xamarin.CommunityToolkit.dll
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Xamarin.Plugin.Calendar.dll
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Xamarin.Plugin.Calendar.pdb

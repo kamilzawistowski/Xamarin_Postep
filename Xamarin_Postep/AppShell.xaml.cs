@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin_Postep.ViewModels;
 using Xamarin_Postep.Views;
+using Xamarin_Postep.Views.Budget;
 using Xamarin_Postep.Views.Language;
 using Xamarin_Postep.Views.ListToAdd;
 using Xamarin_Postep.Views.ListToGO;
@@ -19,10 +20,11 @@ namespace Xamarin_Postep
             Routing.RegisterRoute(nameof(EnglishMainPage), typeof(EnglishMainPage)); 
             Routing.RegisterRoute(nameof(TestowyPage), typeof(TestowyPage)); 
             Routing.RegisterRoute(nameof(CalendarPage), typeof(CalendarPage));
-            Routing.RegisterRoute(nameof(AddNoticePage), typeof(AddNoticePage));
+            Routing.RegisterRoute(nameof(AddInscriptionPage), typeof(AddInscriptionPage));
             Routing.RegisterRoute(nameof(AddQuestPage), typeof(AddQuestPage)); 
             Routing.RegisterRoute(nameof(AddBudgetPage), typeof(AddBudgetPage)); 
             Routing.RegisterRoute(nameof(AddListPage), typeof(AddListPage));
+            Routing.RegisterRoute(nameof(BudgetSettingsPage), typeof(BudgetSettingsPage));
 
 
         }

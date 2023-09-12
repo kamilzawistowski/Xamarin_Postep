@@ -1,11 +1,84 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
+using Xamarin_Postep.Interfaces;
+using Xamarin_Postep.Models;
+using Xamarin_Postep.Views;
+using Xamarin_Postep.Views.Budget;
 
 namespace Xamarin_Postep.ViewModels.ListToAdd
 {
-    class AddBudgetViewModel
+    class AddBudgetViewModel : BaseViewModel
     {
+        public Command SettingCommand { get; set; }
+        
+        public Command AddNewSummary { get; set; }
+        public Command PrzychodBtn { get; set; }
+        public Command WydatekBtn { get; set; }
 
+        public string Type { get; set; }
+
+        private string kategoria;
+        public string Kategoria
+        {
+            get => kategoria;
+            set
+            {
+                SetProperty(ref kategoria, value);
+            }
+        }
+        private string price;
+        public string Price
+        {
+            get => price;
+            set
+            {
+                SetProperty(ref price, value);
+            }
+        }
+
+        private string text;
+        public string Text
+        {
+            get => text;
+            set
+            {
+                SetProperty(ref text, value);
+            }
+        }
+
+        IDataStore<Summary> dataStore;
+        public AddBudgetViewModel()
+        {
+
+            dataStore = DependencyService.Get<IDataStore<Summary>>();
+
+            PrzychodBtn = new Command(TypeIsPrzychod);
+            WydatekBtn = new Command(TypeIsWydatek);
+            SettingCommand = new Command(AddCategoryBudget);
+            AddNewSummary = new Command(AddNewBudgetToDb);
+        }
+
+        public async void AddCategoryBudget()
+        {
+            await Shell.Current.GoToAsync(nameof(BudgetSettingsPage));
+        }
+
+        public async void AddNewBudgetToDb()
+        {
+           Summary summary = new Summary() { Category = Kategoria, Date = DateTime.Now , Description = Text, Price = Price, Type = Type };
+           await dataStore.AddItemAsync(summary);
+        }
+
+
+        public void TypeIsPrzychod()
+        {
+            Type = "Przychod";
+        }
+        public void TypeIsWydatek()
+        {
+            Type = "Wydatek";
+        }
     }
 }

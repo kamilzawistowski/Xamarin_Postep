@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -21,8 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\ListToAdd\AddNoticePage.xaml.cs">
-      <DependentUpon>AddNoticePage.xaml</DependentUpon>
+    <Compile Update="Views\ListToAdd\AddInscriptionPage.xaml.cs">
+      <DependentUpon>AddInscriptionPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Main3Days\TodayPage.xaml.cs">
       <DependentUpon>TodayPage.xaml</DependentUpon>
@@ -36,6 +36,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\Budget\BudgetSettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Language\EnglishMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -48,7 +51,7 @@
     <EmbeddedResource Update="Views\ListToAdd\AddQuestPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ListToAdd\AddNoticePage.xaml">
+    <EmbeddedResource Update="Views\ListToAdd\AddInscriptionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ListToGO\CalendarPage.xaml">

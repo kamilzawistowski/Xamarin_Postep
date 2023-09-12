@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Xamarin_Postep.Models
 {
-    public class Notice
+    public class Inscription
     {
         public int ID { get; set; }
         public DateTime DateTime { get; set; }
-        public string NoticeContent { get; set; }
+        public string InscriptionContent { get; set; }
 
     }
 }

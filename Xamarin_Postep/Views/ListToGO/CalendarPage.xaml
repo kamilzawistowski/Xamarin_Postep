@@ -7,13 +7,11 @@
         <StackLayout>
             <!--<xc:CalendarView ControlTemplate=""/>-->
         <controls:Calendar 
-
-                Day="14"
-        Month="5"
-        Year="2019"
-        VerticalOptions="FillAndExpand"
-        HorizontalOptions="FillAndExpand"/>
-        
+            Day="14"
+            Month="5"
+            Year="2019"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"/>
         </StackLayout>
         <!--/controls:Calendar>-->
         

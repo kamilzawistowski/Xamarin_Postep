@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore.Storage;
 using Xamarin.Forms;
 using Xamarin_Postep.DataBase;
+using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
 using Xamarin_Postep.Services;
 using Xamarin_Postep.Views;
@@ -22,15 +24,6 @@ namespace Xamarin_Postep.ViewModels.Main3Days
                 SetProperty(ref dateTimeNowDay, value);
             }
         }
-
-        public bool IsComplete
-        {
-            get => isComplete;
-            set { 
-                SetProperty(ref isComplete, value);
-            }
-        }
-        private bool isComplete;
 
         public string test;
         public string Test
@@ -64,10 +57,26 @@ namespace Xamarin_Postep.ViewModels.Main3Days
             }
         }
 
+        private ObservableCollection<Inscription> inscriptionList = new ObservableCollection<Inscription>(App.Database.Inscription.ToList());
+
+        //private readonly IDataStore<InscriptionRepository> inscriptionRepository1;
+
+        public ObservableCollection<Inscription> InscriptionList
+        {
+            get => inscriptionList;
+            set
+            {
+                SetProperty(ref inscriptionList, value);
+            }
+        }
+
+
         public TodayViewModel()
         {
+            
             //DataBaseContext dataBaseContext = new DataBaseContext();
             //var a = dataBaseContext.EnglishWords.ToList();
+
 
             DateTimeNowDay = Converters.ConvertEnglishDayToPolishNames(DateTime.Now.DayOfWeek.ToString());
             DateTimeNowNumberAndMonth = DateTime.Now.Day + " " + Converters.ConvertMonthToPolandNames(DateTime.Now.Month);

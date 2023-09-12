@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Xamarin_Postep.Views.ListToAdd.AddNoticePage.xaml", "Views/ListToAdd/AddNoticePage.xaml", typeof(global::Xamarin_Postep.Views.ListToAdd.AddNoticePage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Xamarin_Postep.Views.ListToAdd.AddInscriptionPage.xaml", "Views/ListToAdd/AddInscriptionPage.xaml", typeof(global::Xamarin_Postep.Views.ListToAdd.AddInscriptionPage))]
 
 namespace Xamarin_Postep.Views.ListToAdd {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ListToAdd\\AddNoticePage.xaml")]
-    public partial class AddNoticePage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ListToAdd\\AddInscriptionPage.xaml")]
+    public partial class AddInscriptionPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AddNoticePage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AddInscriptionPage));
         }
     }
 }

@@ -4,9 +4,8 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
-
+using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
-using Xamarin_Postep.Services;
 
 namespace Xamarin_Postep.ViewModels
 {

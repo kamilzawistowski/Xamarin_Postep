@@ -10,62 +10,79 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="150" />
+                <RowDefinition Height="200" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
             </Grid.RowDefinitions>
-
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
           
                 
-            <StackLayout Grid.Row="0"  Margin="30">
+            <StackLayout Grid.Row="0" Grid.ColumnSpan="3"  Margin="30">
                 <Label Text="{Binding DateTimeNowDay}" FontSize="Title" FontFamily="Constantia.ttf" TextColor="#000" HorizontalOptions="Center"  ></Label>
                 <Label FontFamily="Arial" Text="{Binding DateTimeNowNumberAndMonth}" FontSize="Title" TextColor="#000" HorizontalOptions="Center"  ></Label>
         </StackLayout>
-            
-            <CollectionView Grid.Row="1" ItemsSource="{Binding QuestList}" Margin="5" >
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate >
-                    <DataTemplate>
-                        <Frame  Padding="2"  x:DataType="models:Quest" BorderColor="Black">
-                            <StackLayout Orientation="Vertical" Margin="5"  >
-                                    <StackLayout Orientation="Horizontal" >
-                                    <CheckBox Margin="20,0,0,0" IsChecked="{Binding IsComplete}" CheckedChanged="CheckBox_CheckedChanged"/>
-                                    <Label Text="{Binding Content}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+
+
+            <Frame Grid.Row="1" Grid.ColumnSpan="3" BorderColor="Black" Margin="10" >
+                <CollectionView  ItemsSource="{Binding QuestList}" Margin="5">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate >
+                            <DataTemplate>
+                                <Frame  Padding="2"  x:DataType="models:Quest" BorderColor="Black">
+                                    <StackLayout Orientation="Vertical" Margin="5"  >
+                                            <StackLayout Orientation="Horizontal" >
+                                            <CheckBox Margin="20,0,0,0" IsChecked="{Binding IsComplete}" CheckedChanged="CheckBox_CheckedChanged"/>
+                                            <Label Text="{Binding Content}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+                                            </StackLayout>
                                     </StackLayout>
-                                
-                            </StackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+            </Frame>
+
+            <Frame Grid.Row="2" Grid.ColumnSpan="3" BorderColor="Black" Margin="10">
+                <CollectionView  ItemsSource="{Binding InscriptionList}" Margin="5" >
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate >
+                            <DataTemplate>
+                                <Frame Padding="5" x:DataType="models:Inscription" BorderColor="Black">
+                                    <StackLayout Orientation="Vertical" Margin="5"  >
+                                        <StackLayout Orientation="Horizontal" >
+                                            <Label Text="{Binding InscriptionContent}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+            </Frame>
 
 
-            <!--<CollectionView Grid.Row="1" ItemsSource="{Binding QuestList}" Margin="5" >
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate >
-                    <DataTemplate>
-                        <Frame  Padding="2"  x:DataType="models:Quest" BorderColor="Black">
-                            <StackLayout Orientation="Vertical" Margin="5"  >
-                                <StackLayout Orientation="Horizontal" >
-                                    <CheckBox Margin="20,0,0,0" IsChecked="{Binding IsComplete}" CheckedChanged="CheckBox_CheckedChanged"/>
-                                    <Label Text="{Binding Content}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
-                                </StackLayout>
 
-                            </StackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>-->
-            
-            
-            
             <!--<Button Text="Notify" Grid.Row="1" BackgroundColor="Gray" Clicked="Button_Clicked"/>-->
 
-            <Button Grid.Row="2"  HorizontalOptions="Start" VerticalOptions="End" Margin="20" ImageSource="icon_list.png" CornerRadius="90" Clicked="ShowApp_Click" />
-            <Button Grid.Row="2"  HorizontalOptions="End" VerticalOptions="End" Margin="20" ImageSource="icon_plus.png" CornerRadius="90" Clicked="AddNew_Click"/>
+            <Button Grid.Row="3" Grid.ColumnSpan="1"  HorizontalOptions="Start" VerticalOptions="End" Margin="20" ImageSource="icon_list.png" CornerRadius="90" Clicked="ShowApp_Click" />
+
+            <StackLayout Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Margin="0,20,0,20" HorizontalOptions="CenterAndExpand">
+                <Frame BorderColor="Black" BackgroundColor="#829460">
+                    <Label Text="1231" />
+                </Frame>
+                <Frame BorderColor="Black" BackgroundColor="#F96666">
+                    <Label Text="4121"/>
+                </Frame>
+            </StackLayout>
+            
+            <Button Grid.Row="3" Grid.ColumnSpan="3"  HorizontalOptions="End" VerticalOptions="End" Margin="20" ImageSource="icon_plus.png" CornerRadius="90" Clicked="AddNew_Click"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

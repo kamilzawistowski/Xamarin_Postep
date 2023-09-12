@@ -7,6 +7,8 @@ using Plugin.LocalNotification;
 using Plugin.LocalNotification.EventArgs;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin_Postep.DataBase;
+using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.ViewModels.Main3Days;
 using Xamarin_Postep.Views.Language;
 using Xamarin_Postep.Views.ListToAdd;
@@ -65,7 +67,7 @@ namespace Xamarin_Postep.Views.Main3Days
             }
             else if (action == "Notatka")
             {
-                await Navigation.PushAsync(new AddNoticePage(DateTime.Now));
+                await Navigation.PushAsync(new AddInscriptionPage(DateTime.Now));
 
             }
             else if (action == "Wydatek/Przychód")

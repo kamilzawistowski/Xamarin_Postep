@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
 
 namespace Xamarin_Postep.ViewModels.ListToAdd
@@ -42,27 +43,26 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             }
         }
 
-        
 
-        
-        
+
+
+        IDataStore<Quest> dataStore;
+
         private DateTime datePicker;
         public QuestViewModel(DateTime date)
         {
+            dataStore = DependencyService.Get<IDataStore<Quest>>();
             OnQuestAdd = new Command(OnBtnQuestAdd);
             this.date = date;
         }
 
         public void OnBtnQuestAdd()
         {
+
             DateTime dateToPushNotify = new DateTime(datePicker.Year, datePicker.Month, datePicker.Day, TimeContent.Hours, TimeContent.Minutes, TimeContent.Seconds);
             var datepick = DatePicker;
             Quest quest = new Quest() { Date = DatePicker,Content = QuestContent,DateToPushNotify = dateToPushNotify };
-
-
-
-            App.Database.Add(quest);
-            App.Database.SaveChanges();
+            dataStore.AddItemAsync(quest);
         }
     }
 }

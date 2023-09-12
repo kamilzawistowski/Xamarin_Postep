@@ -11,12 +11,12 @@ using Xamarin_Postep.ViewModels.ListToAdd;
 namespace Xamarin_Postep.Views.ListToAdd
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AddNoticePage : ContentPage
+	public partial class AddInscriptionPage : ContentPage
 	{
-		NoticePageViewModel viewModel;
-		public AddNoticePage (DateTime dateTime)
+        InscriptionPageViewModel viewModel;
+		public AddInscriptionPage(DateTime dateTime)
 		{
-			BindingContext = viewModel = new NoticePageViewModel(dateTime);
+			BindingContext = viewModel = new InscriptionPageViewModel(dateTime);
 			InitializeComponent();
 		}
 	}
