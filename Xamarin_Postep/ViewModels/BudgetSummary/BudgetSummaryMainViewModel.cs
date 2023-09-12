@@ -1,10 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
+using Xamarin_Postep.Models;
 
 namespace Xamarin_Postep.ViewModels.BudgetSummary
 {
-    internal class BudgetSummaryMainViewModel
+    public class BudgetSummaryMainViewModel : BaseViewModel
     {
+        private ObservableCollection<Summary> wydatekList = new ObservableCollection<Summary>(App.Database.Summary.Where(x => x.Type == "Wydatek").ToList());
+        public ObservableCollection<Summary> WydatekList
+        {
+            get => wydatekList;
+            set
+            {
+                SetProperty(ref wydatekList, value);
+            }
+        }
+        private ObservableCollection<Summary> przychodList = new ObservableCollection<Summary>(App.Database.Summary.Where(x => x.Type == "Przychod").ToList());
+        public ObservableCollection<Summary> PrzychodList
+        {
+            get => przychodList;
+            set
+            {
+                SetProperty(ref przychodList, value);
+            }
+        }
+        public BudgetSummaryMainViewModel()
+        {
+            
+        }
     }
 }

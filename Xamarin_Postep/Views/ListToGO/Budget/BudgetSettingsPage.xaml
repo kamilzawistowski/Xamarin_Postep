@@ -4,9 +4,26 @@
              x:Class="Xamarin_Postep.Views.ListToGO.Budget.BudgetSettingsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Frame BorderColor="Black" Margin="10">
+                <StackLayout>
+                    <Label Text="Kategorie Wydatek" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"/>
+                    <Entry Text="{Binding CategoryWydatek}"/>
+                    <Button BackgroundColor="Gray" Text="Dodaj"/>
+                    <CollectionView HeightRequest="100" ItemsSource="{Binding WydatekListt}">
+
+                    </CollectionView>
+
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="Black" Margin="10">
+                <StackLayout>
+                    <Label Text="Kategorie Przychod" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"/>
+                    <Entry Text="{Binding CategoryPrzychod}"/>
+                    <Button BackgroundColor="Gray" Text="Dodaj"/>
+                </StackLayout>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

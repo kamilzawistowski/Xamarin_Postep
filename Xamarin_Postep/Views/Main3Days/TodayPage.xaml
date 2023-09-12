@@ -76,10 +76,10 @@
 
             <StackLayout Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Margin="0,20,0,20" HorizontalOptions="CenterAndExpand">
                 <Frame BorderColor="Black" BackgroundColor="#829460">
-                    <Label Text="1231" />
+                    <Label Text="{Binding PrzychodSum}" />
                 </Frame>
                 <Frame BorderColor="Black" BackgroundColor="#F96666">
-                    <Label Text="4121"/>
+                    <Label Text="{Binding WydatekSum}"/>
                 </Frame>
             </StackLayout>
             

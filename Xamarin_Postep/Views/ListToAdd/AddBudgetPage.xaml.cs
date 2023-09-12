@@ -22,6 +22,7 @@ namespace Xamarin_Postep.Views.ListToAdd
             BindingContext = viewModel = new AddBudgetViewModel();
             InitializeComponent();
             PickerStack.IsVisible = false;
+            DatePicker.Date = DateTime.Now;
         }
 
         private void Button_Clicked_Wydatek(object sender, EventArgs e)
@@ -41,6 +42,11 @@ namespace Xamarin_Postep.Views.ListToAdd
 
             ObservableCollection<string> items = new ObservableCollection<string>() { "Wyplata", "Premia", "Sprzedaz", "Inna Forma", "Podarunek" };
             PickerItems.ItemsSource = items;
+        }
+
+        private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            
         }
     }
 }

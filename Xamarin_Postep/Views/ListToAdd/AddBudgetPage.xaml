@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Xamarin_Postep.Views.ListToAdd.AddBudgetPage">
+             x:Class="Xamarin_Postep.Views.ListToAdd.AddBudgetPage"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib">
     
     
     <ContentPage.ToolbarItems>
@@ -27,7 +28,9 @@
                 <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
                 <Label Text="Cena" FontSize="Medium" />
                 <Editor Text="{Binding Price, Mode=TwoWay}" FontSize="Medium" Margin="0" />
+                <DatePicker x:Name="DatePicker" Date="{Binding DatePicker}" MinimumDate="{Binding MinDate}" MaximumDate="01/01/2024" Format="dd/MM/yyyy"/>
                 <Button Text="Dodaj" Command="{Binding AddNewSummary}" BackgroundColor="Gray"  Margin="20"></Button>
+                
             </StackLayout>
             
         </StackLayout>

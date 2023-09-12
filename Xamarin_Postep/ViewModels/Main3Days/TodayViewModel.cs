@@ -34,7 +34,24 @@ namespace Xamarin_Postep.ViewModels.Main3Days
                 SetProperty(ref test, value);
             }
         }
-
+        public decimal wydatekSum;
+        public decimal WydatekSum
+        {
+            get => wydatekSum;//App.Database.Summary.Where(x => x.Date.Month == DateTime.Now.Month).Where(x => x.Type == "Wydatek").Sum(x => x.Price);
+            set
+            {
+                SetProperty(ref wydatekSum, value);
+            }
+        }
+        public decimal przychodSum;
+        public decimal PrzychodSum
+        {
+            get => przychodSum;// App.Database.Summary.Where(x => x.Date.Month == DateTime.Now.Month).Where(x => x.Type == "Przychod").Sum(x => x.Price);
+            set
+            {
+                SetProperty(ref przychodSum, value);
+            }
+        }
 
         public string dateTimeNowNumberAndMonth;
         public string DateTimeNowNumberAndMonth
@@ -69,14 +86,24 @@ namespace Xamarin_Postep.ViewModels.Main3Days
                 SetProperty(ref inscriptionList, value);
             }
         }
-
+        
 
         public TodayViewModel()
         {
-            
+            var a =App.Database.Summary.Where(x => x.Date.Month == DateTime.Now.Month);
+            var b = a.Where(x => x.Type == "Przychod");
+            foreach (var item in b)
+            {
+                PrzychodSum += item.Price;
+            }
+            var a2 = App.Database.Summary.Where(x => x.Date.Month == DateTime.Now.Month);
+            var b2 = a.Where(x => x.Type == "Wydatek");
+            foreach (var item in b2)
+            {
+                WydatekSum += item.Price;
+            }
             //DataBaseContext dataBaseContext = new DataBaseContext();
             //var a = dataBaseContext.EnglishWords.ToList();
-
 
             DateTimeNowDay = Converters.ConvertEnglishDayToPolishNames(DateTime.Now.DayOfWeek.ToString());
             DateTimeNowNumberAndMonth = DateTime.Now.Day + " " + Converters.ConvertMonthToPolandNames(DateTime.Now.Month);

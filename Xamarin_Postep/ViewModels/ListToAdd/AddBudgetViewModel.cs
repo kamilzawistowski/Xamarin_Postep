@@ -5,7 +5,7 @@ using Xamarin.Forms;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
 using Xamarin_Postep.Views;
-using Xamarin_Postep.Views.Budget;
+using Xamarin_Postep.Views.ListToGO.Budget;
 
 namespace Xamarin_Postep.ViewModels.ListToAdd
 {
@@ -28,8 +28,8 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
                 SetProperty(ref kategoria, value);
             }
         }
-        private string price;
-        public string Price
+        private decimal price;
+        public decimal Price
         {
             get => price;
             set
@@ -48,10 +48,32 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             }
         }
 
+        private DateTime datePicker;
+
+        public DateTime DatePicker
+        {
+            get => datePicker;
+            set
+            {
+                SetProperty(ref datePicker, value);
+            }
+        }
+        
+        private DateTime minDate;
+
+        public DateTime MinDate
+        {
+            get => DateTime.Now.AddDays(-7);
+            set
+            {
+                SetProperty(ref minDate, value);
+            }
+        }
+
         IDataStore<Summary> dataStore;
         public AddBudgetViewModel()
         {
-
+           
             dataStore = DependencyService.Get<IDataStore<Summary>>();
 
             PrzychodBtn = new Command(TypeIsPrzychod);
@@ -67,7 +89,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
 
         public async void AddNewBudgetToDb()
         {
-           Summary summary = new Summary() { Category = Kategoria, Date = DateTime.Now , Description = Text, Price = Price, Type = Type };
+           Summary summary = new Summary() { Category = Kategoria, Date = DatePicker, Description = Text, Price = Price, Type = Type };
            await dataStore.AddItemAsync(summary);
         }
 

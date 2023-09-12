@@ -13,6 +13,7 @@ using Xamarin_Postep.ViewModels.Main3Days;
 using Xamarin_Postep.Views.Language;
 using Xamarin_Postep.Views.ListToAdd;
 using Xamarin_Postep.Views.ListToGO;
+using Xamarin_Postep.Views.ListToGO.Budget;
 using Xamarin_Postep.Views.ListToGO.Notice;
 
 namespace Xamarin_Postep.Views.Main3Days
@@ -50,6 +51,11 @@ namespace Xamarin_Postep.Views.Main3Days
             else if (action == "Testowy")
             {
                 await Navigation.PushAsync(new TestowyPage());
+
+            }
+            else if (action == "Budżet")
+            {
+                await Navigation.PushAsync(new BudgetPage());
 
             }
             else if (action == "Listy")

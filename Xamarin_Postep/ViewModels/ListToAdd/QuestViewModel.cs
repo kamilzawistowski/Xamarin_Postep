@@ -33,6 +33,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
                 SetProperty(ref questContent, value);
             }
         }
+        private DateTime datePicker;
 
         public DateTime DatePicker 
         { 
@@ -48,7 +49,6 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
 
         IDataStore<Quest> dataStore;
 
-        private DateTime datePicker;
         public QuestViewModel(DateTime date)
         {
             dataStore = DependencyService.Get<IDataStore<Quest>>();
