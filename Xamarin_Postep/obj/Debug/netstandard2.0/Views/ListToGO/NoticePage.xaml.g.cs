@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Xamarin_Postep.Views.ListToAdd.AddListPage.xaml", "Views/ListToAdd/AddListPage.xaml", typeof(global::Xamarin_Postep.Views.ListToAdd.AddListPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Xamarin_Postep.Views.ListToGO.NoticePage.xaml", "Views/ListToGO/NoticePage.xaml", typeof(global::Xamarin_Postep.Views.ListToGO.NoticePage))]
 
-namespace Xamarin_Postep.Views.ListToAdd {
+namespace Xamarin_Postep.Views.ListToGO {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ListToAdd\\AddListPage.xaml")]
-    public partial class AddListPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ListToGO\\NoticePage.xaml")]
+    public partial class NoticePage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AddListPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(NoticePage));
         }
     }
 }

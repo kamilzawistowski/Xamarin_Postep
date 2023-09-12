@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Xamarin_Postep.Views.ListToAdd.AddListPage">
+             x:Class="Xamarin_Postep.Views.ListToAdd.AddNoticePage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Text="{Binding Title}" Placeholder="Temat"/>
+            <Entry Text="{Binding Theme}" Placeholder="Temat"/>
             <Editor Text="{Binding Note}" HeightRequest="500"/>
-            <Button Text="Dodaj" BackgroundColor="Gray" VerticalOptions="EndAndExpand" />
+            <Button Text="Dodaj" BackgroundColor="Gray" Command="{Binding AddNewNotice}" VerticalOptions="EndAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

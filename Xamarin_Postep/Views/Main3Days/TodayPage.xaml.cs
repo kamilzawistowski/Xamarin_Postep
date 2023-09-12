@@ -13,6 +13,7 @@ using Xamarin_Postep.ViewModels.Main3Days;
 using Xamarin_Postep.Views.Language;
 using Xamarin_Postep.Views.ListToAdd;
 using Xamarin_Postep.Views.ListToGO;
+using Xamarin_Postep.Views.ListToGO.Notice;
 
 namespace Xamarin_Postep.Views.Main3Days
 {
@@ -32,8 +33,6 @@ namespace Xamarin_Postep.Views.Main3Days
 
         private async void ShowApp_Click(object sender, EventArgs e)
         {
-            Frame frame = new Frame();
-            frame.CornerRadius = 40;
             string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Urodziny i Rocznice");
             
             //Debug.WriteLine("Action: " + action);
@@ -51,6 +50,11 @@ namespace Xamarin_Postep.Views.Main3Days
             else if (action == "Testowy")
             {
                 await Navigation.PushAsync(new TestowyPage());
+
+            }
+            else if (action == "Listy")
+            {
+                await Navigation.PushAsync(new NoticePage());
 
             }
         }
@@ -77,7 +81,7 @@ namespace Xamarin_Postep.Views.Main3Days
             }
             else if (action == "Lista")
             {
-                await Navigation.PushAsync(new AddListPage());
+                await Navigation.PushAsync(new AddNoticePage());
 
             }
         }

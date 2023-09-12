@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin_Postep.ViewModels.ListToAdd;
+using Xamarin_Postep.ViewModels.Notice;
 
 namespace Xamarin_Postep.Views.ListToAdd
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddListPage : ContentPage
+    public partial class AddNoticePage : ContentPage
     {
-        AddListViewModel viewModel;
-        public AddListPage()
+        NewNoticeViewModel viewModel;
+        public AddNoticePage()
         {
-            BindingContext = viewModel = new AddListViewModel();
+            BindingContext = viewModel = new NewNoticeViewModel();
             InitializeComponent();
         }
     }

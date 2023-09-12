@@ -7,6 +7,7 @@ using Xamarin_Postep.Views.Budget;
 using Xamarin_Postep.Views.Language;
 using Xamarin_Postep.Views.ListToAdd;
 using Xamarin_Postep.Views.ListToGO;
+using Xamarin_Postep.Views.ListToGO.Notice;
 
 namespace Xamarin_Postep
 {
@@ -23,8 +24,9 @@ namespace Xamarin_Postep
             Routing.RegisterRoute(nameof(AddInscriptionPage), typeof(AddInscriptionPage));
             Routing.RegisterRoute(nameof(AddQuestPage), typeof(AddQuestPage)); 
             Routing.RegisterRoute(nameof(AddBudgetPage), typeof(AddBudgetPage)); 
-            Routing.RegisterRoute(nameof(AddListPage), typeof(AddListPage));
-            Routing.RegisterRoute(nameof(BudgetSettingsPage), typeof(BudgetSettingsPage));
+            Routing.RegisterRoute(nameof(AddNoticePage), typeof(AddNoticePage));
+            Routing.RegisterRoute(nameof(BudgetSettingsPage), typeof(BudgetSettingsPage)); 
+            Routing.RegisterRoute(nameof(NoticePage), typeof(NoticePage));
 
 
         }

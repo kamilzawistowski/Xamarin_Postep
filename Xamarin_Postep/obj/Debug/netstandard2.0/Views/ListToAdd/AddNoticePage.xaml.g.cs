@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Xamarin_Postep.Views.ListToGO.CalendarPage.xaml", "Views/ListToGO/CalendarPage.xaml", typeof(global::Xamarin_Postep.Views.ListToGO.CalendarPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Xamarin_Postep.Views.ListToAdd.AddNoticePage.xaml", "Views/ListToAdd/AddNoticePage.xaml", typeof(global::Xamarin_Postep.Views.ListToAdd.AddNoticePage))]
 
-namespace Xamarin_Postep.Views.ListToGO {
+namespace Xamarin_Postep.Views.ListToAdd {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ListToGO\\CalendarPage.xaml")]
-    public partial class CalendarPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ListToAdd\\AddNoticePage.xaml")]
+    public partial class AddNoticePage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(CalendarPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AddNoticePage));
         }
     }
 }

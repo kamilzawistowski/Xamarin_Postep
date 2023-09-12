@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Postep.Views.ListToGO.Notice.NoticePage"
+             xmlns:models="clr-namespace:Xamarin_Postep.Models"
+             xmlns:VM="clr-namespace:Xamarin_Postep.ViewModels.Notice"
+             
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView  ItemsSource="{Binding NoticeList}" Margin="5">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate >
+                    <DataTemplate>
+                        <Frame  Padding="2"  x:DataType="models:Notice" BorderColor="Black">
+                            <StackLayout Orientation="Vertical" Margin="5"  >
+                                <StackLayout >
+                                    <Button Text="{Binding Theme}" BackgroundColor="Gray" Clicked="GoToNotice_Click"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

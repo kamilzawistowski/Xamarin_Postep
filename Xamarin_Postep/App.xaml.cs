@@ -29,6 +29,7 @@ namespace Xamarin_Postep
             InitializeComponent();
 
             DependencyService.Register<IDataStore<Inscription>>();
+            DependencyService.Register<IDataStore<Models.Notice>>();
             DependencyService.Register<IDataStore<Summary>>();
             DependencyService.Register<IDataStore<Quest>>();
 
