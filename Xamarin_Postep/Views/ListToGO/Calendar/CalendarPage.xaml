@@ -4,16 +4,24 @@
              x:Class="Xamarin_Postep.Views.ListToGO.CalendarPage"
             xmlns:controls="clr-namespace:Xamarin.Plugin.Calendar.Controls;assembly=Xamarin.Plugin.Calendar">
     <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
         <StackLayout>
-            <!--<xc:CalendarView ControlTemplate=""/>-->
-        <controls:Calendar 
+        <controls:Calendar Grid.Row="0"
+            SelectedDate="{Binding SelectedDate}"
+                           x:Name="Calendar"
             Day="14"
             Month="5"
             Year="2019"
             VerticalOptions="FillAndExpand"
             HorizontalOptions="FillAndExpand"/>
         </StackLayout>
-        <!--/controls:Calendar>-->
-        
+            <StackLayout BackgroundColor="Gray" Grid.Row="1">
+                <Label Text="test" HorizontalOptions="Center" FontSize="Title"/>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

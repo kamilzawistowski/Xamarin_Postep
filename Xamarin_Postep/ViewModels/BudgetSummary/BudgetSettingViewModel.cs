@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
+using SkiaSharp;
+using Microcharts;
 
 namespace Xamarin_Postep.ViewModels.BudgetSummary
 {
@@ -20,6 +22,7 @@ namespace Xamarin_Postep.ViewModels.BudgetSummary
 
         public BudgetSettingViewModel()
         {
+            
             ObservableCollection<string> WydatekList = new ObservableCollection<string>();
             WydatekList.Add("test"); 
             WydatekList.Add("test");

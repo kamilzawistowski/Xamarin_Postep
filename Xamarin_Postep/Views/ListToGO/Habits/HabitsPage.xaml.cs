@@ -16,5 +16,14 @@ namespace Xamarin_Postep.Views.ListToGO.Habits
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private async void AddNewHabit_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void BackToPrevious_click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

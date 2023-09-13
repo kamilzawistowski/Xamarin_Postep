@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Plugin.LocalNotification;
@@ -14,6 +15,7 @@ using Xamarin_Postep.Views.Language;
 using Xamarin_Postep.Views.ListToAdd;
 using Xamarin_Postep.Views.ListToGO;
 using Xamarin_Postep.Views.ListToGO.Budget;
+using Xamarin_Postep.Views.ListToGO.Habits;
 using Xamarin_Postep.Views.ListToGO.Notice;
 
 namespace Xamarin_Postep.Views.Main3Days
@@ -21,6 +23,7 @@ namespace Xamarin_Postep.Views.Main3Days
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TodayPage : ContentPage
 	{
+        
         TodayViewModel viewModel;
 		public TodayPage()
 		{
@@ -48,9 +51,9 @@ namespace Xamarin_Postep.Views.Main3Days
                 await Navigation.PushAsync(new EnglishMainPage());
 
             }
-            else if (action == "Testowy")
+            else if (action == "Nawyki")
             {
-                await Navigation.PushAsync(new TestowyPage());
+                await Navigation.PushAsync(new HabitsPage());
 
             }
             else if (action == "Budżet")

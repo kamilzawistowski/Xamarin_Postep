@@ -30,9 +30,11 @@ namespace Xamarin_Postep.ViewModels.Notice
             dataStore = DependencyService.Get<IDataStore<Models.Notice>>();
         }
 
-        public void OnAddNewNotice()
+        public async void OnAddNewNotice()
         {
-            dataStore.AddItemAsync(new Models.Notice() { Note = Note, Theme = Theme});
+            var newModel = new Models.Notice() { Note = Note, Theme = Theme };
+            dataStore.AddItemAsync(newModel);
+            await Shell.Current.GoToAsync("..");
         }
 
     }

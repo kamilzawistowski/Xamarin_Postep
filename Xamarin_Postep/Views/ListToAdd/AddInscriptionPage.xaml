@@ -5,7 +5,9 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Dodaj Wpis" FontSize="Title" HorizontalOptions="Center" Margin="20" />
-            <Editor Text="{Binding InscriptionContent}" HeightRequest="300"/>
+            <Frame BorderColor="Black" Margin="10">
+                <Editor Text="{Binding InscriptionContent}" HeightRequest="300"/>
+            </Frame>
             <Button Command="{Binding OnInscriptionAdd}" BackgroundColor="Gray" VerticalOptions="EndAndExpand" Margin="20" Text="Dodaj"></Button>
         </StackLayout>
     </ContentPage.Content>

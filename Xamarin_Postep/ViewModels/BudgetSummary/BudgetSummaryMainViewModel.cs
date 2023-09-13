@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 using Xamarin_Postep.Models;
+using Xamarin_Postep.Views.ListToGO.Budget;
 
 namespace Xamarin_Postep.ViewModels.BudgetSummary
 {
@@ -27,9 +30,16 @@ namespace Xamarin_Postep.ViewModels.BudgetSummary
                 SetProperty(ref przychodList, value);
             }
         }
+
+        public Command SettingCommand { get; set; }
         public BudgetSummaryMainViewModel()
         {
-            
+            SettingCommand = new Command(GoToSettingsAsync);
+        }
+
+        public async void GoToSettingsAsync()
+        {
+            await Shell.Current.GoToAsync(nameof(BudgetSettingsPage));
         }
     }
 }

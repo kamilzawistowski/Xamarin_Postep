@@ -30,5 +30,11 @@ namespace Xamarin_Postep.Views.ListToGO.Notice
             
             await Navigation.PushAsync(new NoticeSpecifyPage(buttonText));
         }
+        protected override void OnAppearing()
+        {
+            BindingContext = viewModel = new NoticeViewModel();
+            base.OnAppearing();
+        }
+
     }
 }

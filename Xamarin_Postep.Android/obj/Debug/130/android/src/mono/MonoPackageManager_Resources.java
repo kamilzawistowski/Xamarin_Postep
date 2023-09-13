@@ -4,6 +4,9 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "Xamarin_Postep.Android.dll" comes first in this list. */
 		"Xamarin_Postep.Android.dll",
 		"FormsViewGroup.dll",
+		"Microcharts.dll",
+		"Microcharts.Droid.dll",
+		"Microcharts.Forms.dll",
 		"Microsoft.Bcl.AsyncInterfaces.dll",
 		"Microsoft.Bcl.HashCode.dll",
 		"Microsoft.Data.Sqlite.dll",
@@ -27,6 +30,8 @@ public class MonoPackageManager_Resources {
 		"Newtonsoft.Json.dll",
 		"Plugin.LocalNotification.dll",
 		"SkiaSharp.dll",
+		"SkiaSharp.Views.Android.dll",
+		"SkiaSharp.Views.Forms.dll",
 		"Spire.Email.dll",
 		"SQLitePCLRaw.batteries_v2.dll",
 		"SQLitePCLRaw.core.dll",

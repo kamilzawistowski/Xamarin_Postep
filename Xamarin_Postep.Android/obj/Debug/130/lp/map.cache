@@ -1,6 +1,9 @@
 FormsViewGroup.dll
+Microcharts.Droid.dll
 Plugin.LocalNotification.dll
 SkiaSharp.dll
+SkiaSharp.Views.Android.dll
+SkiaSharp.Views.Forms.dll
 Spire.Email.dll
 SQLitePCLRaw.batteries_v2.dll
 SQLitePCLRaw.lib.e_sqlite3.android.dll

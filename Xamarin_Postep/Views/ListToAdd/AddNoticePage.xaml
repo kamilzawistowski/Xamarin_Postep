@@ -5,7 +5,9 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry Text="{Binding Theme}" Placeholder="Temat"/>
+            <Frame BorderColor="Black" Margin="10">
             <Editor Text="{Binding Note}" HeightRequest="500"/>
+            </Frame>
             <Button Text="Dodaj" BackgroundColor="Gray" Command="{Binding AddNewNotice}" VerticalOptions="EndAndExpand" />
         </StackLayout>
     </ContentPage.Content>

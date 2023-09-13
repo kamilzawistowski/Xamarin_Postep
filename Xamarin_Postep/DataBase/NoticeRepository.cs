@@ -18,7 +18,7 @@ namespace Xamarin_Postep.DataBase
         {
             if (item != null)
             {
-                App.Database.Add(item);
+                App.Database.Notice.Add(item);
                 await App.Database.SaveChangesAsync();
                 return true;
             }
@@ -29,10 +29,11 @@ namespace Xamarin_Postep.DataBase
         public async Task<bool> DeleteItemAsync(int id)
         {
 
-            var toDelete = App.Database.Notice.Where(x => x.ID == id);
+            var toDelete = App.Database.Notice.Where(x => x.ID == id).FirstOrDefault();
             if (toDelete != null)
             {
-                App.Database.Remove(toDelete);
+                App.Database.Notice.Remove(toDelete);
+                await App.Database.SaveChangesAsync();
                 return true;
             }
             else
