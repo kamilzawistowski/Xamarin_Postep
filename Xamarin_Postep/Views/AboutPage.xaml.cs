@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Xamarin_Postep.Views.Language;
+using Xamarin_Postep.Views.ListToGO.Language.English;
 using Xamarin_Postep.Views.Main3Days;
 
 namespace Xamarin_Postep.Views

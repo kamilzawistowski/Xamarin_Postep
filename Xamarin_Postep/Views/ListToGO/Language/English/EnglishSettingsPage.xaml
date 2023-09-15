@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Postep.Views.ListToGO.Language.English.EnglishSettingsPage">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior 
+            Command="{Binding BackButton}"/>
+    </Shell.BackButtonBehavior>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+
+            <Frame BorderColor="Black" Margin="7">
+                <StackLayout>
+                    <Label Text="Dodaj kategorie" HorizontalOptions="Center" FontSize="Large"/>
+                    <Entry Text="{Binding NewCategoryText}"/>
+                    <Button Text="Add Category" Command="{Binding AddNewCategoryCommand}" Style="{StaticResource ButtonBackgroundColor}" Clicked="Button_Clicked"/>
+                </StackLayout>
+            </Frame>
+
+
+            <Frame BorderColor="Black" Margin="7" HeightRequest="200">
+                <StackLayout>
+                    <Label Text="Usuń kategorie" HorizontalOptions="Center" FontSize="Large"/>
+
+                    <ListView x:Name="categoryCollection"
+                        ItemsSource="{Binding Options,Mode=TwoWay}"
+                            SelectedItem="{Binding SelectedOption}"
+                              >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding}" TextColor="Black" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Button Text="Delete Category" Command="{Binding DeleteSelectedCategoryCommand}" Style="{StaticResource ButtonBackgroundColor}" Clicked="Button_Clicked"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

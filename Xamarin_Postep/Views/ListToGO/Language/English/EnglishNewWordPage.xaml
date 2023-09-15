@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Postep.Views.ListToGO.Language.English.EnglishNewWordPage"
+             xmlns:models="clr-namespace:Xamarin_Postep.Models">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior 
+            Command="{Binding BackButton}"/>
+    </Shell.BackButtonBehavior>
+
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Label Text="English"/>
+            <Entry Text="{Binding EnglishWord}" FontSize="Small" x:Name="EnglishWordEntry"/>
+            <Label Text="Polskie"/>
+            <Entry Text="{Binding PolishWord}" FontSize="Small" x:Name="PolishWordEntry"/>
+
+            <Button Text="Potwierdz" Command="{Binding AddWordCommand}" Style="{StaticResource ButtonBackgroundColor}" Clicked="Submit_Click"></Button>
+
+            <!--<CollectionView ItemsSource="{Binding Options}"
+                    SelectedItem="{Binding SelectedOption}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:EnglishCategory">
+                        <TextCell Text="{Binding Name}" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>-->
+
+            <ListView x:Name="categoryCollection"
+                        ItemsSource="{Binding Options,Mode=TwoWay}"
+                            SelectedItem="{Binding SelectedOption}"
+                              >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding}" TextColor="Black" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

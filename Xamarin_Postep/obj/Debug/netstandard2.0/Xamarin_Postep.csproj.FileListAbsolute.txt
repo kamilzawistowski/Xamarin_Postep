@@ -5,7 +5,6 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\AppShell.x
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
-C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\Language\EnglishMainPage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToAdd\AddBudgetPage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToAdd\AddInscriptionPage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToAdd\AddNoticePage.xaml.g.cs
@@ -15,6 +14,12 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\List
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Calendar\CalendarPage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Habits\HabitsPage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Habits\HabitsSettingsPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Habits\NewHabitPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Language\English\EnglishListWordsPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Language\English\EnglishMainPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Language\English\EnglishNewWordPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Language\English\EnglishSettingsPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Language\English\EnglishTestPage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Notice\NoticePage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Notice\NoticeSettingsPage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Notice\NoticeSpecifyPage.xaml.g.cs
@@ -27,11 +32,11 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\Test
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Xamarin_Postep.AssemblyInfoInputs.cache
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Xamarin_Postep.AssemblyInfo.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Xamarin_Postep.csproj.CoreCompileInputs.cache
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Xamarin_Postep.dll
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\refint\Xamarin_Postep.dll
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Xamarin_Postep.pdb
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\bin\Debug\netstandard2.0\Xamarin_Postep.deps.json
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\bin\Debug\netstandard2.0\Xamarin_Postep.dll
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\bin\Debug\netstandard2.0\Xamarin_Postep.pdb
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\XamlC.stamp
-C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Xamarin_Postep.dll
-C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\refint\Xamarin_Postep.dll
-C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Xamarin_Postep.pdb
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\ref\Xamarin_Postep.dll

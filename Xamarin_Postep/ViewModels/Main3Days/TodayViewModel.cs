@@ -86,11 +86,25 @@ namespace Xamarin_Postep.ViewModels.Main3Days
                 SetProperty(ref inscriptionList, value);
             }
         }
-        
+
+
+        private ObservableCollection<Models.Habit> habitList = new ObservableCollection<Models.Habit>(App.Database.Habit.ToList());
+
+        //private readonly IDataStore<InscriptionRepository> inscriptionRepository1;
+
+        public ObservableCollection<Models.Habit> HabitList
+        {
+            get => habitList;
+            set
+            {
+                SetProperty(ref habitList, value);
+            }
+        }
+
 
         public TodayViewModel()
         {
-            var a =App.Database.Summary.Where(x => x.Date.Month == DateTime.Now.Month);
+            var a = App.Database.Summary.Where(x => x.Date.Month == DateTime.Now.Month);
             var b = a.Where(x => x.Type == "Przychod");
             foreach (var item in b)
             {

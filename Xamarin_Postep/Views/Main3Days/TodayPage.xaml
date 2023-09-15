@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xc="clr-namespace:XCalendar;assembly=XCalendar"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin_Postep.Views.Main3Days.TodayPage"
              xmlns:models="clr-namespace:Xamarin_Postep.Models"
              BackgroundColor="#fff"
@@ -25,10 +25,30 @@
                 <Label Text="{Binding DateTimeNowDay}" FontSize="Title" FontFamily="Con1" TextColor="#000" HorizontalOptions="Center"></Label>
                 <Label  Text="{Binding DateTimeNowNumberAndMonth}" FontFamily="Con1" FontSize="Title" TextColor="#000" HorizontalOptions="Center"></Label>
         </StackLayout>
+            <StackLayout Grid.Row="1" Grid.ColumnSpan="3">
+                
+            <Frame  BorderColor="Black" Margin="10" >
+                <CollectionView  ItemsSource="{Binding HabitList, Mode=TwoWay}" Margin="5">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate >
+                        <DataTemplate>
+                            <Frame  Padding="2"  x:DataType="models:Habit" BorderColor="Black">
+                                <StackLayout Orientation="Vertical" Margin="5"  >
+                                    <StackLayout Orientation="Horizontal" >
+                                            <CheckBox Margin="20,0,0,0" IsChecked="{Binding IsComplete}" CheckedChanged="CheckBox_CheckedChanged"/>
+                                            <Label Text="{Binding Name}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
 
-
-            <Frame Grid.Row="1" Grid.ColumnSpan="3" BorderColor="Black" Margin="10" >
-                <CollectionView  ItemsSource="{Binding QuestList}" Margin="5">
+            <Frame  BorderColor="Black" Margin="10" >
+                <CollectionView  ItemsSource="{Binding QuestList, Mode=TwoWay}" Margin="5">
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
                         </CollectionView.ItemsLayout>
@@ -46,10 +66,10 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
             </Frame>
+            </StackLayout>
 
-            
             <Frame Grid.Row="2" Grid.ColumnSpan="3" BorderColor="Black" Margin="10">
-                <CollectionView  ItemsSource="{Binding InscriptionList}" Margin="5" >
+                <CollectionView  ItemsSource="{Binding InscriptionList, Mode=TwoWay}" Margin="5" >
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
                         </CollectionView.ItemsLayout>

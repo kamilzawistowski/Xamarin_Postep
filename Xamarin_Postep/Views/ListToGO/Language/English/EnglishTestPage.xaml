@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Postep.Views.ListToGO.Language.English.EnglishTestPage">
+    
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior 
+            Command="{Binding BackButton}"/>
+    </Shell.BackButtonBehavior>
+
+    <ContentPage.Content>
+
+
+
+        <StackLayout>
+            <Label Text="{Binding PolishWordForm,Mode=TwoWay}" HorizontalOptions="Center" TextColor="Black"  FontSize="30" Margin="30" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            <Entry Text="{Binding EnglishWordForCheck}"  HorizontalOptions="Center" VerticalOptions="EndAndExpand" WidthRequest="200"/>
+            <Button Command="{Binding CheckWordCommand}" Style="{StaticResource ButtonBackgroundColor}" Text="Submit" VerticalOptions="EndAndExpand"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -18,15 +18,15 @@ namespace Xamarin_Postep.Views.ListToGO.Budget
 	{
 		BudgetSummaryMainViewModel viewModel;
 
-		private readonly ChartEntry[] entities = new[]
-		{
-			new ChartEntry(123)
-			{
+        private readonly ChartEntry[] entities = new[]
+        {
+            new ChartEntry(123)
+            {
 
-				Label = "Jedzenie",
+                Label = "Jedzenie",
                 TextColor =SKColor.Parse("#000000"),
                 ValueLabel = "521",
-				Color = SKColor.Parse("#FF69B4"),
+                Color = SKColor.Parse("#FF69B4"),
                 ValueLabelColor = SKColor.Parse("#FF69B4")
 
             },
@@ -57,10 +57,10 @@ namespace Xamarin_Postep.Views.ListToGO.Budget
 
             },
         };
-        public BudgetPage ()
-		{
+        public BudgetPage()
+        {
             BindingContext = viewModel = new BudgetSummaryMainViewModel();
-			InitializeComponent ();
+            InitializeComponent();
             ChartView.Chart = new DonutChart { Entries = entities };
 
         }

@@ -23,7 +23,7 @@
             </StackLayout>
             
             <StackLayout x:Name="PickerStack">
-                <Picker Title="--Wybierz Kategorie--"  x:Name="PickerItems" SelectedItem="{Binding Kategoria, Mode=TwoWay}" />
+                <Picker Title="--Wybierz Kategorie--"  x:Name="PickerItems"  SelectedItem="{Binding Kategoria, Mode=TwoWay}" />
                 <Label Text="Opis" FontSize="Medium" />
                 <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
                 <Label Text="Cena" FontSize="Medium" />

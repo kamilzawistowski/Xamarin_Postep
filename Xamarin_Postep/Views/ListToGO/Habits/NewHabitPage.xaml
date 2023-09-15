@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Postep.Views.ListToGO.Habits.NewHabitPage"
+             xmlns:models="clr-namespace:Xamarin_Postep.Models"
+             >
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="LightSkyBlue" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
+        <Frame BorderColor="Black" Margin="5">
+        <StackLayout HorizontalOptions="Center">
+            
+                <Label Text="Wybierz Ikone" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+                <CollectionView Grid.Row="0"  ItemsSource="{Binding Habits}" Margin="5" SelectionMode="Single" SelectedItem="{Binding SelectedIcon}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal"   ItemSpacing="20"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate >
+                        <DataTemplate>
+                            <Grid Padding="10">
+                                <Frame x:DataType="models:HabitIcons" Padding="2"  BorderColor="Black">
+                                    <StackLayout Orientation="Horizontal" Margin="5"  >
+                                            <Image Source="{Binding IconHabit}"/>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+            </StackLayout>
+        </Frame>
+            <StackLayout Grid.Row="1">
+            <Editor  Placeholder="Nazwa nawyku" Margin="20" Text="{Binding HabitName}"/>
+                <Picker Title="--Czestotliwosc nawyku--"  x:Name="PickerItems" ItemsSource="{Binding Kategoria, Mode=TwoWay}" Margin="20" SelectedItem="{Binding SelectedCategory}"/>
+                <Button  BackgroundColor="Gray" Text="Dodaj" Margin="30" VerticalOptions="EndAndExpand" Command="{Binding NewHabitCommand}"/>
+            </StackLayout>
+        </Grid>
+
+        
+    </ContentPage.Content>
+</ContentPage>

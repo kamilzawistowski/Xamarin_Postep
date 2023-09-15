@@ -73,25 +73,21 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
-            "Plugin.LocalNotification": {
-              "target": "Package",
-              "version": "[9.2.0, )"
-            },
-            "Plugin.XCalendar": {
-              "target": "Package",
-              "version": "[2.1.0, )"
-            },
             "Spire.Email": {
               "target": "Package",
               "version": "[6.5.7, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.7.0, )"
+              "version": "[1.8.0, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2196, )"
+              "version": "[5.0.0.2612, )"
+            },
+            "Xamarin.Forms.DataGrid": {
+              "target": "Package",
+              "version": "[5.0.0.2545, )"
             },
             "Xamarin.Plugin.Calendar": {
               "target": "Package",

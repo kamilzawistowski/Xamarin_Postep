@@ -27,6 +27,15 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
-        </ResourceDictionary>        
+            
+            <Style x:Key="ButtonBackgroundColor" TargetType="Button">
+                <Setter Property="Background" Value="#808080" />
+            </Style>
+
+
+        </ResourceDictionary>
+        
+      
+        
     </Application.Resources>
 </Application>

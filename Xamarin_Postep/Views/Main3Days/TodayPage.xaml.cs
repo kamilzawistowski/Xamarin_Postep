@@ -4,18 +4,18 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Plugin.LocalNotification;
-using Plugin.LocalNotification.EventArgs;
+//using Plugin.LocalNotification;
+//using Plugin.LocalNotification.EventArgs;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin_Postep.DataBase;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.ViewModels.Main3Days;
-using Xamarin_Postep.Views.Language;
 using Xamarin_Postep.Views.ListToAdd;
 using Xamarin_Postep.Views.ListToGO;
 using Xamarin_Postep.Views.ListToGO.Budget;
 using Xamarin_Postep.Views.ListToGO.Habits;
+using Xamarin_Postep.Views.ListToGO.Language.English;
 using Xamarin_Postep.Views.ListToGO.Notice;
 
 namespace Xamarin_Postep.Views.Main3Days
@@ -34,10 +34,16 @@ namespace Xamarin_Postep.Views.Main3Days
 
         }
 
+        protected override void OnAppearing()
+        {
+            BindingContext = viewModel = new TodayViewModel();
+
+            base.OnAppearing();
+        }
 
         private async void ShowApp_Click(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Urodziny i Rocznice");
+            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Urodziny i Rocznice", "Angielski");
             
             //Debug.WriteLine("Action: " + action);
             if (action == "Kalendarz Miesięczny")
@@ -97,23 +103,23 @@ namespace Xamarin_Postep.Views.Main3Days
         
 
 
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            var notification = new NotificationRequest
-            {
-                BadgeNumber = 1,
-                Description = "Test Desc",
-                Title = "Notifiy",
-                ReturningData = "DUMMYDATA",
-                NotificationId = 1,
-                Schedule = new NotificationRequestSchedule
-                {
-                    NotifyTime = DateTime.Now.AddSeconds(10)
-                },
+        //private void Button_Clicked(object sender, EventArgs e)
+        //{
+        //    var notification = new NotificationRequest
+        //    {
+        //        BadgeNumber = 1,
+        //        Description = "Test Desc",
+        //        Title = "Notifiy",
+        //        ReturningData = "DUMMYDATA",
+        //        NotificationId = 1,
+        //        Schedule = new NotificationRequestSchedule
+        //        {
+        //            NotifyTime = DateTime.Now.AddSeconds(10)
+        //        },
                  
-            };
-            NotificationCenter.Current.Show(notification);
-        }
+        //    };
+        //    NotificationCenter.Current.Show(notification);
+        //}
 
         private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
