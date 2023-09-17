@@ -94,7 +94,7 @@ namespace Xamarin_Postep.ViewModels.Main3Days
 
         public ObservableCollection<Models.Habit> HabitList
         {
-            get => habitList;
+            get => GetPhotosFromIconPath(habitList);
             set
             {
                 SetProperty(ref habitList, value);
@@ -121,6 +121,15 @@ namespace Xamarin_Postep.ViewModels.Main3Days
 
             DateTimeNowDay = Converters.ConvertEnglishDayToPolishNames(DateTime.Now.DayOfWeek.ToString());
             DateTimeNowNumberAndMonth = DateTime.Now.Day + " " + Converters.ConvertMonthToPolandNames(DateTime.Now.Month);
+        }
+
+        public ObservableCollection<Models.Habit> GetPhotosFromIconPath(ObservableCollection<Models.Habit> Habits)
+        {
+            foreach (var item in Habits)
+            {
+                item.ImageIcon = new FileImageSource().File = item.ImagePath;
+            }
+            return Habits;
         }
 
     }

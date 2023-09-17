@@ -40,7 +40,7 @@
                     <CollectionView.ItemTemplate >
                         <DataTemplate>
                             <Grid Padding="10">
-                                <Frame x:DataType="models:HabitIcons" Padding="2"  BorderColor="Black">
+                                <Frame x:DataType="models:HabitIcon" Padding="2"  BorderColor="Black">
                                     <StackLayout Orientation="Horizontal" Margin="5"  >
                                             <Image Source="{Binding IconHabit}"/>
                                     </StackLayout>

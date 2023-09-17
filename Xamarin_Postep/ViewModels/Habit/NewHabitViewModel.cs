@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -25,8 +26,8 @@ namespace Xamarin_Postep.ViewModels.Habit
             }
         }
 
-        private HabitIcons selectedIcon;
-        public HabitIcons SelectedIcon
+        private HabitIcon selectedIcon;
+        public HabitIcon SelectedIcon
         {
             get => selectedIcon;
             set 
@@ -46,8 +47,8 @@ namespace Xamarin_Postep.ViewModels.Habit
         }
 
 
-        private ObservableCollection<HabitIcons> habits;
-        public ObservableCollection<HabitIcons> Habits
+        private ObservableCollection<HabitIcon> habits;
+        public ObservableCollection<HabitIcon> Habits
         {
             get => HabitIconService.HabitIcons(habits);
             set
@@ -63,15 +64,26 @@ namespace Xamarin_Postep.ViewModels.Habit
         {
             dataStore = DependencyService.Get<IDataStore<Models.Habit>>();
             NewHabitCommand = new Command(AddNewHabit);
-            habits = new ObservableCollection<HabitIcons>();
+            habits = new ObservableCollection<HabitIcon>();
         }
         public void AddNewHabit()
         {
             var name = HabitName;
             var icon = selectedIcon;
             var category = selectedCategory;
-            Models.Habit habit = new Models.Habit() {Image = icon.IconHabit, Name = name,DateTime = DateTime.Now};
+            var icon2 = selectedIcon.IconHabit.ToString();
+            
+
+            //var result = Convert.ToByte(selectedIcon.IconHabit);
+            //string imageBase64 = Convert.ToBase64String(result);
+            ////Convert Base64string to Stream.  
+
+            //byte[] bytes = System.Convert.FromBase64String(imageBase64);
+            //testImage.Source = ImageSource.FromStream(() => new MemoryStream(bytes));
+
+            Models.Habit habit = new Models.Habit() { ImagePath = selectedIcon.IconHabit.ToString().Substring(6), DateTime = DateTime.Now};
             dataStore.AddItemAsync(habit);
+            dataStore.GetItemsAsync();
         }
     }
 }

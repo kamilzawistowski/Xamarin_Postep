@@ -10,7 +10,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="200" />
+                <RowDefinition Height="300" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="100" />
             </Grid.RowDefinitions>
@@ -27,19 +27,19 @@
         </StackLayout>
             <StackLayout Grid.Row="1" Grid.ColumnSpan="3">
                 
-            <Frame  BorderColor="Black" Margin="10" >
-                <CollectionView  ItemsSource="{Binding HabitList, Mode=TwoWay}" Margin="5">
+            <Frame  BorderColor="Black" Margin="5" >
+                <CollectionView  ItemsSource="{Binding HabitList, Mode=TwoWay}" >
                     <CollectionView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20"/>
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate >
                         <DataTemplate>
                             <Frame  Padding="2"  x:DataType="models:Habit" BorderColor="Black">
-                                <StackLayout Orientation="Vertical" Margin="5"  >
-                                    <StackLayout Orientation="Horizontal" >
-                                            <CheckBox Margin="20,0,0,0" IsChecked="{Binding IsComplete}" CheckedChanged="CheckBox_CheckedChanged"/>
-                                            <Label Text="{Binding Name}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
-                                    </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="5"  HeightRequest="30" >
+                                    <StackLayout Orientation="Vertical" Margin="5">
+                                            <CheckBox Margin="0,0,0,0" IsChecked="{Binding IsComplete}" CheckedChanged="CheckBox_CheckedChanged"/>
+                                            <Image Source="{Binding ImageIcon}" />
+                                        </StackLayout>
                                 </StackLayout>
                             </Frame>
                         </DataTemplate>

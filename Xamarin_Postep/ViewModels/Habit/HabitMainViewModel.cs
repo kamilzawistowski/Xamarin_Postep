@@ -15,7 +15,7 @@ namespace Xamarin_Postep.ViewModels.Habit
         private ObservableCollection<Models.Habit> habits;
         public ObservableCollection<Models.Habit> Habits
         {
-            get => habits;
+            get => GetPhotosFromIconPath(habits);
             set
             {
                 SetProperty(ref habits, value);
@@ -29,6 +29,15 @@ namespace Xamarin_Postep.ViewModels.Habit
             dataStore = DependencyService.Get<IDataStore<Models.Habit>>();
             var abc = dataStore.GetItemsAsync();
             Habits = new ObservableCollection<Models.Habit>(abc.Result);
+        }
+
+        public ObservableCollection<Models.Habit> GetPhotosFromIconPath(ObservableCollection<Models.Habit> Habits)
+        {
+            foreach (var item in Habits)
+            {
+                item.ImageIcon = new FileImageSource().File = item.ImagePath;
+            }
+            return Habits;
         }
     }
 }

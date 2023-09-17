@@ -9,14 +9,14 @@ namespace Xamarin_Postep.Services
 {
     public static class HabitIconService
     {
-        public static ObservableCollection<HabitIcons> HabitIcons(ObservableCollection<HabitIcons> habitIcons)
+        public static ObservableCollection<HabitIcon> HabitIcons(ObservableCollection<HabitIcon> habitIcons)
         {
-            ObservableCollection<HabitIcons> imageSources = new ObservableCollection<HabitIcons>();
-            imageSources.Add(new HabitIcons { IconHabit = ImageSource.FromFile("icon_plus.png") });
-            imageSources.Add(new HabitIcons { IconHabit = ImageSource.FromFile("icon_plus.png") });
-            imageSources.Add(new HabitIcons { IconHabit = ImageSource.FromFile("icon_plus.png") });
-            imageSources.Add(new HabitIcons { IconHabit = ImageSource.FromFile("icon_plus.png") });
-            imageSources.Add(new HabitIcons { IconHabit = ImageSource.FromFile("icon_plus.png") });
+            ObservableCollection<HabitIcon> imageSources = new ObservableCollection<HabitIcon>();
+            imageSources.Add(new HabitIcon { IconHabit = ImageSource.FromFile("icon_plus.png") });
+            imageSources.Add(new HabitIcon { IconHabit = ImageSource.FromFile("icon_plus.png") });
+            imageSources.Add(new HabitIcon { IconHabit = ImageSource.FromFile("icon_plus.png") });
+            imageSources.Add(new HabitIcon { IconHabit = ImageSource.FromFile("icon_plus.png") });
+            imageSources.Add(new HabitIcon { IconHabit = ImageSource.FromFile("icon_plus.png") });
             return imageSources;
         }
     }
