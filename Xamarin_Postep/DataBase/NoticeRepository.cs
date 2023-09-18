@@ -18,7 +18,7 @@ namespace Xamarin_Postep.DataBase
         {
             if (item != null)
             {
-                App.Database.Notice.Add(item);
+                App.Database.Add(item);
                 await App.Database.SaveChangesAsync();
                 return true;
             }

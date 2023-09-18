@@ -22,7 +22,6 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             }
         }
         private string questContent;
-        private readonly DateTime date;
 
         public string QuestContent
         {
@@ -33,14 +32,15 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
                 SetProperty(ref questContent, value);
             }
         }
-        private DateTime datePicker;
+        
+        private DateTime date;
 
-        public DateTime DatePicker 
+        public DateTime Date
         { 
-            get => datePicker;
+            get => date;
             set
             {
-                SetProperty(ref datePicker, value);
+                SetProperty(ref date, value);
             }
         }
 
@@ -59,9 +59,9 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
         public void OnBtnQuestAdd()
         {
 
-            DateTime dateToPushNotify = new DateTime(datePicker.Year, datePicker.Month, datePicker.Day, TimeContent.Hours, TimeContent.Minutes, TimeContent.Seconds);
-            var datepick = DatePicker;
-            Quest quest = new Quest() { Date = DatePicker,Content = QuestContent,DateToPushNotify = dateToPushNotify };
+            DateTime dateToPushNotify = new DateTime(date.Year, date.Month, date.Day, TimeContent.Hours, TimeContent.Minutes, TimeContent.Seconds);
+            
+            Quest quest = new Quest() { Date = Date,Content = QuestContent,DateToPushNotify = dateToPushNotify, };
             dataStore.AddItemAsync(quest);
         }
     }

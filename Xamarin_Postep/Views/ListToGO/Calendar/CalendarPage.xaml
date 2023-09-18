@@ -1,26 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xc="clr-namespace:XCalendar;assembly=XCalendar"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="Xamarin_Postep.Views.ListToGO.CalendarPage"
-            xmlns:controls="clr-namespace:Xamarin.Plugin.Calendar.Controls;assembly=Xamarin.Plugin.Calendar">
+             xmlns:controls="clr-namespace:Xamarin.Plugin.Calendar.Controls;assembly=Xamarin.Plugin.Calendar"
+             xmlns:models="clr-namespace:Xamarin_Postep.Models">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-        <StackLayout>
         <controls:Calendar Grid.Row="0"
             SelectedDate="{Binding SelectedDate}"
                            x:Name="Calendar"
             Day="14"
-            Month="5"
-            Year="2019"
+            Month="9"
+            Year="2023"
             VerticalOptions="FillAndExpand"
             HorizontalOptions="FillAndExpand"/>
-        </StackLayout>
-            <StackLayout BackgroundColor="Gray" Grid.Row="1">
-                <Label Text="test" HorizontalOptions="Center" FontSize="Title"/>
+            <StackLayout  Grid.Row="1">
+                <Label Text="{Binding AcctualSelectedDay}" HorizontalOptions="Center" FontSize="Title"/>
+                <ScrollView Margin="5">
+                    <Frame  BorderColor="Black" Margin="10" >
+                        <CollectionView  ItemsSource="{Binding QuestList, Mode=TwoWay}" Margin="5">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate >
+                                <DataTemplate>
+                                    <Frame  Padding="2"  x:DataType="models:Quest" BorderColor="Black">
+                                        <StackLayout Orientation="Vertical" Margin="5"  >
+                                            <StackLayout Orientation="Horizontal" >
+                                                <CheckBox Margin="20,0,0,0" IsChecked="{Binding IsComplete}" CheckedChanged="CheckBox_CheckedChanged"/>
+                                                <Label Text="{Binding Content}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </Frame>
+
+            </ScrollView>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

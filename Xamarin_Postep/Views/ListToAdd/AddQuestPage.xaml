@@ -7,7 +7,9 @@
         <StackLayout>
             <Label Text="Dodaj Zadanie"/>
             <Entry Text="{Binding QuestContent}"/>
-            <DatePicker Date="{Binding DatePicker}" MinimumDate="{Binding Source={x:Static sys:DateTime.Now}}"/>
+            <!--<DatePicker Date="{Binding DatePicker}" MinimumDate="{Binding Source={x:Static sys:DateTime.Today}}" Format="dd/MM/yyyy" />-->
+            <Label Text="{Binding Date}" />
+            <Label Text="Czas do powiadomienia"/>
             <TimePicker Time="{Binding TimeContent}" Format="HH:mm"/>
             <Button Command="{Binding OnQuestAdd}" BackgroundColor="Gray" VerticalOptions="EndAndExpand" Text="Dodaj" Margin="20"/>
         </StackLayout>

@@ -27,7 +27,7 @@ namespace Xamarin_Postep.DataBase
         }
 
         public async Task<bool> DeleteItemAsync(int id)
-        {
+        {    
 
             var toDelete = App.Database.Habit.Where(x => x.ID == id);
             if (toDelete != null)

@@ -81,7 +81,7 @@ namespace Xamarin_Postep.ViewModels.Habit
             //byte[] bytes = System.Convert.FromBase64String(imageBase64);
             //testImage.Source = ImageSource.FromStream(() => new MemoryStream(bytes));
 
-            Models.Habit habit = new Models.Habit() { ImagePath = selectedIcon.IconHabit.ToString().Substring(6), DateTime = DateTime.Now};
+            Models.Habit habit = new Models.Habit() { ImagePath = selectedIcon.IconHabit.ToString().Substring(6),Name = HabitName, DateTime = DateTime.Now};
             dataStore.AddItemAsync(habit);
             dataStore.GetItemsAsync();
         }
