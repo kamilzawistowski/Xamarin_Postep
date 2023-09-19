@@ -103,23 +103,7 @@ namespace Xamarin_Postep.Views.Main3Days
         
 
 
-        //private void Button_Clicked(object sender, EventArgs e)
-        //{
-        //    var notification = new NotificationRequest
-        //    {
-        //        BadgeNumber = 1,
-        //        Description = "Test Desc",
-        //        Title = "Notifiy",
-        //        ReturningData = "DUMMYDATA",
-        //        NotificationId = 1,
-        //        Schedule = new NotificationRequestSchedule
-        //        {
-        //            NotifyTime = DateTime.Now.AddSeconds(10)
-        //        },
-                 
-        //    };
-        //    NotificationCenter.Current.Show(notification);
-        //}
+   
 
         private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
@@ -136,5 +120,23 @@ namespace Xamarin_Postep.Views.Main3Days
                 App.Database.SaveChanges();
             }
         }
+
+        //private void Button_Clicked(object sender, EventArgs e)
+        //{
+        //    var notification = new NotificationRequest
+        //    {
+        //        BadgeNumber = 1,
+        //        Description = "Test Desc",
+        //        Title = "Notifiy",
+        //        ReturningData = "DUMMYDATA",
+        //        NotificationId = 1,
+        //        Schedule = new NotificationRequestSchedule
+        //        {
+        //            NotifyTime = DateTime.Now.AddSeconds(10)
+        //        },
+
+        //    };
+        //    NotificationCenter.Current.Show(notification);
+        //}
     }
 }
