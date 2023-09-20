@@ -24,7 +24,7 @@ namespace Xamarin_Postep.ViewModels.Notice
         IDataStore<Models.Notice> dataStore;
 
         public Command AddNewNotice { get; set; }
-        public NewNoticeViewModel()
+        public NewNoticeViewModel(DateTime date)
         {
             AddNewNotice = new Command(OnAddNewNotice);
             dataStore = DependencyService.Get<IDataStore<Models.Notice>>();

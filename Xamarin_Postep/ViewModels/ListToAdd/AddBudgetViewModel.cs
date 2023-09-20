@@ -70,10 +70,12 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             }
         }
 
+        public DateTime DateTimeForSpecifyDay { get; set; }
+
         IDataStore<Summary> dataStore;
-        public AddBudgetViewModel()
+        public AddBudgetViewModel(DateTime date)
         {
-           
+            DateTimeForSpecifyDay = date;
             dataStore = DependencyService.Get<IDataStore<Summary>>();
 
             PrzychodBtn = new Command(TypeIsPrzychod);

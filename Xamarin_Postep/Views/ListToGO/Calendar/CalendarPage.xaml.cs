@@ -14,7 +14,7 @@ namespace Xamarin_Postep.Views.ListToGO
 	public partial class CalendarPage : ContentPage
 	{
 		CalendarViewModel viewModel;
-		public CalendarPage ()
+		public CalendarPage ( )
 		{
 			BindingContext = viewModel = new CalendarViewModel ();
 			InitializeComponent ();

@@ -73,22 +73,22 @@ namespace Xamarin_Postep.Views.Main3Days
             if (action == "Zadanie")
             {
                 // await Shell.Current.GoToAsync($"{nameof(BudgetSummaryPage)}");
-                await Navigation.PushAsync(new AddQuestPage(DateTime.Now));
+                await Navigation.PushAsync(new AddQuestPage(DateTime.Now.AddDays(-1)));
 
             }
             else if (action == "Notatka")
             {
-                await Navigation.PushAsync(new AddInscriptionPage(DateTime.Now));
+                await Navigation.PushAsync(new AddInscriptionPage(DateTime.Now.AddDays(-1)));
 
             }
             else if (action == "Wydatek/Przychód")
             {
-                await Navigation.PushAsync(new AddBudgetPage());
+                await Navigation.PushAsync(new AddBudgetPage(DateTime.Now.AddDays(-1)));
 
             }
             else if (action == "Lista")
             {
-                await Navigation.PushAsync(new AddNoticePage());
+                await Navigation.PushAsync(new AddNoticePage(DateTime.Now.AddDays(-1)));
 
             }
         }

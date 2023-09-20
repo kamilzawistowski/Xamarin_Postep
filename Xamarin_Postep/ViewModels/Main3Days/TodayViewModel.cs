@@ -63,24 +63,38 @@ namespace Xamarin_Postep.ViewModels.Main3Days
             }
         }
 
-        private ObservableCollection<Quest> questList = new ObservableCollection<Quest>(App.Database.Quest.ToList());
+        private ObservableCollection<Quest> questList;
 
         public ObservableCollection<Quest> QuestList
         {
-            get => questList;
+            get
+            {
+                questList = new ObservableCollection<Quest>(App.Database.Quest
+                    .Where(x => x.Date.Day == DateTime.Now.Day)
+                    .Where(x => x.Date.Month == DateTime.Now.Month)
+                    .ToList());
+                return questList;
+            }
             set
             {
                 SetProperty(ref questList, value);
             }
         }
 
-        private ObservableCollection<Inscription> inscriptionList = new ObservableCollection<Inscription>(App.Database.Inscription.ToList());
+        private ObservableCollection<Inscription> inscriptionList ;
 
         //private readonly IDataStore<InscriptionRepository> inscriptionRepository1;
 
         public ObservableCollection<Inscription> InscriptionList
         {
-            get => inscriptionList;
+            get
+            {
+                inscriptionList = new ObservableCollection<Inscription>(App.Database.Inscription
+                    .Where(x => x.DateTime.Day == DateTime.Now.Day)
+                    .Where(x => x.DateTime.Month == DateTime.Now.Month)
+                    .ToList());
+                return inscriptionList;
+            }
             set
             {
                 SetProperty(ref inscriptionList, value);
@@ -88,13 +102,22 @@ namespace Xamarin_Postep.ViewModels.Main3Days
         }
 
 
-        private ObservableCollection<Models.Habit> habitList = new ObservableCollection<Models.Habit>(App.Database.Habit.ToList());
+        private ObservableCollection<Models.Habit> habitList ;
 
         //private readonly IDataStore<InscriptionRepository> inscriptionRepository1;
 
         public ObservableCollection<Models.Habit> HabitList
         {
-            get => GetPhotosFromIconPath(habitList);
+            get
+            {
+                habitList = new ObservableCollection<Models.Habit>(App.Database.Habit
+                    .Where(x => x.DateTime.Day == DateTime.Now.Day)
+                    .Where(x => x.DateTime.Month == DateTime.Now.Month)
+                    .ToList());
+
+                GetPhotosFromIconPath(habitList);
+                return habitList;
+            }
             set
             {
                 SetProperty(ref habitList, value);

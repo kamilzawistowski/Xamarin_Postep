@@ -17,9 +17,9 @@ namespace Xamarin_Postep.Views.ListToAdd
 	{
         ObservableCollection<string> items;
         AddBudgetViewModel viewModel;
-		public AddBudgetPage ()
+		public AddBudgetPage (DateTime date)
 		{
-            BindingContext = viewModel = new AddBudgetViewModel();
+            BindingContext = viewModel = new AddBudgetViewModel(date);
             InitializeComponent();
             PickerStack.IsVisible = false;
             DatePicker.Date = DateTime.Now;

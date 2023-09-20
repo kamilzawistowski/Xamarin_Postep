@@ -15,9 +15,9 @@ namespace Xamarin_Postep.Views.ListToAdd
     public partial class AddNoticePage : ContentPage
     {
         NewNoticeViewModel viewModel;
-        public AddNoticePage()
+        public AddNoticePage(DateTime date)
         {
-            BindingContext = viewModel = new NewNoticeViewModel();
+            BindingContext = viewModel = new NewNoticeViewModel(date);
             InitializeComponent();
         }
     }

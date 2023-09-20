@@ -42,7 +42,7 @@ namespace Xamarin_Postep.ViewModels.Calendar
                 SetProperty(ref acctualSelectedDay, value);
             }
         }
-        public CalendarViewModel()
+        public CalendarViewModel( )
         {
             selectedDate = DateTime.Now;
         }
