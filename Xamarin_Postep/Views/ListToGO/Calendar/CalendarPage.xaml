@@ -13,7 +13,7 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="170"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <controls:Calendar Grid.Row="0" Grid.ColumnSpan="3" 
@@ -50,11 +50,11 @@
             </ScrollView>
             </StackLayout>
 
-            <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="0,20,0,20" HorizontalOptions="CenterAndExpand">
-                <Frame BorderColor="Black" BackgroundColor="#829460">
+            <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="0,20,0,20" HorizontalOptions="CenterAndExpand"  >
+                <Frame BorderColor="Black" BackgroundColor="#829460" WidthRequest="60">
                     <Label Text="{Binding PrzychodSum}" />
                 </Frame>
-                <Frame BorderColor="Black" BackgroundColor="#F96666">
+                <Frame BorderColor="Black" BackgroundColor="#F96666"  WidthRequest="60">
                     <Label Text="{Binding WydatekSum}"/>
                 </Frame>
             </StackLayout>

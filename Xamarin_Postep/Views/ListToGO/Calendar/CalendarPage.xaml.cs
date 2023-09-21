@@ -38,7 +38,7 @@ namespace Xamarin_Postep.Views.ListToGO
         private async void AddNew_Click(object sender, EventArgs e)
         {
             string action = await DisplayActionSheet("", "", null, "Zadanie", "Notatka", "Wydatek/Przychód", "Lista");
-            var abc = Calendar.SelectedDate;
+           
 
             //Debug.WriteLine("Action: " + action);
             if (action == "Zadanie")

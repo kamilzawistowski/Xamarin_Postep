@@ -22,7 +22,7 @@ namespace Xamarin_Postep.Views.ListToAdd
             BindingContext = viewModel = new AddBudgetViewModel(date);
             InitializeComponent();
             PickerStack.IsVisible = false;
-            DatePicker.Date = DateTime.Now;
+            DatePicker.Date = date;
         }
 
         private void Button_Clicked_Wydatek(object sender, EventArgs e)
