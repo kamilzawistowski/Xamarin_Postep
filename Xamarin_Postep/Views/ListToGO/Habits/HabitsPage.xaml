@@ -36,7 +36,6 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <Button Grid.Row="2"  HorizontalOptions="Start" VerticalOptions="End" Margin="20" ImageSource="icon_list.png" CornerRadius="90" Clicked="BackToPrevious_click"/>
             <Button Grid.Row="2"  HorizontalOptions="End" VerticalOptions="End" Margin="20" ImageSource="icon_plus.png" CornerRadius="90" Clicked="AddNewHabit_Click"/>
        
         </Grid>

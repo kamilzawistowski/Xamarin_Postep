@@ -30,7 +30,7 @@
         </StackLayout>
             <StackLayout Grid.Row="1" Grid.ColumnSpan="3">
                 
-            <Frame  BorderColor="Black" Margin="5" >
+            <Frame  BorderColor="Black" Margin="10" >
                 <CollectionView  ItemsSource="{Binding HabitList, Mode=TwoWay}" >
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20"/>

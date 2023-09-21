@@ -81,9 +81,39 @@ namespace Xamarin_Postep.ViewModels.Habit
             //byte[] bytes = System.Convert.FromBase64String(imageBase64);
             //testImage.Source = ImageSource.FromStream(() => new MemoryStream(bytes));
 
-            Models.Habit habit = new Models.Habit() { ImagePath = selectedIcon.IconHabit.ToString().Substring(6),Name = HabitName, DateTime = DateTime.Now};
-            dataStore.AddItemAsync(habit);
+            //Models.Habit habit = new Models.Habit() { ImagePath = selectedIcon.IconHabit.ToString().Substring(6),Name = HabitName, DateTime = DateTime.Now};
+            //dataStore.AddItemAsync(habit);
             dataStore.GetItemsAsync();
+
+           // PopulateDateList();
         }
+
+        private ObservableCollection<DateTime> dateList;
+        public ObservableCollection<DateTime> DateList
+        {
+            get { return dateList; }
+            set
+            {
+                dateList = value;
+                OnPropertyChanged(nameof(DateList));
+            }
+        }
+
+        private void PopulateDateList()
+        {
+            DateList = new ObservableCollection<DateTime>();
+            DateTime today = DateTime.Today;
+            DateTime lastDayOfYear = new DateTime(today.Year, 12, 31);
+
+            // Calculate the number of days remaining in the current year
+            int daysRemaining = (int)(lastDayOfYear - today).TotalDays;
+
+            
+            for (int i = 0; i <= daysRemaining; i++)
+            {
+                dataStore.AddItemAsync(new Models.Habit() { ImagePath = selectedIcon.IconHabit.ToString().Substring(6), Name = HabitName, DateTime = today.AddDays(i) });
+            }
+        }
+
     }
 }

@@ -7,10 +7,16 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
                 <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-        <controls:Calendar Grid.Row="0"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <controls:Calendar Grid.Row="0" Grid.ColumnSpan="3" 
             SelectedDate="{Binding SelectedDate}"
                            x:Name="Calendar"
             Day="14"
@@ -18,7 +24,7 @@
             Year="2023"
             VerticalOptions="FillAndExpand"
             HorizontalOptions="FillAndExpand"/>
-            <StackLayout  Grid.Row="1">
+            <StackLayout  Grid.Row="1" Grid.ColumnSpan="3" >
                 <Label Text="{Binding AcctualSelectedDay}" HorizontalOptions="Center" FontSize="Title"/>
                 <ScrollView Margin="5">
                     <Frame  BorderColor="Black" Margin="10" >
@@ -43,6 +49,17 @@
 
             </ScrollView>
             </StackLayout>
+
+            <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="0,20,0,20" HorizontalOptions="CenterAndExpand">
+                <Frame BorderColor="Black" BackgroundColor="#829460">
+                    <Label Text="{Binding PrzychodSum}" />
+                </Frame>
+                <Frame BorderColor="Black" BackgroundColor="#F96666">
+                    <Label Text="{Binding WydatekSum}"/>
+                </Frame>
+            </StackLayout>
+
+            <Button Grid.Row="2" Grid.ColumnSpan="3"  HorizontalOptions="End" VerticalOptions="End" Margin="20" ImageSource="icon_plus.png" CornerRadius="90" Clicked="AddNew_Click"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
