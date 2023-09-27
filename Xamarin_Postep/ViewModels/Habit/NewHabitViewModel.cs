@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -85,7 +86,7 @@ namespace Xamarin_Postep.ViewModels.Habit
             //dataStore.AddItemAsync(habit);
             dataStore.GetItemsAsync();
 
-           // PopulateDateList();
+            PopulateDateList();
         }
 
         private ObservableCollection<DateTime> dateList;
@@ -101,19 +102,26 @@ namespace Xamarin_Postep.ViewModels.Habit
 
         private void PopulateDateList()
         {
+            int idForLast = 0;
             DateList = new ObservableCollection<DateTime>();
             DateTime today = DateTime.Today;
             DateTime lastDayOfYear = new DateTime(today.Year, 12, 31);
 
             // Calculate the number of days remaining in the current year
             int daysRemaining = (int)(lastDayOfYear - today).TotalDays;
-
-            
+            var countHabits = dataStore.GetItemsAsync().Result.Count();
+            if (countHabits > 0)
+            {
+                idForLast = dataStore.GetItemsAsync().Result.Where(x => x.ID == countHabits).FirstOrDefault().IdGroup;
+                idForLast += 1;
+            }
             for (int i = 0; i <= daysRemaining; i++)
             {
-                dataStore.AddItemAsync(new Models.Habit() { ImagePath = selectedIcon.IconHabit.ToString().Substring(6), Name = HabitName, DateTime = today.AddDays(i) });
+                dataStore.AddItemAsync(new Models.Habit() { ImagePath = selectedIcon.IconHabit.ToString().Substring(6), Name = HabitName, DateTime = today.AddDays(i),IdGroup = idForLast });
             }
         }
+
+
 
     }
 }

@@ -64,5 +64,10 @@ namespace Xamarin_Postep.Views.ListToGO.Budget
             ChartView.Chart = new DonutChart { Entries = entities };
 
         }
+
+        private void monthPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

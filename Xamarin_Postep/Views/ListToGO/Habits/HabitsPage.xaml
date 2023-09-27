@@ -24,11 +24,12 @@
                 <CollectionView.ItemTemplate >
                     <DataTemplate>
                         <Grid Padding="10">
-                            <Frame Padding="2"  BorderColor="Black" x:DataType="models:Habit">
+                            <Frame Padding="2"  BorderColor="Black" x:DataType="models:HabitResult">
                                 <StackLayout Orientation="Horizontal" Margin="5"  >
                                     <Image Source="{Binding ImageIcon}" HorizontalOptions="Fill"/>
-                                    <Label Text="test1" HorizontalOptions="CenterAndExpand"/>
-                                    <Label Text="test2" HorizontalOptions="End"/>
+                                    <Label Text="{Binding Name}" HorizontalOptions="CenterAndExpand"/>
+                                    <Label Text="{Binding PassToToday}" HorizontalOptions="End"/>
+                                    <Label Text="{Binding PassToTheEnd}" HorizontalOptions="End"/>
                                 </StackLayout>
                             </Frame>
                         </Grid>

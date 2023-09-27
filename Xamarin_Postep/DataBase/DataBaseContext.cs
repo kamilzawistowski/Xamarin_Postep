@@ -26,12 +26,13 @@ namespace Xamarin_Postep.DataBase
         public DbSet<EnglishWord> EnglishWord { get; set; }
         public DbSet<EnglishCategory> EnglishCategory { get; set; }
         public DbSet<Habit> Habit { get; set; }
+        public DbSet<HabitResult> HabitResult { get; set; }
 
-       
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Testowaa.db3");
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Testowaa3.db3");
 
             optionsBuilder
                 .UseSqlite($"Filename={dbPath}");
@@ -44,7 +45,10 @@ namespace Xamarin_Postep.DataBase
 
             modelBuilder.Entity<Habit>()
             .Ignore(x => x.ImageIcon);
-        
+
+            modelBuilder.Entity<HabitResult>()
+            .Ignore(x => x.ImageIcon);
+
             //.HasOne<HabitIcon>(p => p.Icon)
             //.WithOne(pp => pp.Habit)
             //.HasForeignKey<HabitIcon>(pp => pp.HabitID);

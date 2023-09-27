@@ -21,7 +21,7 @@ namespace Xamarin_Postep.Views.ListToGO
 		CalendarViewModel viewModel;
 		public CalendarPage ( )
 		{
-            BindingContext = viewModel = new CalendarViewModel ();
+            BindingContext = viewModel = new CalendarViewModel();
 			InitializeComponent ();
             Calendar.SwipeUpToHideEnabled = false;
         }
