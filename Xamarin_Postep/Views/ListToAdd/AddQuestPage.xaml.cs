@@ -19,5 +19,10 @@ namespace Xamarin_Postep.Views.ListToAdd
 			BindingContext = viewModel = new QuestViewModel (time);
 			InitializeComponent ();
 		}
-	}
+
+        private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            timePicker.IsEnabled = e.Value;
+        }
+    }
 }

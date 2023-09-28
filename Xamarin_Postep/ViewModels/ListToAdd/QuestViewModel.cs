@@ -45,6 +45,27 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
         }
 
 
+        private ObservableCollection<string> repeatCategory = new ObservableCollection<string>() { "Codziennie", "Co 2 dni", "Co 3 dni", "Raz na tydzień", "Raz na 2 tyg.", "Raz na miesiąc"};
+        public ObservableCollection<string> RepeatCategory
+        {
+            get => repeatCategory;
+            set
+            {
+                SetProperty(ref repeatCategory, value);
+            }
+        }
+
+
+        private ObservableCollection<string> dayStart = new ObservableCollection<string>() { "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela" };
+        public ObservableCollection<string> DayStart
+        {
+            get => dayStart;
+            set
+            {
+                SetProperty(ref dayStart, value);
+            }
+        }
+
 
 
         IDataStore<Quest> dataStore;
@@ -64,5 +85,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             Quest quest = new Quest() { Date = Date,Content = QuestContent,DateToPushNotify = dateToPushNotify, };
             dataStore.AddItemAsync(quest);
         }
+
+
     }
 }

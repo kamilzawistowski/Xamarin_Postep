@@ -25,9 +25,11 @@
             VerticalOptions="FillAndExpand"
             HorizontalOptions="FillAndExpand"/>
             <StackLayout  Grid.Row="1" Grid.ColumnSpan="3" >
+               
                 <Label Text="{Binding AcctualSelectedDay}" HorizontalOptions="Center" FontSize="Title"/>
-                <ScrollView Margin="5">
-                    <Frame  BorderColor="Black" Margin="10" >
+                <Frame  BorderColor="Black" Margin="5" >
+
+                    <ScrollView >
                         <CollectionView  ItemsSource="{Binding QuestList, Mode=TwoWay}" Margin="5">
                             <CollectionView.ItemsLayout>
                                 <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
@@ -45,9 +47,9 @@
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
-                    </Frame>
 
             </ScrollView>
+                </Frame>
             </StackLayout>
 
             <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="0,20,0,20" HorizontalOptions="CenterAndExpand"  >

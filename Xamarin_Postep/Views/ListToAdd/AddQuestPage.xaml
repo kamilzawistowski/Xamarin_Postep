@@ -9,8 +9,17 @@
             <Entry Text="{Binding QuestContent}"/>
             <!--<DatePicker Date="{Binding DatePicker}" MinimumDate="{Binding Source={x:Static sys:DateTime.Today}}" Format="dd/MM/yyyy" />-->
             <Label Text="{Binding Date}" />
-            <Label Text="Czas do powiadomienia"/>
-            <TimePicker Time="{Binding TimeContent}" Format="HH:mm"/>
+            
+                <StackLayout Orientation="Horizontal" Margin="5">
+                    <Label Text="Czas do powiadomienia:"/>
+                <CheckBox x:Name="enableTimePickerCheckBox" CheckedChanged="CheckBox_CheckedChanged"/>
+            </StackLayout>
+
+            <TimePicker x:Name="timePicker" IsEnabled="{Binding IsChecked, Source={x:Reference enableTimePickerCheckBox}}" />
+            <Label Text="Powtarzanie:" FontSize="Medium" Margin="10"/>
+            <Picker ItemsSource="{Binding RepeatCategory}" Title="Codziennie"/>
+            <Label Text="Zacznij od:" FontSize="Medium" Margin="10"/>
+            <Picker ItemsSource="{Binding DayStart}" Title="Dziś"/>
             <Button Command="{Binding OnQuestAdd}" BackgroundColor="Gray" VerticalOptions="EndAndExpand" Text="Dodaj" Margin="20"/>
         </StackLayout>
     </ContentPage.Content>
