@@ -11,6 +11,8 @@ namespace Xamarin_Postep
 {
     public partial class App : Application
     {
+
+
         private static DataBaseContext _database;
 
         public static DataBaseContext Database
@@ -24,8 +26,12 @@ namespace Xamarin_Postep
                 return _database;
             }
         }
+
+
+       
         public App()
         {
+            
             InitializeComponent();
 
             DependencyService.Register<IDataStore<Inscription>>();
@@ -39,6 +45,7 @@ namespace Xamarin_Postep
             DependencyService.Register<MockDataStore>();
             DependencyService.Register<QuestRepository>();
             MainPage = new AppShell();
+          
         }
 
         protected override void OnStart()

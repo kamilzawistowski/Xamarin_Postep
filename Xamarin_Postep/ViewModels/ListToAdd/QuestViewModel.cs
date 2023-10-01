@@ -32,7 +32,32 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
                 SetProperty(ref questContent, value);
             }
         }
-        
+
+        private string dayStartSelectedItem;
+
+        public string DayStartSelectedItem
+        {
+            get => dayStartSelectedItem
+;
+            set
+            {
+                SetProperty(ref dayStartSelectedItem, value);
+            }
+        }
+
+        private string repeatSelectedItem;
+
+        public string RepeatSelectedItem
+        {
+            get => repeatSelectedItem
+;
+            set
+            {
+                SetProperty(ref repeatSelectedItem, value);
+            }
+        }
+
+
         private DateTime date;
 
         public DateTime Date
@@ -43,9 +68,9 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
                 SetProperty(ref date, value);
             }
         }
-
-
-        private ObservableCollection<string> repeatCategory = new ObservableCollection<string>() { "Codziennie", "Co 2 dni", "Co 3 dni", "Raz na tydzień", "Raz na 2 tyg.", "Raz na miesiąc"};
+        
+            
+        private ObservableCollection<string> repeatCategory = new ObservableCollection<string>() { "Brak", "Codziennie", "Co 2 dni", "Co 3 dni", "Raz na tydzień", "Raz na 2 tyg.", "Raz na miesiąc"};
         public ObservableCollection<string> RepeatCategory
         {
             get => repeatCategory;
@@ -56,7 +81,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
         }
 
 
-        private ObservableCollection<string> dayStart = new ObservableCollection<string>() { "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela" };
+        private ObservableCollection<string> dayStart = new ObservableCollection<string>() {"Dziś","Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela" };
         public ObservableCollection<string> DayStart
         {
             get => dayStart;
@@ -79,9 +104,50 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
 
         public void OnBtnQuestAdd()
         {
+           
+
+            switch (dayStartSelectedItem)
+            {
+                case "Dziś":
+                    break;
+                case "Poniedziałek":
+                    break;
+                case "Wtorek":
+                    break;
+                case "Środa":
+                    break;
+                case "Czwartek":
+                    break;
+                case "Piątek":
+                    break;
+                case "Sobota":
+                    break;
+                case "Niedziela":
+                    break;
+                default:
+                    break;
+            }
+
+            switch (repeatSelectedItem)
+            {
+                case "Brak":
+                    break;
+                case "Codziennie":
+                    break;
+                case "Co 2 dni":
+                    break;
+                case "Co 3 dni":
+                    break;
+                case "Raz na tydzień":
+                    break;
+                case "Raz na 2 tyg.":
+                    break;
+                case "Raz na miesiąc":
+                    break;
+
+            }
 
             DateTime dateToPushNotify = new DateTime(date.Year, date.Month, date.Day, TimeContent.Hours, TimeContent.Minutes, TimeContent.Seconds);
-            
             Quest quest = new Quest() { Date = Date,Content = QuestContent,DateToPushNotify = dateToPushNotify, };
             dataStore.AddItemAsync(quest);
         }

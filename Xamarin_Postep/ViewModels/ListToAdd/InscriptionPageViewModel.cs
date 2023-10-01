@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
 using Xamarin_Postep.DataBase;
@@ -11,11 +12,15 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
     class InscriptionPageViewModel : BaseViewModel
     {
 
-        private string inscriptionContent;
-
         private readonly DateTime dateTime;
 
+
         public Command OnInscriptionAdd { get; set; }
+
+
+
+        private string inscriptionContent;
+
         public string InscriptionContent
         {
             get => inscriptionContent;
@@ -24,19 +29,42 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
                 SetProperty(ref inscriptionContent, value);
             }
         }
-            IDataStore<Inscription> dataStore;
+        private string selectedEvent;
+
+        public string SelectedEvent
+        {
+            get => selectedEvent;
+            set
+            {
+                SetProperty(ref selectedEvent, value);
+            }
+        }
+
+        private ObservableCollection<string> events = new ObservableCollection<string>() { "Urodziny", "Rocznica" };
+
+        public ObservableCollection<string> Events
+        {
+            get => events;
+            set
+            {
+                SetProperty(ref events, value);
+            }
+        }
+
+
+        IDataStore<Inscription> dataStore;
 
         public InscriptionPageViewModel(DateTime dateTime)
         {
             //dataStore = DependencyService.Get<IDataStorage>();
             dataStore = DependencyService.Get<IDataStore<Inscription>>();
-            OnInscriptionAdd = new Command(OnAddNewNotice);
+            OnInscriptionAdd = new Command(OnAddNewInscription);
             this.dateTime = dateTime;
         }
 
-        public void OnAddNewNotice()
+        public void OnAddNewInscription()
         {
-            Inscription inscription = new Inscription() { DateTime = dateTime ,InscriptionContent = InscriptionContent};
+            Inscription inscription = new Inscription() { DateTime = dateTime ,InscriptionContent = InscriptionContent ,Type = selectedEvent};
             dataStore.AddItemAsync(inscription);
 
         }

@@ -17,9 +17,9 @@
 
             <TimePicker x:Name="timePicker" IsEnabled="{Binding IsChecked, Source={x:Reference enableTimePickerCheckBox}}" />
             <Label Text="Powtarzanie:" FontSize="Medium" Margin="10"/>
-            <Picker ItemsSource="{Binding RepeatCategory}" Title="Codziennie"/>
+            <Picker ItemsSource="{Binding RepeatCategory}" Title="Brak" SelectedItem="{Binding RepeatSelectedItem}"/>
             <Label Text="Zacznij od:" FontSize="Medium" Margin="10"/>
-            <Picker ItemsSource="{Binding DayStart}" Title="Dziś"/>
+            <Picker ItemsSource="{Binding DayStart}" Title="Dziś" SelectedItem="{Binding DayStartSelectedItem}"/>
             <Button Command="{Binding OnQuestAdd}" BackgroundColor="Gray" VerticalOptions="EndAndExpand" Text="Dodaj" Margin="20"/>
         </StackLayout>
     </ContentPage.Content>

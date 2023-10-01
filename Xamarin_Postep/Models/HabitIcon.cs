@@ -7,6 +7,7 @@ namespace Xamarin_Postep.Models
 {
     public class HabitIcon
     {
+        public string Emoji { get; set; }
         public ImageSource IconHabit { get; set; }
     }
 }

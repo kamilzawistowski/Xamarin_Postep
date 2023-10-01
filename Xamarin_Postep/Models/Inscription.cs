@@ -8,6 +8,7 @@ namespace Xamarin_Postep.Models
     {
         public int ID { get; set; }
         public DateTime DateTime { get; set; }
+        public string Type { get; set; }
         public string InscriptionContent { get; set; }
 
     }

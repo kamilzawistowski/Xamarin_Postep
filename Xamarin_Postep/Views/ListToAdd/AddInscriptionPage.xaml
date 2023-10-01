@@ -8,6 +8,7 @@
             <Frame BorderColor="Black" Margin="10">
                 <Editor Text="{Binding InscriptionContent}" HeightRequest="300"/>
             </Frame>
+            <Picker ItemsSource="{Binding Events}" SelectedItem="{Binding SelectedEvent}" Title="wydarzenie"/>
             <Button Command="{Binding OnInscriptionAdd}" BackgroundColor="Gray" VerticalOptions="EndAndExpand" Margin="20" Text="Dodaj"></Button>
         </StackLayout>
     </ContentPage.Content>

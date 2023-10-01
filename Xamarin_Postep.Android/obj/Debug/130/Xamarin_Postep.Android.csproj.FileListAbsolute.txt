@@ -777,3 +777,11 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\stamp\_Conver
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\stamp\_GenerateJavaStubs.stamp
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\stamp\_GeneratePackageManagerJava.stamp
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\stamp\_ResolveLibraryProjectImports.stamp
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\ikony.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\ciezarki.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\ksiazka.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\las.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\lotos.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\marchewka.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\stopy.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\weganizm.png

@@ -33,7 +33,7 @@
             
                 <Label Text="Wybierz Ikone" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Center"/>
 
-                <CollectionView Grid.Row="0"  ItemsSource="{Binding Habits}" Margin="5" SelectionMode="Single" SelectedItem="{Binding SelectedIcon}">
+                    <CollectionView  Grid.Row="0"  ItemsSource="{Binding Habits}" Margin="5" SelectionMode="Single" SelectedItem="{Binding SelectedIcon}">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Horizontal"   ItemSpacing="20"/>
                     </CollectionView.ItemsLayout>
@@ -41,9 +41,10 @@
                         <DataTemplate>
                             <Grid Padding="10">
                                 <Frame x:DataType="models:HabitIcon" Padding="2"  BorderColor="Black">
-                                    <StackLayout Orientation="Horizontal" Margin="5"  >
+                                    <StackLayout Orientation="Horizontal" Margin="1" >
                                             <Image Source="{Binding IconHabit}"/>
-                                    </StackLayout>
+                                            <!--<Label Text="{Binding Emoji}"/>-->
+                                        </StackLayout>
                                 </Frame>
                             </Grid>
                         </DataTemplate>
@@ -54,7 +55,6 @@
         </Frame>
             <StackLayout Grid.Row="1">
             <Editor  Placeholder="Nazwa nawyku" Margin="20" Text="{Binding HabitName}"/>
-                <Picker Title="--Czestotliwosc nawyku--"  x:Name="PickerItems" ItemsSource="{Binding Kategoria, Mode=TwoWay}" Margin="20" SelectedItem="{Binding SelectedCategory}"/>
                 <Button  BackgroundColor="Gray" Text="Dodaj" Margin="30" VerticalOptions="EndAndExpand" Command="{Binding NewHabitCommand}"/>
             </StackLayout>
         </Grid>

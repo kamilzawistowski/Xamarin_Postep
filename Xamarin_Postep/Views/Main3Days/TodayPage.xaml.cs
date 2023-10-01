@@ -121,6 +121,13 @@ namespace Xamarin_Postep.Views.Main3Days
             }
         }
 
+        private async void BtnAnimation_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+           
+            //await RotateTo(360, 2000);
+            this.Rotation = 0;
+        }
+        
         //private void Button_Clicked(object sender, EventArgs e)
         //{
         //    var notification = new NotificationRequest

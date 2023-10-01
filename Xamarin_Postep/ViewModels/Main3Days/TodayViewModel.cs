@@ -25,6 +25,16 @@ namespace Xamarin_Postep.ViewModels.Main3Days
             }
         }
 
+        public string colorFrame;
+        public string ColorFrame
+        {
+            get => colorFrame = "Red";
+            set
+            {
+                SetProperty(ref colorFrame, value);
+            }
+        }
+
         public string test;
         public string Test
         {

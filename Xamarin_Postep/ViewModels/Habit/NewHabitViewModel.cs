@@ -47,7 +47,6 @@ namespace Xamarin_Postep.ViewModels.Habit
             }
         }
 
-
         private ObservableCollection<HabitIcon> habits;
         public ObservableCollection<HabitIcon> Habits
         {
