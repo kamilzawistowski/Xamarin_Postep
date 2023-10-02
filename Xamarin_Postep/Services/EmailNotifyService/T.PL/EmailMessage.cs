@@ -8,7 +8,7 @@ using Spire.Email;
 
 namespace ProgramPostep.Services.EmailNotifyService.T.PL
 {
-    internal class EmailMessage : IEmailMessage
+    public class EmailMessage : IEmailMessage
     {
         public string Body { get; set; }
         public string Subject { get; set; }

@@ -1,5 +1,7 @@
 FormsViewGroup.dll
+HarfBuzzSharp.dll
 Microcharts.Droid.dll
+Plugin.Messaging.dll
 SkiaSharp.dll
 SkiaSharp.Views.Android.dll
 SkiaSharp.Views.Forms.dll

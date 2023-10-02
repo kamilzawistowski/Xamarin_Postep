@@ -21,29 +21,32 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+
             <StackLayout>
-            <Label Text="Wydatek" Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" FontSize="Title"/>
+                <Label Text="Wydatek" Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" FontSize="Title" TextColor="BurlyWood" FontFamily="Con1"/>
+                
             <CollectionView Grid.Column="0" Grid.Row="0"  ItemsSource="{Binding WydatekList}" Margin="5">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate >
                     <DataTemplate>
-                        <Frame  Padding="2" x:DataType="models:Summary" BorderColor="Black">
                             <StackLayout Orientation="Vertical" Margin="5"  >
-                                <StackLayout >
-                                    <Label Text="{Binding Category}"  />
-                                    <Label Text="{Binding Price}"  />
+                                    <Frame  Padding="2" x:DataType="models:Summary" BorderColor="Black">
+                                    <StackLayout BackgroundColor="BurlyWood">
+                                        <Label Text="{Binding Category}" FontSize="Medium" FontAttributes="Bold" TextColor="Black" FontFamily="Con1"/>
+                                        <Label Text="{Binding Description}" FontSize="Default" FontAttributes="Bold" TextColor="Black" FontFamily="Con1"/>
+                                        <Label Text="{Binding Price}" FontSize="Medium" FontAttributes="Bold" TextColor="BlanchedAlmond" FontFamily="Con1"/>
+                                        </StackLayout>
+                                    </Frame>
                                 </StackLayout>
-                            </StackLayout>
-                        </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
             </StackLayout>
 
             <StackLayout Grid.Column="1" Grid.Row="0">
-                <Label Text="Przychod" Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" FontSize="Title"/>
+                <Label Text="Przychod" Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" FontSize="Title" TextColor="CadetBlue" FontFamily="Con1"/>
                 <CollectionView Grid.Column="1" Grid.Row="0" ItemsSource="{Binding PrzychodList}" Margin="5">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
@@ -51,12 +54,11 @@
                     <CollectionView.ItemTemplate >
                         <DataTemplate>
                             <Frame  Padding="2"  x:DataType="models:Summary" BorderColor="Black">
-                                <StackLayout Orientation="Vertical" Margin="5"  >
-                                    <StackLayout >
-                                        <Label Text="{Binding Category}"  />
-                                        <Label Text="{Binding Price}"  />
+                                <StackLayout BackgroundColor="CadetBlue">
+                                    <Label Text="{Binding Category}" FontSize="Medium" FontAttributes="Bold" TextColor="Black" FontFamily="Con1"/>
+                                    <Label Text="{Binding Description}" FontSize="Default" FontAttributes="Bold" TextColor="Black" FontFamily="Con1"/>
+                                    <Label Text="{Binding Price}" FontSize="Medium" FontAttributes="Bold" TextColor="BlanchedAlmond" FontFamily="Con1"/>
                                     </StackLayout>
-                                </StackLayout>
                             </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

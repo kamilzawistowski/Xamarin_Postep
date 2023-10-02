@@ -6,6 +6,7 @@ using Xamarin_Postep.Services;
 using Xamarin_Postep.Views;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
+using QuestPDF.Infrastructure;
 
 namespace Xamarin_Postep
 {
@@ -33,7 +34,7 @@ namespace Xamarin_Postep
         {
             
             InitializeComponent();
-
+            QuestPDF.Settings.License = LicenseType.Community;
             DependencyService.Register<IDataStore<Inscription>>();
             DependencyService.Register<IDataStore<Models.Notice>>();
             DependencyService.Register<IDataStore<Summary>>();

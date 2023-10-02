@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
+using Plugin.Messaging;
+using ProgramPostep.Services.EmailNotifyService.T.PL;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
@@ -104,7 +108,28 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
 
         public void OnBtnQuestAdd()
         {
-           
+            PdfServiceHandler.GetPdfDocument();
+
+            //EmailSender emailSender = new EmailSender();
+            //emailSender.SendEmail(new EmailConfigurationSMTP("Test", false, "lxlxlxl@t.pl", "Kamil_123"), new EmailMessage("Test", "test", "Test", DateTime.Now, "lxlxlxl@t.pl", "lxlxlxl@t.pl"));
+            var path = Path.Combine(FileSystem.AppDataDirectory, "Test.pdf");
+            
+            var emailMessenger = CrossMessaging.Current.EmailMessenger;
+            if (emailMessenger.CanSendEmail)
+            {
+                // Send simple e-mail to single receiver without attachments, bcc, cc etc.
+                emailMessenger.SendEmail("kamil60702@gmail.com", "Xamarin Messaging Plugin", "Well hello there from Xam.Messaging.Plugin");
+
+                // Alternatively use EmailBuilder fluent interface to construct more complex e-mail with multiple recipients, bcc, attachments etc.
+                //var email = new EmailMessageBuilder()
+                //  .To("kamil60702@gmail.com")
+                //  //.Cc("kamil60702@gmail.com")  // Nikt nie wie kto jeszcze dostal ta wiadomosc
+                //  .Subject("Xamarin Messaging Plugin")
+                //  .Body("<h1>Well hello there from</h1> <a>Xam.Messaging.Plugin</a>")
+                //  .Build();
+
+               // emailMessenger.SendEmail(email);
+            }
 
             switch (dayStartSelectedItem)
             {

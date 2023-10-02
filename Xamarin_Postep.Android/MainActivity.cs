@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.OS;
 //using Plugin.LocalNotification;
 using Android.Content;
+using Android.OS;
+using System.IO;
 
 namespace Xamarin_Postep.Droid
 {
@@ -15,7 +17,9 @@ namespace Xamarin_Postep.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            
+
+            DeviceInfo.GetDevicePath();
+
             //NotificationCenter.CreateNotificationChannel();
             //NotificationCenter.NotifyNotificationTapped(Intent);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

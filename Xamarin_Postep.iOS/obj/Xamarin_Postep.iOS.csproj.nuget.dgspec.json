@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[0.9.5.9, )"
             },
+            "Xam.Plugins.Messaging": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.8.0, )"
@@ -150,9 +154,17 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2023.9.0, )"
+            },
             "Spire.Email": {
               "target": "Package",
               "version": "[6.5.7, )"
+            },
+            "Xam.Plugins.Messaging": {
+              "target": "Package",
+              "version": "[5.2.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
