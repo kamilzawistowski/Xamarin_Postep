@@ -17,6 +17,7 @@ using Xamarin_Postep.Views.ListToGO.Budget;
 using Xamarin_Postep.Views.ListToGO.Habits;
 using Xamarin_Postep.Views.ListToGO.Language.English;
 using Xamarin_Postep.Views.ListToGO.Notice;
+using Xamarin_Postep.Views.ListToGO.Raports;
 
 namespace Xamarin_Postep.Views.Main3Days
 {
@@ -43,9 +44,17 @@ namespace Xamarin_Postep.Views.Main3Days
 
         private async void ShowApp_Click(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Urodziny i Rocznice", "Angielski");
-            
+            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Urodziny i Rocznice", "Angielski","Raporty");
+            //switch (action)
+            //{
+            //    case "Raporty":
+            //        await Navigation.PushAsync(new RaportMainPage());  //GOTO
+            //        break;
+            //    default:
+            //        break;
+            //}
             //Debug.WriteLine("Action: " + action);
+            
             if (action == "Kalendarz Miesięczny")
             {
                 // await Shell.Current.GoToAsync($"{nameof(BudgetSummaryPage)}");
@@ -70,6 +79,11 @@ namespace Xamarin_Postep.Views.Main3Days
             else if (action == "Listy")
             {
                 await Navigation.PushAsync(new NoticePage());
+
+            }
+            else if (action == "Raporty")
+            {
+                await Navigation.PushAsync(new RaportMainPage());
 
             }
         }

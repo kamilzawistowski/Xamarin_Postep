@@ -13,7 +13,7 @@ using Xamarin_Postep.Models;
 
 namespace Xamarin_Postep.ViewModels.ListToAdd
 {
-    class QuestViewModel : BaseViewModel
+    public class QuestViewModel : BaseViewModel
     {
         public Command OnQuestAdd { get; set; }
         private TimeSpan timeContent;
@@ -108,46 +108,35 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
 
         public void OnBtnQuestAdd()
         {
-            PdfServiceHandler.GetPdfDocument();
-
-            //EmailSender emailSender = new EmailSender();
-            //emailSender.SendEmail(new EmailConfigurationSMTP("Test", false, "lxlxlxl@t.pl", "Kamil_123"), new EmailMessage("Test", "test", "Test", DateTime.Now, "lxlxlxl@t.pl", "lxlxlxl@t.pl"));
-            var path = Path.Combine(FileSystem.AppDataDirectory, "Test.pdf");
-            
-            var emailMessenger = CrossMessaging.Current.EmailMessenger;
-            if (emailMessenger.CanSendEmail)
-            {
-                // Send simple e-mail to single receiver without attachments, bcc, cc etc.
-                emailMessenger.SendEmail("kamil60702@gmail.com", "Xamarin Messaging Plugin", "Well hello there from Xam.Messaging.Plugin");
-
-                // Alternatively use EmailBuilder fluent interface to construct more complex e-mail with multiple recipients, bcc, attachments etc.
-                //var email = new EmailMessageBuilder()
-                //  .To("kamil60702@gmail.com")
-                //  //.Cc("kamil60702@gmail.com")  // Nikt nie wie kto jeszcze dostal ta wiadomosc
-                //  .Subject("Xamarin Messaging Plugin")
-                //  .Body("<h1>Well hello there from</h1> <a>Xam.Messaging.Plugin</a>")
-                //  .Build();
-
-               // emailMessenger.SendEmail(email);
-            }
-
+            DateTime dateTime = DateTime.Now;
             switch (dayStartSelectedItem)
             {
                 case "Dziś":
                     break;
                 case "Poniedziałek":
+                    getDayInWeek(ref dateTime, "Monday");
                     break;
                 case "Wtorek":
+                    getDayInWeek(ref dateTime, "Tuesday");
                     break;
                 case "Środa":
+                    getDayInWeek(ref dateTime, "Wednesday");
+
                     break;
                 case "Czwartek":
+                    getDayInWeek(ref dateTime, "Thursday");
+
                     break;
                 case "Piątek":
+                    getDayInWeek(ref dateTime, "Friday");
+
                     break;
                 case "Sobota":
+                    getDayInWeek(ref dateTime, "Saturday");
+
                     break;
                 case "Niedziela":
+                    getDayInWeek(ref dateTime, "Sunday");
                     break;
                 default:
                     break;
@@ -158,25 +147,63 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
                 case "Brak":
                     break;
                 case "Codziennie":
+                    PopulateDateList(dateTime, 1);
                     break;
                 case "Co 2 dni":
+                    PopulateDateList(dateTime, 2);
                     break;
                 case "Co 3 dni":
+                    PopulateDateList(dateTime, 3);
                     break;
                 case "Raz na tydzień":
+
+                    PopulateDateList(dateTime, 7);
                     break;
                 case "Raz na 2 tyg.":
+                    PopulateDateList(dateTime, 14);
                     break;
                 case "Raz na miesiąc":
+                    PopulateDateList(dateTime, 28);
                     break;
 
             }
 
-            DateTime dateToPushNotify = new DateTime(date.Year, date.Month, date.Day, TimeContent.Hours, TimeContent.Minutes, TimeContent.Seconds);
-            Quest quest = new Quest() { Date = Date,Content = QuestContent,DateToPushNotify = dateToPushNotify, };
-            dataStore.AddItemAsync(quest);
+           // DateTime dateToPushNotify = new DateTime(date.Year, date.Month, date.Day, TimeContent.Hours, TimeContent.Minutes, TimeContent.Seconds);
+           // Quest quest = new Quest() { Date = Date,Content = QuestContent,DateToPushNotify = dateToPushNotify, };
+            //dataStore.AddItemAsync(quest);
+        }
+        ObservableCollection<DateTime> DateList = new ObservableCollection<DateTime>();
+
+        private void PopulateDateList(DateTime dateTime,int interval)
+        {
+            int idForLast = 0;
+            DateTime startDay = dateTime;
+            DateTime lastDayOfYear = new DateTime(startDay.Year, 12, 31);
+
+            // Calculate the number of days remaining in the current year
+            int daysRemaining = (int)(lastDayOfYear - startDay).TotalDays;
+            var countHabits = dataStore.GetItemsAsync().Result.Count();
+            
+            for (int i = 0; i <= daysRemaining; i = i + interval)
+            {
+                dataStore.AddItemAsync(new Models.Quest() {DateToPushNotify = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, TimeContent.Hours,TimeContent.Minutes,0), Content = QuestContent , Date = dateTime.AddDays(i) });
+                //DateList.Add(dateTime.AddDays(i));
+            }
+
         }
 
+        private DateTime getDayInWeek(ref DateTime dateTime,string day)
+        {
+            int i = 0;
+            DateTime dateTime1 = dateTime;
+            while (dateTime1.DayOfWeek.ToString() != day)
+            {
+                dateTime1 = dateTime.AddDays(i);
+                i++;
+            }
+            dateTime = dateTime1;
+            return dateTime;
+        }
 
     }
 }

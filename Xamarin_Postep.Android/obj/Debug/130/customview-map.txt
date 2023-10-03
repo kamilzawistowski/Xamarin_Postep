@@ -23,13 +23,16 @@ com.google.android.material.tabs.TabLayout;C:\Repozytoria\Xamarin_Postep\Xamarin
 com.google.android.material.tabs.TabLayout;C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\lp\70\jl\res\layout\tabbar.xml
 declare-styleable;C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\lp\70\jl\res\values\attrs.xml
 external-cache-path;C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\lp\69\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-files-path;obj\Debug\130\res\xml\file_paths.xml
 external-path;C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\lp\69\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-path;obj\Debug\130\res\xml\file_paths.xml
 foreground;obj\Debug\130\res\mipmap-anydpi-v26\icon.xml
 foreground;obj\Debug\130\res\mipmap-anydpi-v26\icon_round.xml
 FrameLayout;C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\lp\70\jl\res\layout\bottomtablayout.xml
 item;C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\lp\70\jl\res\values\styles.xml
 LinearLayout;C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\lp\70\jl\res\layout\bottomtablayout.xml
 paths;C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\lp\69\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+paths;obj\Debug\130\res\xml\file_paths.xml
 resources;C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\lp\2\jl\res\values\strings.xml
 resources;C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\lp\70\jl\res\values\attrs.xml
 resources;C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\lp\70\jl\res\values\strings.xml

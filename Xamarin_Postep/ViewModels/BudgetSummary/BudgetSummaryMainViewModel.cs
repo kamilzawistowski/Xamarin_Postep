@@ -10,6 +10,7 @@ using Xamarin.Forms;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
 using Xamarin_Postep.Views.ListToGO.Budget;
+using static QuestPDF.Helpers.Colors;
 
 namespace Xamarin_Postep.ViewModels.BudgetSummary
 {
@@ -66,6 +67,7 @@ namespace Xamarin_Postep.ViewModels.BudgetSummary
             var entitiesD = new List<ChartEntry>();
             int color = 1;
             decimal PriceSum = 0;
+            string FinanseCategory;
             var db = dataStore.GetItemsAsync().Result.Where(x => x.Price > 0).GroupBy(x => x.Category);
             foreach (var item in db)
             {
@@ -75,25 +77,47 @@ namespace Xamarin_Postep.ViewModels.BudgetSummary
                 foreach (var item2 in item)
                 {
                     PriceSum += item2.Price;
+                   
                 }
 
-                var random = new Random();
-                string colorRandom = String.Format("#{0:X6}", random.Next(0x1000000));
+                FinanseCategory = item.FirstOrDefault().Type;
+                
+                var ChartBackgroundColor = GetChartColor(FinanseCategory);
+
                 ChartEntry abc = new ChartEntry((int)PriceSum)
                 {
                     Label = $"{item.FirstOrDefault().Category}",
                     ValueLabel = $"{PriceSum}",
-                    Color = SKColor.Parse($"{colorRandom}"),
-                    ValueLabelColor = SKColor.Parse($"{colorRandom}"),
-                    TextColor = SKColor.Parse("#000000")
+                    Color = SKColor.Parse($"{ChartBackgroundColor}"),
+                    ValueLabelColor = SKColor.Parse($"{ChartBackgroundColor}"),
+                    TextColor = SKColor.Parse($"#000000")
                 };
                 entitiesD.Add(abc);
-                color = color + 1;
                 PriceSum = 0;
             }
             Entities = entitiesD;
             return entities;
         }
         
+        private SKColor GetChartColor(string finanseCategory)
+        {
+            int red = 0;
+            int green = 0;
+            Random random2 = new Random();
+            if (finanseCategory == "Wydatek")
+            {
+                red = random2.Next(256);
+                green = random2.Next(5);
+
+            }
+            else if (finanseCategory == "Przychod")
+            {
+                red = random2.Next(5);
+                green = random2.Next(256);
+            }
+            int blue = random2.Next(10);
+            SKColor BcgColorChart = new SKColor((byte)red, (byte)green, (byte)blue);
+            return BcgColorChart;
+        }
     }
 }

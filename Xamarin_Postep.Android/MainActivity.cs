@@ -8,6 +8,7 @@ using Android.OS;
 using Android.Content;
 using Android.OS;
 using System.IO;
+using QuestPDF.Infrastructure;
 
 namespace Xamarin_Postep.Droid
 {
@@ -17,7 +18,7 @@ namespace Xamarin_Postep.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            QuestPDF.Settings.License = LicenseType.Community;
             DeviceInfo.GetDevicePath();
 
             //NotificationCenter.CreateNotificationChannel();

@@ -34,8 +34,8 @@
                             <StackLayout Orientation="Vertical" Margin="5"  >
                                     <Frame  Padding="2" x:DataType="models:Summary" BorderColor="Black">
                                     <StackLayout BackgroundColor="BurlyWood">
-                                        <Label Text="{Binding Category}" FontSize="Medium" FontAttributes="Bold" TextColor="Black" FontFamily="Con1"/>
-                                        <Label Text="{Binding Description}" FontSize="Default" FontAttributes="Bold" TextColor="Black" FontFamily="Con1"/>
+                                        <Label Text="{Binding Description}" FontSize="Medium" FontAttributes="Bold" TextColor="Black" FontFamily="Con1"/>
+                                        <Label Text="{Binding Category}" FontSize="Default" FontAttributes="Bold" TextColor="Black" FontFamily="Con1"/>
                                         <Label Text="{Binding Price}" FontSize="Medium" FontAttributes="Bold" TextColor="BlanchedAlmond" FontFamily="Con1"/>
                                         </StackLayout>
                                     </Frame>
@@ -55,8 +55,8 @@
                         <DataTemplate>
                             <Frame  Padding="2"  x:DataType="models:Summary" BorderColor="Black">
                                 <StackLayout BackgroundColor="CadetBlue">
-                                    <Label Text="{Binding Category}" FontSize="Medium" FontAttributes="Bold" TextColor="Black" FontFamily="Con1"/>
-                                    <Label Text="{Binding Description}" FontSize="Default" FontAttributes="Bold" TextColor="Black" FontFamily="Con1"/>
+                                    <Label Text="{Binding Description}" FontSize="Medium" FontAttributes="Bold" TextColor="Black" FontFamily="Con1"/>
+                                    <Label Text="{Binding Category}" FontSize="Default" FontAttributes="Bold" TextColor="Black" FontFamily="Con1"/>
                                     <Label Text="{Binding Price}" FontSize="Medium" FontAttributes="Bold" TextColor="BlanchedAlmond" FontFamily="Con1"/>
                                     </StackLayout>
                             </Frame>

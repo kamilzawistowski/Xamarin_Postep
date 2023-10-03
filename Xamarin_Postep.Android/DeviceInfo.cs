@@ -8,11 +8,19 @@ using Android.OS;
 using Android.Content;
 using Android.OS;
 using System.IO;
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+using QuestPDF.Previewer;
+using Xamarin.Essentials;
+using Plugin.Messaging;
 
 public static class DeviceInfo
 {
     public static string GetDevicePath()
     {
+        
+
         var dcimFolder = Android.OS.Environment.GetExternalStoragePublicDirectory(System.Environment.SystemDirectory).Path;
         var dcimFolder2 = Android.OS.Environment.GetExternalStoragePublicDirectory(System.Environment.CurrentDirectory).Path;
 
@@ -23,6 +31,9 @@ public static class DeviceInfo
            return  Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "Documents");
         }
         return Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath);
+
+
+
 
     }
 }

@@ -6584,9 +6584,21 @@
             "target": "Package",
             "version": "[0.9.5.9, )"
           },
+          "Microcharts": {
+            "target": "Package",
+            "version": "[0.9.5.9, )"
+          },
           "Microcharts.Forms": {
             "target": "Package",
             "version": "[0.9.5.9, )"
+          },
+          "Microcharts.Forms": {
+            "target": "Package",
+            "version": "[0.9.5.9, )"
+          },
+          "Xam.Plugins.Messaging": {
+            "target": "Package",
+            "version": "[5.2.0, )"
           },
           "Xam.Plugins.Messaging": {
             "target": "Package",
@@ -6596,6 +6608,14 @@
             "target": "Package",
             "version": "[1.8.0, )"
           },
+          "Xamarin.Essentials": {
+            "target": "Package",
+            "version": "[1.8.0, )"
+          },
+          "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[5.0.0.2612, )"
+          },
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[5.0.0.2612, )"
@@ -6603,6 +6623,14 @@
           "Xamarin.Forms.DataGrid": {
             "target": "Package",
             "version": "[5.0.0.2545, )"
+          },
+          "Xamarin.Forms.DataGrid": {
+            "target": "Package",
+            "version": "[5.0.0.2545, )"
+          },
+          "Xamarin.Plugin.Calendar": {
+            "target": "Package",
+            "version": "[2.0.9699, )"
           },
           "Xamarin.Plugin.Calendar": {
             "target": "Package",

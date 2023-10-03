@@ -40,3 +40,4 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\bin\Debug\netstandard2.0\Xamarin_Po
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\bin\Debug\netstandard2.0\Xamarin_Postep.pdb
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\ref\Xamarin_Postep.dll
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Raports\RaportMainPage.xaml.g.cs

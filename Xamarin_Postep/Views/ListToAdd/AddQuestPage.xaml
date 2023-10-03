@@ -15,7 +15,7 @@
                 <CheckBox x:Name="enableTimePickerCheckBox" CheckedChanged="CheckBox_CheckedChanged"/>
             </StackLayout>
 
-            <TimePicker x:Name="timePicker" IsEnabled="{Binding IsChecked, Source={x:Reference enableTimePickerCheckBox}}" />
+            <TimePicker x:Name="timePicker" Time="{Binding TimeContent}"  IsEnabled="{Binding IsChecked, Source={x:Reference enableTimePickerCheckBox}}" />
             <Label Text="Powtarzanie:" FontSize="Medium" Margin="10"/>
             <Picker ItemsSource="{Binding RepeatCategory}" Title="Brak" SelectedItem="{Binding RepeatSelectedItem}"/>
             <Label Text="Zacznij od:" FontSize="Medium" Margin="10"/>

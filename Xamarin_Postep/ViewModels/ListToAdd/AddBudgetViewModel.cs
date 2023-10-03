@@ -91,7 +91,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
 
         public async void AddNewBudgetToDb()
         {
-           Summary summary = new Summary() { Category = Kategoria, Date = DatePicker, Description = Text, Price = Price, Type = Type };
+           Summary summary = new Summary() { Category = Kategoria, Date = DatePicker, Description = $"{Char.ToUpper(Text[0]) + Text.Substring(1)}", Price = Price, Type = Type };
            await dataStore.AddItemAsync(summary);
         }
 
