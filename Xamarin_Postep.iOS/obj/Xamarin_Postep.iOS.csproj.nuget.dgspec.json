@@ -50,6 +50,14 @@
               "target": "Package",
               "version": "[0.9.5.9, )"
             },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[10.1.8, )"
+            },
             "Xam.Plugins.Messaging": {
               "target": "Package",
               "version": "[5.2.0, )"
@@ -148,11 +156,19 @@
               "target": "Package",
               "version": "[3.1.32, )"
             },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[10.1.8, )"
             },
             "QuestPDF": {
               "target": "Package",

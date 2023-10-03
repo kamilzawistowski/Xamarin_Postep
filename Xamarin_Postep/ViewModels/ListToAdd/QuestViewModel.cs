@@ -37,7 +37,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             }
         }
 
-        private string dayStartSelectedItem;
+        private string dayStartSelectedItem = "Dziś";
 
         public string DayStartSelectedItem
         {
@@ -49,7 +49,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             }
         }
 
-        private string repeatSelectedItem;
+        private string repeatSelectedItem = "Brak";
 
         public string RepeatSelectedItem
         {
@@ -145,6 +145,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             switch (repeatSelectedItem)
             {
                 case "Brak":
+                    dataStore.AddItemAsync(new Models.Quest() { DateToPushNotify = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, TimeContent.Hours, TimeContent.Minutes, 0), Content = QuestContent, Date = dateTime });
                     break;
                 case "Codziennie":
                     PopulateDateList(dateTime, 1);

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-//using Plugin.LocalNotification;
-//using Plugin.LocalNotification.EventArgs;
+using Plugin.LocalNotification;
+using Plugin.LocalNotification.EventArgs;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin_Postep.DataBase;
@@ -44,6 +44,8 @@ namespace Xamarin_Postep.Views.Main3Days
 
         private async void ShowApp_Click(object sender, EventArgs e)
         {
+            
+            
             string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Urodziny i Rocznice", "Angielski","Raporty");
             //switch (action)
             //{
@@ -141,23 +143,24 @@ namespace Xamarin_Postep.Views.Main3Days
             //await RotateTo(360, 2000);
             this.Rotation = 0;
         }
-        
-        //private void Button_Clicked(object sender, EventArgs e)
-        //{
-        //    var notification = new NotificationRequest
-        //    {
-        //        BadgeNumber = 1,
-        //        Description = "Test Desc",
-        //        Title = "Notifiy",
-        //        ReturningData = "DUMMYDATA",
-        //        NotificationId = 1,
-        //        Schedule = new NotificationRequestSchedule
-        //        {
-        //            NotifyTime = DateTime.Now.AddSeconds(10)
-        //        },
 
-        //    };
-        //    NotificationCenter.Current.Show(notification);
-        //}
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            var notification = new NotificationRequest
+            {
+                BadgeNumber = 1,
+                Description = "Test Desc",
+                Title = "Notifiy",
+                ReturningData = "DUMMYDATA",
+                NotificationId = 1,
+                Schedule = new NotificationRequestSchedule
+                {
+                    NotifyTime = DateTime.Now.AddSeconds(10)
+                },
+
+            };
+           
+            LocalNotificationCenter.Current.Show(notification);
+        }
     }
 }

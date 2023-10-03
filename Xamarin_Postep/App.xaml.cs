@@ -7,6 +7,7 @@ using Xamarin_Postep.Views;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
 using QuestPDF.Infrastructure;
+using Xamarin_Postep.Services.NotificationService;
 
 namespace Xamarin_Postep
 {
@@ -51,6 +52,7 @@ namespace Xamarin_Postep
 
         protected override void OnStart()
         {
+            NotificationSystem notificationSystem = new NotificationSystem();
         }
 
         protected override void OnSleep()

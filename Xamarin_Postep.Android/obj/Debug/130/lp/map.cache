@@ -1,6 +1,7 @@
 FormsViewGroup.dll
 HarfBuzzSharp.dll
 Microcharts.Droid.dll
+Plugin.LocalNotification.dll
 Plugin.Messaging.dll
 SkiaSharp.dll
 SkiaSharp.Views.Android.dll
@@ -72,6 +73,10 @@ Xamarin.Forms.Platform.Android.dll
 Xamarin.Forms.Platform.dll
 Xamarin.Google.Android.Material.dll
 Xamarin.Google.Guava.ListenableFuture.dll
+Xamarin.GooglePlayServices.Base.dll
+Xamarin.GooglePlayServices.Basement.dll
+Xamarin.GooglePlayServices.Location.dll
+Xamarin.GooglePlayServices.Tasks.dll
 Xamarin.Jetbrains.Annotations.dll
 Xamarin.Kotlin.StdLib.dll
 Xamarin.KotlinX.Coroutines.Android.dll
@@ -129,3 +134,7 @@ androidx.asynclayoutinflater.asynclayoutinflater.aar
 androidx.legacy.legacy-support-core-ui.aar
 androidx.legacy.legacy-support-v4.aar
 androidx.browser.browser.aar
+playservicesbasement-18.1.0.aar
+playservicestasks-18.0.2.aar
+playservicesbase-18.1.0.aar
+playserviceslocation-20.0.0.aar
