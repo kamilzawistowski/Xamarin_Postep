@@ -30,8 +30,6 @@ namespace Xamarin_Postep.Views.ListToAdd
             btnWydatek.BackgroundColor = Color.Gray;
             btnPrzychod.BackgroundColor = Color.White;
             PickerStack.IsVisible = true;
-            ObservableCollection<string> items = new ObservableCollection<string>() { "Zakupy", "Mieszkanie", "Ivy", "Abonamenty", "Pielegnacje", "Zdrowie", "Ubrania", "Podroze", "Ksiazki", "Rozliczenia i dlugi" };
-            PickerItems.ItemsSource = items;
         }
 
         private void Button_Clicked_Przychod(object sender, EventArgs e)
@@ -39,9 +37,6 @@ namespace Xamarin_Postep.Views.ListToAdd
             btnPrzychod.BackgroundColor = Color.Gray;
             btnWydatek.BackgroundColor = Color.White;
             PickerStack.IsVisible = true;
-
-            ObservableCollection<string> items = new ObservableCollection<string>() { "Wyplata", "Premia", "Sprzedaz", "Inna Forma", "Podarunek" };
-            PickerItems.ItemsSource = items;
         }
 
         private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)

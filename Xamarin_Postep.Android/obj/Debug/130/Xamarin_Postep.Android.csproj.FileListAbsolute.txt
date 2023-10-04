@@ -874,3 +874,14 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\android\src\m
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\android\src\plugin\LocalNotification\GeofenceTransitionsIntentReceiver.java
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\android\src\plugin\LocalNotification\NotificationActionReceiver.java
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\android\src\plugin\LocalNotification\ScheduledAlarmReceiver.java
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\biegnacy.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\buty2.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\ciezarkii.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\joga.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\ksiazkaa.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\lotus.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\medytacja.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\rower.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\rowerr.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\sprzatanie.png
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.Android\obj\Debug\130\res\drawable\suplementy.png

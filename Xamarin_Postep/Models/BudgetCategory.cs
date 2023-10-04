@@ -4,9 +4,10 @@ using System.Text;
 
 namespace Xamarin_Postep.Models
 {
-    public class LanguageCategory
+    public class BudgetCategory
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
+        public string Type { get; set; }
     }
 }

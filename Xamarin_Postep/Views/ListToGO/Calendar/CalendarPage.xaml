@@ -39,7 +39,6 @@
                                     <Frame  Padding="2"  x:DataType="models:Quest" BorderColor="Black">
                                         <StackLayout Orientation="Vertical" Margin="5"  >
                                             <StackLayout Orientation="Horizontal" >
-                                                <CheckBox Margin="20,0,0,0" IsChecked="{Binding IsComplete}" CheckedChanged="CheckBox_CheckedChanged"/>
                                                 <Label Text="{Binding Content}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
                                             </StackLayout>
                                         </StackLayout>

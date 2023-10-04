@@ -33,7 +33,9 @@ namespace Xamarin_Postep.DataBase
             var toDelete = App.Database.Summary.Where(x => x.ID == id);
             if (toDelete != null)
             {
+
                 App.Database.Remove(toDelete);
+                await App.Database.SaveChangesAsync();
                 return true;
             }
             else

@@ -4,10 +4,10 @@
              x:Class="Xamarin_Postep.Views.ListToAdd.AddQuestPage"
              xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <ContentPage.Content>
-        <StackLayout>
+        <!--<StackLayout>
             <Label Text="Dodaj Zadanie"/>
             <Entry Text="{Binding QuestContent}"/>
-            <!--<DatePicker Date="{Binding DatePicker}" MinimumDate="{Binding Source={x:Static sys:DateTime.Today}}" Format="dd/MM/yyyy" />-->
+            --><!--<DatePicker Date="{Binding DatePicker}" MinimumDate="{Binding Source={x:Static sys:DateTime.Today}}" Format="dd/MM/yyyy" />--><!--
             <Label Text="{Binding Date}" />
             
                 <StackLayout Orientation="Horizontal" Margin="5">
@@ -21,7 +21,47 @@
             <Label Text="Zacznij od:" FontSize="Medium" Margin="10"/>
             <Picker ItemsSource="{Binding DayStart}" Title="Dziś" SelectedItem="{Binding DayStartSelectedItem}"/>
             <Button Command="{Binding OnQuestAdd}" BackgroundColor="Gray" VerticalOptions="EndAndExpand" Text="Dodaj" Margin="20"/>
-        </StackLayout>
+        </StackLayout>-->
+
+        <Frame CornerRadius="15" BackgroundColor="GhostWhite" Padding="20" VerticalOptions="CenterAndExpand" Margin="20">
+
+            <StackLayout>
+
+                <Label Text="Dodaj Zadanie" FontSize="24" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+
+                <!-- Entry for QuestContent -->
+                <Entry Placeholder="Treść zadania" Text="{Binding QuestContent}" Margin="0,10,0,10" />
+
+                <!-- DatePicker for Date -->
+                <DatePicker Date="{Binding DatePicker}" MinimumDate="{Binding Source={x:Static sys:DateTime.Today}}" Format="dd/MM/yyyy" Margin="0,10,0,10" />
+
+                <!-- Label for displaying selected Date -->
+
+                <StackLayout Orientation="Horizontal" Margin="0,10,0,10">
+                    <Label Text="Czas do powiadomienia:" HorizontalOptions="StartAndExpand"/>
+                    <CheckBox x:Name="enableTimePickerCheckBox" CheckedChanged="CheckBox_CheckedChanged"/>
+                </StackLayout>
+
+                <!-- TimePicker for TimeContent -->
+                <TimePicker x:Name="timePicker" Time="{Binding TimeContent}" IsEnabled="{Binding IsChecked, Source={x:Reference enableTimePickerCheckBox}}" Margin="0,10,0,10" />
+
+                <Label Text="Powtarzanie:" FontSize="Medium" Margin="0,10,0,10" />
+
+                <!-- Picker for RepeatCategory -->
+                <Picker ItemsSource="{Binding RepeatCategory}" Title="Brak" SelectedItem="{Binding RepeatSelectedItem}" Margin="0,10,0,10" />
+
+                <Label Text="Zacznij od:" FontSize="Medium" Margin="0,10,0,10" />
+
+                <!-- Picker for DayStart -->
+                <Picker ItemsSource="{Binding DayStart}" Title="Dziś" SelectedItem="{Binding DayStartSelectedItem}" Margin="0,10,0,10" />
+
+                <!-- Button to add the task -->
+                <Button Command="{Binding OnQuestAdd}" BackgroundColor="Gray" VerticalOptions="EndAndExpand" Text="Dodaj" Margin="2" CornerRadius="25" />
+
+            </StackLayout>
+
+        </Frame>
+
     </ContentPage.Content>
 </ContentPage>
     

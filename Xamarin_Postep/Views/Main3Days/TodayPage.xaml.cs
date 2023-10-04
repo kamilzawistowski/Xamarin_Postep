@@ -46,7 +46,7 @@ namespace Xamarin_Postep.Views.Main3Days
         {
             
             
-            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Urodziny i Rocznice", "Angielski","Raporty");
+            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Urodziny i Rocznice", "Jezyk Obcy","Raporty");
             //switch (action)
             //{
             //    case "Raporty":
@@ -63,7 +63,7 @@ namespace Xamarin_Postep.Views.Main3Days
                 await Navigation.PushAsync(new CalendarPage());
 
             }
-            else if (action == "Angielski")
+            else if (action == "Jezyk Obcy")
             {
                 await Navigation.PushAsync(new EnglishMainPage());
 

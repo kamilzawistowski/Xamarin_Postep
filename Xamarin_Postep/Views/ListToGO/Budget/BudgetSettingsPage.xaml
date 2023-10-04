@@ -1,29 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Xamarin_Postep.Views.ListToGO.Budget.BudgetSettingsPage">
+             x:Class="Xamarin_Postep.Views.ListToGO.Budget.BudgetSettingsPage"
+             xmlns:models="clr-namespace:Xamarin_Postep.Models">
     <ContentPage.Content>
         <StackLayout>
 
-            <Frame BorderColor="Black" Margin="10">
+            <Label Text="Dodaj Kategorie" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Title" Margin="15"/>
+
+            <Frame BorderColor="Black" Margin="7">
                 <StackLayout>
-                    <Label Text="Kategorie Wydatek" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"/>
-                    <Entry Text="{Binding CategoryWydatek}"/>
-                    <Button BackgroundColor="Gray" Text="Dodaj"/>
-                    <CollectionView HeightRequest="100" ItemsSource="{Binding WydatekListt}">
-
-                    </CollectionView>
-
+                    <Label Text="Wydatek" HorizontalOptions="Center" FontSize="Large"/>
+                    <Entry Text="{Binding NewCategoryWydatekText}"/>
+                    <Button Text="Add Category" Command="{Binding AddNewCategoryWydatekCommand}" Style="{StaticResource ButtonBackgroundColor}" Clicked="Button_Clicked"/>
+                </StackLayout>
+            </Frame>
+            
+            <Frame BorderColor="Black" Margin="7">
+                <StackLayout>
+                    <Label Text="Przychod" HorizontalOptions="Center" FontSize="Large"/>
+                    <Entry Text="{Binding NewCategoryPrzychodText}"/>
+                    <Button Text="Add Category" Command="{Binding AddNewCategoryPrzychodCommand}" Style="{StaticResource ButtonBackgroundColor}" Clicked="Button_Clicked"/>
                 </StackLayout>
             </Frame>
 
-            <Frame BorderColor="Black" Margin="10">
+            <Frame BorderColor="Black" Margin="7" HeightRequest="200">
                 <StackLayout>
-                    <Label Text="Kategorie Przychod" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"/>
-                    <Entry Text="{Binding CategoryPrzychod}"/>
-                    <Button BackgroundColor="Gray" Text="Dodaj"/>
+                    <Label Text="Usuń kategorie" HorizontalOptions="Center" FontSize="Large"/>
+
+                    <ListView x:Name="categoryCollection"
+                        ItemsSource="{Binding Options,Mode=TwoWay}"
+                            SelectedItem="{Binding SelectedOption}"
+                              >
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="models:BudgetCategory">
+                                <TextCell Text="{Binding Name}" TextColor="Black" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Button Text="Delete Category" Command="{Binding DeleteSelectedCategoryCommand}" Style="{StaticResource ButtonBackgroundColor}" Clicked="Button_Clicked"/>
                 </StackLayout>
             </Frame>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

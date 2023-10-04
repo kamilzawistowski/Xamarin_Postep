@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 using Xamarin_Postep.Interfaces;
@@ -70,13 +72,25 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             }
         }
 
+        private ObservableCollection<string> categories;
+
+        public ObservableCollection<string> Categories
+        {
+            get => categories;
+            set
+            {
+                SetProperty(ref categories, value);
+            }
+        }
         public DateTime DateTimeForSpecifyDay { get; set; }
 
-        IDataStore<Summary> dataStore;
+        IDataStore<Summary> dataStoreSummary;
+        IDataStore<BudgetCategory> dataStoreBudgetCategory;
         public AddBudgetViewModel(DateTime date)
         {
             DateTimeForSpecifyDay = date;
-            dataStore = DependencyService.Get<IDataStore<Summary>>();
+            dataStoreBudgetCategory = DependencyService.Get<IDataStore<BudgetCategory>>();
+            dataStoreSummary = DependencyService.Get<IDataStore<Summary>>();
 
             PrzychodBtn = new Command(TypeIsPrzychod);
             WydatekBtn = new Command(TypeIsWydatek);
@@ -92,17 +106,21 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
         public async void AddNewBudgetToDb()
         {
            Summary summary = new Summary() { Category = Kategoria, Date = DatePicker, Description = $"{Char.ToUpper(Text[0]) + Text.Substring(1)}", Price = Price, Type = Type };
-           await dataStore.AddItemAsync(summary);
+           await dataStoreSummary.AddItemAsync(summary);
         }
 
 
         public void TypeIsPrzychod()
         {
             Type = "Przychod";
+            Categories = new ObservableCollection<string>(dataStoreBudgetCategory.GetItemsAsync().Result.Where(x => x.Type == Type).Select(x => x.Name).ToList());
+
         }
         public void TypeIsWydatek()
         {
             Type = "Wydatek";
+            Categories = new ObservableCollection<string>(dataStoreBudgetCategory.GetItemsAsync().Result.Where(x => x.Type == Type).Select(x => x.Name).ToList());
+
         }
     }
 }

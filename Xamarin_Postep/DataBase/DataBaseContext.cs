@@ -27,12 +27,14 @@ namespace Xamarin_Postep.DataBase
         public DbSet<EnglishCategory> EnglishCategory { get; set; }
         public DbSet<Habit> Habit { get; set; }
         public DbSet<HabitResult> HabitResult { get; set; }
+        
+        public DbSet<BudgetCategory> BudgetCategory { get; set; }
 
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Testowaa6.db3");
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Testowaa7.db3");
 
             optionsBuilder
                 .UseSqlite($"Filename={dbPath}");
