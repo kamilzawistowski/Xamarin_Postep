@@ -14,7 +14,6 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
     class AddBudgetViewModel : BaseViewModel
     {
         public Command SettingCommand { get; set; }
-        
         public Command AddNewSummary { get; set; }
         public Command PrzychodBtn { get; set; }
         public Command WydatekBtn { get; set; }
@@ -30,6 +29,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
                 SetProperty(ref kategoria, value);
             }
         }
+
         private decimal price;
         public decimal Price
         {
@@ -39,6 +39,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
                 SetProperty(ref price, value);
             }
         }
+
 
         private string text;
         public string Text
@@ -50,8 +51,8 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             }
         }
 
-        private DateTime datePicker;
 
+        private DateTime datePicker;
         public DateTime DatePicker
         {
             get => datePicker;
@@ -60,9 +61,9 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
                 SetProperty(ref datePicker, value);
             }
         }
+
         
         private DateTime minDate;
-
         public DateTime MinDate
         {
             get => DateTime.Now.AddDays(-7);
@@ -72,8 +73,8 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             }
         }
 
-        private ObservableCollection<string> categories;
 
+        private ObservableCollection<string> categories;
         public ObservableCollection<string> Categories
         {
             get => categories;
@@ -82,20 +83,33 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
                 SetProperty(ref categories, value);
             }
         }
+
         public DateTime DateTimeForSpecifyDay { get; set; }
+
 
         IDataStore<Summary> dataStoreSummary;
         IDataStore<BudgetCategory> dataStoreBudgetCategory;
+
+        private bool ValidateSave()
+        {
+            return !String.IsNullOrWhiteSpace(text) & !String.IsNullOrWhiteSpace(kategoria);
+        }
+
         public AddBudgetViewModel(DateTime date)
         {
+
             DateTimeForSpecifyDay = date;
             dataStoreBudgetCategory = DependencyService.Get<IDataStore<BudgetCategory>>();
             dataStoreSummary = DependencyService.Get<IDataStore<Summary>>();
 
+
             PrzychodBtn = new Command(TypeIsPrzychod);
             WydatekBtn = new Command(TypeIsWydatek);
             SettingCommand = new Command(AddCategoryBudget);
-            AddNewSummary = new Command(AddNewBudgetToDb);
+            AddNewSummary = new Command(AddNewBudgetToDb, ValidateSave);
+
+            this.PropertyChanged +=
+                (_, __) => AddNewSummary.ChangeCanExecute();
         }
 
         public async void AddCategoryBudget()
@@ -107,6 +121,9 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
         {
            Summary summary = new Summary() { Category = Kategoria, Date = DatePicker, Description = $"{Char.ToUpper(Text[0]) + Text.Substring(1)}", Price = Price, Type = Type };
            await dataStoreSummary.AddItemAsync(summary);
+            MessagingCenter.Send(this, "DisplayAlert", $"Pomyslnie Dodano \n {Type} - {text} - {price} ");
+            Text = string.Empty;
+            Price = 0;
         }
 
 

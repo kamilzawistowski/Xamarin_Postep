@@ -30,7 +30,7 @@ namespace Xamarin_Postep.DataBase
         public async Task<bool> DeleteItemAsync(int id)
         {
 
-            var toDelete = App.Database.Summary.Where(x => x.ID == id);
+            var toDelete = App.Database.Summary.Where(x => x.ID == id).FirstOrDefault();
             if (toDelete != null)
             {
 

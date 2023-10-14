@@ -54,8 +54,8 @@
             </StackLayout>
         </Frame>
             <StackLayout Grid.Row="1">
-            <Editor  Placeholder="Nazwa nawyku" Margin="20" Text="{Binding HabitName}"/>
-                <Button  BackgroundColor="Gray" Text="Dodaj" Margin="30" VerticalOptions="EndAndExpand" Command="{Binding NewHabitCommand}"/>
+            <Editor  Placeholder="Nazwa nawyku" Margin="20" Text="{Binding HabitName,Mode=TwoWay}"/>
+                <Button  BackgroundColor="Gray" Text="Dodaj" Margin="30" VerticalOptions="EndAndExpand" Command="{Binding NewHabitCommand}" BorderColor="Black" BorderWidth="1"/>
             </StackLayout>
         </Grid>
 

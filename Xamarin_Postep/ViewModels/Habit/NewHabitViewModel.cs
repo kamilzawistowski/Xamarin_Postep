@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Xamarin_Postep.ViewModels.Habit
 {
     public class NewHabitViewModel : BaseViewModel
     {
-        public ICommand NewHabitCommand { get; set; }
+        public Command NewHabitCommand { get; set; }
 
         private ObservableCollection<string> kategoria = new ObservableCollection<string>() { "Zakupy", "Mieszkanie", "Ivy", "Abonamenty", "Pielegnacje", "Zdrowie", "Ubrania", "Podroze", "Ksiazki", "Rozliczenia i dlugi" };
         public ObservableCollection<string> Kategoria
@@ -56,15 +57,31 @@ namespace Xamarin_Postep.ViewModels.Habit
                 SetProperty(ref habits, value);
             }
         }
-        public string HabitName { get; set; }
+        private string habitName;
+        public string HabitName
+    {
+            get => habitName;
+            set
+            {
+                SetProperty(ref habitName, value);
+            }
+        }
 
         IDataStore<Models.Habit> dataStore;
+
+        private bool ValidateSave()
+        {
+            return !String.IsNullOrWhiteSpace(HabitName);
+        }
 
         public NewHabitViewModel()
         {
             dataStore = DependencyService.Get<IDataStore<Models.Habit>>();
-            NewHabitCommand = new Command(AddNewHabit);
+            NewHabitCommand = new Command(AddNewHabit, ValidateSave);
             habits = new ObservableCollection<HabitIcon>();
+
+            this.PropertyChanged +=
+                (_, __) => NewHabitCommand.ChangeCanExecute();
         }
         public void AddNewHabit()
         {
@@ -86,6 +103,10 @@ namespace Xamarin_Postep.ViewModels.Habit
             dataStore.GetItemsAsync();
 
             PopulateDateList();
+            MessagingCenter.Send(this, "DisplayAlert", $"Pomyslnie Dodano {HabitName}");
+            HabitName = string.Empty;
+
+
         }
 
         private ObservableCollection<DateTime> dateList;

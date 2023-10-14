@@ -18,7 +18,16 @@ namespace Xamarin_Postep.Views.ListToAdd
 		{
 			BindingContext = viewModel = new QuestViewModel (time);
 			InitializeComponent ();
-		}
+            MessagingCenter.Subscribe<QuestViewModel, string>(this, "DisplayAlert", (sender, message) =>
+            {
+
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+
+                    await DisplayAlert("Zadanie", message, "OK");
+                });
+            });
+        }
 
         private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {

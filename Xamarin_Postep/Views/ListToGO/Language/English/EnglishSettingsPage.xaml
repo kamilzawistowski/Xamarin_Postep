@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Xamarin_Postep.Views.ListToGO.Language.English.EnglishSettingsPage">
-    <Shell.BackButtonBehavior>
-        <BackButtonBehavior 
-            Command="{Binding BackButton}"/>
-    </Shell.BackButtonBehavior>
+             x:Class="Xamarin_Postep.Views.ListToGO.Language.English.EnglishSettingsPage"
+             xmlns:models="clr-namespace:Xamarin_Postep.Models">
+   
 
     <ContentPage.Content>
         <StackLayout>
@@ -29,8 +27,8 @@
                             SelectedItem="{Binding SelectedOption}"
                               >
                         <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <TextCell Text="{Binding}" TextColor="Black" />
+                            <DataTemplate x:DataType="models:EnglishCategory">
+                                <TextCell Text="{Binding Name}" TextColor="Black" />
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>

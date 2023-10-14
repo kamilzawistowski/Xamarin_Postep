@@ -3,13 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin_Postep.Views.ListToGO.Language.English.EnglishListWordsPage"
              xmlns:models="clr-namespace:Xamarin_Postep.Models">
-    <Shell.BackButtonBehavior>
-        <BackButtonBehavior 
-            Command="{Binding BackButton}"/>
-    </Shell.BackButtonBehavior>
-
-
-
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <Picker x:Name="categoryPicker" Title="Select Category" ItemsSource="{Binding Options}" SelectedItem="{Binding CategorySelected}" />

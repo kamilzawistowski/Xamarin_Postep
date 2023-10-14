@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using Plugin.Messaging;
+using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.Shapes;
 using Xamarin.Forms.Xaml;
 using Xamarin_Postep.Views.ListToGO.Language.English;
 
@@ -30,7 +33,7 @@ namespace Xamarin_Postep.Views.ListToGO.Raports
 
             if (answer == true)
             {
-                string path2 = Path.Combine("/storage/emulated/0", "Documents", fileName);
+                string path2 = System.IO.Path.Combine("/storage/emulated/0", "Documents", fileName);
 
                 var emailMessenger = CrossMessaging.Current.EmailMessenger;
                 if (emailMessenger.CanSendEmail)
@@ -50,6 +53,20 @@ namespace Xamarin_Postep.Views.ListToGO.Raports
             
         }
 
-       
+        private async void Button_Clicked2(object sender, EventArgs e)
+        {
+            string dbName = "Testowaa7.db3";
+            string dbPath = System.IO.Path.Combine(FileSystem.AppDataDirectory, dbName);
+            if (File.Exists(dbPath))
+            {
+                if (File.Exists(System.IO.Path.Combine("/storage/emulated/0", "Documents", dbName)))
+                {
+                    File.Delete(System.IO.Path.Combine("/storage/emulated/0", "Documents", dbName));
+
+                    File.Copy(dbPath, System.IO.Path.Combine("/storage/emulated/0", "Documents"));
+                    await DisplayAlert("Utworzono:", $" Kopia bazy danych : '{dbName}'\n Znajduje sie /storage/emulated/0/Documents", "OK");
+                }
+            }
+        }
     }
 }

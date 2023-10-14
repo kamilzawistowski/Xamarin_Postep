@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,13 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Xamarin_Postep.ViewModels.ListToAdd
 {
     public class QuestViewModel : BaseViewModel
     {
-        public Command OnQuestAdd { get; set; }
+        public Command OnQuestAdd { get; }
         private TimeSpan timeContent;
         public TimeSpan TimeContent
         {
@@ -94,7 +96,10 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
                 SetProperty(ref dayStart, value);
             }
         }
-
+        private bool ValidateSave()
+        {
+            return !String.IsNullOrWhiteSpace(questContent);
+        }
 
 
         IDataStore<Quest> dataStore;
@@ -102,7 +107,9 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
         public QuestViewModel(DateTime date)
         {
             dataStore = DependencyService.Get<IDataStore<Quest>>();
-            OnQuestAdd = new Command(OnBtnQuestAdd);
+            OnQuestAdd = new Command(OnBtnQuestAdd, ValidateSave);
+            this.PropertyChanged +=
+                (_, __) => OnQuestAdd.ChangeCanExecute();
             this.date = date;
         }
 
@@ -168,9 +175,11 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
                     break;
 
             }
+            MessagingCenter.Send(this, "DisplayAlert", $"Pomyslnie dodano zadanie \n {QuestContent}");
+            QuestContent = string.Empty;
 
-           // DateTime dateToPushNotify = new DateTime(date.Year, date.Month, date.Day, TimeContent.Hours, TimeContent.Minutes, TimeContent.Seconds);
-           // Quest quest = new Quest() { Date = Date,Content = QuestContent,DateToPushNotify = dateToPushNotify, };
+            // DateTime dateToPushNotify = new DateTime(date.Year, date.Month, date.Day, TimeContent.Hours, TimeContent.Minutes, TimeContent.Seconds);
+            // Quest quest = new Quest() { Date = Date,Content = QuestContent,DateToPushNotify = dateToPushNotify, };
             //dataStore.AddItemAsync(quest);
         }
         ObservableCollection<DateTime> DateList = new ObservableCollection<DateTime>();

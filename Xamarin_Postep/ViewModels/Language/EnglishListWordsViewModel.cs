@@ -67,13 +67,7 @@ namespace Xamarin_Postep.ViewModels.Language
         {
             dataStoreWords = DependencyService.Get<IDataStore<EnglishWord>>();
             dataStoreCategory = DependencyService.Get<IDataStore<EnglishCategory>>();
-            BackButton = new Command(BackToPreviousPage);
             DeleteSelectedCommand = new Command(DeleteAllChecked);
-        }
-        public Command BackButton { get; set; }
-        public async void BackToPreviousPage()
-        {
-            await Shell.Current.GoToAsync(nameof(EnglishMainPage));
         }
 
         public async void DeleteAllChecked()

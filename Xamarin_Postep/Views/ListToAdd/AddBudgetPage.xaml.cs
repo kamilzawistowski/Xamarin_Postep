@@ -23,6 +23,16 @@ namespace Xamarin_Postep.Views.ListToAdd
             InitializeComponent();
             PickerStack.IsVisible = false;
             DatePicker.Date = date;
+
+            MessagingCenter.Subscribe<AddBudgetViewModel, string>(this, "DisplayAlert", (sender, message) =>
+            {
+
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+
+                    await DisplayAlert("Budżet", message, "OK");
+                });
+            });
         }
 
         private void Button_Clicked_Wydatek(object sender, EventArgs e)
@@ -43,5 +53,6 @@ namespace Xamarin_Postep.Views.ListToAdd
         {
             
         }
+      
     }
 }

@@ -8,7 +8,7 @@
             <Frame BorderColor="Black" Margin="10">
             <Editor Text="{Binding Note}" HeightRequest="500"/>
             </Frame>
-            <Button Text="Dodaj" BackgroundColor="Gray" Command="{Binding AddNewNotice}" VerticalOptions="EndAndExpand" />
+            <Button Text="Dodaj" BackgroundColor="Gray" Command="{Binding AddNewNotice}" VerticalOptions="EndAndExpand" BorderColor="Black" BorderWidth="1" Margin="10" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

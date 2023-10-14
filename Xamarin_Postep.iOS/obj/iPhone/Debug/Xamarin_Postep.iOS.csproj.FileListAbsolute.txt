@@ -26,9 +26,7 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Microsoft.Enti
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Microsoft.EntityFrameworkCore.Sqlite.dll
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Microsoft.Extensions.Caching.Memory.dll
-C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Microsoft.Extensions.Configuration.dll
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Microsoft.Extensions.Configuration.Binder.dll
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Microsoft.Extensions.DependencyInjection.dll
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Microsoft.Extensions.DependencyModel.dll
@@ -118,3 +116,5 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\System.Securit
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Plugin.Messaging.Abstractions.dll
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Plugin.Messaging.Abstractions.pdb
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Plugin.Messaging.dll
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep.iOS\bin\iPhone\Debug\Plugin.LocalNotification.dll

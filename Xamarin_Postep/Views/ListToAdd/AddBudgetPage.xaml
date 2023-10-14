@@ -26,10 +26,10 @@
                 <Picker Title="--Wybierz Kategorie--" ItemsSource="{Binding Categories,Mode=TwoWay}" x:Name="PickerItems"  SelectedItem="{Binding Kategoria, Mode=TwoWay}"  />
                 <Label Text="Opis" FontSize="Medium" />
                 <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
-                <Label Text="Cena" FontSize="Medium" />
-                <Editor Text="{Binding Price, Mode=TwoWay}" FontSize="Medium" Margin="0" />
+                <Label Text="Kwota" FontSize="Medium" />
+                <Editor Text="{Binding Price, Mode=TwoWay}" FontSize="Medium" Margin="0" Keyboard="Numeric"/>
                 <DatePicker x:Name="DatePicker" Date="{Binding DatePicker}" MinimumDate="{Binding MinDate}" MaximumDate="01/01/2024" Format="dd/MM/yyyy"/>
-                <Button Text="Dodaj" Command="{Binding AddNewSummary}" BackgroundColor="Gray"  Margin="20"></Button>
+                <Button Text="Dodaj" Command="{Binding AddNewSummary}" BackgroundColor="Gray"  Margin="20" BorderColor="Black" BorderWidth="1"></Button>
                 
             </StackLayout>
             

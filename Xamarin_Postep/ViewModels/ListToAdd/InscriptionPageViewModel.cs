@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Text;
 using Xamarin.Forms;
 using Xamarin_Postep.DataBase;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Xamarin_Postep.ViewModels.ListToAdd
 {
@@ -40,7 +42,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             }
         }
 
-        private ObservableCollection<string> events = new ObservableCollection<string>() { "Urodziny", "Rocznica" };
+        private ObservableCollection<string> events = new ObservableCollection<string>() { "Urodziny", "Wydarzenie" };
 
         public ObservableCollection<string> Events
         {
@@ -62,10 +64,12 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             this.dateTime = dateTime;
         }
 
-        public void OnAddNewInscription()
+        public async void OnAddNewInscription()
         {
             Inscription inscription = new Inscription() { DateTime = dateTime ,InscriptionContent = InscriptionContent ,Type = selectedEvent};
             dataStore.AddItemAsync(inscription);
+            MessagingCenter.Send(this, "DisplayAlert", $"Pomyslnie Dodano ");
+            await Shell.Current.GoToAsync("..");
 
         }
     }

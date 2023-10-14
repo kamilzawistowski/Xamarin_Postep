@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
@@ -11,17 +12,16 @@ namespace Xamarin_Postep.ViewModels.Language
 {
     class EnglishSettingsViewModel : BaseViewModel
     {
-        public Command BackButton { get; set; }
         public Command DeleteSelectedCategoryCommand { get; set; }
         public string NewCategoryText { get; set; }
-        public string SelectedOption { get; set; }
+        public EnglishCategory SelectedOption { get; set; }
 
         public Command AddNewCategoryCommand { get; set; }
 
-        private List<string> options;
-        public List<string> Options
+        private ObservableCollection<EnglishCategory> options;
+        public ObservableCollection<EnglishCategory> Options
         {
-            get { return options = new List<String>(dataStoreEnglishCategory.GetItemsAsync().Result.Select(x => x.Name)); }
+            get { return options = new ObservableCollection<EnglishCategory>(dataStoreEnglishCategory.GetItemsAsync().Result); }
             set
             {
                 if (options != value)
@@ -39,7 +39,6 @@ namespace Xamarin_Postep.ViewModels.Language
         {
             dataStoreEnglishCategory = DependencyService.Get<IDataStore<EnglishCategory>>();
             DeleteSelectedCategoryCommand = new Command(DeleteCategory);
-            BackButton = new Command(BackToPreviousPage);
             AddNewCategoryCommand = new Command(AddNewCategory);
         }
 
@@ -58,7 +57,7 @@ namespace Xamarin_Postep.ViewModels.Language
         public void DeleteCategory()
         {
             EnglishCategory category = new EnglishCategory();
-            category.Name = SelectedOption;
+            category = SelectedOption;
             dataStoreEnglishCategory.DeleteItemAsync(category.ID);
 
         }

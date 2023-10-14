@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin_Postep.ViewModels.Habit;
+using Xamarin_Postep.ViewModels.ListToAdd;
 
 namespace Xamarin_Postep.Views.ListToGO.Habits
 {
@@ -18,6 +19,16 @@ namespace Xamarin_Postep.Views.ListToGO.Habits
         {
             BindingContext = viewModel = new NewHabitViewModel();
             InitializeComponent();
+
+            MessagingCenter.Subscribe<NewHabitViewModel, string>(this, "DisplayAlert", (sender, message) =>
+            {
+
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+
+                    await DisplayAlert("Nawyk", message, "OK");
+                });
+            });
         }
 
        

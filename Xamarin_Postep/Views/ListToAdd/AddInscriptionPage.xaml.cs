@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin_Postep.ViewModels.ListToAdd;
+using Xamarin_Postep.ViewModels.Notice;
 
 namespace Xamarin_Postep.Views.ListToAdd
 {
@@ -18,6 +19,15 @@ namespace Xamarin_Postep.Views.ListToAdd
 		{
 			BindingContext = viewModel = new InscriptionPageViewModel(dateTime);
 			InitializeComponent();
-		}
+            MessagingCenter.Subscribe<InscriptionPageViewModel, string>(this, "DisplayAlert", (sender, message) =>
+            {
+
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+
+                    await DisplayAlert("Wydarzenie", message, "OK");
+                });
+            });
+        }
 	}
 }

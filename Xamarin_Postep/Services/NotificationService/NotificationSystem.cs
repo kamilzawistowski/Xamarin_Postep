@@ -18,19 +18,22 @@ namespace Xamarin_Postep.Services.NotificationService
             var questList = dataStore.GetItemsAsync().Result.Where(x => x.DateToPushNotify.Month == DateTime.Now.Month);
             foreach (var item in questList)
             {
-                var notification = new NotificationRequest
+                if (item.DateToPushNotify.Hour != 0)
                 {
-                    BadgeNumber = 1,
-                    Description = "",
-                    Title = $"{item.Content}",
-                    ReturningData = "DUMMYDATA",
-                    NotificationId = 1,
-                    Schedule = new NotificationRequestSchedule
+                    var notification = new NotificationRequest
                     {
-                        NotifyTime = item.DateToPushNotify
-                    },
-                };
-                LocalNotificationCenter.Current.Show(notification);
+                        BadgeNumber = 1,
+                        Description = "",
+                        Title = $"{item.Content}",
+                        ReturningData = "DUMMYDATA",
+                        NotificationId = 1,
+                        Schedule = new NotificationRequestSchedule
+                        {
+                            NotifyTime = item.DateToPushNotify
+                        },
+                    };
+                    LocalNotificationCenter.Current.Show(notification);
+                }
             }
         }
 

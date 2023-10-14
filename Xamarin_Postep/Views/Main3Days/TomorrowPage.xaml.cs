@@ -35,7 +35,7 @@ namespace Xamarin_Postep.Views.Main3Days
 
         private async void ShowApp_Click(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Urodziny i Rocznice", "Jezyk Obcy", "Raporty");
+            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Wydarzenia", "Jezyk Obcy", "Raporty");
 
             //Debug.WriteLine("Action: " + action);
             if (action == "Kalendarz Miesięczny")
@@ -73,7 +73,7 @@ namespace Xamarin_Postep.Views.Main3Days
 
         private async void AddNew_Click(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("", "", null, "Zadanie", "Notatka", "Wydatek/Przychód", "Lista");
+            string action = await DisplayActionSheet("", "", null, "Zadanie", "Wydarzenie/Wpis", "Wydatek/Przychód", "Notatka");
             //Debug.WriteLine("Action: " + action);
             if (action == "Zadanie")
             {
@@ -81,7 +81,7 @@ namespace Xamarin_Postep.Views.Main3Days
                 await Navigation.PushAsync(new AddQuestPage(DateTime.Now.AddDays(1)));
 
             }
-            else if (action == "Notatka")
+            else if (action == "Wydarzenie/Wpis")
             {
                 await Navigation.PushAsync(new AddInscriptionPage(DateTime.Now.AddDays(1)));
 
@@ -91,7 +91,7 @@ namespace Xamarin_Postep.Views.Main3Days
                 await Navigation.PushAsync(new AddBudgetPage(DateTime.Now.AddDays(1)));
 
             }
-            else if (action == "Lista")
+            else if (action == "NotatkaLista")
             {
                 await Navigation.PushAsync(new AddNoticePage(DateTime.Now.AddDays(1)));
 

@@ -19,6 +19,15 @@ namespace Xamarin_Postep.Views.ListToAdd
         {
             BindingContext = viewModel = new NewNoticeViewModel(date);
             InitializeComponent();
+            MessagingCenter.Subscribe<NewNoticeViewModel, string>(this, "DisplayAlert", (sender, message) =>
+            {
+
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+
+                    await DisplayAlert("Notatka", message, "OK");
+                });
+            });
         }
     }
 }

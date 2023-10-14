@@ -5,7 +5,6 @@
              xmlns:models="clr-namespace:Xamarin_Postep.Models"
              BackgroundColor="#fff"
              xmlns:essensials="clr-namespace:Xamarin.Essentials;assembly=Xamarin.Essentials"
-             Title="Dzisiaj"
              >
 
     <ContentPage.Content>
@@ -39,7 +38,7 @@
                         </Grid.RowDefinitions>
                         
 
-                        <Frame Grid.Row="0" BorderColor="Black" Margin="3">
+                        <Frame Grid.Row="0"  Margin="3">
                             <CollectionView ItemsSource="{Binding HabitList, Mode=TwoWay}">
                                 <CollectionView.ItemsLayout>
                                     <LinearItemsLayout Orientation="Horizontal" ItemSpacing="2"/>
@@ -76,7 +75,7 @@
                         </Frame>
                     
                     <!--###########################################################################################################################################################################-->
-                    <Frame Grid.Row="1"   BorderColor="Black" Margin="10">
+                    <Frame Grid.Row="1"  Margin="3">
                         <CollectionView  ItemsSource="{Binding QuestList, Mode=TwoWay}" Margin="5">
 
                             <CollectionView.ItemsLayout>
@@ -99,7 +98,7 @@
 
 
 
-                    <Frame Grid.Row="2"  BorderColor="Black" Margin="10" >
+                    <Frame Grid.Row="2"   Margin="3" >
                         <CollectionView  ItemsSource="{Binding InscriptionList, Mode=TwoWay}" Margin="5" >
                             <CollectionView.ItemsLayout>
                                 <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>

@@ -54,6 +54,7 @@ namespace Xamarin_Postep
         protected override void OnStart()
         {
             NotificationSystem notificationSystem = new NotificationSystem();
+         
         }
 
         protected override void OnSleep()

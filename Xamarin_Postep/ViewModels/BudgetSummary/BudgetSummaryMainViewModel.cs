@@ -107,12 +107,12 @@ namespace Xamarin_Postep.ViewModels.BudgetSummary
             if (finanseCategory == "Wydatek")
             {
                 red = random2.Next(256);
-                green = random2.Next(5);
+                green = random2.Next(20);
 
             }
             else if (finanseCategory == "Przychod")
             {
-                red = random2.Next(5);
+                red = random2.Next(20);
                 green = random2.Next(256);
             }
             int blue = random2.Next(10);
