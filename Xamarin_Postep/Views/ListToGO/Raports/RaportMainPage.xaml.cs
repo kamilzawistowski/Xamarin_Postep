@@ -6,11 +6,15 @@ using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using NativeMedia;
 using Plugin.Messaging;
+using SkiaSharp;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Shapes;
 using Xamarin.Forms.Xaml;
+using Xamarin_Postep.Models;
 using Xamarin_Postep.Views.ListToGO.Language.English;
 
 namespace Xamarin_Postep.Views.ListToGO.Raports
@@ -27,13 +31,13 @@ namespace Xamarin_Postep.Views.ListToGO.Raports
         {
             var fileName = PdfServiceHandler.GetPdfDocument();
 
-            await DisplayAlert ("Utworzono plik", $"{fileName}\n Znajduje sie /storage/emulated/0/Documents", "OK");
+            await DisplayAlert ("Utworzono plik", $"{fileName}\n Znajduje sie /storage/emulated/0/Documents/Raports", "OK");
 
             bool answer = await DisplayAlert("Wyślij", "Czy chcesz wysłać plik emailem?", "Yes", "No");
 
             if (answer == true)
             {
-                string path2 = System.IO.Path.Combine("/storage/emulated/0", "Documents", fileName);
+                string path2 = System.IO.Path.Combine("/storage/emulated/0", "Documents/Raports", fileName);
 
                 var emailMessenger = CrossMessaging.Current.EmailMessenger;
                 if (emailMessenger.CanSendEmail)
@@ -43,14 +47,13 @@ namespace Xamarin_Postep.Views.ListToGO.Raports
                       .To("kamil60702@gmail.com")
                       //.Cc("kamil60702@gmail.com")  // Nikt nie wie kto jeszcze dostal ta wiadomosc
                       .Subject("Raport Ogolny")
-                      .Body("<h1>Well hello there from</h1> <a>Xam.Messaging.Plugin</a> <h2>Well hello there from</h2>")
+                      .Body("")
                       .WithAttachment(path2, "pdf")
                       .Build();
 
                      emailMessenger.SendEmail(email);
                 }
             }
-            
         }
 
         private async void Button_Clicked2(object sender, EventArgs e)
@@ -66,6 +69,40 @@ namespace Xamarin_Postep.Views.ListToGO.Raports
                     File.Copy(dbPath, System.IO.Path.Combine("/storage/emulated/0", "Documents"));
                     await DisplayAlert("Utworzono:", $" Kopia bazy danych : '{dbName}'\n Znajduje sie /storage/emulated/0/Documents", "OK");
                 }
+            }
+        }
+
+        private async void SelectPhotoButton_Clicked(object sender, EventArgs e)
+        {
+            var results = await MediaGallery.PickAsync(1, MediaFileType.Image, MediaFileType.Video);
+
+            if (results?.Files == null)
+            {
+                return;
+            }
+
+
+            foreach (var item in results.Files)
+            {
+                var fileName = item.NameWithoutExtension;
+                var extension = item.Extension;
+                var contentType = item.ContentType;
+
+
+                await DisplayAlert(fileName, $"Extension:{extension},Content-Type: {contentType}", "Ok");
+
+                string path2 = System.IO.Path.Combine("/storage/emulated/0", "Documents/Raports/Photos");
+
+                string photopath = $"/storage/emulated/0/DCIM/Camera/{item.NameWithoutExtension}.{item.Extension}";
+                //if (File.Exists(photopath))
+                //{
+                //    image.Source = photopath;
+                //}
+
+               // byte[] byteArray = File.ReadAllBytes(photopath);
+
+                //await MediaGallery.SaveAsync(MediaFileType.Image, by);
+                //File.Copy(photopath, System.IO.Path.Combine("/storage/emulated/0", "Documents/Raports"));
             }
         }
     }

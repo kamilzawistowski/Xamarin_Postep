@@ -23,6 +23,7 @@ namespace Xamarin_Postep.Droid
 
             //NotificationCenter.CreateNotificationChannel();
             //NotificationCenter.NotifyNotificationTapped(Intent);
+            NativeMedia.Platform.Init(this, savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
@@ -35,6 +36,15 @@ namespace Xamarin_Postep.Droid
             base.OnNewIntent(intent);
         }
 
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            if (NativeMedia.Platform.CheckCanProcessResult(requestCode, resultCode, data))
+            {
+                NativeMedia.Platform.OnActivityResult(requestCode, resultCode, data);
+            }
+
+            base.OnActivityResult(requestCode, resultCode, data);
+        }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

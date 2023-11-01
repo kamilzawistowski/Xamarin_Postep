@@ -80,6 +80,9 @@
     <PackageReference Include="Xamarin.Forms.DataGrid">
       <Version>5.0.0.2545</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.MediaGallery">
+      <Version>2.2.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Plugin.Calendar">
       <Version>2.0.9699</Version>
     </PackageReference>

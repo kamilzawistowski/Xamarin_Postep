@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tXE3O2WTRst4tm/WujIeXzl/4ezVAfViWKEhkjP03t1ugn2KWrPTQWLRWMqgPhk/gElIlzSGYzOSs1lqwe+LgA==",
+  "dgSpecHash": "ele4+hFsiEFOA4dhTXriTgJdl2NCeKQAoqNdEMc+UuReMHJigwA+A1F3zy25C1nq4vIWMc4fMJAtw5RoYOI8BQ==",
   "success": true,
   "projectFilePath": "C:\\Repozytoria\\Xamarin_Postep\\Xamarin_Postep.iOS\\Xamarin_Postep.iOS.csproj",
   "expectedPackageFiles": [
@@ -102,6 +102,8 @@
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.essentials\\1.8.0\\xamarin.essentials.1.8.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.forms\\5.0.0.2612\\xamarin.forms.5.0.0.2612.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.forms.datagrid\\5.0.0.2545\\xamarin.forms.datagrid.5.0.0.2545.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.mediagallery\\2.2.1\\xamarin.mediagallery.2.2.1.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.mediagallery.permision\\2.2.1\\xamarin.mediagallery.permision.2.2.1.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.plugin.calendar\\2.0.9699\\xamarin.plugin.calendar.2.0.9699.nupkg.sha512"
   ],
   "logs": []

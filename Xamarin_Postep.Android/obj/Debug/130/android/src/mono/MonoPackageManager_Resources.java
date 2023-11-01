@@ -26,6 +26,8 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Extensions.Logging.dll",
 		"Microsoft.Extensions.Options.dll",
 		"Microsoft.Extensions.Primitives.dll",
+		"NativeMedia.dll",
+		"NativeMedia.Permision.dll",
 		"Newtonsoft.Json.dll",
 		"Plugin.LocalNotification.dll",
 		"Plugin.Messaging.Abstractions.dll",

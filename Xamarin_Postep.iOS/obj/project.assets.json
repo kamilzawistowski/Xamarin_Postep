@@ -1500,6 +1500,45 @@
           "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {}
         }
       },
+      "Xamarin.MediaGallery/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.7.3",
+          "Xamarin.MediaGallery.Permision": "2.2.1"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/NativeMedia.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/xamarinios10/NativeMedia.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.MediaGallery.Permision/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.7.3"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/NativeMedia.Permision.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/xamarinios10/NativeMedia.Permision.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Plugin.Calendar/2.0.9699": {
         "type": "package",
         "dependencies": {
@@ -1535,6 +1574,7 @@
           "Xamarin.Essentials": "1.8.0",
           "Xamarin.Forms": "5.0.0.2612",
           "Xamarin.Forms.DataGrid": "5.0.0.2545",
+          "Xamarin.MediaGallery": "2.2.1",
           "Xamarin.Plugin.Calendar": "2.0.9699"
         },
         "compile": {
@@ -2936,6 +2976,45 @@
           "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {}
         }
       },
+      "Xamarin.MediaGallery/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.7.3",
+          "Xamarin.MediaGallery.Permision": "2.2.1"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/NativeMedia.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/xamarinios10/NativeMedia.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.MediaGallery.Permision/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.7.3"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/NativeMedia.Permision.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/xamarinios10/NativeMedia.Permision.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Plugin.Calendar/2.0.9699": {
         "type": "package",
         "dependencies": {
@@ -2971,6 +3050,7 @@
           "Xamarin.Essentials": "1.8.0",
           "Xamarin.Forms": "5.0.0.2612",
           "Xamarin.Forms.DataGrid": "5.0.0.2545",
+          "Xamarin.MediaGallery": "2.2.1",
           "Xamarin.Plugin.Calendar": "2.0.9699"
         },
         "compile": {
@@ -4372,6 +4452,45 @@
           "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {}
         }
       },
+      "Xamarin.MediaGallery/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.7.3",
+          "Xamarin.MediaGallery.Permision": "2.2.1"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/NativeMedia.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/xamarinios10/NativeMedia.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.MediaGallery.Permision/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.7.3"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/NativeMedia.Permision.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/xamarinios10/NativeMedia.Permision.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Plugin.Calendar/2.0.9699": {
         "type": "package",
         "dependencies": {
@@ -4407,6 +4526,7 @@
           "Xamarin.Essentials": "1.8.0",
           "Xamarin.Forms": "5.0.0.2612",
           "Xamarin.Forms.DataGrid": "5.0.0.2545",
+          "Xamarin.MediaGallery": "2.2.1",
           "Xamarin.Plugin.Calendar": "2.0.9699"
         },
         "compile": {
@@ -5808,6 +5928,45 @@
           "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {}
         }
       },
+      "Xamarin.MediaGallery/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.7.3",
+          "Xamarin.MediaGallery.Permision": "2.2.1"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/NativeMedia.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/xamarinios10/NativeMedia.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.MediaGallery.Permision/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.7.3"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/NativeMedia.Permision.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/xamarinios10/NativeMedia.Permision.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Plugin.Calendar/2.0.9699": {
         "type": "package",
         "dependencies": {
@@ -5843,6 +6002,7 @@
           "Xamarin.Essentials": "1.8.0",
           "Xamarin.Forms": "5.0.0.2612",
           "Xamarin.Forms.DataGrid": "5.0.0.2545",
+          "Xamarin.MediaGallery": "2.2.1",
           "Xamarin.Plugin.Calendar": "2.0.9699"
         },
         "compile": {
@@ -10247,6 +10407,69 @@
         "xamarin.forms.datagrid.nuspec"
       ]
     },
+    "Xamarin.MediaGallery/2.2.1": {
+      "sha512": "uO/rpg83xu/J5p/oCTKdy2CFgwMjuEJfz8OkfgzhyGjQfxfBeJCvUp6CrJ2hYN56lx0H/ITuWKuMPjUvOWLJ7Q==",
+      "type": "package",
+      "path": "xamarin.mediagallery/2.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.nuget.md",
+        "icon.png",
+        "lib/monoandroid10.0/NativeMedia.dll",
+        "lib/monoandroid10.0/NativeMedia.xml",
+        "lib/monoandroid11.0/NativeMedia.dll",
+        "lib/monoandroid11.0/NativeMedia.xml",
+        "lib/monoandroid12.0/NativeMedia.dll",
+        "lib/monoandroid12.0/NativeMedia.xml",
+        "lib/monoandroid13.0/NativeMedia.dll",
+        "lib/monoandroid13.0/NativeMedia.xml",
+        "lib/net6.0-android31.0/NativeMedia.aar",
+        "lib/net6.0-android31.0/NativeMedia.dll",
+        "lib/net6.0-android31.0/NativeMedia.xml",
+        "lib/net6.0-android32.0/NativeMedia.aar",
+        "lib/net6.0-android32.0/NativeMedia.dll",
+        "lib/net6.0-android32.0/NativeMedia.xml",
+        "lib/net6.0-android33.0/NativeMedia.aar",
+        "lib/net6.0-android33.0/NativeMedia.dll",
+        "lib/net6.0-android33.0/NativeMedia.xml",
+        "lib/net6.0-ios16.1/NativeMedia.dll",
+        "lib/net6.0-ios16.1/NativeMedia.xml",
+        "lib/netstandard2.0/NativeMedia.dll",
+        "lib/netstandard2.0/NativeMedia.xml",
+        "lib/xamarinios10/NativeMedia.dll",
+        "lib/xamarinios10/NativeMedia.xml",
+        "xamarin.mediagallery.2.2.1.nupkg.sha512",
+        "xamarin.mediagallery.nuspec"
+      ]
+    },
+    "Xamarin.MediaGallery.Permision/2.2.1": {
+      "sha512": "ihpfxAmqc0SbxXLsDxgEGZH+uvdto0YwFZSUaYkXI3xBlbhjtAu7Boil7eIvAj98XNTR2UBIARs/g//5uANBoQ==",
+      "type": "package",
+      "path": "xamarin.mediagallery.permision/2.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.nuget.md",
+        "icon.png",
+        "lib/monoandroid10.0/NativeMedia.Permision.dll",
+        "lib/monoandroid10.0/NativeMedia.Permision.xml",
+        "lib/monoandroid11.0/NativeMedia.Permision.dll",
+        "lib/monoandroid11.0/NativeMedia.Permision.xml",
+        "lib/monoandroid12.0/NativeMedia.Permision.dll",
+        "lib/monoandroid12.0/NativeMedia.Permision.xml",
+        "lib/monoandroid13.0/NativeMedia.Permision.dll",
+        "lib/monoandroid13.0/NativeMedia.Permision.xml",
+        "lib/netstandard2.0/NativeMedia.Permision.dll",
+        "lib/netstandard2.0/NativeMedia.Permision.xml",
+        "lib/xamarinios10/NativeMedia.Permision.dll",
+        "lib/xamarinios10/NativeMedia.Permision.xml",
+        "xamarin.mediagallery.permision.2.2.1.nupkg.sha512",
+        "xamarin.mediagallery.permision.nuspec"
+      ]
+    },
     "Xamarin.Plugin.Calendar/2.0.9699": {
       "sha512": "Yt1MHlv1uu9LiihnsyyCc/YagU2bJcQLi6XPtLneW8WiT8uLemgGDu0O75hFvdEtyk8uUOg/1pR9jNbnP+dzQw==",
       "type": "package",
@@ -10283,6 +10506,7 @@
       "Xamarin.Essentials >= 1.8.0",
       "Xamarin.Forms >= 5.0.0.2612",
       "Xamarin.Forms.DataGrid >= 5.0.0.2545",
+      "Xamarin.MediaGallery >= 2.2.1",
       "Xamarin.Plugin.Calendar >= 2.0.9699",
       "Xamarin_Postep >= 1.0.0"
     ]
@@ -10360,6 +10584,10 @@
           "Xamarin.Forms.DataGrid": {
             "target": "Package",
             "version": "[5.0.0.2545, )"
+          },
+          "Xamarin.MediaGallery": {
+            "target": "Package",
+            "version": "[2.2.1, )"
           },
           "Xamarin.Plugin.Calendar": {
             "target": "Package",

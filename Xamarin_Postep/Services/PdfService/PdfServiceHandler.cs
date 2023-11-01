@@ -18,9 +18,33 @@ public static class PdfServiceHandler
     {
         public static string GetPdfDocument()
         {
+
+        try
+        {
+            string fullFolderPath = Path.Combine("/storage/emulated/0/Documents", "Raports");
+
+            if (!Directory.Exists(fullFolderPath))
+            {
+                Directory.CreateDirectory(fullFolderPath);
+                Console.WriteLine("Folder created successfully at: " + fullFolderPath);
+            }
+            else
+            {
+                Console.WriteLine("Folder already exists at: " + fullFolderPath);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error creating folder: " + ex.Message);
+        }
+
         string path = Path.Combine(FileSystem.AppDataDirectory, "Test.pdf");
         string fileName = $"Raport[{DateTime.Now.Day}-{DateTime.Now.Month}-{DateTime.Now.Year}-{DateTime.Now.Minute}-{DateTime.Now.Second}].pdf";
-        string path2 = Path.Combine("/storage/emulated/0", "Documents", fileName);
+        string path2 = Path.Combine("/storage/emulated/0", "Documents/Raports", fileName);
+
+
+
+        GetFilesInFolder("/storage/emulated/0/Documents/Raports");
 
         //string[] files = Directory.GetFiles("/storage/emulated/0/Documents/Raporty");
 
@@ -35,7 +59,7 @@ public static class PdfServiceHandler
                     page.DefaultTextStyle(x => x.FontSize(20));
 
                     page.Header()
-                        .Text("Hello PDF!")
+                        .Text($"Raport z dnia {DateTime.Now.Day}-{DateTime.Now.Month}-{DateTime.Now.Year}")
                         .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
 
                     page.Content()
@@ -44,7 +68,6 @@ public static class PdfServiceHandler
                         {
                             x.Spacing(20);
 
-                            x.Item().Text(Placeholders.LoremIpsum());
                             x.Item().Image(Placeholders.Image(200, 100));
                         });
 
@@ -58,9 +81,35 @@ public static class PdfServiceHandler
                 });
             }).GeneratePdf(path2);
 
+
         return fileName;
 
         //.GeneratePdf("Xamarin_Postep\\Resources\\hello.pdf");   Path.Combine(FileSystem.AppDataDirectory, "Test.pdf")
+    }
+
+    public static List<string> GetFilesInFolder(string path)
+    {
+        try
+        {
+            List<string> fileNames = new List<string>();
+            DirectoryInfo dir = new DirectoryInfo(path);
+
+            // Get all files in the directory
+            FileInfo[] files = dir.GetFiles();
+
+            foreach (FileInfo file in files)
+            {
+                fileNames.Add(file.Name);
+            }
+
+            return fileNames;
+        }
+        catch (Exception ex)
+        {
+            // Handle exceptions as needed
+            return null;
+        }
+
     }
 
 }

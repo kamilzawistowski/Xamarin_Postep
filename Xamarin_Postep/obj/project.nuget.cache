@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "t4BbaeB8EtV3VqutpqAelJWU8rrq03gq8iB1JHGg8e9iAsd1jicdQQQAdZ5GQHtraJV0Pnzdp843veAaBM59lA==",
+  "dgSpecHash": "r5LyhypIE/8SaYW4rOhaixRMB0vTtBKtOxu6zYtRWGSb++4Ol90yhYiZP0mWu5Eb07BkaD/ZXR8s5XXRC/CrlQ==",
   "success": true,
   "projectFilePath": "C:\\Repozytoria\\Xamarin_Postep\\Xamarin_Postep\\Xamarin_Postep.csproj",
   "expectedPackageFiles": [
@@ -62,6 +62,7 @@
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.essentials\\1.8.0\\xamarin.essentials.1.8.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.forms\\5.0.0.2612\\xamarin.forms.5.0.0.2612.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.forms.datagrid\\5.0.0.2545\\xamarin.forms.datagrid.5.0.0.2545.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.mediagallery\\2.2.1\\xamarin.mediagallery.2.2.1.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.plugin.calendar\\2.0.9699\\xamarin.plugin.calendar.2.0.9699.nupkg.sha512"
   ],
   "logs": [

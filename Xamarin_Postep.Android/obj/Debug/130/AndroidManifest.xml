@@ -11,7 +11,10 @@
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.VIBRATE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+  <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
   <application android:label="Xamarin_Postep.Android" android:theme="@style/MainTheme" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true" android:extractNativeLibs="true">
     <provider android:name="android.support.v4.content.FileProvider" android:authorities="com.companyname.xamarin_postep.fileprovider" android:exported="false" android:grantUriPermissions="true">
       <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
@@ -23,6 +26,9 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <provider android:authorities="com.companyname.xamarin_postep.mediaFileProvider" android:exported="false" android:grantUriPermissions="true" android:name="nativeMedia.fileProvider">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_provider_paths" />
+    </provider>
     <receiver android:enabled="true" android:exported="false" android:label="Plugin LocalNotification Geofence Transitions Receiver" android:name="plugin.LocalNotification.GeofenceTransitionsIntentReceiver" />
     <receiver android:enabled="true" android:exported="false" android:label="Plugin LocalNotification Action Receiver" android:name="plugin.LocalNotification.NotificationActionReceiver" />
     <receiver android:enabled="true" android:exported="false" android:label="Plugin LocalNotification Scheduled Alarm Receiver" android:name="plugin.LocalNotification.ScheduledAlarmReceiver">

@@ -46,8 +46,6 @@ namespace Xamarin_Postep.ViewModels.Notice
             MessagingCenter.Send(this, "DisplayAlert", $"Pomyslnie Dodano \n {theme}");
             await Shell.Current.GoToAsync("..");
 
-
-
         }
 
     }

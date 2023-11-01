@@ -6,6 +6,8 @@
         <StackLayout>
             <Button Text="Wygeneruj Raport" HorizontalOptions="Center" Clicked="Button_Clicked" BackgroundColor="Gray"></Button>
             <Button Text="Kopia zapasowa bazy danych" HorizontalOptions="Center" Clicked="Button_Clicked2" BackgroundColor="Gray" Margin="15"></Button>
+            <Button Text="Select Photo" Clicked="SelectPhotoButton_Clicked" />
+            <Image x:Name="image"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

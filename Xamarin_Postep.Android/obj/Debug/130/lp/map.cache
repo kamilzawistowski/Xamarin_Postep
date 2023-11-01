@@ -1,6 +1,8 @@
 FormsViewGroup.dll
 HarfBuzzSharp.dll
 Microcharts.Droid.dll
+NativeMedia.dll
+NativeMedia.Permision.dll
 Plugin.LocalNotification.dll
 Plugin.Messaging.dll
 SkiaSharp.dll
