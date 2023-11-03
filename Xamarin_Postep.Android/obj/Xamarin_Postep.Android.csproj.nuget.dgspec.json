@@ -42,6 +42,10 @@
       "frameworks": {
         "monoandroid13.0": {
           "dependencies": {
+            "FirebaseAuthentication.net": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Microcharts": {
               "target": "Package",
               "version": "[0.9.5.9, )"
@@ -54,6 +58,10 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Plugin.CloudFirestore": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Plugin.LocalNotification": {
               "target": "Package",
               "version": "[10.1.8, )"
@@ -65,6 +73,14 @@
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.8.0, )"
+            },
+            "Xamarin.Firebase.Auth": {
+              "target": "Package",
+              "version": "[122.0.0.2, )"
+            },
+            "Xamarin.Firebase.Core": {
+              "target": "Package",
+              "version": "[121.1.1.5, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
@@ -127,6 +143,10 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "FirebaseAuthentication.net": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Microcharts": {
               "target": "Package",
               "version": "[0.9.5.9, )"
@@ -158,6 +178,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Plugin.CloudFirestore": {
+              "target": "Package",
+              "version": "[4.1.0, )"
             },
             "Plugin.LocalNotification": {
               "target": "Package",

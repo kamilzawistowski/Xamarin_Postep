@@ -9,13 +9,17 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using NativeMedia;
 using Plugin.Messaging;
+using QuestPDF.Infrastructure;
 using SkiaSharp;
+using System.Drawing;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Shapes;
 using Xamarin.Forms.Xaml;
 using Xamarin_Postep.Models;
 using Xamarin_Postep.Views.ListToGO.Language.English;
+using System.Runtime.Serialization.Formatters.Binary;
+using Xamarin.Forms.PlatformConfiguration.TizenSpecific;
 
 namespace Xamarin_Postep.Views.ListToGO.Raports
 {
@@ -72,15 +76,17 @@ namespace Xamarin_Postep.Views.ListToGO.Raports
             }
         }
 
+
+
         private async void SelectPhotoButton_Clicked(object sender, EventArgs e)
         {
             var results = await MediaGallery.PickAsync(1, MediaFileType.Image, MediaFileType.Video);
-
+            byte[] header = null;
             if (results?.Files == null)
             {
                 return;
             }
-
+            
 
             foreach (var item in results.Files)
             {
@@ -88,22 +94,34 @@ namespace Xamarin_Postep.Views.ListToGO.Raports
                 var extension = item.Extension;
                 var contentType = item.ContentType;
 
-
                 await DisplayAlert(fileName, $"Extension:{extension},Content-Type: {contentType}", "Ok");
 
                 string path2 = System.IO.Path.Combine("/storage/emulated/0", "Documents/Raports/Photos");
 
                 string photopath = $"/storage/emulated/0/DCIM/Camera/{item.NameWithoutExtension}.{item.Extension}";
+
+                //Image image = new Image(path2, fileName, extension, contentType);
+
+
+                BinaryFormatter bf = new BinaryFormatter();
+                MemoryStream ms = new MemoryStream();
+                bf.Serialize(ms, image);
+
+                var img = ms.ToArray();
+
                 //if (File.Exists(photopath))
                 //{
                 //    image.Source = photopath;
                 //}
 
-               // byte[] byteArray = File.ReadAllBytes(photopath);
+                // byte[] byteArray = File.ReadAllBytes(photopath);
 
                 //await MediaGallery.SaveAsync(MediaFileType.Image, by);
                 //File.Copy(photopath, System.IO.Path.Combine("/storage/emulated/0", "Documents/Raports"));
             }
+
+
         }
+
     }
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "191210977929",
+    "project_id": "testplanerkamil",
+    "storage_bucket": "testplanerkamil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191210977929:android:7839991764b0a087fe2458",
+        "android_client_info": {
+          "package_name": "com.gheorghedarle.todoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc3N1NM33OaVlAijnIt1arU2l4Wo46KN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

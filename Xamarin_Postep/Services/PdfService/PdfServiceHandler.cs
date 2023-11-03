@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Text;
 using ProgramPostep.Services.EmailNotifyService;
 using ProgramPostep.Services.EmailNotifyService.T.PL;
@@ -9,6 +10,7 @@ using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using QuestPDF.Previewer;
+using SkiaSharp;
 using Xamarin.Essentials;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat;
@@ -69,6 +71,7 @@ public static class PdfServiceHandler
                             x.Spacing(20);
 
                             x.Item().Image(Placeholders.Image(200, 100));
+
                         });
 
                     page.Footer()
@@ -89,6 +92,7 @@ public static class PdfServiceHandler
 
     public static List<string> GetFilesInFolder(string path)
     {
+
         try
         {
             List<string> fileNames = new List<string>();
@@ -111,5 +115,6 @@ public static class PdfServiceHandler
         }
 
     }
+
 
 }
