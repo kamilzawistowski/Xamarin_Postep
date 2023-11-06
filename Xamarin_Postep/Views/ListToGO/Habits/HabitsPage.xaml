@@ -17,7 +17,7 @@
             <Label Text="Lista Nawyków" HorizontalOptions="Center" FontSize="Title"/>
         </StackLayout>
 
-            <CollectionView Grid.Row="1"  ItemsSource="{Binding Habits}" Margin="5" SelectionMode="Single" SelectedItem="{Binding SelectedIcon}">
+            <CollectionView Grid.Row="1"  ItemsSource="{Binding Habits}" Margin="5" SelectionMode="Single" SelectedItem="{Binding SelectedItem}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical"   ItemSpacing="20"/>
                 </CollectionView.ItemsLayout>
@@ -38,6 +38,7 @@
             </CollectionView>
 
             <Button Grid.Row="2"  HorizontalOptions="End" VerticalOptions="End" Margin="20" ImageSource="icon_plus.png" CornerRadius="90" Clicked="AddNewHabit_Click"/>
+            <Button Grid.Row="2"  HorizontalOptions="Start" VerticalOptions="End" Margin="20" ImageSource="icon_list.png" CornerRadius="90" Command="{Binding DeleteTask}"/>
        
         </Grid>
     </ContentPage.Content>

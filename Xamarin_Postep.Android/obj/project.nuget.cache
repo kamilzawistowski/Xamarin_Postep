@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IV0r8T5sDKPJrpKajTI7UsZBpVJ0AuPHPVZtVBKA29IrvkmmQ51v2f//LtVIWFqTbaN/gea7Glhql7GwNim1mA==",
+  "dgSpecHash": "3daaIT7ZqB21B7343yYaSlC1fQTSwA7UHnQu4v4E0TEd1jRqz3kH7eKjDrcMnReTY5AqDSEjNG45u1piv+nGUg==",
   "success": true,
   "projectFilePath": "C:\\Repozytoria\\Xamarin_Postep\\Xamarin_Postep.Android\\Xamarin_Postep.Android.csproj",
   "expectedPackageFiles": [
@@ -129,6 +129,7 @@
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.androidx.viewpager\\1.0.0.21\\xamarin.androidx.viewpager.1.0.0.21.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.androidx.viewpager2\\1.0.0.10\\xamarin.androidx.viewpager2.1.0.0.10.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.build.download\\0.11.4\\xamarin.build.download.0.11.4.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.6\\xamarin.communitytoolkit.2.0.6.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.essentials\\1.8.0\\xamarin.essentials.1.8.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.firebase.analytics\\121.3.0.3\\xamarin.firebase.analytics.121.3.0.3.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.firebase.annotations\\116.2.0.4\\xamarin.firebase.annotations.116.2.0.4.nupkg.sha512",

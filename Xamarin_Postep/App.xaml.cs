@@ -45,6 +45,7 @@ namespace Xamarin_Postep
             DependencyService.Register<IDataStore<EnglishCategory>>();
             DependencyService.Register<IDataStore<BudgetCategory>>();
 
+
             DependencyService.Register<MockDataStore>();
             DependencyService.Register<QuestRepository>();
             MainPage = new AppShell();

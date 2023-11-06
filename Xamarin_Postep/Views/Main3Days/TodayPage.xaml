@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin_Postep.Views.Main3Days.TodayPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:models="clr-namespace:Xamarin_Postep.Models"
              BackgroundColor="#fff"
              xmlns:essensials="clr-namespace:Xamarin.Essentials;assembly=Xamarin.Essentials"
@@ -33,8 +34,8 @@
                 <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="33*" />
-                            <RowDefinition Height="33*" />
-                            <RowDefinition Height="33*" />
+                            <RowDefinition Height="46*" />
+                            <RowDefinition Height="20*" />
                         </Grid.RowDefinitions>
                         
 
@@ -75,7 +76,7 @@
                         </Frame>
                     
                     <!--###########################################################################################################################################################################-->
-                    <Frame Grid.Row="1"  Margin="3">
+                    <Frame Grid.Row="1"  Margin="3" >
                         <CollectionView  ItemsSource="{Binding QuestList, Mode=TwoWay}" Margin="5">
 
                             <CollectionView.ItemsLayout>
@@ -98,8 +99,8 @@
 
 
 
-                    <Frame Grid.Row="2"   Margin="3" >
-                        <CollectionView  ItemsSource="{Binding InscriptionList, Mode=TwoWay}" Margin="5" >
+                    <Frame Grid.Row="2" >
+                        <CollectionView  ItemsSource="{Binding InscriptionList, Mode=TwoWay}">
                             <CollectionView.ItemsLayout>
                                 <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
                             </CollectionView.ItemsLayout>
@@ -134,7 +135,16 @@
                 </Frame>
             </StackLayout>
 
-            <Button Grid.Row="2" Grid.ColumnSpan="3"  HorizontalOptions="End" VerticalOptions="End" Margin="20" ImageSource="icon_plus.png" CornerRadius="90" Clicked="AddNew_Click"/>
+            <Button 
+                Grid.Row="2" 
+                Grid.ColumnSpan="3" 
+                HorizontalOptions="End" 
+                VerticalOptions="End" 
+                Margin="20" 
+                ImageSource="icon_plus.png" 
+                CornerRadius="90" 
+                Clicked="AddNew_Click"
+                />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

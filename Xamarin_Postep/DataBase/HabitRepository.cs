@@ -29,10 +29,15 @@ namespace Xamarin_Postep.DataBase
         public async Task<bool> DeleteItemAsync(int id)
         {
 
-            var toDelete = App.Database.Habit.Where(x => x.ID == id).FirstOrDefault();
+            var toDelete = App.Database.Habit.Where(x => x.IdGroup == id).FirstOrDefault();
             if (toDelete != null)
             {
-                App.Database.Remove(toDelete);
+                foreach (var item in App.Database.Habit.Where(x => x.IdGroup == id))
+                {
+                    App.Database.Remove(item);
+
+                }
+
                 await App.Database.SaveChangesAsync();
 
                 return true;
@@ -42,6 +47,8 @@ namespace Xamarin_Postep.DataBase
                 return false;
             }
         }
+
+     
 
         public Task<Habit> GetItemAsync(int id)
             => App.Database.Habit.FirstOrDefaultAsync(c => c.ID == id);

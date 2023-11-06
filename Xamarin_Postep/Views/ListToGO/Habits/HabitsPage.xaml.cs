@@ -18,16 +18,27 @@ namespace Xamarin_Postep.Views.ListToGO.Habits
 		{
             BindingContext = viewModel = new HabitMainViewModel();
 			InitializeComponent ();
-		}
+
+            MessagingCenter.Subscribe<HabitMainViewModel, string>(this, "DisplayAlert", (sender, message) =>
+            {
+
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+
+                    await DisplayAlert("Nawyk", message, "OK");
+                });
+            });
+        }
+
+        protected override void OnAppearing()
+        {
+            InitializeComponent();
+        }
 
         private async void AddNewHabit_Click(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new NewHabitPage());
         }
 
-        private void BackToPrevious_click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

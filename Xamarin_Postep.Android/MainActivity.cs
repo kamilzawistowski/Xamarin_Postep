@@ -10,6 +10,7 @@ using Android.OS;
 using System.IO;
 using QuestPDF.Infrastructure;
 using Firebase;
+using Xamarin_Postep.Droid.Auth;
 
 namespace Xamarin_Postep.Droid
 {

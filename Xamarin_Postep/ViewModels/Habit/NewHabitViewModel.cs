@@ -28,6 +28,9 @@ namespace Xamarin_Postep.ViewModels.Habit
             }
         }
 
+        private IEnumerable<Models.Habit> habitstest;
+        
+
         private HabitIcon selectedIcon;
         public HabitIcon SelectedIcon
         {
@@ -59,7 +62,7 @@ namespace Xamarin_Postep.ViewModels.Habit
         }
         private string habitName;
         public string HabitName
-    {
+        {
             get => habitName;
             set
             {
@@ -71,7 +74,7 @@ namespace Xamarin_Postep.ViewModels.Habit
 
         private bool ValidateSave()
         {
-            return !String.IsNullOrWhiteSpace(HabitName);
+            return !String.IsNullOrWhiteSpace(HabitName) && !habitstest.Any(x => x.Name == habitName) && selectedIcon != null;
         }
 
         public NewHabitViewModel()
@@ -79,6 +82,7 @@ namespace Xamarin_Postep.ViewModels.Habit
             dataStore = DependencyService.Get<IDataStore<Models.Habit>>();
             NewHabitCommand = new Command(AddNewHabit, ValidateSave);
             habits = new ObservableCollection<HabitIcon>();
+            habitstest = dataStore.GetItemsAsync().Result;
 
             this.PropertyChanged +=
                 (_, __) => NewHabitCommand.ChangeCanExecute();
@@ -104,8 +108,9 @@ namespace Xamarin_Postep.ViewModels.Habit
 
             PopulateDateList();
             MessagingCenter.Send(this, "DisplayAlert", $"Pomyslnie Dodano {HabitName}");
-            HabitName = string.Empty;
 
+            HabitName = string.Empty;
+            Shell.Current.GoToAsync("..");
 
         }
 
@@ -132,7 +137,7 @@ namespace Xamarin_Postep.ViewModels.Habit
             var countHabits = dataStore.GetItemsAsync().Result.Count();
             if (countHabits > 0)
             {
-                idForLast = dataStore.GetItemsAsync().Result.Where(x => x.ID == countHabits).FirstOrDefault().IdGroup;
+                idForLast = dataStore.GetItemsAsync().Result.Last().IdGroup;
                 idForLast += 1;
             }
             for (int i = 0; i <= daysRemaining; i++)

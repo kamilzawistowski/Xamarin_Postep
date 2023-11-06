@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xHujbP8YYTljen4NHuwpLih7uVlzrBF+m3FQi5hk1m/T9zTK/8CKmWpfC/tRx5A13P+WDvq5u7xyc6jfFXgVvA==",
+  "dgSpecHash": "zUO/Nw649l3qihhNxpWo+YV9nMmDE0NZrz0ubArMDGhUq26Ml9OhbXvi8qca+B94xHa+WQ7SdJQMKsQevNcUNA==",
   "success": true,
   "projectFilePath": "C:\\Repozytoria\\Xamarin_Postep\\Xamarin_Postep.iOS\\Xamarin_Postep.iOS.csproj",
   "expectedPackageFiles": [
@@ -104,6 +104,7 @@
     "C:\\Users\\Kamil\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xam.plugins.messaging\\5.2.0\\xam.plugins.messaging.5.2.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.build.download\\0.11.0\\xamarin.build.download.0.11.0.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.6\\xamarin.communitytoolkit.2.0.6.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.essentials\\1.8.0\\xamarin.essentials.1.8.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.firebase.ios.auth\\8.10.0.3\\xamarin.firebase.ios.auth.8.10.0.3.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.firebase.ios.cloudfirestore\\1.19.0\\xamarin.firebase.ios.cloudfirestore.1.19.0.nupkg.sha512",

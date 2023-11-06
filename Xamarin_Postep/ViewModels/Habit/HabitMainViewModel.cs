@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Windows.Input;
 using Microsoft.Extensions.DependencyModel;
+using Plugin.CloudFirestore;
 using Xamarin.Forms;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
@@ -13,15 +15,6 @@ namespace Xamarin_Postep.ViewModels.Habit
 {
     public class HabitMainViewModel : BaseViewModel
     {
-        //private ObservableCollection<Models.Habit> habits;
-        //public ObservableCollection<Models.Habit> Habits
-        //{
-        //    get => GetPhotosFromIconPath(habits);
-        //    set
-        //    {
-        //        SetProperty(ref habits, value);
-        //    }
-        //}
 
         private ObservableCollection<Models.HabitResult> habits;
         public ObservableCollection<Models.HabitResult> Habits
@@ -33,12 +26,41 @@ namespace Xamarin_Postep.ViewModels.Habit
             }
         }
 
+        private HabitResult selectedItem;
+        public HabitResult SelectedItem
+        {
+            get => selectedItem;
+            set
+            {
+                SetProperty(ref selectedItem, value);
+            }
+        }
+        public Command DeleteTask { get;set; }
+
+        private bool ValidateSave()
+        {
+            return selectedItem != null;
+        }
+
         IDataStore<Models.Habit> dataStore;
         public HabitMainViewModel()
         {
+            DeleteTask = new Command(OnDeleteBtnClick, ValidateSave);
             dataStore = DependencyService.Get<IDataStore<Models.Habit>>();
             var abc = dataStore.GetItemsAsync();
-            //Habits = new ObservableCollection<Models.Habit>(abc.Result);
+
+            this.PropertyChanged +=
+                (_, __) => DeleteTask.ChangeCanExecute();
+   
+        }
+
+        public void OnDeleteBtnClick()
+        {
+            var idGroup = dataStore.GetItemsAsync().Result.Where(x => x.Name == SelectedItem.Name).Select(x => x.IdGroup).FirstOrDefault();
+            dataStore.DeleteItemAsync(idGroup);
+            MessagingCenter.Send(this, "DisplayAlert", $"Pomyslnie usunięto nawyk {SelectedItem.Name}");
+            Shell.Current.GoToAsync("..");
+
         }
 
         public ObservableCollection<Models.Habit> GetPhotosFromIconPath(ObservableCollection<Models.Habit> Habits)
@@ -54,56 +76,42 @@ namespace Xamarin_Postep.ViewModels.Habit
 
         public ObservableCollection<Models.HabitResult> GroupHabits(ObservableCollection<Models.Habit> Habits)
         {
-            int IdForGroup = 0;
-            ObservableCollection<Models.HabitResult> HabitsResult = new ObservableCollection<Models.HabitResult>();
             int HabitPass = 0;
             int HabitPassToToday = 0;
             int CountForGroup = 0;
             int CountForGroupToToday = 0;
-
-            if (Habits.Count > 0)
+            string ImageIcon = "";
+            string Name = "";
+            ObservableCollection<Models.HabitResult> HabitsResult = new ObservableCollection<Models.HabitResult>();
+            List<IGrouping<int,Models.Habit>> HabitsResult2 = new List<IGrouping<int, Models.Habit>>(dataStore.GetItemsAsync().Result.GroupBy(x => x.IdGroup).ToList());
+            foreach (var group in HabitsResult2)
             {
-                for (int i = 0; i < Habits.Count; i++)
+                foreach (var item in group)
                 {
-                    if (Habits[i].IdGroup == IdForGroup)
-                    {
-                        CountForGroup++;
-                        if (Habits[i].IsComplete == true)
+                    CountForGroup++;
+                    if (item.IsComplete == true)
                         {
-                            
                             HabitPass++;
                         }
-                        if (Habits[i].DateTime.DayOfYear <= DateTime.Now.DayOfYear)
+                        if (item.DateTime.DayOfYear <= DateTime.Now.DayOfYear)
                         {
-
-                            if (Habits[i].IsComplete == true)
+                            if (item.IsComplete == true)
                             {
-
                                 HabitPassToToday++;
                             }
                             CountForGroupToToday++;
-
                         }
-
-                    }
-                    else
-                    {
-                        HabitsResult.Add(new Models.HabitResult { ImageIcon = new FileImageSource().File = Habits[i - 1].ImagePath, Name = Habits[i - 1].Name, PassToToday = $"{HabitPassToToday}" + "/" + $"{CountForGroupToToday}", PassToTheEnd = $"{HabitPass}" + "/" + $"{CountForGroup}" });
-                        IdForGroup++;
-                        HabitPass = 0;
-                        CountForGroup = 0;
-                        HabitPassToToday = 0;
-                        CountForGroupToToday = 0;
-                        i -= 1;
-                    }
-
-                    if(i == Habits.Count-1)
-                    {
-                        HabitsResult.Add(new Models.HabitResult { ImageIcon = new FileImageSource().File = Habits[i - 1].ImagePath, Name = Habits[i - 1].Name, PassToToday = $"{HabitPassToToday}" + "/" + $"{CountForGroupToToday}", PassToTheEnd = $"{HabitPass}" + "/" + $"{CountForGroup}" });
-                    }
+                    ImageIcon = item.ImagePath;
+                    Name = item.Name;
                 }
+                HabitsResult.Add(new Models.HabitResult { ImageIcon = new FileImageSource().File = ImageIcon, Name = Name, PassToToday = $"{HabitPassToToday}" + "/" + $"{CountForGroupToToday}", PassToTheEnd = $"{HabitPass}" + "/" + $"{CountForGroup}" });
+                HabitPass = 0;
+                CountForGroup = 0;
+                HabitPassToToday = 0;
+                CountForGroupToToday = 0;
             }
             return HabitsResult;
+
         }
     }
 }
