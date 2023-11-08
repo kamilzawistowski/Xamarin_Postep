@@ -18,6 +18,7 @@ using Xamarin_Postep.Views.ListToGO.Habits;
 using Xamarin_Postep.Views.ListToGO.Language.English;
 using Xamarin_Postep.Views.ListToGO.Notice;
 using Xamarin_Postep.Views.ListToGO.Raports;
+using Xamarin_Postep.Views.ListToGO.Spis;
 
 namespace Xamarin_Postep.Views.Main3Days
 {
@@ -28,25 +29,19 @@ namespace Xamarin_Postep.Views.Main3Days
         TodayViewModel viewModel;
 		public TodayPage()
 		{
-            
             BindingContext = viewModel = new TodayViewModel();
             InitializeComponent();
-            
-
         }
 
         protected override void OnAppearing()
         {
             BindingContext = viewModel = new TodayViewModel();
-
             base.OnAppearing();
         }
 
         private async void ShowApp_Click(object sender, EventArgs e)
         {
-            
-            
-            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Wydarzenia", "Jezyk Obcy","Raporty");
+            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny","Spis", "Budżet", "Nawyki", "Listy", "Wydarzenia", "Jezyk Obcy","Raporty");
             //switch (action)
             //{
             //    case "Raporty":
@@ -56,7 +51,12 @@ namespace Xamarin_Postep.Views.Main3Days
             //        break;
             //}
             //Debug.WriteLine("Action: " + action);
-            
+            if (action == "Spis")
+            {
+                // await Shell.Current.GoToAsync($"{nameof(BudgetSummaryPage)}");
+                await Navigation.PushAsync(new QuestCatalogPage());
+
+            }
             if (action == "Kalendarz Miesięczny")
             {
                 // await Shell.Current.GoToAsync($"{nameof(BudgetSummaryPage)}");
@@ -89,7 +89,6 @@ namespace Xamarin_Postep.Views.Main3Days
 
             }
         }
-
         private async void AddNew_Click(object sender, EventArgs e)
         {
             string action = await DisplayActionSheet("", "", null, "Zadanie", "Wydarzenie/Wpis", "Wydatek/Przychód", "Notatka");
@@ -116,10 +115,6 @@ namespace Xamarin_Postep.Views.Main3Days
 
             }
         }
-        
-
-
-   
 
         private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {

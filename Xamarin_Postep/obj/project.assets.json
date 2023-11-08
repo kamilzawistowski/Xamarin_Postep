@@ -556,6 +556,36 @@
           }
         }
       },
+      "Prism.Core/8.1.97": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Prism.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Prism.Forms/8.1.97": {
+        "type": "package",
+        "dependencies": {
+          "Prism.Core": "8.1.97",
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "compile": {
+          "lib/netstandard2.0/Prism.Forms.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.Forms.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "QuestPDF/2023.9.0": {
         "type": "package",
         "dependencies": {
@@ -1131,6 +1161,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.DataGrid.dll": {}
+        }
+      },
+      "Xamarin.Forms.FontAwesome.Brand/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.6.0.726",
+          "Xamarin.Forms.IconFontHelper": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/FontAwesome.Brand.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FontAwesome.Brand.dll": {}
+        }
+      },
+      "Xamarin.Forms.IconFontHelper/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.6.0.726"
+        },
+        "compile": {
+          "lib/netstandard2.0/IconFontHelper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/IconFontHelper.dll": {}
         }
       },
       "Xamarin.MediaGallery/2.2.1": {
@@ -2145,6 +2200,52 @@
         "lib/xamarinios10/Plugin.LocalNotification.xml",
         "plugin.localnotification.10.1.8.nupkg.sha512",
         "plugin.localnotification.nuspec"
+      ]
+    },
+    "Prism.Core/8.1.97": {
+      "sha512": "EP5zrvWddw3eSq25Y7hHnDYdmLZEC2Z/gMrvmHzUuLbitmA1UaS7wQUlSwNr9Km8lzJNCvytFnaGBEFukHgoHg==",
+      "type": "package",
+      "path": "prism.core/8.1.97",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net461/Prism.dll",
+        "lib/net461/Prism.pdb",
+        "lib/net461/Prism.xml",
+        "lib/net47/Prism.dll",
+        "lib/net47/Prism.pdb",
+        "lib/net47/Prism.xml",
+        "lib/net5.0/Prism.dll",
+        "lib/net5.0/Prism.pdb",
+        "lib/net5.0/Prism.xml",
+        "lib/netstandard2.0/Prism.dll",
+        "lib/netstandard2.0/Prism.pdb",
+        "lib/netstandard2.0/Prism.xml",
+        "prism-logo.png",
+        "prism.core.8.1.97.nupkg.sha512",
+        "prism.core.nuspec",
+        "readme.txt"
+      ]
+    },
+    "Prism.Forms/8.1.97": {
+      "sha512": "PZ11VwcKc1XNOhIAbdZXPwiRdG1QbxS3cV0JKdKJp914+LSGog71LbHg5hMY2C8AssfCe6wjG5wOvZaBV68nvw==",
+      "type": "package",
+      "path": "prism.forms/8.1.97",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/monoandroid10.0/Prism.Forms.dll",
+        "lib/monoandroid10.0/Prism.Forms.pdb",
+        "lib/monoandroid10.0/Prism.Forms.xml",
+        "lib/netstandard2.0/Prism.Forms.dll",
+        "lib/netstandard2.0/Prism.Forms.pdb",
+        "lib/netstandard2.0/Prism.Forms.xml",
+        "prism-logo.png",
+        "prism.forms.8.1.97.nupkg.sha512",
+        "prism.forms.nuspec",
+        "readme.txt"
       ]
     },
     "QuestPDF/2023.9.0": {
@@ -3527,6 +3628,34 @@
         "xamarin.forms.datagrid.nuspec"
       ]
     },
+    "Xamarin.Forms.FontAwesome.Brand/1.0.0": {
+      "sha512": "ZmUBfWX5KLqRSpNivcagR3N7GafWHpFsj5oFn1Ex4Lbht0fYn8/9JnSv+vK6kH16w7LbFJKL80FvJ0T99QhrGQ==",
+      "type": "package",
+      "path": "xamarin.forms.fontawesome.brand/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/netstandard2.0/FontAwesome.Brand.dll",
+        "xamarin.forms.fontawesome.brand.1.0.0.nupkg.sha512",
+        "xamarin.forms.fontawesome.brand.nuspec"
+      ]
+    },
+    "Xamarin.Forms.IconFontHelper/1.0.0": {
+      "sha512": "CA8aH/SCbfe4UKw123fDRaXJB1+J5T9ssFwggLK25va8Z7L/KtctXj5GUYrLKEaDKAKYrGXwE3ulhuabQr/U4A==",
+      "type": "package",
+      "path": "xamarin.forms.iconfonthelper/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/netstandard2.0/IconFontHelper.dll",
+        "xamarin.forms.iconfonthelper.1.0.0.nupkg.sha512",
+        "xamarin.forms.iconfonthelper.nuspec"
+      ]
+    },
     "Xamarin.MediaGallery/2.2.1": {
       "sha512": "uO/rpg83xu/J5p/oCTKdy2CFgwMjuEJfz8OkfgzhyGjQfxfBeJCvUp6CrJ2hYN56lx0H/ITuWKuMPjUvOWLJ7Q==",
       "type": "package",
@@ -3597,6 +3726,7 @@
       "NETStandard.Library >= 2.0.3",
       "Plugin.CloudFirestore >= 4.1.0",
       "Plugin.LocalNotification >= 10.1.8",
+      "Prism.Forms >= 8.1.97",
       "QuestPDF >= 2023.9.0",
       "Spire.Email >= 6.5.7",
       "Xam.Plugins.Messaging >= 5.2.0",
@@ -3604,6 +3734,7 @@
       "Xamarin.Essentials >= 1.8.0",
       "Xamarin.Forms >= 5.0.0.2612",
       "Xamarin.Forms.DataGrid >= 5.0.0.2545",
+      "Xamarin.Forms.FontAwesome.Brand >= 1.0.0",
       "Xamarin.MediaGallery >= 2.2.1",
       "Xamarin.Plugin.Calendar >= 2.0.9699"
     ]
@@ -3697,6 +3828,10 @@
             "target": "Package",
             "version": "[10.1.8, )"
           },
+          "Prism.Forms": {
+            "target": "Package",
+            "version": "[8.1.97, )"
+          },
           "QuestPDF": {
             "target": "Package",
             "version": "[2023.9.0, )"
@@ -3724,6 +3859,10 @@
           "Xamarin.Forms.DataGrid": {
             "target": "Package",
             "version": "[5.0.0.2545, )"
+          },
+          "Xamarin.Forms.FontAwesome.Brand": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "Xamarin.MediaGallery": {
             "target": "Package",

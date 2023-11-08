@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Windows.Input;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Prism.Navigation;
 using Xamarin.Forms;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
+using Xamarin_Postep.Views;
 using Xamarin_Postep.Views.ListToGO.Language.English;
 
 namespace Xamarin_Postep.ViewModels.Language
@@ -14,8 +18,13 @@ namespace Xamarin_Postep.ViewModels.Language
     {
 
         private string categorySelected;
+        public Command<EnglishWord> ItemTapped { get; }
 
+        public Command SelectionChangedCommand { get; set; }
         public Command DeleteSelectedCommand { get; set; }
+        
+        public Command GoToEditPageCommand { get; set; }
+
         public string CategorySelected
         {
             get { return categorySelected; }
@@ -27,6 +36,17 @@ namespace Xamarin_Postep.ViewModels.Language
                     AllWords = new ObservableCollection<EnglishWord>(dataStoreWords.GetItemsAsync().Result.Where(x => x.Category == categorySelected));
 
                 }
+            }
+        }
+
+
+        private EnglishWord selectedListItem;
+        public EnglishWord SelectedListItem
+        {
+            get { return selectedListItem; }
+            set
+            {
+                SetProperty(ref selectedListItem, value);
             }
         }
 
@@ -60,19 +80,36 @@ namespace Xamarin_Postep.ViewModels.Language
             }
         }
 
+
+
         public IDataStore<EnglishWord> dataStoreWords;
         public IDataStore<EnglishCategory> dataStoreCategory;
 
         public EnglishListWordsViewModel()
         {
+            SelectionChangedCommand = new Command(SelectionChanged);
             dataStoreWords = DependencyService.Get<IDataStore<EnglishWord>>();
             dataStoreCategory = DependencyService.Get<IDataStore<EnglishCategory>>();
-            DeleteSelectedCommand = new Command(DeleteAllChecked);
+            DeleteSelectedCommand = new Command<EnglishWord>(DeleteAllChecked);
+            GoToEditPageCommand = new Command<EnglishWord>(GoToEditPage);
+            ItemTapped = new Command<EnglishWord>(GoToEditPage);
+
         }
 
-        public async void DeleteAllChecked()
+        public async void DeleteAllChecked(EnglishWord word)
         {
-            var a = AllWords.ToList();
+            await dataStoreWords.DeleteItemAsync(word.ID);
         }
+
+        public async void GoToEditPage(EnglishWord Word)
+        {
+            await Shell.Current.GoToAsync($"{nameof(EnglishEditWordPage)}?{nameof(EnglishEditWordViewModel.EnglishWord)}={Word}");
+
+        }
+        public async void SelectionChanged()
+        {
+            
+        }
+
     }
 }

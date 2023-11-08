@@ -14,6 +14,5 @@ namespace Xamarin_Postep.Models
         public string ImagePath { get; set; }
         public DateTime DateTime { get; set; }
         public bool IsComplete { get; set; }
-        
     }
 }

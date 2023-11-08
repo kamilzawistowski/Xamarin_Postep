@@ -73,13 +73,13 @@ namespace Xamarin_Postep.ViewModels.Main3Days
             }
         }
 
-        private ObservableCollection<Quest> questList;
+        private ObservableCollection<Models.Quest> questList;
 
-        public ObservableCollection<Quest> QuestList
+        public ObservableCollection<Models.Quest> QuestList
         {
             get
             {
-                questList = new ObservableCollection<Quest>(App.Database.Quest
+                questList = new ObservableCollection<Models.Quest>(App.Database.Quest
                     .Where(x => x.Date.Day == DateTime.Now.Day)
                     .Where(x => x.Date.Month == DateTime.Now.Month)
                     .ToList());

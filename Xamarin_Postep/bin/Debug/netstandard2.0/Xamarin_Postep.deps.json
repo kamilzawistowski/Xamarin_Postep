@@ -19,6 +19,7 @@
           "NETStandard.Library": "2.0.3",
           "Plugin.CloudFirestore": "4.1.0",
           "Plugin.LocalNotification": "10.1.8",
+          "Prism.Forms": "8.1.97",
           "QuestPDF": "2023.9.0",
           "Spire.Email": "6.5.7",
           "Xam.Plugins.Messaging": "5.2.0",
@@ -26,6 +27,7 @@
           "Xamarin.Essentials": "1.8.0",
           "Xamarin.Forms": "5.0.0.2612",
           "Xamarin.Forms.DataGrid": "5.0.0.2545",
+          "Xamarin.Forms.FontAwesome.Brand": "1.0.0",
           "Xamarin.MediaGallery": "2.2.1",
           "Xamarin.Plugin.Calendar": "2.0.9699"
         },
@@ -377,6 +379,26 @@
           }
         }
       },
+      "Prism.Core/8.1.97": {
+        "runtime": {
+          "lib/netstandard2.0/Prism.dll": {
+            "assemblyVersion": "8.1.97.5141",
+            "fileVersion": "8.1.97.5141"
+          }
+        }
+      },
+      "Prism.Forms/8.1.97": {
+        "dependencies": {
+          "Prism.Core": "8.1.97",
+          "Xamarin.Forms": "5.0.0.2612"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.Forms.dll": {
+            "assemblyVersion": "8.1.97.5141",
+            "fileVersion": "8.1.97.5141"
+          }
+        }
+      },
       "QuestPDF/2023.9.0": {
         "dependencies": {
           "SkiaSharp": "2.88.3",
@@ -688,6 +710,29 @@
           }
         }
       },
+      "Xamarin.Forms.FontAwesome.Brand/1.0.0": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2612",
+          "Xamarin.Forms.IconFontHelper": "1.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FontAwesome.Brand.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Xamarin.Forms.IconFontHelper/1.0.0": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2612"
+        },
+        "runtime": {
+          "lib/netstandard2.0/IconFontHelper.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Xamarin.MediaGallery/2.2.1": {
         "runtime": {
           "lib/netstandard2.0/NativeMedia.dll": {
@@ -960,6 +1005,20 @@
       "path": "plugin.localnotification/10.1.8",
       "hashPath": "plugin.localnotification.10.1.8.nupkg.sha512"
     },
+    "Prism.Core/8.1.97": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EP5zrvWddw3eSq25Y7hHnDYdmLZEC2Z/gMrvmHzUuLbitmA1UaS7wQUlSwNr9Km8lzJNCvytFnaGBEFukHgoHg==",
+      "path": "prism.core/8.1.97",
+      "hashPath": "prism.core.8.1.97.nupkg.sha512"
+    },
+    "Prism.Forms/8.1.97": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PZ11VwcKc1XNOhIAbdZXPwiRdG1QbxS3cV0JKdKJp914+LSGog71LbHg5hMY2C8AssfCe6wjG5wOvZaBV68nvw==",
+      "path": "prism.forms/8.1.97",
+      "hashPath": "prism.forms.8.1.97.nupkg.sha512"
+    },
     "QuestPDF/2023.9.0": {
       "type": "package",
       "serviceable": true,
@@ -1183,6 +1242,20 @@
       "sha512": "sha512-KKniix9AxC0VYIRp5vHP4LK4jcbhJ0THeQwpUpXUxzUPx5DzTqRAo8iY6RRD733L6iWxbsH2dMklPBuFpi+psg==",
       "path": "xamarin.forms.datagrid/5.0.0.2545",
       "hashPath": "xamarin.forms.datagrid.5.0.0.2545.nupkg.sha512"
+    },
+    "Xamarin.Forms.FontAwesome.Brand/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZmUBfWX5KLqRSpNivcagR3N7GafWHpFsj5oFn1Ex4Lbht0fYn8/9JnSv+vK6kH16w7LbFJKL80FvJ0T99QhrGQ==",
+      "path": "xamarin.forms.fontawesome.brand/1.0.0",
+      "hashPath": "xamarin.forms.fontawesome.brand.1.0.0.nupkg.sha512"
+    },
+    "Xamarin.Forms.IconFontHelper/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CA8aH/SCbfe4UKw123fDRaXJB1+J5T9ssFwggLK25va8Z7L/KtctXj5GUYrLKEaDKAKYrGXwE3ulhuabQr/U4A==",
+      "path": "xamarin.forms.iconfonthelper/1.0.0",
+      "hashPath": "xamarin.forms.iconfonthelper.1.0.0.nupkg.sha512"
     },
     "Xamarin.MediaGallery/2.2.1": {
       "type": "package",

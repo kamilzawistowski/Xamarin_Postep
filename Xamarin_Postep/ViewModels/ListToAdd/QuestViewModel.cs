@@ -102,11 +102,11 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
         }
 
 
-        IDataStore<Quest> dataStore;
+        IDataStore<Models.Quest> dataStore;
 
         public QuestViewModel(DateTime date)
         {
-            dataStore = DependencyService.Get<IDataStore<Quest>>();
+            dataStore = DependencyService.Get<IDataStore<Models.Quest>>();
             OnQuestAdd = new Command(OnBtnQuestAdd, ValidateSave);
             this.PropertyChanged +=
                 (_, __) => OnQuestAdd.ChangeCanExecute();
@@ -152,7 +152,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             switch (repeatSelectedItem)
             {
                 case "Brak":
-                    dataStore.AddItemAsync(new Models.Quest() { DateToPushNotify = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, TimeContent.Hours, TimeContent.Minutes, 0), Content = QuestContent, Date = dateTime });
+                    dataStore.AddItemAsync(new Models.Quest() { DateToPushNotify = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, TimeContent.Hours, TimeContent.Minutes, 0), Content = $"{Char.ToUpper(QuestContent[0]) + QuestContent.Substring(1)}", Date = dateTime });
                     break;
                 case "Codziennie":
                     PopulateDateList(dateTime, 1);

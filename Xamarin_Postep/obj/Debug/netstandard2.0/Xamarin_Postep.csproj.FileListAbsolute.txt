@@ -41,3 +41,6 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\bin\Debug\netstandard2.0\Xamarin_Po
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\ref\Xamarin_Postep.dll
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Raports\RaportMainPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Language\English\EnglishTestMainPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Language\English\EnglishEditWordPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Spis\QuestCatalogPage.xaml.g.cs

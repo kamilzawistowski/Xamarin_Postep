@@ -6,6 +6,7 @@ NativeMedia.Permision.dll
 Plugin.CloudFirestore.dll
 Plugin.LocalNotification.dll
 Plugin.Messaging.dll
+Prism.Forms.dll
 SkiaSharp.dll
 SkiaSharp.Views.Android.dll
 SkiaSharp.Views.Forms.dll

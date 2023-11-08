@@ -39,7 +39,7 @@
                         </Grid.RowDefinitions>
                         
 
-                        <Frame Grid.Row="0"  Margin="3">
+                        <Frame Grid.Row="0"  Margin="3" >
                             <CollectionView ItemsSource="{Binding HabitList, Mode=TwoWay}">
                                 <CollectionView.ItemsLayout>
                                     <LinearItemsLayout Orientation="Horizontal" ItemSpacing="2"/>

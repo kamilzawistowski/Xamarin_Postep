@@ -38,14 +38,14 @@ namespace Xamarin_Postep.ViewModels.Calendar
             {
                 SetProperty(ref selectedDate, value);
                 AcctualSelectedDay = $"{selectedDate.Day}" + $" {Converters.ConvertMonthToPolandNames(selectedDate.Date.Month)}" + $" {selectedDate.Year}";
-                QuestList = new ObservableCollection<Quest>(App.Database.Quest.Where(x => x.Date.Day == SelectedDate.Day).Where(x => x.Date.Month == SelectedDate.Month).Where(x => x.Date.Year == SelectedDate.Year));
+                QuestList = new ObservableCollection<Models.Quest>(App.Database.Quest.Where(x => x.Date.Day == SelectedDate.Day).Where(x => x.Date.Month == SelectedDate.Month).Where(x => x.Date.Year == SelectedDate.Year));
                 GetSummary();
             }
         }
 
-        private ObservableCollection<Quest> questList = new ObservableCollection<Quest>();
+        private ObservableCollection<Models.Quest> questList = new ObservableCollection<Models.Quest>();
 
-        public ObservableCollection<Quest> QuestList
+        public ObservableCollection<Models.Quest> QuestList
         {
             get => questList;
             set

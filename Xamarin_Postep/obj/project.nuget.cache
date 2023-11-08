@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MFmmpbbiUquMthov9aYLj2Va+jhHCRxY52UhtjOo6yfj9+RvMt5vNDiybzQSdzUDHsP/LWrBK/MuL9prCvIq4w==",
+  "dgSpecHash": "fI+jtCkEk0Q9PrSleOXTJ/W2G8tx8Ns4S57Z2+h88KmSug6NjbkjqEqoBtiCXe+xw/Dfnbfi/rCX12Ab6Ht26w==",
   "success": true,
   "projectFilePath": "C:\\Repozytoria\\Xamarin_Postep\\Xamarin_Postep\\Xamarin_Postep.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,8 @@
     "C:\\Users\\Kamil\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\plugin.cloudfirestore\\4.1.0\\plugin.cloudfirestore.4.1.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\plugin.localnotification\\10.1.8\\plugin.localnotification.10.1.8.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\prism.forms\\8.1.97\\prism.forms.8.1.97.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\questpdf\\2023.9.0\\questpdf.2023.9.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\skiasharp\\2.88.3\\skiasharp.2.88.3.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\skiasharp.harfbuzz\\2.88.3\\skiasharp.harfbuzz.2.88.3.nupkg.sha512",
@@ -71,6 +73,8 @@
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.essentials\\1.8.0\\xamarin.essentials.1.8.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.forms\\5.0.0.2612\\xamarin.forms.5.0.0.2612.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.forms.datagrid\\5.0.0.2545\\xamarin.forms.datagrid.5.0.0.2545.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.forms.fontawesome.brand\\1.0.0\\xamarin.forms.fontawesome.brand.1.0.0.nupkg.sha512",
+    "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.forms.iconfonthelper\\1.0.0\\xamarin.forms.iconfonthelper.1.0.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.mediagallery\\2.2.1\\xamarin.mediagallery.2.2.1.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\xamarin.plugin.calendar\\2.0.9699\\xamarin.plugin.calendar.2.0.9699.nupkg.sha512"
   ],

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Postep.Views.ListToGO.Language.English.EnglishTestMainPage">
+    <ContentPage.Content>
+
+        <Frame BorderColor="Black" Margin="15">
+            <StackLayout HeightRequest="400">
+
+                <ListView x:Name="categoryCollection"
+                        ItemsSource="{Binding Options}"
+                              MinimumHeightRequest="300"
+                    SelectedItem="{Binding SelectedOption}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding}" TextColor="Black" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button HeightRequest="50"  Style="{StaticResource ButtonBackgroundColor}" Text="Test do wpisywania" Clicked="Click_Test"></Button>
+                <Button HeightRequest="50"  Style="{StaticResource ButtonBackgroundColor}" Text="Test czasowy" Clicked="TimeTest"></Button>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

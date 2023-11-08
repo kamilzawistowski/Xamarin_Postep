@@ -10,6 +10,7 @@ using Xamarin_Postep.Views.ListToGO.Habits;
 using Xamarin_Postep.Views.ListToGO.Language.English;
 using Xamarin_Postep.Views.ListToGO.Notice;
 using Xamarin_Postep.Views.ListToGO.Raports;
+using Xamarin_Postep.Views.ListToGO.Spis;
 
 namespace Xamarin_Postep
 {
@@ -36,7 +37,10 @@ namespace Xamarin_Postep
             Routing.RegisterRoute(nameof(EnglishNewWordPage), typeof(EnglishNewWordPage));
             Routing.RegisterRoute(nameof(EnglishListWordsPage), typeof(EnglishListWordsPage));
             Routing.RegisterRoute(nameof(EnglishMainPage), typeof(EnglishMainPage)); 
-            Routing.RegisterRoute(nameof(RaportMainPage), typeof(RaportMainPage));
+            Routing.RegisterRoute(nameof(RaportMainPage), typeof(RaportMainPage)); 
+            Routing.RegisterRoute(nameof(EnglishTestMainPage), typeof(EnglishTestMainPage));
+            Routing.RegisterRoute(nameof(EnglishEditWordPage), typeof(EnglishEditWordPage));
+            Routing.RegisterRoute(nameof(QuestCatalogPage), typeof(QuestCatalogPage));
 
 
         }

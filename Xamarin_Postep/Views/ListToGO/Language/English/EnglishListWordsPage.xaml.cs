@@ -19,15 +19,16 @@ namespace Xamarin_Postep.Views.ListToGO.Language.English
         public EnglishListWordsPage()
         {
             BindingContext = viewModel = new EnglishListWordsViewModel();
-
             InitializeComponent();
         }
 
-        private void DeleteItems(object sender, EventArgs e)
-        {
-            var selectedWords = new List<EnglishWord>();
+        
 
+        //private async void GoToEditPage(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new EnglishEditWordPage((EnglishWord)WordsList.SelectedItem));
+        //}
 
-        }
+        
     }
 }

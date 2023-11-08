@@ -33,12 +33,9 @@ namespace Xamarin_Postep.Views.ListToGO.Language.English
 
         private async void Click_Test(object sender, EventArgs e)
         {
-            if(categoryCollection.SelectedItem != null)
-            {
-                await Navigation.PushAsync(new EnglishTestPage(categoryCollection.SelectedItem.ToString() != null ? categoryCollection.SelectedItem.ToString() : null));
-            }
-            else
-                await Navigation.PushAsync(new EnglishTestPage());
+            
+               
+                await Navigation.PushAsync(new EnglishTestMainPage());
 
         }
 

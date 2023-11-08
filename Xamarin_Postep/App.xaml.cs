@@ -8,6 +8,7 @@ using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
 using QuestPDF.Infrastructure;
 using Xamarin_Postep.Services.NotificationService;
+using Prism.Ioc;
 
 namespace Xamarin_Postep
 {
@@ -51,7 +52,7 @@ namespace Xamarin_Postep
             MainPage = new AppShell();
           
         }
-
+        
         protected override void OnStart()
         {
             NotificationSystem notificationSystem = new NotificationSystem();

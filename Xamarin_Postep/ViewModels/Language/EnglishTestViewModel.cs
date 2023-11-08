@@ -53,6 +53,11 @@ namespace Xamarin_Postep.ViewModels.Language
             }
         }
 
+        private bool ValidateSave()
+        {
+            return EnglishWordForCheck != null;
+        }
+
         public IDataStore<EnglishWord> dataStoreEnglishWord;
         public IDataStore<EnglishCategory> dataStoreEnglishCategory;
         public List<EnglishWord> AllWords { get; set; }
@@ -64,8 +69,10 @@ namespace Xamarin_Postep.ViewModels.Language
             dataStoreEnglishWord = DependencyService.Get<IDataStore<EnglishWord>>();
             dataStoreEnglishCategory = DependencyService.Get<IDataStore<EnglishCategory>>();
             BackButton = new Command(BackToPreviousPage);
-            CheckWordCommand = new Command(NextWordAndCheck);
+            CheckWordCommand = new Command(NextWordAndCheck, ValidateSave);
 
+            this.PropertyChanged +=
+               (_, __) => CheckWordCommand.ChangeCanExecute();
             if (category == null)
             {
                 AllWords = Shuffle(dataStoreEnglishWord.GetItemsAsync().Result.ToList());
@@ -104,7 +111,7 @@ namespace Xamarin_Postep.ViewModels.Language
 
         public async void BackToPreviousPage()
         {
-            await Shell.Current.GoToAsync(nameof(EnglishMainPage));
+            await Shell.Current.GoToAsync("..");
         }
 
         public static List<T> Shuffle<T>(List<T> list)

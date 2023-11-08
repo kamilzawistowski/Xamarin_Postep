@@ -28,10 +28,12 @@ namespace Xamarin_Postep.DataBase.Language.English
         public async Task<bool> DeleteItemAsync(int id)
         {
 
-            var toDelete = App.Database.EnglishWord.Where(x => x.ID == id);
+            var toDelete = App.Database.EnglishWord.Where(x => x.ID == id).FirstOrDefault();
             if (toDelete != null)
             {
-                 App.Database.Remove(toDelete);
+                App.Database.Remove(toDelete);
+
+                await App.Database.SaveChangesAsync();
                 return true;
             }
             else

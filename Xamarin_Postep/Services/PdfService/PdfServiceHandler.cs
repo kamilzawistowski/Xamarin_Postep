@@ -45,7 +45,6 @@ public static class PdfServiceHandler
         string path2 = Path.Combine("/storage/emulated/0", "Documents/Raports", fileName);
 
 
-
         GetFilesInFolder("/storage/emulated/0/Documents/Raports");
 
         //string[] files = Directory.GetFiles("/storage/emulated/0/Documents/Raporty");
