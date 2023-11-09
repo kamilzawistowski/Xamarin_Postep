@@ -66,7 +66,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
 
         private DateTime date;
 
-        public DateTime Date
+        public DateTime DatePicker
         { 
             get => date;
             set
@@ -110,12 +110,12 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             OnQuestAdd = new Command(OnBtnQuestAdd, ValidateSave);
             this.PropertyChanged +=
                 (_, __) => OnQuestAdd.ChangeCanExecute();
-            this.date = date;
+            DatePicker = date;
         }
 
         public void OnBtnQuestAdd()
         {
-            DateTime dateTime = DateTime.Now;
+            DateTime dateTime = date;
             switch (dayStartSelectedItem)
             {
                 case "Dziś":
