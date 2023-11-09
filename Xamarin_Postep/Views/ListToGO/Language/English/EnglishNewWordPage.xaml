@@ -2,22 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin_Postep.Views.ListToGO.Language.English.EnglishNewWordPage"
-             xmlns:models="clr-namespace:Xamarin_Postep.Models">
+             xmlns:models="clr-namespace:Xamarin_Postep.Models"
+             xmlns:local="clr-namespace:Xamarin_Postep.ViewModels.Language">
     <Shell.BackButtonBehavior>
         <BackButtonBehavior 
             Command="{Binding BackButton}"/>
     </Shell.BackButtonBehavior>
-
+    
+    <ContentPage.BindingContext>
+        <local:EnglishWordsViewModel/>
+    </ContentPage.BindingContext>
 
     <ContentPage.Content>
 
         <StackLayout>
             <Label Text="English"/>
-            <Entry Text="{Binding EnglishWord}" FontSize="Small" x:Name="EnglishWordEntry"/>
+            <Entry Text="{Binding WordEnglish.WordEnglish,Mode=TwoWay}" FontSize="Small" x:Name="EnglishWordEntry"/>
             <Label Text="Polskie"/>
-            <Entry Text="{Binding PolishWord}" FontSize="Small" x:Name="PolishWordEntry"/>
+            <Entry Text="{Binding WordEnglish.WordPolish,Mode=TwoWay}" FontSize="Small" x:Name="PolishWordEntry"/>
 
-            <Button Text="Potwierdz" Command="{Binding AddWordCommand}" Style="{StaticResource ButtonBackgroundColor}" Clicked="Submit_Click"></Button>
+            <Button Text="Potwierdz" Command="{Binding AddWordCommand}" Style="{StaticResource ButtonBackgroundColor}" CommandParameter="{Binding WordEnglish}" ></Button>
 
             <!--<CollectionView ItemsSource="{Binding Options}"
                     SelectedItem="{Binding SelectedOption}">
@@ -27,8 +31,10 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>-->
-            
-            <Label Text="Kategorie" FontSize="Large" HorizontalOptions="Center" Margin="10"/>
+            <Picker x:DataType="local:EnglishWordsViewModel" ItemsSource="{Binding Options,Mode=TwoWay}" SelectedItem="{Binding WordEnglish.Category}" />
+
+
+            <!--<Label Text="Kategorie" FontSize="Large" HorizontalOptions="Center" Margin="10"/>
             <ListView x:Name="categoryCollection"
                         ItemsSource="{Binding Options,Mode=TwoWay}"
                             SelectedItem="{Binding SelectedOption}"
@@ -38,7 +44,7 @@
                         <TextCell Text="{Binding}" TextColor="Black" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
 
         </StackLayout>
     </ContentPage.Content>

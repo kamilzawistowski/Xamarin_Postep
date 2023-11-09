@@ -10,7 +10,7 @@
         <StackLayout Orientation="Vertical">
             <Picker x:Name="categoryPicker" Title="Select Category" ItemsSource="{Binding Options}" SelectedItem="{Binding CategorySelected}" />
 
-            <RefreshView x:DataType="viewmodels:EnglishListWordsViewModel" Command="{Binding LoadProductCommand}" >
+            <RefreshView  Command="{Binding LoadProductCommand}" >
 
                 <CollectionView ItemsSource="{Binding AllWords}" x:Name="TaskItems"  Margin="10" SelectionMode="Single" SelectedItems="{Binding SelectedListItem}" >
                     <CollectionView.ItemsLayout>
@@ -26,7 +26,7 @@
                                             <SwipeItemView
                                                 Command="{Binding BindingContext.GoToEditPageCommand, Source={x:Reference TaskItems}}"
                                                 CommandParameter="{Binding .}"
-                                                WidthRequest="64">
+                                                >
                                                 <Label
                                                 BackgroundColor="AliceBlue"
                                                 Text="Edit"
@@ -38,7 +38,6 @@
                                                  Command="{Binding BindingContext.DeleteSelectedCommand, Source={x:Reference TaskItems}}"
                                                 CommandParameter="{Binding}" 
                                                 >
-                                                
                                                     <Label
                                                 VerticalOptions="CenterAndExpand"
                                                 BackgroundColor="Red"

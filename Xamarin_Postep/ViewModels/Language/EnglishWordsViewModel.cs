@@ -14,8 +14,21 @@ namespace Xamarin_Postep.ViewModels.Language
     {
         public string EnglishWord { get; set; }
         public string PolishWord { get; set; }
-        public Command AddWordCommand { get; set; }
+        public Command<EnglishWord> AddWordCommand { get; set; }
         public Command BackButton { get; set; }
+
+        private EnglishWord wordEnglish;
+        public EnglishWord WordEnglish
+        {
+            get
+            {
+                return wordEnglish;
+            }
+            set
+            {
+                SetProperty(ref wordEnglish, value);
+            }
+        }
 
         private ObservableCollection<string> options;
         public ObservableCollection<string> Options
@@ -56,12 +69,24 @@ namespace Xamarin_Postep.ViewModels.Language
             dataStoreEnglishCategory = DependencyService.Get<IDataStore<EnglishCategory>>();
             //options = new List<string>(dataStoreEnglishCategory.GetItemsAsync().Result.Select(x => x.Name));
             BackButton = new Command(BackToPreviousPage);
-
-            AddWordCommand = new Command(OnAddItem);
+            AddWordCommand = new Command<EnglishWord>(OnAddItem);
+            WordEnglish = new EnglishWord();
         }
-        public void OnAddItem()
+        public EnglishWordsViewModel(EnglishWord word) : base()
         {
-            dataStoreEnglishWord.AddItemAsync(new Models.EnglishWord() { DateTime = DateTime.Today, WordEnglish = EnglishWord, WordPolish = PolishWord, Category = SelectedOption });
+            
+        }
+        public async void OnAddItem(EnglishWord word)
+        {
+            if (word.ID < 0)
+            {
+                dataStoreEnglishWord.UpdateItemAsync(word);
+                await Shell.Current.GoToAsync("..");
+            }
+            else
+            {
+                dataStoreEnglishWord.AddItemAsync(new Models.EnglishWord() { DateTime = DateTime.Today, WordEnglish = WordEnglish.WordEnglish, WordPolish = WordEnglish.WordPolish, Category = WordEnglish.Category });
+            }
         }
 
         public List<string> GenerateListOfTheme()
@@ -76,3 +101,4 @@ namespace Xamarin_Postep.ViewModels.Language
 
     }
 }
+ 

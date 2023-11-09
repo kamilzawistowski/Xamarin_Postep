@@ -3,12 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin_Postep.Views.ListToGO.Language.English.EnglishEditWordPage"
              xmlns:models="clr-namespace:Xamarin_Postep.Models">
-    <ContentPage.BindingContext>
-        <StackLayout>
-            <Picker/>
-            <Label x:Name="Label22" Text="{Binding WordEnglish,Mode=TwoWay}" TextColor="Black"/>
-            <Label Text="{Binding WordPolish,Mode=TwoWay}"/>
-            <Button Text="Zmien" Command="{Binding EditCommand}" BackgroundColor="Black"/>
-        </StackLayout>
-    </ContentPage.BindingContext>
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="47*"/>
+            </Grid.RowDefinitions>
+            <StackLayout>
+                <Label Grid.Row="0" Text="Kategorie" FontSize="Large" HorizontalOptions="Center" Margin="10"/>
+                    <ListView Margin="10" BackgroundColor="LightGray" x:Name="categoryCollection" 
+                                ItemsSource="{Binding Options,Mode=TwoWay}"
+                                    SelectedItem="{Binding SelectedOption}"
+                                      >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding}" TextColor="Black" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView> 
+            </StackLayout>
+            <Editor Grid.Row="1" VerticalOptions="Start" Text="{Binding WordEnglish}" TextColor="Black"/>
+            <Editor Grid.Row="2" VerticalOptions="Start" Text="{Binding WordPolish}" TextColor="Black"/>
+            <Button Grid.Row="3" VerticalOptions="EndAndExpand" Text="Zmien" Command="{Binding EditCommand}" Margin="20" BackgroundColor="Gray" TextColor="Wheat"/>
+        </Grid>
+    </StackLayout>
 </ContentPage>

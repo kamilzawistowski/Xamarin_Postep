@@ -15,17 +15,25 @@ namespace Xamarin_Postep.Views.ListToGO.Language.English
 	public partial class EnglishNewWordPage : ContentPage
 	{
         EnglishWordsViewModel viewModel;
-        public EnglishNewWordPage()
+          public EnglishNewWordPage()
         {
             BindingContext = viewModel = new EnglishWordsViewModel();
             InitializeComponent();
         }
 
-        private void Submit_Click(object sender, EventArgs e)
+        public EnglishNewWordPage(EnglishWord model)
         {
-            PolishWordEntry.Text = "";
-            EnglishWordEntry.Text = "";
+            BindingContext = viewModel = new EnglishWordsViewModel(model);
+
+            InitializeComponent();
+            if (model != null)
+            {
+                ((EnglishWordsViewModel)BindingContext).WordEnglish = model;
+            }
+
         }
+
+        
 
 
     }

@@ -55,6 +55,7 @@ namespace Xamarin_Postep.DataBase.Language.English
             if (item != null)
             {
                 App.Database.Update(item);
+
                 await App.Database.SaveChangesAsync();
                 return true;
             }

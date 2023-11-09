@@ -24,7 +24,7 @@ namespace Xamarin_Postep.ViewModels.Language
         public Command SelectionChangedCommand { get; set; }
         public Command DeleteSelectedCommand { get; set; }
         
-        public Command GoToEditPageCommand { get; set; }
+        public Command<EnglishWord> GoToEditPageCommand { get; set; }
 
         public string CategorySelected
         {
@@ -97,6 +97,7 @@ namespace Xamarin_Postep.ViewModels.Language
         public void OnAppearing()
         {
             IsBusy = true;
+            ExecuteLoadCollection();
         }
 
         async Task ExecuteLoadCollection()
@@ -126,13 +127,16 @@ namespace Xamarin_Postep.ViewModels.Language
         }
         public async void DeleteAllChecked(EnglishWord word)
         {
-            await dataStoreWords.DeleteItemAsync(word.ID);
+            if (word != null)
+                await dataStoreWords.DeleteItemAsync(word.ID);
+
             ExecuteLoadCollection();
         }
 
         public async void GoToEditPage(EnglishWord Word)
         {
-            await NavigationService.PushAsync(new EnglishEditWordPage(Word));
+            if(Word != null)
+            await NavigationService.PushAsync(new EnglishNewWordPage(Word));
 
         }
         public async void SelectionChanged()
