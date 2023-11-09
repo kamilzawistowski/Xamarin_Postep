@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Prism.Navigation;
@@ -19,7 +20,7 @@ namespace Xamarin_Postep.ViewModels.Language
 
         private string categorySelected;
         public Command<EnglishWord> ItemTapped { get; }
-
+        public Command LoadProductCommand { get; set; }
         public Command SelectionChangedCommand { get; set; }
         public Command DeleteSelectedCommand { get; set; }
         
@@ -63,20 +64,15 @@ namespace Xamarin_Postep.ViewModels.Language
                 }
             }
         }
-        private ObservableCollection<EnglishWord> allWords { get; set; }
-
+        private ObservableCollection<EnglishWord> allWords = new ObservableCollection<EnglishWord>();
         public ObservableCollection<EnglishWord> AllWords
         {
             get {
-                return allWords == null ? new ObservableCollection<EnglishWord>(dataStoreWords.GetItemsAsync().Result.ToList()) : new ObservableCollection<EnglishWord>(dataStoreWords.GetItemsAsync().Result.Where(x=> x.Category == categorySelected).ToList()); 
+                return allWords;
             }
             set
             {
-                if (allWords != value)
-                {
-                    allWords = value;
-                    OnPropertyChanged(nameof(AllWords));
-                }
+                SetProperty(ref allWords, value);
             }
         }
 
@@ -85,7 +81,7 @@ namespace Xamarin_Postep.ViewModels.Language
         public IDataStore<EnglishWord> dataStoreWords;
         public IDataStore<EnglishCategory> dataStoreCategory;
 
-        public EnglishListWordsViewModel()
+        public EnglishListWordsViewModel(INavigation navigation)
         {
             SelectionChangedCommand = new Command(SelectionChanged);
             dataStoreWords = DependencyService.Get<IDataStore<EnglishWord>>();
@@ -93,17 +89,50 @@ namespace Xamarin_Postep.ViewModels.Language
             DeleteSelectedCommand = new Command<EnglishWord>(DeleteAllChecked);
             GoToEditPageCommand = new Command<EnglishWord>(GoToEditPage);
             ItemTapped = new Command<EnglishWord>(GoToEditPage);
-
+            LoadProductCommand = new Command(async () => await ExecuteLoadCollection());
+            NavigationService = navigation;
+            allWords = new ObservableCollection<EnglishWord>(dataStoreWords.GetItemsAsync().Result.ToList());
         }
 
+        public void OnAppearing()
+        {
+            IsBusy = true;
+        }
+
+        async Task ExecuteLoadCollection()
+        {
+
+            try
+            {
+                IsBusy = true;
+                AllWords.Clear();
+
+                var Words = App.Database.EnglishWord.Where(X => X.ID > 0);
+                foreach (var item in Words)
+                {
+                    AllWords.Add(item);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally 
+            { 
+                IsBusy = false;
+            }
+           
+        }
         public async void DeleteAllChecked(EnglishWord word)
         {
             await dataStoreWords.DeleteItemAsync(word.ID);
+            ExecuteLoadCollection();
         }
 
         public async void GoToEditPage(EnglishWord Word)
         {
-            await Shell.Current.GoToAsync($"{nameof(EnglishEditWordPage)}?{nameof(EnglishEditWordViewModel.EnglishWord)}={Word}");
+            await NavigationService.PushAsync(new EnglishEditWordPage(Word));
 
         }
         public async void SelectionChanged()

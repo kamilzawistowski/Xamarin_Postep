@@ -32,7 +32,6 @@ namespace Xamarin_Postep.DataBase.Language.English
             if (toDelete != null)
             {
                 App.Database.Remove(toDelete);
-
                 await App.Database.SaveChangesAsync();
                 return true;
             }

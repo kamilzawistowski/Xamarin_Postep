@@ -9,43 +9,45 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <Picker x:Name="categoryPicker" Title="Select Category" ItemsSource="{Binding Options}" SelectedItem="{Binding CategorySelected}" />
-            <CollectionView ItemsSource="{Binding AllWords}" x:Name="TaskItems"  Margin="10" SelectionMode="Single" SelectedItems="{Binding SelectedListItem}" >
-        <CollectionView.ItemsLayout>
-            <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
-        </CollectionView.ItemsLayout>
-        <CollectionView.ItemTemplate >
-                    <DataTemplate >
 
-                        <Frame BackgroundColor="Red" Padding="0,1,15,1"  BorderColor="Black">
-                <SwipeView>
-                    <SwipeView.RightItems>
-                                    <SwipeItems>
-                                        <!--<SwipeItemView
+            <RefreshView x:DataType="viewmodels:EnglishListWordsViewModel" Command="{Binding LoadProductCommand}" >
+
+                <CollectionView ItemsSource="{Binding AllWords}" x:Name="TaskItems"  Margin="10" SelectionMode="Single" SelectedItems="{Binding SelectedListItem}" >
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate >
+                        <DataTemplate >
+
+                            <Frame BackgroundColor="Red" Padding="0,1,15,1"  BorderColor="Black">
+                                <SwipeView>
+                                    <SwipeView.RightItems>
+                                        <SwipeItems>
+                                            <SwipeItemView
                                                 Command="{Binding BindingContext.GoToEditPageCommand, Source={x:Reference TaskItems}}"
-                                                CommandParameter="{Binding}"
+                                                CommandParameter="{Binding .}"
                                                 WidthRequest="64">
-                                            <Label
+                                                <Label
                                                 BackgroundColor="AliceBlue"
                                                 Text="Edit"
                                                 VerticalOptions="Center"
                                                 TextColor="Black" />
-                                        </SwipeItemView>-->
-                                        
-                                        <SwipeItemView
+                                            </SwipeItemView>
+
+                                            <SwipeItemView
                                                  Command="{Binding BindingContext.DeleteSelectedCommand, Source={x:Reference TaskItems}}"
                                                 CommandParameter="{Binding}" 
-                                                
                                                 >
-                                            <StackLayout x:DataType="models:EnglishWord">
-                                            <Label
+                                                
+                                                    <Label
                                                 VerticalOptions="CenterAndExpand"
                                                 BackgroundColor="Red"
                                                 Text="Delete"
                                                 TextColor="Black" />
-                                            </StackLayout>
-                                            
-                                        </SwipeItemView>
-                                        <!--<SwipeItemView 
+                                               
+
+                                            </SwipeItemView>
+                                            <!--<SwipeItemView 
                                                 Command="{Binding BindingContext.EditTaskCommand, Source={x:Reference TaskItems}}"
                                                 CommandParameter="{Binding}">
                                             <Frame
@@ -61,34 +63,33 @@
                                             </Frame>
                                         </SwipeItemView>-->
                                         </SwipeItems>
-                        </SwipeView.RightItems>
-                    <Grid >
-                        <Frame BorderColor="Black"  BackgroundColor="AntiqueWhite" x:DataType="models:EnglishWord">
-                            <StackLayout Orientation="Vertical" Margin="0"  >
-                                <Label Text="{Binding Category}" HorizontalOptions="Start" FontSize="Small" FontAttributes="Italic"  TextColor="Black" />
-                                <Frame BorderColor="Black">
-                                    <StackLayout Orientation="Horizontal" >
-                                        <Label Text="{Binding WordEnglish}" x:Name="WordEnglish" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="Medium" />
-                                        <Label Text="{Binding WordPolish}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
-                                        <Label Text="{Binding Pass}"  HorizontalOptions="EndAndExpand" FontAttributes="Bold" FontSize="Medium" />
-                                    </StackLayout>
-                                </Frame>
-                            </StackLayout>
-                        </Frame>
-                    </Grid>
-                </SwipeView>
-            </Frame>
-        </DataTemplate>
-    </CollectionView.ItemTemplate>
-</CollectionView>
-
+                                    </SwipeView.RightItems>
+                                    <Grid >
+                                        <Frame BorderColor="Black"  BackgroundColor="AntiqueWhite" x:DataType="models:EnglishWord">
+                                            <StackLayout Orientation="Vertical" Margin="0"  >
+                                                <Label Text="{Binding Category}" HorizontalOptions="Start" FontSize="Small" FontAttributes="Italic"  TextColor="Black" />
+                                                <Frame BorderColor="Black">
+                                                    <StackLayout Orientation="Horizontal" >
+                                                        <Label Text="{Binding WordEnglish}" x:Name="WordEnglish" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="Medium" />
+                                                        <Label Text="{Binding WordPolish}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+                                                        <Label Text="{Binding Pass}"  HorizontalOptions="EndAndExpand" FontAttributes="Bold" FontSize="Medium" />
+                                                    </StackLayout>
+                                                </Frame>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
+                                </SwipeView>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
 
             <StackLayout Orientation="Horizontal">
-                <Button  Margin="20"  ImageSource="icon_list.png" CornerRadius="90" Command="{Binding DeleteSelectedCommand}" />
-                <Button  HorizontalOptions="EndAndExpand" ImageSource="icon_plus.png" Margin="20" CornerRadius="90"/>
-            </StackLayout>
+                    <Button  Margin="20"  ImageSource="icon_list.png" CornerRadius="90" Command="{Binding DeleteSelectedCommand}" />
+                    <Button  HorizontalOptions="EndAndExpand" ImageSource="icon_plus.png" Margin="20" CornerRadius="90"/>
+                </StackLayout>
         </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>
 <!--<CollectionView ItemsSource="{Binding AllWords}" x:Name="WordsList"  SelectionChangedCommandParameter="{Binding SelectionChangedCommand}"  Margin="10" SelectionMode="Single" SelectedItem="{Binding SelectedListItem}" >

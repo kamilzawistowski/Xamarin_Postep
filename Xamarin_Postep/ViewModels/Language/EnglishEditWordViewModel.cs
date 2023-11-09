@@ -14,7 +14,6 @@ namespace Xamarin_Postep.ViewModels.Language
         public Command<EnglishWord> ItemTapped { get; }
 
         private EnglishWord englishWord;
-
         public EnglishWord EnglishWord
         {
             get
@@ -26,9 +25,23 @@ namespace Xamarin_Postep.ViewModels.Language
                 englishWord = value;
             }
         }
+
+        private string wordEnglish;
+        private string WordPolish;
+        public string WordEnglish
+        {
+            get { return wordEnglish; }
+            set
+            {
+                SetProperty(ref wordEnglish, value);
+            }
+
+        }
+
         public EnglishEditWordViewModel(EnglishWord model)
         {
-            
+            EnglishWord = model;
+            WordEnglish = model.WordEnglish;
         }
         public EnglishEditWordViewModel()
         {

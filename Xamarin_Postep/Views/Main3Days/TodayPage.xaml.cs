@@ -134,7 +134,7 @@ namespace Xamarin_Postep.Views.Main3Days
 
         private async void BtnAnimation_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-           
+            this.BackgroundColor = Color.Gray;
             //await RotateTo(360, 2000);
             this.Rotation = 0;
         }

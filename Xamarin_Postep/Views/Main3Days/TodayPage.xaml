@@ -60,7 +60,7 @@
                                                     <CheckBox 
                                                 
                                                         CheckedChanged="BtnAnimation_CheckedChanged"
-                                               IsChecked="{Binding IsComplete}"
+                                                        IsChecked="{Binding IsComplete}"
                                                />
                                                     <Image 
                                                Source="{Binding ImageIcon}"

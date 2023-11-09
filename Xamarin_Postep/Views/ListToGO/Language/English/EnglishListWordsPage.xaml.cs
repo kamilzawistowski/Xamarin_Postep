@@ -18,17 +18,21 @@ namespace Xamarin_Postep.Views.ListToGO.Language.English
 
         public EnglishListWordsPage()
         {
-            BindingContext = viewModel = new EnglishListWordsViewModel();
+            BindingContext = viewModel = new EnglishListWordsViewModel(Navigation);
             InitializeComponent();
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            viewModel.OnAppearing();
+        }
 
-        
 
         //private async void GoToEditPage(object sender, EventArgs e)
         //{
         //    await Navigation.PushAsync(new EnglishEditWordPage((EnglishWord)WordsList.SelectedItem));
         //}
 
-        
+
     }
 }

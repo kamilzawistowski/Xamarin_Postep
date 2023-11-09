@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Xamarin_Postep.Views.ListToGO.Language.English.EnglishEditWordPage">
+             x:Class="Xamarin_Postep.Views.ListToGO.Language.English.EnglishEditWordPage"
+             xmlns:models="clr-namespace:Xamarin_Postep.Models">
     <ContentPage.BindingContext>
         <StackLayout>
             <Picker/>
-            <Label/>
-            <Button/>
+            <Label x:Name="Label22" Text="{Binding WordEnglish,Mode=TwoWay}" TextColor="Black"/>
+            <Label Text="{Binding WordPolish,Mode=TwoWay}"/>
+            <Button Text="Zmien" Command="{Binding EditCommand}" BackgroundColor="Black"/>
         </StackLayout>
     </ContentPage.BindingContext>
 </ContentPage>

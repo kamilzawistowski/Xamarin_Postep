@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Prism.Navigation;
 using Xamarin.Forms;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
@@ -11,7 +10,7 @@ namespace Xamarin_Postep.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        protected INavigationService _navigationService { get; set; }
+        protected INavigation NavigationService { get; set; }
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
 
         bool isBusy = false;

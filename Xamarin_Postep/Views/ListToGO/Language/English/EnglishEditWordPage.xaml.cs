@@ -25,8 +25,10 @@ namespace Xamarin_Postep.Views.ListToGO.Language.English
         }
         public EnglishEditWordPage(EnglishWord model)
         {
-			BindingContext = viewModel = new EnglishEditWordViewModel(model);
             InitializeComponent();
+
+            BindingContext = viewModel = new EnglishEditWordViewModel(model);
+
         }
 
     }
