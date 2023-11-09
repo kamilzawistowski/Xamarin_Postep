@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using Microcharts;
 using Xamarin.Forms;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
@@ -13,8 +15,12 @@ namespace Xamarin_Postep.ViewModels.Language
     {
         private string polishWordForm;
         private string englishWordForCheck;
+        private string englishWordTimeTest;
+        private int pass;
         public Command BackButton { get; set; }
         public Command CheckWordCommand { get; set; }
+        public Command KnowAnswerCommand { get; set; }
+        public Command DontKnowAnswerCommand { get; set; }
 
         private List<string> options;
         public List<string> Options
@@ -28,7 +34,25 @@ namespace Xamarin_Postep.ViewModels.Language
                 }
             }
         }
-
+        public int Pass
+        {
+            get { return pass; }
+            set
+            {
+                    SetProperty(ref pass, value);
+            }
+        }
+        public string EnglishWordTimeTest
+        {
+            get { return englishWordForCheck; }
+            set
+            {
+                if (englishWordForCheck != value)
+                {
+                    SetProperty(ref englishWordForCheck, value);
+                }
+            }
+        }
         public string EnglishWordForCheck
         {
             get { return englishWordForCheck; }
@@ -64,12 +88,16 @@ namespace Xamarin_Postep.ViewModels.Language
 
         public int numberOfIteration = 0;
 
+
         public EnglishTestViewModel(string category)
         {
             dataStoreEnglishWord = DependencyService.Get<IDataStore<EnglishWord>>();
             dataStoreEnglishCategory = DependencyService.Get<IDataStore<EnglishCategory>>();
             BackButton = new Command(BackToPreviousPage);
             CheckWordCommand = new Command(NextWordAndCheck, ValidateSave);
+            CheckWordCommand = new Command(NextWordAndCheck);
+            KnowAnswerCommand = new Command(TimeTestKnowAnswer);
+            DontKnowAnswerCommand = new Command(TimeTestDONTKnowAnswer);
 
             this.PropertyChanged +=
                (_, __) => CheckWordCommand.ChangeCanExecute();
@@ -85,8 +113,49 @@ namespace Xamarin_Postep.ViewModels.Language
 
             if (AllWords.Count > 0)
 
-                PolishWordForm = AllWords[numberOfIteration].WordPolish;
+            PolishWordForm = AllWords[numberOfIteration].WordPolish;
+            EnglishWordTimeTest = AllWords[numberOfIteration].WordEnglish;
+            Pass = AllWords[numberOfIteration].Pass;
         }
+
+        public void TimeTestKnowAnswer()
+        {
+            
+                AllWords[numberOfIteration].Pass += 1;
+                dataStoreEnglishWord.UpdateItemAsync(AllWords[numberOfIteration]);
+            
+            var abc = dataStoreEnglishWord.GetItemsAsync().Result.ToList();
+
+            numberOfIteration++;
+
+            if (numberOfIteration == AllWords.Count)
+            {
+                Shell.Current.GoToAsync(nameof(EnglishMainPage));
+                numberOfIteration = 0;
+                return;
+            }
+            this.PolishWordForm = AllWords[numberOfIteration].WordPolish;
+            this.EnglishWordTimeTest = AllWords[numberOfIteration].WordEnglish;
+            this.Pass = AllWords[numberOfIteration].Pass;
+        }
+
+        public void TimeTestDONTKnowAnswer()
+        {
+            var abc = dataStoreEnglishWord.GetItemsAsync().Result.ToList();
+
+            numberOfIteration++;
+
+            if (numberOfIteration == AllWords.Count)
+            {
+                Shell.Current.GoToAsync(nameof(EnglishMainPage));
+                numberOfIteration = 0;
+                return;
+            }
+            this.PolishWordForm = AllWords[numberOfIteration].WordPolish;
+            this.EnglishWordTimeTest = AllWords[numberOfIteration].WordEnglish;
+            this.Pass = AllWords[numberOfIteration].Pass;
+        }
+
 
         public void NextWordAndCheck()
         {
@@ -98,7 +167,7 @@ namespace Xamarin_Postep.ViewModels.Language
             var abc = dataStoreEnglishWord.GetItemsAsync().Result.ToList();
 
             numberOfIteration++;
-            this.EnglishWordForCheck = "";
+           
             if (numberOfIteration == AllWords.Count)
             {
                 Shell.Current.GoToAsync(nameof(EnglishMainPage));
@@ -106,7 +175,8 @@ namespace Xamarin_Postep.ViewModels.Language
                 return;
             }
             this.PolishWordForm = AllWords[numberOfIteration].WordPolish;
-
+            this.EnglishWordTimeTest = AllWords[numberOfIteration].WordEnglish;
+            this.Pass = AllWords[numberOfIteration].Pass;
         }
 
         public async void BackToPreviousPage()

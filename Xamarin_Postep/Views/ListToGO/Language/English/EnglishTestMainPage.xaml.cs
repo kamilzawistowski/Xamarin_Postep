@@ -36,9 +36,16 @@ namespace Xamarin_Postep.Views.ListToGO.Language.English
 
         }
 
-        private void TimeTest(object sender, EventArgs e)
+        private async void TimeTest(object sender, EventArgs e)
         {
-
+            if (categoryCollection.SelectedItem != null)
+            {
+                await Navigation.PushAsync(new EnglishTimeTestPage(categoryCollection.SelectedItem.ToString() != null ? categoryCollection.SelectedItem.ToString() : null));
+            }
+            else
+                await Navigation.PushAsync(new EnglishTimeTestPage());
+        
         }
+    
     }
 }

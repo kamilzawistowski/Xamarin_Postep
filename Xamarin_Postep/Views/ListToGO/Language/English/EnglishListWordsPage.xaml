@@ -34,7 +34,8 @@
                                         <SwipeItemView
                                                  Command="{Binding BindingContext.DeleteSelectedCommand, Source={x:Reference TaskItems}}"
                                                 CommandParameter="{Binding}" 
-                                                WidthRequest="64" HeightRequest="64">
+                                                
+                                                >
                                             <StackLayout x:DataType="models:EnglishWord">
                                             <Label
                                                 VerticalOptions="CenterAndExpand"
@@ -69,6 +70,7 @@
                                     <StackLayout Orientation="Horizontal" >
                                         <Label Text="{Binding WordEnglish}" x:Name="WordEnglish" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="Medium" />
                                         <Label Text="{Binding WordPolish}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+                                        <Label Text="{Binding Pass}"  HorizontalOptions="EndAndExpand" FontAttributes="Bold" FontSize="Medium" />
                                     </StackLayout>
                                 </Frame>
                             </StackLayout>

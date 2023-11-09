@@ -41,8 +41,7 @@ namespace Xamarin_Postep.ViewModels.Quest
             {
                 dataStore.DeleteItemAsync(item.ID);
             }
-            
-            
+          
         }
         
     }
