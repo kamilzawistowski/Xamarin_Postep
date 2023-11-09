@@ -33,8 +33,13 @@ namespace Xamarin_Postep.Views.ListToGO.Language.English
 
         }
 
-        
-
-
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            if (viewModel.WordEnglish != null)
+            {
+                EnglishWordEntry.Text = string.Empty;
+                PolishWordEntry.Text = string.Empty;
+            }
+        }
     }
 }

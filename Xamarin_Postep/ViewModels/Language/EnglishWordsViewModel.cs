@@ -78,7 +78,7 @@ namespace Xamarin_Postep.ViewModels.Language
         }
         public async void OnAddItem(EnglishWord word)
         {
-            if (word.ID < 0)
+            if (word.ID > 0)
             {
                 dataStoreEnglishWord.UpdateItemAsync(word);
                 await Shell.Current.GoToAsync("..");
@@ -87,6 +87,7 @@ namespace Xamarin_Postep.ViewModels.Language
             {
                 dataStoreEnglishWord.AddItemAsync(new Models.EnglishWord() { DateTime = DateTime.Today, WordEnglish = WordEnglish.WordEnglish, WordPolish = WordEnglish.WordPolish, Category = WordEnglish.Category });
             }
+            
         }
 
         public List<string> GenerateListOfTheme()

@@ -73,7 +73,7 @@ namespace Xamarin_Postep.ViewModels.Calendar
         public void GetSummary()
         {
             PrzychodSum = 0;
-            var a = App.Database.Summary.Where(x => x.Date.Month == selectedDate.Month);
+            var a = App.Database.Summary.Where(x => x.Date.Day == selectedDate.Day);
             var b = a.Where(x => x.Type == "Przychod");
             foreach (var item in b)
             {
@@ -81,7 +81,7 @@ namespace Xamarin_Postep.ViewModels.Calendar
             }
             PrzychodSum += 0;
             WydatekSum = 0;
-            var a2 = App.Database.Summary.Where(x => x.Date.Month == selectedDate.Month);
+            var a2 = App.Database.Summary.Where(x => x.Date.Day == selectedDate.Day);
             var b2 = a.Where(x => x.Type == "Wydatek");
             foreach (var item in b2)
             {
