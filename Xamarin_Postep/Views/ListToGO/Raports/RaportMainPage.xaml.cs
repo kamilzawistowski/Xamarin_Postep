@@ -123,5 +123,33 @@ namespace Xamarin_Postep.Views.ListToGO.Raports
 
         }
 
+        private async void Button_GenerateEnglishWords(object sender, EventArgs e)  //GOTO 
+        {
+            var fileName = PdfServiceHandler.GetPdfDocument();
+
+            await DisplayAlert("Utworzono plik", $"{fileName}\n Znajduje sie /storage/emulated/0/Documents/Raports", "OK");
+
+            bool answer = await DisplayAlert("Wyślij", "Czy chcesz wysłać plik emailem?", "Yes", "No");
+
+            if (answer == true)
+            {
+                string path2 = System.IO.Path.Combine("/storage/emulated/0", "Documents/Raports", fileName);
+
+                var emailMessenger = CrossMessaging.Current.EmailMessenger;
+                if (emailMessenger.CanSendEmail)
+                {
+
+                    var email = new EmailMessageBuilder()
+                      .To("kamil60702@gmail.com")
+                      //.Cc("kamil60702@gmail.com")  // Nikt nie wie kto jeszcze dostal ta wiadomosc
+                      .Subject("Raport Ogolny")
+                      .Body("")
+                      .WithAttachment(path2, "pdf")
+                      .Build();
+
+                    emailMessenger.SendEmail(email);
+                }
+            }
+        }
     }
 }
