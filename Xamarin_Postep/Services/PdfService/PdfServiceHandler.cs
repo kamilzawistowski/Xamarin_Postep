@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using ProgramPostep.Services.EmailNotifyService;
 using ProgramPostep.Services.EmailNotifyService.T.PL;
@@ -17,23 +18,42 @@ using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat;
 using Xamarin_Postep;
 using Xamarin_Postep.Services.PdfService;
+using Xamarin_Postep.Services.PdfService.RaportGeneral;
 
 public static class PdfServiceHandler
 {
     
 
-    public static string GetPdfDocument()
+    public static string GetPdfDocument(string DocumentType)
     {
-        string fileName = $"Raport[{DateTime.Now.Day}-{DateTime.Now.Month}-{DateTime.Now.Year}-{DateTime.Now.Minute}-{DateTime.Now.Second}].pdf";
+        if (DocumentType == "EnglishTest")
+        {
+            string fileName = $"Test_Angielski_[{DateTime.Now.Day}-{DateTime.Now.Month}-{DateTime.Now.Year}-{DateTime.Now.Minute}-{DateTime.Now.Second}].pdf";
 
-        var filePath = GetFilePath(fileName);
+            var filePath = GetFilePath(fileName);
 
-        var document = new EnglishWordsDocument(new EnglishWordsRaportComponent("Theme"));
+            var document = new EnglishWordsDocument(new EnglishWordsTestComponent("Test Angielski"));
 
-        if(filePath != null)
-        document.GeneratePdf(filePath);
+            if (filePath != null)
+                document.GeneratePdf(filePath);
 
-        return fileName;
+            return fileName;
+        }
+        else if(DocumentType == "RaportTydzien")
+        {
+
+            string fileName = $"Raport[{DateTime.Now.Day}-{DateTime.Now.Month}-{DateTime.Now.Year}-{DateTime.Now.Minute}-{DateTime.Now.Second}].pdf";
+
+            var filePath = GetFilePath(fileName);
+
+            var document = new RaportGeneralDocument(new RaportHeaderComponent(),new RaportGeneralHabitComponent(),new RaportGeneralSummaryComponent());
+
+            if (filePath != null)
+                document.GeneratePdf(filePath);
+
+            return fileName;
+        }
+        return "";
     }
 
 

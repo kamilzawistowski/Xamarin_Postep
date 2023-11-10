@@ -1,20 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using QuestPDF.Infrastructure;
-using QuestPDF.Drawing;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
 
-namespace Xamarin_Postep.Services.PdfService
+namespace Xamarin_Postep.Services.PdfService.RaportGeneral
 {
-    class EnglishWordsDocument : IDocument
+    class RaportGeneralDocument : IDocument
     {
-        private readonly EnglishWordsRaportComponent content;
+        private readonly RaportGeneralHabitComponent habitComponent;
+        private readonly RaportGeneralSummaryComponent summaryComponent;
+        private readonly RaportHeaderComponent raportHeaderComponent;
 
-        public EnglishWordsDocument(EnglishWordsRaportComponent content)
+        public RaportGeneralDocument(
+            RaportHeaderComponent raportHeaderComponent,
+            RaportGeneralHabitComponent habitComponent,
+            RaportGeneralSummaryComponent summaryComponent
+            
+            )
         {
-            this.content = content;
+            this.habitComponent = habitComponent;
+            this.summaryComponent = summaryComponent;
+            this.raportHeaderComponent = raportHeaderComponent;
         }
 
         public void Compose(IDocumentContainer container)
@@ -25,29 +33,12 @@ namespace Xamarin_Postep.Services.PdfService
                     page.Margin(40);
 
                     page.Size(PageSizes.A4);
-
-                    page.Content().Element(content.Compose);
+                    //page.Header().Element(raportHeaderComponent.Compose);
+                    //page.Content().Element(habitComponent.Compose);
+                    page.Content().Element(summaryComponent.Compose);
                     page.Footer().Element(ComposeFooter);
                 });
         }
-
-
-
-        
-
-        private void ComposeContent(IContainer container)
-        {
-            container.Column(column =>
-            {
-                column.Item().PaddingVertical(80).Text("First");
-                column.Item().PageBreak();
-                column.Item().PaddingVertical(80).Text("Second");
-                column.Item().PageBreak();
-                column.Item().PaddingVertical(80).Text("Third");
-                column.Item().PageBreak();
-            });
-        }
-
         private void ComposeFooter(IContainer container)
         {
             container.Background(Colors.Grey.Lighten3).Column(column =>
@@ -60,7 +51,7 @@ namespace Xamarin_Postep.Services.PdfService
                         x.Span(" / ");
                         x.TotalPages();
                     });
-                    row.RelativeItem().AlignRight().Text("Footer for header");
+                    row.RelativeItem().AlignRight().Text("Raport Program Postep ");
                 });
 
                 column.Item().SkipOnce().Background(Colors.Grey.Lighten3).Row(row =>
@@ -71,13 +62,12 @@ namespace Xamarin_Postep.Services.PdfService
                         x.Span(" / ");
                         x.TotalPages();
                     });
-                    row.RelativeItem().AlignRight().Text("Footer for every page except header");
+                    row.RelativeItem().AlignRight().Text("LECIMY ! ");
                 });
             });
         }
 
         public DocumentMetadata GetMetadata() => DocumentMetadata.Default;
         public DocumentSettings GetSettings() => DocumentSettings.Default;
-
     }
 }

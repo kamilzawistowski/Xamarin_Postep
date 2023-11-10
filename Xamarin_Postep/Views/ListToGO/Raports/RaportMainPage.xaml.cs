@@ -33,7 +33,7 @@ namespace Xamarin_Postep.Views.ListToGO.Raports
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            var fileName = PdfServiceHandler.GetPdfDocument();
+            var fileName = PdfServiceHandler.GetPdfDocument("RaportTydzien");
 
             await DisplayAlert ("Utworzono plik", $"{fileName}\n Znajduje sie /storage/emulated/0/Documents/Raports", "OK");
 
@@ -125,7 +125,7 @@ namespace Xamarin_Postep.Views.ListToGO.Raports
 
         private async void Button_GenerateEnglishWords(object sender, EventArgs e)  //GOTO 
         {
-            var fileName = PdfServiceHandler.GetPdfDocument();
+            var fileName = PdfServiceHandler.GetPdfDocument("EnglishTest");
 
             await DisplayAlert("Utworzono plik", $"{fileName}\n Znajduje sie /storage/emulated/0/Documents/Raports", "OK");
 

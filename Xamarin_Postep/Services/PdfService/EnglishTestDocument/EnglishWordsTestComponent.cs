@@ -8,14 +8,14 @@ using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
 using Xamarin_Postep.Services.PdfService;
 
-public class EnglishWordsRaportComponent : IComponent
+public class EnglishWordsTestComponent : IComponent
 {
      
     private string Title { get; }
     private List<EnglishWord> Words { get; }
 
     IDataStore<EnglishWord> dataStore;
-    public EnglishWordsRaportComponent(string title)
+    public EnglishWordsTestComponent(string title)
     {
         dataStore = DependencyService.Get<IDataStore<EnglishWord>>();
         Title = title;
@@ -38,7 +38,6 @@ public class EnglishWordsRaportComponent : IComponent
                     columns.ConstantColumn(85);
                    
                 });
-                table.Cell().ColumnSpan(6).LabelCell("TEST Z JEZYKA ANGIELSKIEGO WSZYSTKIE SLOWKA");
                 foreach (var item in Words)
                 {
                     table.Cell().LabelCell(item.WordPolish);
@@ -49,6 +48,7 @@ public class EnglishWordsRaportComponent : IComponent
     public IContainer Block(IContainer container)
     {
         return container
+            .Background("White")
             .Border(1)
             .ShowOnce()
             //.MinWidth(50)
