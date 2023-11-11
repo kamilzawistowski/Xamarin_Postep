@@ -11,7 +11,7 @@ using Xamarin_Postep.Models;
 
 namespace Xamarin_Postep.DataBase.Language.English
 {
-    class EnglishWordRepository : IDataStore<EnglishWord>
+    class EnglishWordRepository : IDataStore<EnglishWord>, IRepozytory
     {
         public async Task<bool> AddItemAsync(EnglishWord item)
         {

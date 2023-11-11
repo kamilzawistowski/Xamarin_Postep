@@ -12,7 +12,7 @@ using Xamarin_Postep.Models;
 
 namespace Xamarin_Postep.DataBase.Language.English
 {
-    class EnglishCategoryRepository : IDataStore<EnglishCategory>
+    class EnglishCategoryRepository : IDataStore<EnglishCategory>, IRepozytory
     {
         public async Task<bool> AddItemAsync(EnglishCategory item)
         {

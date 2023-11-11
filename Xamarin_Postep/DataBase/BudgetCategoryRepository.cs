@@ -12,7 +12,7 @@ using Xamarin_Postep.Models;
 [assembly: Xamarin.Forms.Dependency(typeof(BudgetCategoryRepository))]
 namespace Xamarin_Postep.DataBase
 {
-    internal class BudgetCategoryRepository : IDataStore<BudgetCategory>
+    internal class BudgetCategoryRepository : IDataStore<BudgetCategory>, IRepozytory
     {
         public async Task<bool> AddItemAsync(BudgetCategory item)
         {

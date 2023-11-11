@@ -28,7 +28,7 @@ namespace Xamarin_Postep.ViewModels.Habit
             }
         }
 
-        private IEnumerable<Models.Habit> habitstest;
+        private IEnumerable<Models.HabitRepository> habitstest;
         
 
         private HabitIcon selectedIcon;
@@ -70,7 +70,7 @@ namespace Xamarin_Postep.ViewModels.Habit
             }
         }
 
-        IDataStore<Models.Habit> dataStore;
+        IDataStore<Models.HabitRepository> dataStore;
 
         private bool ValidateSave()
         {
@@ -79,7 +79,7 @@ namespace Xamarin_Postep.ViewModels.Habit
 
         public NewHabitViewModel()
         {
-            dataStore = DependencyService.Get<IDataStore<Models.Habit>>();
+            dataStore = DependencyService.Get<IDataStore<Models.HabitRepository>>();
             NewHabitCommand = new Command(AddNewHabit, ValidateSave);
             habits = new ObservableCollection<HabitIcon>();
             habitstest = dataStore.GetItemsAsync().Result;
@@ -142,7 +142,7 @@ namespace Xamarin_Postep.ViewModels.Habit
             }
             for (int i = 0; i <= daysRemaining; i++)
             {
-                dataStore.AddItemAsync(new Models.Habit() { ImagePath = selectedIcon.IconHabit.ToString().Substring(6), Name = HabitName, DateTime = today.AddDays(i),IdGroup = idForLast });
+                dataStore.AddItemAsync(new Models.HabitRepository() { ImagePath = selectedIcon.IconHabit.ToString().Substring(6), Name = HabitName, DateTime = today.AddDays(i),IdGroup = idForLast });
             }
         }
 

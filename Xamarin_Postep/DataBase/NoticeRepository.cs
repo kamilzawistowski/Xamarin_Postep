@@ -12,7 +12,7 @@ using Xamarin_Postep.Models;
 [assembly: Xamarin.Forms.Dependency(typeof(NoticeRepository))]
 namespace Xamarin_Postep.DataBase
 {
-    class NoticeRepository : IDataStore<Models.Notice>
+    class NoticeRepository : IDataStore<Models.Notice>, IRepozytory
     {
         public async Task<bool> AddItemAsync(Notice item)
         {

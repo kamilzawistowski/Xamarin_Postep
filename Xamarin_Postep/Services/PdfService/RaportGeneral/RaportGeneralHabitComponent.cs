@@ -12,11 +12,15 @@ namespace Xamarin_Postep.Services.PdfService.RaportGeneral
 {
     class RaportGeneralHabitComponent : IComponent
     {
-        IDataStore<Models.Habit> dataStore;
-        private List<IGrouping<string,Habit>> Habits { get; }
+        IDataStore<Models.HabitRepository> dataStore;
+
+
+        private List<IGrouping<string,HabitRepository>> Habits { get; }
+
+        public HabitRepository HabitSum { get; set; }
         public RaportGeneralHabitComponent()
         {
-            dataStore = DependencyService.Get<IDataStore<Models.Habit>>();
+            dataStore = DependencyService.Get<IDataStore<Models.HabitRepository>>();
             Habits = dataStore.GetItemsAsync().Result.GroupBy(x => x.Name).ToList();
         }
 
@@ -35,9 +39,9 @@ namespace Xamarin_Postep.Services.PdfService.RaportGeneral
                     {
                         foreach (var item2 in item)
                         {
-                            table.Cell().LabelCell(item.Category);
-                            table.Cell().LabelCell(item.Date.ToString());
-                            table.Cell().LabelCell(item.Date.ToString());
+                            if(HabitSum.Name != "")
+                            HabitSum.Name = item2.Name;
+
                         }
                     }
 

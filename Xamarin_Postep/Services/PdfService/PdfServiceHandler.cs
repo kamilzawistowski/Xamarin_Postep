@@ -17,7 +17,9 @@ using Xamarin.Essentials;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat;
 using Xamarin_Postep;
+using Xamarin_Postep.Models;
 using Xamarin_Postep.Services.PdfService;
+using Xamarin_Postep.Services.PdfService.DataSourceServices;
 using Xamarin_Postep.Services.PdfService.RaportGeneral;
 
 public static class PdfServiceHandler
@@ -26,6 +28,7 @@ public static class PdfServiceHandler
 
     public static string GetPdfDocument(string DocumentType)
     {
+        var pdfService = new HabitPDFSourceDataService<HabitRepository>();
         if (DocumentType == "EnglishTest")
         {
             string fileName = $"Test_Angielski_[{DateTime.Now.Day}-{DateTime.Now.Month}-{DateTime.Now.Year}-{DateTime.Now.Minute}-{DateTime.Now.Second}].pdf";

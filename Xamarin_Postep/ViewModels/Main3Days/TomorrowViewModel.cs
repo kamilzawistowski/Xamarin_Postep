@@ -98,15 +98,15 @@ namespace Xamarin_Postep.ViewModels.Main3Days
         }
 
 
-        private ObservableCollection<Models.Habit> habitList;
+        private ObservableCollection<Models.HabitRepository> habitList;
 
         //private readonly IDataStore<InscriptionRepository> inscriptionRepository1;
 
-        public ObservableCollection<Models.Habit> HabitList
+        public ObservableCollection<Models.HabitRepository> HabitList
         {
             get
             {
-                habitList = new ObservableCollection<Models.Habit>(App.Database.Habit
+                habitList = new ObservableCollection<Models.HabitRepository>(App.Database.Habit
                     .Where(x => x.DateTime.Day == DateForYesterday.Day)
                     .Where(x => x.DateTime.Month == DateForYesterday.Month)
                     .ToList());
@@ -144,7 +144,7 @@ namespace Xamarin_Postep.ViewModels.Main3Days
             DateTimeNowNumberAndMonth = DateForYesterday.Day + " " + Converters.ConvertMonthToPolandNames(DateForYesterday.Month);
         }
 
-        public ObservableCollection<Models.Habit> GetPhotosFromIconPath(ObservableCollection<Models.Habit> Habits)
+        public ObservableCollection<Models.HabitRepository> GetPhotosFromIconPath(ObservableCollection<Models.HabitRepository> Habits)
         {
             foreach (var item in Habits)
             {

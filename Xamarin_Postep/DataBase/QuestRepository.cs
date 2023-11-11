@@ -13,7 +13,7 @@ using Xamarin_Postep.Services;
 [assembly: Dependency(typeof(QuestRepository))]
 namespace Xamarin_Postep.DataBase
 {
-    class QuestRepository : IDataStore<Quest>
+    class QuestRepository : IDataStore<Quest>, IRepozytory
     {
         public async Task<bool> AddItemAsync(Quest item)
         {

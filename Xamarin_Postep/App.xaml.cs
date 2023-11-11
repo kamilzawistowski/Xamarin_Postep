@@ -41,7 +41,7 @@ namespace Xamarin_Postep
             DependencyService.Register<IDataStore<Models.Notice>>();
             DependencyService.Register<IDataStore<Summary>>();
             DependencyService.Register<IDataStore<Quest>>();
-            DependencyService.Register<IDataStore<Habit>>();
+            DependencyService.Register<IDataStore<Models.HabitRepository>>();
             DependencyService.Register<IDataStore<EnglishWord>>();
             DependencyService.Register<IDataStore<EnglishCategory>>();
             DependencyService.Register<IDataStore<BudgetCategory>>();

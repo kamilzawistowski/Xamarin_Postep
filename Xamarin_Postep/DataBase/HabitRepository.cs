@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -9,12 +10,12 @@ using Xamarin_Postep.DataBase;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
 
-[assembly: Xamarin.Forms.Dependency(typeof(HabitRepository))]
+[assembly: Xamarin.Forms.DependencyAttribute(typeof(Xamarin_Postep.DataBase.TType))]
 namespace Xamarin_Postep.DataBase
 {
-    class HabitRepository : IDataStore<Habit>
+    class TType : IDataStore<Models.Habit> , IRepozytory
     {
-        public async Task<bool> AddItemAsync(Habit item)
+        public async Task<bool> AddItemAsync(Models.Habit item)
         {
             if (item != null)
             {
@@ -48,18 +49,21 @@ namespace Xamarin_Postep.DataBase
             }
         }
 
-     
+        public IEnumerator<Models.HabitRepository> GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
 
-        public Task<Habit> GetItemAsync(int id)
+        public Task<Models.HabitRepository> GetItemAsync(int id)
             => App.Database.Habit.FirstOrDefaultAsync(c => c.ID == id);
 
 
-        public async Task<IEnumerable<Habit>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Models.HabitRepository>> GetItemsAsync(bool forceRefresh = false)
             => await App.Database.Habit.ToListAsync();
 
 
 
-        public async Task<bool> UpdateItemAsync(Habit item)
+        public async Task<bool> UpdateItemAsync(Models.HabitRepository item)
         {
             if (item != null)
             {
@@ -70,5 +74,6 @@ namespace Xamarin_Postep.DataBase
             else
                 return false;
         }
+
     }
 }

@@ -13,7 +13,7 @@ using Xamarin.Forms;
 [assembly: Xamarin.Forms.Dependency(typeof(BudgetRepository))]
 namespace Xamarin_Postep.DataBase
 {
-    class BudgetRepository : IDataStore<Summary>
+    class BudgetRepository : IDataStore<Summary>, IRepozytory
     {
         public async Task<bool> AddItemAsync(Summary item)
         {

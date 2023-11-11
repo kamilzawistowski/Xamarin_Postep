@@ -17,12 +17,11 @@ namespace Xamarin_Postep.Services.PdfService.RaportGeneral
             RaportHeaderComponent raportHeaderComponent,
             RaportGeneralHabitComponent habitComponent,
             RaportGeneralSummaryComponent summaryComponent
-            
             )
         {
+            this.raportHeaderComponent = raportHeaderComponent;
             this.habitComponent = habitComponent;
             this.summaryComponent = summaryComponent;
-            this.raportHeaderComponent = raportHeaderComponent;
         }
 
         public void Compose(IDocumentContainer container)
@@ -33,7 +32,7 @@ namespace Xamarin_Postep.Services.PdfService.RaportGeneral
                     page.Margin(40);
 
                     page.Size(PageSizes.A4);
-                    //page.Header().Element(raportHeaderComponent.Compose);
+                    page.Header().Element(raportHeaderComponent.Compose);
                     //page.Content().Element(habitComponent.Compose);
                     page.Content().Element(summaryComponent.Compose);
                     page.Footer().Element(ComposeFooter);

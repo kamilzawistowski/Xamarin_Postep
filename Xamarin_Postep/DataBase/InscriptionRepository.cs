@@ -13,7 +13,7 @@ using Xamarin_Postep.DataBase;
 [assembly: Dependency(typeof(InscriptionRepository))]
 namespace Xamarin_Postep.DataBase
 {
-    public class InscriptionRepository : IDataStore<Inscription>
+    public class InscriptionRepository : IDataStore<Inscription>, IRepozytory
     {
         public async Task<bool> AddItemAsync(Inscription item)
         {
