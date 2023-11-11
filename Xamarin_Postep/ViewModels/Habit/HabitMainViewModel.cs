@@ -19,7 +19,7 @@ namespace Xamarin_Postep.ViewModels.Habit
         private ObservableCollection<Models.HabitResult> habits;
         public ObservableCollection<Models.HabitResult> Habits
         {
-            get => GroupHabits(new ObservableCollection<Models.HabitRepository>(dataStore.GetItemsAsync().Result));
+            get => GroupHabits(new ObservableCollection<Models.Habit>(dataStore.GetItemsAsync().Result));
             set
             {
                 SetProperty(ref habits, value);
@@ -42,11 +42,11 @@ namespace Xamarin_Postep.ViewModels.Habit
             return selectedItem != null;
         }
 
-        IDataStore<Models.HabitRepository> dataStore;
+        IDataStore<Models.Habit> dataStore;
         public HabitMainViewModel()
         {
             DeleteTask = new Command(OnDeleteBtnClick, ValidateSave);
-            dataStore = DependencyService.Get<IDataStore<Models.HabitRepository>>();
+            dataStore = DependencyService.Get<IDataStore<Models.Habit>>();
             var abc = dataStore.GetItemsAsync();
 
             this.PropertyChanged +=
@@ -63,7 +63,7 @@ namespace Xamarin_Postep.ViewModels.Habit
 
         }
 
-        public ObservableCollection<Models.HabitRepository> GetPhotosFromIconPath(ObservableCollection<Models.HabitRepository> Habits)
+        public ObservableCollection<Models.Habit> GetPhotosFromIconPath(ObservableCollection<Models.Habit> Habits)
         {
             foreach (var item in Habits)
             {
@@ -74,7 +74,7 @@ namespace Xamarin_Postep.ViewModels.Habit
 
 
 
-        public ObservableCollection<Models.HabitResult> GroupHabits(ObservableCollection<Models.HabitRepository> Habits)
+        public ObservableCollection<Models.HabitResult> GroupHabits(ObservableCollection<Models.Habit> Habits)
         {
             int HabitPass = 0;
             int HabitPassToToday = 0;
@@ -83,7 +83,7 @@ namespace Xamarin_Postep.ViewModels.Habit
             string ImageIcon = "";
             string Name = "";
             ObservableCollection<Models.HabitResult> HabitsResult = new ObservableCollection<Models.HabitResult>();
-            List<IGrouping<int,Models.HabitRepository>> HabitsResult2 = new List<IGrouping<int, Models.HabitRepository>>(dataStore.GetItemsAsync().Result.GroupBy(x => x.IdGroup).ToList());
+            List<IGrouping<int,Models.Habit>> HabitsResult2 = new List<IGrouping<int, Models.Habit>>(dataStore.GetItemsAsync().Result.GroupBy(x => x.IdGroup).ToList());
             foreach (var group in HabitsResult2)
             {
                 foreach (var item in group)

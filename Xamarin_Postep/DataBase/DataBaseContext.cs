@@ -25,7 +25,7 @@ namespace Xamarin_Postep.DataBase
         
         public DbSet<EnglishWord> EnglishWord { get; set; }
         public DbSet<EnglishCategory> EnglishCategory { get; set; }
-        public DbSet<Models.HabitRepository> Habit { get; set; }
+        public DbSet<Models.Habit> Habit { get; set; }
         public DbSet<HabitResult> HabitResult { get; set; }
         
         public DbSet<BudgetCategory> BudgetCategory { get; set; }
@@ -45,7 +45,7 @@ namespace Xamarin_Postep.DataBase
             modelBuilder.Entity<Quest>()
                 .HasKey(x => x.ID);
 
-            modelBuilder.Entity<Models.HabitRepository>()
+            modelBuilder.Entity<Models.Habit>()
             .Ignore(x => x.ImageIcon);
 
             modelBuilder.Entity<HabitResult>()

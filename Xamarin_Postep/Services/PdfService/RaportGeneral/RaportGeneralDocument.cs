@@ -11,18 +11,24 @@ namespace Xamarin_Postep.Services.PdfService.RaportGeneral
     {
         private readonly RaportGeneralHabitComponent habitComponent;
         private readonly RaportGeneralSummaryComponent summaryComponent;
+        private readonly RaportGeneralQuestComponent questComponent;
         private readonly RaportHeaderComponent raportHeaderComponent;
 
         public RaportGeneralDocument(
             RaportHeaderComponent raportHeaderComponent,
             RaportGeneralHabitComponent habitComponent,
-            RaportGeneralSummaryComponent summaryComponent
+            RaportGeneralSummaryComponent summaryComponent,
+            RaportGeneralQuestComponent questComponent
             )
         {
             this.raportHeaderComponent = raportHeaderComponent;
             this.habitComponent = habitComponent;
             this.summaryComponent = summaryComponent;
+            this.questComponent = questComponent;
         }
+
+        public DocumentMetadata GetMetadata() => DocumentMetadata.Default;
+        public DocumentSettings GetSettings() => DocumentSettings.Default;
 
         public void Compose(IDocumentContainer container)
         {
@@ -32,12 +38,31 @@ namespace Xamarin_Postep.Services.PdfService.RaportGeneral
                     page.Margin(40);
 
                     page.Size(PageSizes.A4);
-                    page.Header().Element(raportHeaderComponent.Compose);
-                    //page.Content().Element(habitComponent.Compose);
-                    page.Content().Element(summaryComponent.Compose);
+                    page.Content().Element(ComposeContent);
                     page.Footer().Element(ComposeFooter);
                 });
         }
+
+        void ComposeContent(IContainer container)
+        {
+            container.PaddingVertical(40).Column(column =>
+            {
+                column.Spacing(5);
+                //column.Item().Row(row =>
+                //{
+                //    row.RelativeItem().Component(new AddressComponent("From", Model.SellerAddress));
+                //    row.ConstantItem(50);
+                //    row.RelativeItem().Component(new AddressComponent("For", Model.CustomerAddress));
+                //});
+                column.Item().Element(raportHeaderComponent.Compose);
+                column.Item().Element(habitComponent.Compose);
+                column.Item().Element(questComponent.Compose);
+                column.Item().Element(summaryComponent.Compose);
+
+            });
+        }
+
+
         private void ComposeFooter(IContainer container)
         {
             container.Background(Colors.Grey.Lighten3).Column(column =>
@@ -66,7 +91,6 @@ namespace Xamarin_Postep.Services.PdfService.RaportGeneral
             });
         }
 
-        public DocumentMetadata GetMetadata() => DocumentMetadata.Default;
-        public DocumentSettings GetSettings() => DocumentSettings.Default;
+
     }
 }

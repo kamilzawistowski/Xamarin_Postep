@@ -10,10 +10,10 @@ using Xamarin_Postep.DataBase;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
 
-[assembly: Xamarin.Forms.DependencyAttribute(typeof(Xamarin_Postep.DataBase.TType))]
+[assembly: Xamarin.Forms.DependencyAttribute(typeof(Xamarin_Postep.DataBase.HabitRepository))]
 namespace Xamarin_Postep.DataBase
 {
-    class TType : IDataStore<Models.Habit> , IRepozytory
+    class HabitRepository : IDataStore<Models.Habit> , IRepozytory
     {
         public async Task<bool> AddItemAsync(Models.Habit item)
         {
@@ -49,21 +49,21 @@ namespace Xamarin_Postep.DataBase
             }
         }
 
-        public IEnumerator<Models.HabitRepository> GetEnumerator()
+        public IEnumerator<Models.Habit> GetEnumerator()
         {
             throw new NotImplementedException();
         }
 
-        public Task<Models.HabitRepository> GetItemAsync(int id)
+        public Task<Models.Habit> GetItemAsync(int id)
             => App.Database.Habit.FirstOrDefaultAsync(c => c.ID == id);
 
 
-        public async Task<IEnumerable<Models.HabitRepository>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Models.Habit>> GetItemsAsync(bool forceRefresh = false)
             => await App.Database.Habit.ToListAsync();
 
 
 
-        public async Task<bool> UpdateItemAsync(Models.HabitRepository item)
+        public async Task<bool> UpdateItemAsync(Models.Habit item)
         {
             if (item != null)
             {
