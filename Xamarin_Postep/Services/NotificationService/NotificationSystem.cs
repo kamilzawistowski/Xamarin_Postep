@@ -15,7 +15,7 @@ namespace Xamarin_Postep.Services.NotificationService
         public NotificationSystem()
         {
             dataStore = DependencyService.Get<IDataStore<Models.Quest>>();
-            var questList = dataStore.GetItemsAsync().Result.Where(x => x.DateToPushNotify.Month == DateTime.Now.Month);
+            var questList = dataStore.GetItemsAsync().Result.Where(x => x.DateToPushNotify.Month == DateTime.Now.Month).Where(x => x.DateToPushNotify.Hour != 0);
             foreach (var item in questList)
             {
                 if (item.DateToPushNotify.Hour != 0)
@@ -24,7 +24,7 @@ namespace Xamarin_Postep.Services.NotificationService
                     {
                         BadgeNumber = 1,
                         Description = "",
-                        Title = $"{item.Content}",
+                        Title = $"{item.Content}    \r -test \n -test \n -test \n -test \n -tes \n -test \n -test",
                         ReturningData = "DUMMYDATA",
                         NotificationId = 1,
                         Schedule = new NotificationRequestSchedule

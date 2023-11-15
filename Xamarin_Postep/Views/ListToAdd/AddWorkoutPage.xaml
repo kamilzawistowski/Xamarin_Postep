@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Postep.Views.ListToAdd.AddWorkoutPage"
+             xmlns:models="clr-namespace:Xamarin_Postep.Models">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80*"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+                <RefreshView Command="{Binding LoadProductCommand}">
+                    <CollectionView ItemsSource="{Binding ExerciseCollection}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout x:DataType="models:Exercise">
+                                        <Label Text="{Binding Category}"/>
+                                        <Label Text="{Binding Name}"/>
+                                        <Label Text="{Binding Series}"/>
+                                        <Label Text="{Binding Repeat}"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </RefreshView>
+                <Button Text="Zakończ trening"/>
+                <Frame>
+                    <StackLayout>
+                        <Picker ItemsSource="{Binding CategoryList}" SelectedItem="{Binding SelectedCategory}"/>
+                        <Picker ItemsSource="{Binding NameExerciseList}"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Frame>
+                                <Label Text="Seria"/>
+                                <Entry Keyboard="Numeric" />
+                            </Frame>
+                            <Frame>
+                                    <Label Text="Powtorzenia"/>
+                                    <Entry Keyboard="Numeric"/>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

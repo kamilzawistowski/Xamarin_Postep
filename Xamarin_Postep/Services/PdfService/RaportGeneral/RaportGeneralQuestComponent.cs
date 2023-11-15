@@ -12,7 +12,6 @@ namespace Xamarin_Postep.Services.PdfService.RaportGeneral
     public class RaportGeneralQuestComponent : IComponent
     {
         public int daysOfTheRaport { get; set; }
-        public Habit HabitSum { get; set; }
         public RaportGeneralQuestComponent(int daysOfTheRaport)
         {
             this.daysOfTheRaport = daysOfTheRaport;

@@ -45,6 +45,8 @@ namespace Xamarin_Postep
             DependencyService.Register<IDataStore<EnglishWord>>();
             DependencyService.Register<IDataStore<EnglishCategory>>();
             DependencyService.Register<IDataStore<BudgetCategory>>();
+            DependencyService.Register<IDataStore<Workout>>();
+            DependencyService.Register<IDataStore<Exercise>>();
 
 
             DependencyService.Register<MockDataStore>();

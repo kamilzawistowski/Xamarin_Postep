@@ -22,13 +22,13 @@ namespace Xamarin_Postep.DataBase
         public DbSet<Summary> Summary { get; set; }
         public DbSet<Inscription> Inscription { get; set; }
         public DbSet<Notice> Notice { get; set; }
-        
         public DbSet<EnglishWord> EnglishWord { get; set; }
         public DbSet<EnglishCategory> EnglishCategory { get; set; }
         public DbSet<Models.Habit> Habit { get; set; }
         public DbSet<HabitResult> HabitResult { get; set; }
-        
         public DbSet<BudgetCategory> BudgetCategory { get; set; }
+        public DbSet<Workout> Workout { get; set; }
+        public DbSet<Exercise> Exercise { get; set; }
 
 
 

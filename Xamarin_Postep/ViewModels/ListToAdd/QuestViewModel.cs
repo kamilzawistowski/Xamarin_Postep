@@ -11,6 +11,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
+using Xamarin_Postep.Services.NotificationService;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Xamarin_Postep.ViewModels.ListToAdd
@@ -181,6 +182,7 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             // DateTime dateToPushNotify = new DateTime(date.Year, date.Month, date.Day, TimeContent.Hours, TimeContent.Minutes, TimeContent.Seconds);
             // Quest quest = new Quest() { Date = Date,Content = QuestContent,DateToPushNotify = dateToPushNotify, };
             //dataStore.AddItemAsync(quest);
+            NotificationSystem notificationSystem = new NotificationSystem();
         }
         ObservableCollection<DateTime> DateList = new ObservableCollection<DateTime>();
 
@@ -197,9 +199,9 @@ namespace Xamarin_Postep.ViewModels.ListToAdd
             for (int i = 0; i <= daysRemaining; i = i + interval)
             {
                 dataStore.AddItemAsync(new Models.Quest() {DateToPushNotify = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, TimeContent.Hours,TimeContent.Minutes,0), Content = QuestContent , Date = dateTime.AddDays(i) });
+                
                 //DateList.Add(dateTime.AddDays(i));
             }
-
         }
 
         private DateTime getDayInWeek(ref DateTime dateTime,string day)
