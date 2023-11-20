@@ -9,7 +9,6 @@
     ".NETStandard,Version=v2.0/": {
       "Xamarin_Postep/1.0.0": {
         "dependencies": {
-          "FirebaseAuthentication.net": "4.1.0",
           "Microcharts": "0.9.5.9",
           "Microcharts.Forms": "0.9.5.9",
           "Microsoft.EntityFrameworkCore": "3.1.32",
@@ -33,17 +32,6 @@
         },
         "runtime": {
           "Xamarin_Postep.dll": {}
-        }
-      },
-      "FirebaseAuthentication.net/4.1.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Firebase.Auth.dll": {
-            "assemblyVersion": "4.1.0.0",
-            "fileVersion": "4.1.0.0"
-          }
         }
       },
       "HarfBuzzSharp/2.8.2.3": {
@@ -759,13 +747,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "FirebaseAuthentication.net/4.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pShi5v9cvT5bUWZDm261lO4uxJHvzOvpj46YHrL3uCB1WBeyCIcpoVakAQ2xHTu1dpmV86/BzSNRpqIGNp860g==",
-      "path": "firebaseauthentication.net/4.1.0",
-      "hashPath": "firebaseauthentication.net.4.1.0.nupkg.sha512"
     },
     "HarfBuzzSharp/2.8.2.3": {
       "type": "package",

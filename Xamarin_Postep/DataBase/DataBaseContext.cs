@@ -34,7 +34,7 @@ namespace Xamarin_Postep.DataBase
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Testowaa7.db3");
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Testowaa9.db3");
 
             optionsBuilder
                 .UseSqlite($"Filename={dbPath}");

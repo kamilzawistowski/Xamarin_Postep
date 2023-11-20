@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "fI+jtCkEk0Q9PrSleOXTJ/W2G8tx8Ns4S57Z2+h88KmSug6NjbkjqEqoBtiCXe+xw/Dfnbfi/rCX12Ab6Ht26w==",
+  "dgSpecHash": "BgTuimzJg/LgAzQT/xB/LKGUY76vw/2Z6dMicsRrqyaj4YQAYFUfGrKbP9hvMpoXFNlH2lHUwCqTZ78KU7JFPg==",
   "success": true,
   "projectFilePath": "C:\\Repozytoria\\Xamarin_Postep\\Xamarin_Postep\\Xamarin_Postep.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Kamil\\.nuget\\packages\\firebaseauthentication.net\\4.1.0\\firebaseauthentication.net.4.1.0.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\harfbuzzsharp\\2.8.2.3\\harfbuzzsharp.2.8.2.3.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\2.8.2.3\\harfbuzzsharp.nativeassets.macos.2.8.2.3.nupkg.sha512",
     "C:\\Users\\Kamil\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\2.8.2.3\\harfbuzzsharp.nativeassets.win32.2.8.2.3.nupkg.sha512",

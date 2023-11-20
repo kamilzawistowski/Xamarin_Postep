@@ -10,7 +10,7 @@ using Android.OS;
 using System.IO;
 using QuestPDF.Infrastructure;
 using Firebase;
-using Xamarin_Postep.Droid.Auth;
+//using Xamarin_Postep.Droid.Auth;
 
 namespace Xamarin_Postep.Droid
 {
@@ -27,8 +27,8 @@ namespace Xamarin_Postep.Droid
             //NotificationCenter.NotifyNotificationTapped(Intent);
 
 
-            Xamarin.Forms.DependencyService.Register<FirebaseAuthentication>();
-            FirebaseApp.InitializeApp(Application.Context);
+            //Xamarin.Forms.DependencyService.Register<FirebaseAuthentication>();
+            //FirebaseApp.InitializeApp(Application.Context);
 
             NativeMedia.Platform.Init(this, savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

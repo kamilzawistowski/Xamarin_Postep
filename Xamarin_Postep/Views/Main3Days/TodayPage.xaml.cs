@@ -91,8 +91,14 @@ namespace Xamarin_Postep.Views.Main3Days
         }
         private async void AddNew_Click(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("", "", null, "Zadanie", "Wydarzenie/Wpis", "Wydatek/Przychód", "Notatka");
+            string action = await DisplayActionSheet("", "", null, "Zadanie", "Wydarzenie/Wpis", "Wydatek/Przychód", "Notatka","Trening");
             //Debug.WriteLine("Action: " + action);
+            if (action == "Trening")
+            {
+                // await Shell.Current.GoToAsync($"{nameof(BudgetSummaryPage)}");
+                await Navigation.PushAsync(new AddWorkoutPage());
+
+            }
             if (action == "Zadanie")
             {
                 // await Shell.Current.GoToAsync($"{nameof(BudgetSummaryPage)}");

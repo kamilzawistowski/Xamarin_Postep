@@ -2,45 +2,60 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin_Postep.Views.ListToAdd.AddWorkoutPage"
-             xmlns:models="clr-namespace:Xamarin_Postep.Models">
+             xmlns:models="clr-namespace:Xamarin_Postep.Models"
+             xmlns:local="clr-namespace:Xamarin_Postep.ViewModels.Workout">
+
     <ContentPage.Content>
         <StackLayout>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="80*"/>
-                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="50*"/>
+                    <RowDefinition Height="50*"/>
                 </Grid.RowDefinitions>
-                <RefreshView Command="{Binding LoadProductCommand}">
-                    <CollectionView ItemsSource="{Binding ExerciseCollection}">
+                <RefreshView x:DataType="local:AddWorkoutViewModel" Command="{Binding LoadProductCommand}" Grid.Row="0" >
+                    
+                    <CollectionView ItemsSource="{Binding ExerciseView}" SelectionMode="None" Margin="2" >
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <ViewCell>
                                     <StackLayout x:DataType="models:Exercise">
-                                        <Label Text="{Binding Category}"/>
-                                        <Label Text="{Binding Name}"/>
+                                        <Label Text="{Binding Category}" BackgroundColor="Gray"/>
+                                        <Label Text="{Binding Description}"/>
                                         <Label Text="{Binding Series}"/>
                                         <Label Text="{Binding Repeat}"/>
+                                        <Label Text="{Binding Weight}"/>
                                     </StackLayout>
-                                </ViewCell>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
+                    
                 </RefreshView>
-                <Button Text="Zakończ trening"/>
-                <Frame>
+                <Button Text="Zakończ trening" Grid.Row="0" HeightRequest="50" VerticalOptions="EndAndExpand" BackgroundColor="Gray" Margin="20,20,20,5"/>
+
+                <Frame Grid.Row="1" BackgroundColor="Gainsboro">
                     <StackLayout>
                         <Picker ItemsSource="{Binding CategoryList}" SelectedItem="{Binding SelectedCategory}"/>
-                        <Picker ItemsSource="{Binding NameExerciseList}"/>
-                        <StackLayout Orientation="Horizontal">
-                            <Frame>
-                                <Label Text="Seria"/>
-                                <Entry Keyboard="Numeric" />
+                        <Picker ItemsSource="{Binding NameExerciseList}" SelectedItem="{Binding SelectedExercise}"/>
+                        <StackLayout Orientation="Horizontal" Margin="20">
+                            <Frame HorizontalOptions="StartAndExpand">
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="Seria"/>
+                                    <Entry Keyboard="Numeric" Text="{Binding SerieContent}" />
+                                </StackLayout>
                             </Frame>
-                            <Frame>
-                                    <Label Text="Powtorzenia"/>
-                                    <Entry Keyboard="Numeric"/>
+                            <Frame HorizontalOptions="CenterAndExpand">
+                                <StackLayout Orientation="Vertical" >
+                                    <Label Text="Powtórzenie"/>
+                                    <Entry Keyboard="Numeric" />
+                                </StackLayout>
+                            </Frame>
+                            <Frame HorizontalOptions="EndAndExpand">
+                                <StackLayout Orientation="Vertical" >
+                                    <Label Text="Cieżar"/>
+                                    <Entry Keyboard="Numeric" />
+                                </StackLayout>
                             </Frame>
                         </StackLayout>
+                        <Button Text="Dodaj" VerticalOptions="EndAndExpand" BackgroundColor="Gray" Command="{Binding AddExerciseCommand}"/>
                     </StackLayout>
                 </Frame>
             </Grid>

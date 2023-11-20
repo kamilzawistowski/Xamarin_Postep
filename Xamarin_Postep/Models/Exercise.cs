@@ -12,5 +12,6 @@ namespace Xamarin_Postep.Models
         public string Category { get; set; }
         public string Series { get; set; }
         public string Repeat { get; set; }
+        public string Weight { get; set; }
     }
 }

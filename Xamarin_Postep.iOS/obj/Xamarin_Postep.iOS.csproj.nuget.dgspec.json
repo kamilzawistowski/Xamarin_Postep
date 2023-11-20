@@ -42,10 +42,6 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
-            "FirebaseAuthentication.net": {
-              "target": "Package",
-              "version": "[4.1.0, )"
-            },
             "Microcharts": {
               "target": "Package",
               "version": "[0.9.5.9, )"
@@ -73,10 +69,6 @@
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.8.0, )"
-            },
-            "Xamarin.Firebase.iOS.Auth": {
-              "target": "Package",
-              "version": "[8.10.0.3, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
@@ -154,10 +146,6 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
-            "FirebaseAuthentication.net": {
-              "target": "Package",
-              "version": "[4.1.0, )"
-            },
             "Microcharts": {
               "target": "Package",
               "version": "[0.9.5.9, )"
