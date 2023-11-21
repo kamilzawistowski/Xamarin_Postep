@@ -26,6 +26,7 @@ namespace Xamarin_Postep.ViewModels.Workout
             }
             set => SetProperty(ref selectedCategory, value);
         }
+
         private string serieContent; 
         public string SerieContent
         {
@@ -34,6 +35,24 @@ namespace Xamarin_Postep.ViewModels.Workout
                 return serieContent;
             }
             set => SetProperty(ref serieContent, value);
+        }
+        private string repeatContent;
+        public string RepeatContent
+        {
+            get
+            {
+                return repeatContent;
+            }
+            set => SetProperty(ref repeatContent, value);
+        }
+        private string weightContent;
+        public string WeightContent
+        {
+            get
+            {
+                return weightContent;
+            }
+            set => SetProperty(ref weightContent, value);
         }
         private string selectedExercise; 
         public string SelectedExercise
@@ -112,7 +131,8 @@ namespace Xamarin_Postep.ViewModels.Workout
         }
         private void AddExercise()
         {
-            dataStoreExercise.AddItemAsync(new Exercise() { Category = SelectedCategory, Description = SelectedExercise, Series= serieContent });
+            var exercise = selectedExercise;
+            dataStoreExercise.AddItemAsync(new Exercise() { Category = SelectedCategory, Description = exercise, Series= serieContent,Repeat = RepeatContent,Weight = WeightContent });
             RefreshCollection();
         }
         private void AddWorkout()
