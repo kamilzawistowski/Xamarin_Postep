@@ -49,11 +49,6 @@ namespace Xamarin_Postep.DataBase
             }
         }
 
-        public IEnumerator<Models.Habit> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<Models.Habit> GetItemAsync(int id)
             => App.Database.Habit.FirstOrDefaultAsync(c => c.ID == id);
 

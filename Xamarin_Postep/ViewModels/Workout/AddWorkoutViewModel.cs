@@ -85,21 +85,27 @@ namespace Xamarin_Postep.ViewModels.Workout
             set => SetProperty(ref nameExerciseList, value);
         }
 
-        private ObservableCollection<Exercise> exerciseView = new ObservableCollection<Exercise>();
+        private ObservableCollection<Exercise> exerciseView;
         public ObservableCollection<Exercise> ExerciseView 
         { 
             get => exerciseView; 
             set => SetProperty(ref exerciseView, value);
         }
 
+        public int countWorkout = 0;
+
         IDataStore<Exercise> dataStoreExercise;
+        IDataStore<Models.Workout> dataStoreWorkout;
+
         public AddWorkoutViewModel()
         {
+            dataStoreWorkout = DependencyService.Get<IDataStore<Models.Workout>>();
             dataStoreExercise = DependencyService.Get<IDataStore<Exercise>>();
-            exerciseView = new ObservableCollection<Exercise>(dataStoreExercise.GetItemsAsync().Result.ToList());
+            ExerciseView = new ObservableCollection<Exercise>(dataStoreExercise.GetItemsAsync().Result.ToList());
             AddExerciseCommand = new Command(AddExercise);
             AddWorkoutCommand = new Command(AddWorkout);
             LoadProductCommand = new Command(RefreshCollection);
+            countWorkout = dataStoreWorkout.GetItemsAsync().Result.Count() + 1;
         }
 
         public void OnAppearing()
@@ -129,14 +135,27 @@ namespace Xamarin_Postep.ViewModels.Workout
                 IsBusy = false;
             }
         }
-        private void AddExercise()
+        private  void AddExercise()
         {
             var exercise = selectedExercise;
-            dataStoreExercise.AddItemAsync(new Exercise() { Category = SelectedCategory, Description = exercise, Series= serieContent,Repeat = RepeatContent,Weight = WeightContent });
+            dataStoreExercise.AddItemAsync(new Exercise() { Workout = countWorkout, Category = SelectedCategory, Name = exercise, Series = serieContent, Repeat = RepeatContent, Weight = WeightContent });
             RefreshCollection();
         }
-        private void AddWorkout()
+        private async void AddWorkout()
         {
+            string cont = await Shell.Current.DisplayPromptAsync("Dodaj Trening", "Podaj Nazwe Treningu");
+                
+                if(cont != null)
+                {
+                    dataStoreWorkout.AddItemAsync(new Models.Workout() { DateTime = DateTime.Now, Exercise = new List<Exercise>(dataStoreExercise.GetItemsAsync().Result),Name = cont });
+
+                        foreach (var item in dataStoreExercise.GetItemsAsync().Result)
+                        {
+                            dataStoreExercise.DeleteItemAsync(item.Id);
+                        }
+
+                    RefreshCollection();
+                }
 
         }
 

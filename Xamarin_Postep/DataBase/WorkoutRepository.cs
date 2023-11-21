@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Xamarin.Forms;
+using Xamarin_Postep.DataBase;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
 
-[assembly: Xamarin.Forms.DependencyAttribute(typeof(Xamarin_Postep.DataBase.WorkoutRepository))]
-
+[assembly: Dependency(typeof(WorkoutRepository))]
 namespace Xamarin_Postep.DataBase
 {
     internal class WorkoutRepository : IDataStore<Workout>

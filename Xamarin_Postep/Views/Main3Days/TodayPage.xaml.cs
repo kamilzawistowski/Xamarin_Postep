@@ -19,6 +19,7 @@ using Xamarin_Postep.Views.ListToGO.Language.English;
 using Xamarin_Postep.Views.ListToGO.Notice;
 using Xamarin_Postep.Views.ListToGO.Raports;
 using Xamarin_Postep.Views.ListToGO.Spis;
+using Xamarin_Postep.Views.ListToGO.Workouts;
 
 namespace Xamarin_Postep.Views.Main3Days
 {
@@ -41,7 +42,7 @@ namespace Xamarin_Postep.Views.Main3Days
 
         private async void ShowApp_Click(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny","Spis", "Budżet", "Nawyki", "Listy", "Wydarzenia", "Jezyk Obcy","Raporty");
+            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny","Spis", "Budżet", "Nawyki", "Listy", "Wydarzenia", "Jezyk Obcy","Raporty","Treningi");
             //switch (action)
             //{
             //    case "Raporty":
@@ -51,6 +52,12 @@ namespace Xamarin_Postep.Views.Main3Days
             //        break;
             //}
             //Debug.WriteLine("Action: " + action);
+            if (action == "Treningi")
+            {
+                // await Shell.Current.GoToAsync($"{nameof(BudgetSummaryPage)}");
+                await Navigation.PushAsync(new WorkoutsPage());
+
+            }
             if (action == "Spis")
             {
                 // await Shell.Current.GoToAsync($"{nameof(BudgetSummaryPage)}");

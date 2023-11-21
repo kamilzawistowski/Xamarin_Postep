@@ -19,7 +19,7 @@
                             <DataTemplate>
                                     <StackLayout x:DataType="models:Exercise">
                                         <Label Text="{Binding Category}" BackgroundColor="Gray"/>
-                                        <Label Text="{Binding Description}"/>
+                                        <Label Text="{Binding Name}"/>
 
                                         <StackLayout Orientation="Horizontal" Margin="5" >
                                             <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
@@ -42,7 +42,7 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                    <Button Text="Zakończ trening" Grid.Row="0" HeightRequest="50" VerticalOptions="EndAndExpand" BackgroundColor="Gray" Margin="20,20,20,5"/>
+                        <Button Text="Zakończ trening" Grid.Row="0" Command="{Binding AddWorkoutCommand}" HeightRequest="50" VerticalOptions="EndAndExpand" BackgroundColor="Gray" Margin="20,20,20,5"/>
                     </StackLayout>
                 </RefreshView>
 

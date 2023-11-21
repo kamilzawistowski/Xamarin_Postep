@@ -11,6 +11,7 @@ using Xamarin_Postep.Views.ListToGO.Language.English;
 using Xamarin_Postep.Views.ListToGO.Notice;
 using Xamarin_Postep.Views.ListToGO.Raports;
 using Xamarin_Postep.Views.ListToGO.Spis;
+using Xamarin_Postep.Views.ListToGO.Workouts;
 
 namespace Xamarin_Postep
 {
@@ -43,6 +44,8 @@ namespace Xamarin_Postep
             Routing.RegisterRoute(nameof(QuestCatalogPage), typeof(QuestCatalogPage)); 
             Routing.RegisterRoute(nameof(EnglishTimeTestPage), typeof(EnglishTimeTestPage)); 
             Routing.RegisterRoute(nameof(AddWorkoutPage), typeof(AddWorkoutPage));
+            Routing.RegisterRoute(nameof(WorkoutsPage), typeof(WorkoutsPage)); 
+            Routing.RegisterRoute(nameof(SpecifyWorkoutPage), typeof(SpecifyWorkoutPage));
 
 
         }
