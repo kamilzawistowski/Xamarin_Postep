@@ -25,15 +25,13 @@
                                         <SwipeItems>
                                             <SwipeItemView
                                                 Command="{Binding BindingContext.GoToEditPageCommand, Source={x:Reference TaskItems}}"
-                                                CommandParameter="{Binding .}"
-                                                >
+                                                CommandParameter="{Binding .}">
                                                 <Label
                                                 BackgroundColor="AliceBlue"
                                                 Text="Edit"
                                                 VerticalOptions="Center"
                                                 TextColor="Black" />
                                             </SwipeItemView>
-
                                             <SwipeItemView
                                                  Command="{Binding BindingContext.DeleteSelectedCommand, Source={x:Reference TaskItems}}"
                                                 CommandParameter="{Binding}" 
@@ -43,24 +41,7 @@
                                                 BackgroundColor="Red"
                                                 Text="Delete"
                                                 TextColor="Black" />
-                                               
-
                                             </SwipeItemView>
-                                            <!--<SwipeItemView 
-                                                Command="{Binding BindingContext.EditTaskCommand, Source={x:Reference TaskItems}}"
-                                                CommandParameter="{Binding}">
-                                            <Frame
-                                                    BackgroundColor="Transparent"
-                                                    Padding="25, 0, 15, 0">
-                                                <Label
-                                                        Text="&#xf303;"
-                                                        TextColor="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}"
-                                                        FontSize="{StaticResource Headline4FontSize}"
-                                                        FontFamily="FontAwesome_Solid"
-                                                        VerticalTextAlignment="Center">
-                                                </Label>
-                                            </Frame>
-                                        </SwipeItemView>-->
                                         </SwipeItems>
                                     </SwipeView.RightItems>
                                     <Grid >

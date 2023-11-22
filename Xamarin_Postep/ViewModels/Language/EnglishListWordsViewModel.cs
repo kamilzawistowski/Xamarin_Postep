@@ -139,6 +139,7 @@ namespace Xamarin_Postep.ViewModels.Language
             await NavigationService.PushAsync(new EnglishNewWordPage(Word));
 
         }
+
         public async void SelectionChanged()
         {
             

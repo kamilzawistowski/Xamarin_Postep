@@ -27,7 +27,13 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
-            
+
+            <Style x:Key="FontBlackAndBaldAndMediumSize" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="#000" />
+            </Style>
+
             <Style x:Key="ButtonBackgroundColor" TargetType="Button">
                 <Setter Property="Background" Value="#808080" />
             </Style>

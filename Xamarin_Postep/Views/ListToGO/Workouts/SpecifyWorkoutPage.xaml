@@ -1,12 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Xamarin_Postep.Views.ListToGO.Workouts.SpecifyWorkoutPage">
+             x:Class="Xamarin_Postep.Views.ListToGO.Workouts.SpecifyWorkoutPage"
+            xmlns:local="clr-namespace:Xamarin_Postep.ViewModels.Workout"
+             xmlns:Models="clr-namespace:Xamarin_Postep.Models">
+
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <!--<CollectionView ItemsSource="{Binding DataView}" SelectionMode="Single" Margin="2" >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout x:DataType="Models:Exercise">
+                            <Label Text="{Binding Category}" BackgroundColor="Gray"/>
+                            <Label Text="{Binding Name}"/>
+
+                            <StackLayout Orientation="Horizontal" Margin="5" >
+                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                    <Label Text="Serie:"/>
+                                    <Label Text="{Binding Series}"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="Powtorzenia:"/>
+                                    <Label Text="{Binding Repeat}"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                                    <Label Text="Ciężar:"/>
+                                    <Label Text="{Binding Weight}"/>
+                                </StackLayout>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -101,7 +101,7 @@ namespace Xamarin_Postep.ViewModels.Workout
         {
             dataStoreWorkout = DependencyService.Get<IDataStore<Models.Workout>>();
             dataStoreExercise = DependencyService.Get<IDataStore<Exercise>>();
-            ExerciseView = new ObservableCollection<Exercise>(dataStoreExercise.GetItemsAsync().Result.ToList());
+            ExerciseView = new ObservableCollection<Exercise>(dataStoreExercise.GetItemsAsync().Result.ToList().Where(x => x.Workout == dataStoreWorkout.GetItemsAsync().Result.Count()+1));
             AddExerciseCommand = new Command(AddExercise);
             AddWorkoutCommand = new Command(AddWorkout);
             LoadProductCommand = new Command(RefreshCollection);
@@ -120,7 +120,7 @@ namespace Xamarin_Postep.ViewModels.Workout
             {
                 IsBusy = true;
                 ExerciseView.Clear();
-                foreach (var item in dataStoreExercise.GetItemsAsync().Result)
+                foreach (var item in dataStoreExercise.GetItemsAsync().Result.Where(x => x.Workout == dataStoreWorkout.GetItemsAsync().Result.Count() +1))
                 {
                     ExerciseView.Add(item);
                 }
@@ -147,16 +147,12 @@ namespace Xamarin_Postep.ViewModels.Workout
                 
                 if(cont != null)
                 {
-                    dataStoreWorkout.AddItemAsync(new Models.Workout() { DateTime = DateTime.Now, Exercise = new List<Exercise>(dataStoreExercise.GetItemsAsync().Result),Name = cont });
-
-                        foreach (var item in dataStoreExercise.GetItemsAsync().Result)
-                        {
-                            dataStoreExercise.DeleteItemAsync(item.Id);
-                        }
+                    dataStoreWorkout.AddItemAsync(new Models.Workout() { DateTime = DateTime.Now, Exercise = new List<Exercise>(dataStoreExercise.GetItemsAsync().Result.Where(x => x.Workout == countWorkout)),Name = cont });
 
                     RefreshCollection();
                 }
 
+            await Shell.Current.GoToAsync("..");
         }
 
         private void GetExercise()

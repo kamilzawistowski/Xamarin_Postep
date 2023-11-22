@@ -3,26 +3,116 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin_Postep.Views.ListToGO.Workouts.WorkoutsPage"
              xmlns:local="clr-namespace:Xamarin_Postep.ViewModels.Workout"
-             xmlns:Models="clr-namespace:Xamarin_Postep.Models">
-    <ContentPage.BindingContext>
-        <local:WorkoutsViewModel/>
-    </ContentPage.BindingContext>
-    
+             xmlns:Models="clr-namespace:Xamarin_Postep.Models"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+
     <ContentPage.Content>
-        
-            <RefreshView x:DataType="local:WorkoutsViewModel"  Grid.Row="0" >
-            <CollectionView ItemsSource="{Binding WorkoutsView}" SelectionMode="Single" Margin="2" >
+        <StackLayout Orientation="Vertical">
+            <CollectionView ItemsSource="{Binding WorkoutsView}" x:Name="TaskItems" SelectionMode="Single" Margin="2" >
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="Models:Workout" >
+                            <Frame  BorderColor="Black" Margin="2" >
+
+                                <StackLayout >
+                                    
+                                <Label Text="{Binding Name}" FontSize="Large" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" Margin="15"/>
+                                                <StackLayout x:DataType="Models:Workout" Margin="20" Orientation="Horizontal">
+                                    <Frame  BorderColor="Black" Margin="2" >
+
+                                        <ScrollView HeightRequest="200">
+
+
+                                            <CollectionView ItemsSource="{Binding Exercise}"  >
+                                                
+                                                <CollectionView.ItemsLayout>
+                                                    <LinearItemsLayout Orientation="Horizontal" />
+                                                </CollectionView.ItemsLayout>
+                                                
+                                                <CollectionView.ItemTemplate>
+                                                    <DataTemplate >
+                                                        <StackLayout x:DataType="Models:Exercise" Orientation="Vertical">
+
+                                                            <Frame BorderColor="Black" Margin="2" >
+                                                        <StackLayout x:DataType="Models:Exercise" Orientation="Vertical">
+                                                                    <Label Text="{Binding Category}" Style="{StaticResource FontBlackAndBaldAndMediumSize}"/>
+                                                                    <Label Text="{Binding Name}" Style="{StaticResource FontBlackAndBaldAndMediumSize}" />
+
+                                                            <StackLayout Orientation="Horizontal" Margin="5" >
+                                                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                                                            <Label Text="Serie:" Style="{StaticResource FontBlackAndBaldAndMediumSize}"/>
+                                                                            <Label Text="{Binding Series}" Style="{StaticResource FontBlackAndBaldAndMediumSize}"/>
+                                                                </StackLayout>
+
+                                                                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                                                                            <Label Text="Powtorzenia:" Style="{StaticResource FontBlackAndBaldAndMediumSize}"/>
+                                                                            <Label Text="{Binding Repeat}" Style="{StaticResource FontBlackAndBaldAndMediumSize}"/>
+                                                                </StackLayout>
+
+                                                                    <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                                                                            <Label Text="Ciężar:" Style="{StaticResource FontBlackAndBaldAndMediumSize}"/>
+                                                                            <Label Text="{Binding Weight}" Style="{StaticResource FontBlackAndBaldAndMediumSize}"/>
+                                                                </StackLayout>
+                                                            </StackLayout>
+
+                                                        </StackLayout>
+                                                        </Frame>
+                                                        </StackLayout>
+
+                                                    </DataTemplate>
+                                                    
+                                                </CollectionView.ItemTemplate>
+                                            </CollectionView>
+
+                                        </ScrollView >
+
+                                    </Frame>
+                                </StackLayout>
+
+                            </StackLayout>
+                            </Frame>
+
+                        </DataTemplate>
+
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+            <StackLayout>
+            
+                
+                
+                
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
+
+<!--<RefreshView  Grid.Row="0" >
+            <CollectionView ItemsSource="{Binding WorkoutsView}" x:Name="TaskItems" SelectionMode="Single" Margin="2" >
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                
-                                <StackLayout x:DataType="Models:Workout" Margin="15">
-                                    <Label Text="{Binding DateTime}"/>
-                                    <Label Text="{Binding Name}"/>
-                                </StackLayout>
-                                
-                            </DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItemView
+                                                Command="{Binding BindingContext.GoToEditPageCommand, Source={x:Reference TaskItems}}"
+                                                CommandParameter="{Binding .}">
+                                            <Label
+                                                BackgroundColor="AliceBlue"
+                                                Text="Edit"
+                                                VerticalOptions="Center"
+                                                TextColor="Black" />
+                                    </SwipeItemView>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <StackLayout Margin="15" x:DataType="Models:Workout">
+                                <Label Text="{Binding DateTime}"/>
+                                <Label Text="{Binding Name}"/>
+                            </StackLayout>
+                        </SwipeView>
+                    </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
             </RefreshView>
-    </ContentPage.Content>
-</ContentPage>
+            <StackLayout>-->

@@ -23,29 +23,8 @@
 
             <Button Text="Potwierdz" Command="{Binding AddWordCommand}" Style="{StaticResource ButtonBackgroundColor}" CommandParameter="{Binding WordEnglish}" Clicked="Button_Clicked" ></Button>
 
-            <!--<CollectionView ItemsSource="{Binding Options}"
-                    SelectedItem="{Binding SelectedOption}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="models:EnglishCategory">
-                        <TextCell Text="{Binding Name}" />
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>-->
             <Label Text="Kategoria" FontSize="Medium" TextColor="Black" />
             <Picker Title="Wybierz Kategorie" x:DataType="local:EnglishWordsViewModel" ItemsSource="{Binding Options,Mode=TwoWay}" SelectedItem="{Binding WordEnglish.Category}" />
-
-
-            <!--<Label Text="Kategorie" FontSize="Large" HorizontalOptions="Center" Margin="10"/>
-            <ListView x:Name="categoryCollection"
-                        ItemsSource="{Binding Options,Mode=TwoWay}"
-                            SelectedItem="{Binding SelectedOption}"
-                              >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding}" TextColor="Black" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
 
         </StackLayout>
     </ContentPage.Content>
