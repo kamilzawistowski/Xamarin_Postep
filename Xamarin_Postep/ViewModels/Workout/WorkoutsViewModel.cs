@@ -15,6 +15,7 @@ namespace Xamarin_Postep.ViewModels.Workout
     public class WorkoutsViewModel : BaseViewModel
     {
         protected INavigation NavigationServicee { get; set; }
+        public Command SettingCommand { get; set; }
         public Command<Models.Workout> GoToEditPageCommand { get; set; }
 
         private Models.Workout workout;
@@ -50,11 +51,17 @@ namespace Xamarin_Postep.ViewModels.Workout
             WorkoutsView = new ObservableCollection<Models.Workout>(dataStore.GetItemsAsync().Result);
             
             GoToEditPageCommand = new Command<Models.Workout>(GoToEditPage);
+            SettingCommand = new Command(GoToSettings);
             Workout = new Models.Workout();
 
             NavigationServicee = navigation;
             GetExercise();
 
+        }
+
+        public async void GoToSettings()
+        {
+            await Shell.Current.GoToAsync(nameof(SettingsWorkoutPage));
         }
 
         public async void GoToEditPage(Models.Workout workout)

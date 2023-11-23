@@ -48,3 +48,4 @@ C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\List
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToAdd\AddWorkoutPage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Workouts\WorkoutsPage.xaml.g.cs
 C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Workouts\SpecifyWorkoutPage.xaml.g.cs
+C:\Repozytoria\Xamarin_Postep\Xamarin_Postep\obj\Debug\netstandard2.0\Views\ListToGO\Workouts\SettingsWorkoutPage.xaml.g.cs

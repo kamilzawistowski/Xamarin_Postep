@@ -45,7 +45,8 @@ namespace Xamarin_Postep
             Routing.RegisterRoute(nameof(EnglishTimeTestPage), typeof(EnglishTimeTestPage)); 
             Routing.RegisterRoute(nameof(AddWorkoutPage), typeof(AddWorkoutPage));
             Routing.RegisterRoute(nameof(WorkoutsPage), typeof(WorkoutsPage)); 
-            Routing.RegisterRoute(nameof(SpecifyWorkoutPage), typeof(SpecifyWorkoutPage));
+            Routing.RegisterRoute(nameof(SpecifyWorkoutPage), typeof(SpecifyWorkoutPage)); 
+            Routing.RegisterRoute(nameof(SettingsWorkoutPage), typeof(SettingsWorkoutPage));
 
 
         }

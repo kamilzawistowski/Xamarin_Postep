@@ -5,7 +5,12 @@
              xmlns:local="clr-namespace:Xamarin_Postep.ViewModels.Workout"
              xmlns:Models="clr-namespace:Xamarin_Postep.Models"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
-
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icon_list.png" Command="{Binding SettingCommand}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <CollectionView ItemsSource="{Binding WorkoutsView}" x:Name="TaskItems" SelectionMode="Single" Margin="2" >
