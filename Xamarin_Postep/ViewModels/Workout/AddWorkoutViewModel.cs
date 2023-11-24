@@ -6,6 +6,7 @@ using System.Text;
 using Xamarin.Forms;
 using Xamarin_Postep.Interfaces;
 using Xamarin_Postep.Models;
+using Xamarin_Postep.Services;
 
 namespace Xamarin_Postep.ViewModels.Workout
 {
@@ -64,7 +65,7 @@ namespace Xamarin_Postep.ViewModels.Workout
             set => SetProperty(ref selectedExercise, value);
         }
 
-        private ObservableCollection<string> categoryList = new ObservableCollection<string>() { "Klatka Piersiowa", "Biceps" };
+        private ObservableCollection<string> categoryList = StaticDataService.BodyParts;
         public ObservableCollection<string> CategoryList
         {
             get
@@ -92,15 +93,20 @@ namespace Xamarin_Postep.ViewModels.Workout
             set => SetProperty(ref exerciseView, value);
         }
 
+
         public int countWorkout = 0;
 
         IDataStore<Exercise> dataStoreExercise;
         IDataStore<Models.Workout> dataStoreWorkout;
+        IDataStore<ExerciseCategory> dataStoreExerciseCategory;
+
+
 
         public AddWorkoutViewModel()
         {
             dataStoreWorkout = DependencyService.Get<IDataStore<Models.Workout>>();
             dataStoreExercise = DependencyService.Get<IDataStore<Exercise>>();
+            dataStoreExerciseCategory = DependencyService.Get<IDataStore<ExerciseCategory>>();
             ExerciseView = new ObservableCollection<Exercise>(dataStoreExercise.GetItemsAsync().Result.ToList().Where(x => x.Workout == dataStoreWorkout.GetItemsAsync().Result.Count()+1));
             AddExerciseCommand = new Command(AddExercise);
             AddWorkoutCommand = new Command(AddWorkout);
@@ -157,13 +163,41 @@ namespace Xamarin_Postep.ViewModels.Workout
 
         private void GetExercise()
         {
-            if (selectedCategory == "Klatka Piersiowa")
+           
+            switch (selectedCategory)
             {
-                NameExerciseList = new ObservableCollection<string>() { "Ławeczka sztanga", "ławeczka Hantle" };
-            }
-            else if (selectedCategory == "Biceps")
-            {
-                NameExerciseList = new ObservableCollection<string>() { "Hantle Stojąc", "Modlitewnik" };
+                case "Klata":
+                    NameExerciseList = new ObservableCollection<string>(dataStoreExerciseCategory.GetItemsAsync().Result.Where(x => x.BodyPart == "Klata").Select(x => x.ExerciseName).ToList());
+                    break;
+                case "Biceps":
+                    NameExerciseList = new ObservableCollection<string>(dataStoreExerciseCategory.GetItemsAsync().Result.Where(x => x.BodyPart == "Biceps").Select(x => x.ExerciseName).ToList());
+                    break;
+                case "Triceps":
+                    NameExerciseList = new ObservableCollection<string>(dataStoreExerciseCategory.GetItemsAsync().Result.Where(x => x.BodyPart == "Triceps").Select(x => x.ExerciseName).ToList());
+                    break;
+                case "Plecy":
+                    NameExerciseList = new ObservableCollection<string>(dataStoreExerciseCategory.GetItemsAsync().Result.Where(x => x.BodyPart == "Plecy").Select(x => x.ExerciseName).ToList());
+                    break;
+                case "Dwugłowe Nóg":
+                    NameExerciseList = new ObservableCollection<string>(dataStoreExerciseCategory.GetItemsAsync().Result.Where(x => x.BodyPart == "Dwugłowe Nóg").Select(x => x.ExerciseName).ToList());
+                    break;
+                case "Czworogłowe Nóg":
+                    NameExerciseList = new ObservableCollection<string>(dataStoreExerciseCategory.GetItemsAsync().Result.Where(x => x.BodyPart == "Czworogłowe Nóg").Select(x => x.ExerciseName).ToList());
+                    break;
+                case "Łydki":
+                    NameExerciseList = new ObservableCollection<string>(dataStoreExerciseCategory.GetItemsAsync().Result.Where(x => x.BodyPart == "Łydki").Select(x => x.ExerciseName).ToList());
+                    break;
+                case "Pośladki":
+                    NameExerciseList = new ObservableCollection<string>(dataStoreExerciseCategory.GetItemsAsync().Result.Where(x => x.BodyPart == "Pośladki").Select(x => x.ExerciseName).ToList());
+                    break;
+                case "Brzuch":
+                    NameExerciseList = new ObservableCollection<string>(dataStoreExerciseCategory.GetItemsAsync().Result.Where(x => x.BodyPart == "Brzuch").Select(x => x.ExerciseName).ToList());
+                    break;
+                case "Barki":
+                    NameExerciseList = new ObservableCollection<string>(dataStoreExerciseCategory.GetItemsAsync().Result.Where(x => x.BodyPart == "Barki").Select(x => x.ExerciseName).ToList());
+                    break;
+                default:
+                    break;
             }
         }
 

@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
 using Xamarin_Postep.Interfaces;
+using Xamarin_Postep.Models;
+using Xamarin_Postep.Services;
 
 namespace Xamarin_Postep.ViewModels.Workout
 {
@@ -33,7 +35,7 @@ namespace Xamarin_Postep.ViewModels.Workout
         private ObservableCollection<string> bodyPartCollection;
         public ObservableCollection<string> BodyPartCollection
         {
-            get { return new ObservableCollection<string>() { "Klata", "Biceps", "Triceps", "Barki", "Plecy", "Dwugłowe Ud", "Czworogłowe Nóg", "Łydki", "Pośladki", "Brzuch" }; }     
+            get { return StaticDataService.BodyParts; }   
             set
             {
 
@@ -41,16 +43,19 @@ namespace Xamarin_Postep.ViewModels.Workout
             }
         }
 
+        IDataStore<ExerciseCategory> dataStore;
         
         public SettingsWorkoutViewModel()
         {
+            dataStore = DependencyService.Get<IDataStore<ExerciseCategory>>();
             AddNewExerciseCommand = new Command(OnAddExercise);
         }
 
-        public void OnAddExercise()
+        public async void OnAddExercise()
         {
-            var bodyPart = SelectedBodyPart;
-            var newExercise = NewExerciseEntry;
+            var newExercise = new ExerciseCategory() { BodyPart = SelectedBodyPart, ExerciseName = NewExerciseEntry };
+            dataStore.AddItemAsync(newExercise);
+            await Shell.Current.DisplayAlert("Nowe Ćwiczenie", $"Dodano ćwiczenie do {SelectedBodyPart} o nazwie {NewExerciseEntry}", "Wstecz");
         }
     }
 
