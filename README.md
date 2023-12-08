@@ -13,3 +13,10 @@
 - [ ] Usuwanie nawyku
 - [ ] Edycja nawyku
 - [ ] Wyświetlanie nawyku
+
+ <h2>Do Dodanie</h2>
+ 
+- [ ] Polaczenie z API
+- [ ] Refaktoryzacja
+- [ ] Google - Azure hub Notification
+- [ ] Login system
