@@ -70,7 +70,24 @@ namespace Xamarin_Postep.Views.Main3Days
 
             }
         }
+        private async void BtnAnimation_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            //await RotateTo(360, 2000);
+            this.Rotation = 0;
 
+            var clickedCheckBox = viewModel.HabitList.Where(x => x.IsComplete == true);
+            if (clickedCheckBox.Count() > 0)
+            {
+                App.Database.Update(clickedCheckBox.First());
+                App.Database.SaveChanges();
+            }
+            var clickedCheckBox2 = viewModel.HabitList.Where(x => x.IsComplete == false);
+            if (clickedCheckBox2.Count() > 0)
+            {
+                App.Database.Update(clickedCheckBox2.First());
+                App.Database.SaveChanges();
+            }
+        }
         private async void AddNew_Click(object sender, EventArgs e)
         {
             string action = await DisplayActionSheet("", "", null, "Zadanie", "Wydarzenie/Wpis", "Wydatek/Przychód", "Notatka");

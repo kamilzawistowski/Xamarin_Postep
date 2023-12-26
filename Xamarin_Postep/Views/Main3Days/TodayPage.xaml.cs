@@ -30,8 +30,10 @@ namespace Xamarin_Postep.Views.Main3Days
         TodayViewModel viewModel;
 		public TodayPage()
 		{
+
             BindingContext = viewModel = new TodayViewModel();
             InitializeComponent();
+
         }
 
         protected override void OnAppearing()
@@ -147,9 +149,26 @@ namespace Xamarin_Postep.Views.Main3Days
 
         private async void BtnAnimation_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            this.BackgroundColor = Color.Gray;
-            //await RotateTo(360, 2000);
-            this.Rotation = 0;
+            await ((CheckBox)sender).FadeTo(1, 250, Easing.Linear);
+            await ((CheckBox)sender).FadeTo(0, 250, Easing.Linear);
+            await ((CheckBox)sender).FadeTo(1.0, 250, Easing.Linear);
+            await ((CheckBox)sender).ScaleTo(1.6, 250, Easing.BounceIn);
+            ((CheckBox)sender).RotateTo(360,250, Easing.Linear);
+            await ((CheckBox)sender).ScaleTo(2.5,500,Easing.BounceIn);
+            await ((CheckBox)sender).ScaleTo(1.0,500,Easing.BounceOut);
+
+            var clickedCheckBox = viewModel.QuestList.Where(x => x.IsComplete == true);
+            if (clickedCheckBox.Count() > 0)
+            {
+                App.Database.Update(clickedCheckBox.First());
+                App.Database.SaveChanges();
+            }
+            var clickedCheckBox2 = viewModel.QuestList.Where(x => x.IsComplete == false);
+            if (clickedCheckBox2.Count() > 0)
+            {
+                App.Database.Update(clickedCheckBox2.First());
+                App.Database.SaveChanges();
+            }
         }
 
         private void Button_Clicked(object sender, EventArgs e)

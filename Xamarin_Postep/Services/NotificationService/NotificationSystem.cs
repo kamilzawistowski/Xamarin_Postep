@@ -24,7 +24,7 @@ namespace Xamarin_Postep.Services.NotificationService
                     {
                         BadgeNumber = 1,
                         Description = "",
-                        Title = $"{item.Content}    \r -test \n -test \n -test \n -test \n -tes \n -test \n -test",
+                        Title = $"{item.Content}",
                         ReturningData = "DUMMYDATA",
                         NotificationId = 1,
                         Schedule = new NotificationRequestSchedule

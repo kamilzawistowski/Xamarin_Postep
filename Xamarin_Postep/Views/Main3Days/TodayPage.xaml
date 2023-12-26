@@ -23,9 +23,11 @@
                 <ColumnDefinition Width="170"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            
             <!--###########################################################################################################################################################################-->
-
-            <StackLayout Grid.Row="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center">
+            <Button Margin="28" CornerRadius="45"  BackgroundColor="Goldenrod" Grid.Row="0" FontSize="Micro" Grid.Column="2" Text="Progres"/>
+            
+            <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Label Text="Dzisiaj" FontSize="Title" FontFamily="Con1" TextColor="#000" HorizontalOptions="Center"></Label>
                     <Label Text="{Binding DateTimeNowDay}" FontSize="Title" FontFamily="Con1" TextColor="#000" HorizontalOptions="Center"></Label>
@@ -61,7 +63,9 @@
                                             <Frame BorderColor="Black" Grid.Column="0">
                                                 <StackLayout Orientation="Vertical">
                                                     <CheckBox 
-                                                
+                                                        
+                                                        Color="Chocolate"
+                                                        x:Name="Habittt"
                                                         CheckedChanged="BtnAnimation_CheckedChanged"
                                                         IsChecked="{Binding IsComplete}"
                                                />

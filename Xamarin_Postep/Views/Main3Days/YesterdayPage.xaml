@@ -57,6 +57,7 @@
                                             <StackLayout Orientation="Vertical">
                                                 <CheckBox 
                                                 
+                                                        CheckedChanged="BtnAnimation_CheckedChanged"
                                                        
                                                IsChecked="{Binding IsComplete}"
                                                />

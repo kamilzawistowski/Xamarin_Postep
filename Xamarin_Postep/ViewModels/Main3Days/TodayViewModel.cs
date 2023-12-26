@@ -165,5 +165,9 @@ namespace Xamarin_Postep.ViewModels.Main3Days
             return Habits;
         }
 
+
+
     }
+
+
 }
