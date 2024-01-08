@@ -1,10 +1,11 @@
-<h1>Aplikacja do monitorowania codziennych czynności użytkowych </h1>
+<h1>Aplikacja do monitorowania codziennych czynności użytkowych na platforme Android/OS </h1>
 
 Aplikacja została stworzona w celu monitorowania czynności powtarzających się
 takich jak:
  - Monitorowanie nawyków i zadań 
  - Analiza wydatkow i przychodów
  - Tworzenie raportów i generowanie pdf ( QuestPDF)
+ - Powiadomienia lokalne o zadaniach
 
 
 ![plot](./img/Xamarin_Screens.png)
