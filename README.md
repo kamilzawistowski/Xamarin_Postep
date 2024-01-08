@@ -1,4 +1,4 @@
-<h1>Aplikacja do użytku codzinnego monitorująca wydatki , zadania , nawyki itd ..</h1>
+<h1>Aplikacja do użytku codzinnego monitorująca wydatki , zadania , nawyki </h1>
 
 <h2>Zadania</h2>
 
@@ -20,3 +20,4 @@
 - [ ] Refaktoryzacja
 - [ ] Google - Azure hub Notification
 - [ ] Login system
+- [ ] Tryb Ciemny/Jasny
