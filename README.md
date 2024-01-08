@@ -1,18 +1,6 @@
-<h1>Aplikacja do użytku codzinnego monitorująca wydatki , zadania , nawyki </h1>
+<h1>Aplikacja do monitorowania codziennych czynności użytkowych </h1>
 
-<h2>Zadania</h2>
-
-- [ ] Dodanie zadania
-- [ ] Usuwanie zadania
-- [ ] Edycja zadania
-- [ ] Wyświetlanie zadania
-
- <h2>Nawyk</h2>
- 
-- [ ] Dodanie nawyku
-- [ ] Usuwanie nawyku
-- [ ] Edycja nawyku
-- [ ] Wyświetlanie nawyku
+![plot](./img/Xamarin_Screens.png)
 
  <h2>Do Dodanie</h2>
  
