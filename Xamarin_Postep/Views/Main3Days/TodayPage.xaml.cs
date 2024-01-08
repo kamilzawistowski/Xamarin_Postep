@@ -30,10 +30,8 @@ namespace Xamarin_Postep.Views.Main3Days
         TodayViewModel viewModel;
 		public TodayPage()
 		{
-
             BindingContext = viewModel = new TodayViewModel();
             InitializeComponent();
-
         }
 
         protected override void OnAppearing()

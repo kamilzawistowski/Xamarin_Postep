@@ -4,6 +4,9 @@
              x:Class="Xamarin_Postep.Views.ListToGO.Progres.MainProgresPage">
     <ContentPage.Content>
         <StackLayout>
+            <CollectionView>
+                
+            </CollectionView>
             <Button 
                 Text="Dodaj nowy progres" 
                 HorizontalOptions="EndAndExpand" />

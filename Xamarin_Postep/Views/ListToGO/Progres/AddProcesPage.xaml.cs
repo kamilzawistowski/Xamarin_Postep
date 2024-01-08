@@ -11,13 +11,14 @@ using Xamarin_Postep.ViewModels.Progres;
 namespace Xamarin_Postep.Views.ListToGO.Progres
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainProgresPage : ContentPage
+    public partial class AddProcesPage : ContentPage
     {
-        ProgresMainViewModel viewModel;
-        public MainProgresPage()
+        ProcesNewElementViewModel viewModel;
+        public AddProcesPage()
         {
             InitializeComponent();
-            BindingContext = viewModel = new ProgresMainViewModel();
+            BindingContext = viewModel = new ProcesNewElementViewModel();
+
         }
     }
 }

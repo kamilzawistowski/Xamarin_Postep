@@ -14,8 +14,6 @@ namespace Xamarin_Postep
 {
     public partial class App : Application
     {
-
-
         private static DataBaseContext _database;
 
         public static DataBaseContext Database
