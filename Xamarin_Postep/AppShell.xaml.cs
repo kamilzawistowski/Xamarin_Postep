@@ -9,6 +9,7 @@ using Xamarin_Postep.Views.ListToGO.Budget;
 using Xamarin_Postep.Views.ListToGO.Habits;
 using Xamarin_Postep.Views.ListToGO.Language.English;
 using Xamarin_Postep.Views.ListToGO.Notice;
+using Xamarin_Postep.Views.ListToGO.Meals;
 using Xamarin_Postep.Views.ListToGO.Raports;
 using Xamarin_Postep.Views.ListToGO.Spis;
 using Xamarin_Postep.Views.ListToGO.Workouts;
@@ -47,7 +48,9 @@ namespace Xamarin_Postep
             Routing.RegisterRoute(nameof(WorkoutsPage), typeof(WorkoutsPage)); 
             Routing.RegisterRoute(nameof(SpecifyWorkoutPage), typeof(SpecifyWorkoutPage)); 
             Routing.RegisterRoute(nameof(SettingsWorkoutPage), typeof(SettingsWorkoutPage));
-
+            Routing.RegisterRoute(nameof(RaportMainPage), typeof(RaportMainPage));
+            Routing.RegisterRoute(nameof(MealsMainPage), typeof(MealsMainPage));
+            Routing.RegisterRoute(nameof(MealsSettingPage), typeof(MealsSettingPage));
 
         }
 

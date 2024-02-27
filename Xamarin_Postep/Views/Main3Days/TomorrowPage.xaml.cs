@@ -35,7 +35,7 @@ namespace Xamarin_Postep.Views.Main3Days
 
         private async void ShowApp_Click(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Wydarzenia", "Jezyk Obcy", "Raporty");
+            string action = await DisplayActionSheet("", "", null, "Kalendarz Miesięczny", "Budżet", "Nawyki", "Listy", "Wydarzenia", "Jezyk Obcy", "Raporty", "Proces");
 
             //Debug.WriteLine("Action: " + action);
             if (action == "Kalendarz Miesięczny")
@@ -65,6 +65,11 @@ namespace Xamarin_Postep.Views.Main3Days
 
             }
             else if (action == "Raporty")
+            {
+                await Navigation.PushAsync(new RaportMainPage());
+
+            }
+            else if (action == "Proces")
             {
                 await Navigation.PushAsync(new RaportMainPage());
 

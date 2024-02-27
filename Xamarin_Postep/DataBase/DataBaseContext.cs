@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Xamarin.Essentials;
 using Xamarin_Postep.Models;
+using Xamarin_Postep.Models.Meals;
 using Xamarin_Postep.Services;
 
 namespace Xamarin_Postep.DataBase
@@ -30,7 +31,8 @@ namespace Xamarin_Postep.DataBase
         public DbSet<Workout> Workout { get; set; }
         public DbSet<Exercise> Exercise { get; set; }
         public DbSet<ExerciseCategory> ExerciseCategory { get; set; }
-        
+        public DbSet<Meal> Meal { get; set; }
+
 
 
 

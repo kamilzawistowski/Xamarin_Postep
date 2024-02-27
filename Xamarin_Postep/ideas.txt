@@ -1,0 +1,14 @@
+﻿
+Pomysły co dodac do apki :
+
+- Powiadomienia jesli X zadanie nie jest do X godziny zrobione , wtedy przy powrocie do apki albo nadaje je znowu za X czasu lub 
+	powiadomonia powinny byc dodawane nie jedno na dzien tylko X co X godzin do momentu ukonczenia zadania.
+
+- Lista obiadow/sniadan/dan do pracy do dodawania oraz losowania na dany tydzien.
+	+ Generowanie na ich podstawie listy zakupów
+
+- Funkcjonalnosc ktora zapewni progres - lista kroków do wykonania aby osiagnac cel , duzy cel na mniejsze
+mniejsze na mniejszebardziej - Jakie kroki trzeba teraz zrobic aby wspiac sie w danej umiejetnosci
+lub co robic by byc w niej lepszy
+
+-

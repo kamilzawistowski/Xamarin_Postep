@@ -17,6 +17,7 @@ namespace Xamarin_Postep.Views.ListToAdd
 	{
         ObservableCollection<string> items;
         AddBudgetViewModel viewModel;
+
 		public AddBudgetPage (DateTime date)
 		{
             BindingContext = viewModel = new AddBudgetViewModel(date);
