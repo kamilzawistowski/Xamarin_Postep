@@ -32,13 +32,15 @@ namespace Xamarin_Postep.DataBase
         public DbSet<Exercise> Exercise { get; set; }
         public DbSet<ExerciseCategory> ExerciseCategory { get; set; }
         public DbSet<Meal> Meal { get; set; }
+        public DbSet<Ingredient> Ingredient { get; set; }
+        
 
 
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "DataBaseP4.db3");
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "DataBaseP5.db3");
 
             optionsBuilder
                 .UseSqlite($"Filename={dbPath}");

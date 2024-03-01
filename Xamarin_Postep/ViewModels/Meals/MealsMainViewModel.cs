@@ -13,6 +13,7 @@ namespace Xamarin_Postep.ViewModels.Meals
         public Command SettingCommand { get; set; }
 
 
+
         public MealsMainViewModel(INavigation navigation)
         {
             SettingCommand = new Command(GoToSettings);

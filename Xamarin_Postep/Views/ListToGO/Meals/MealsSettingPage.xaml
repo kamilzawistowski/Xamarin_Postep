@@ -1,12 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:models="clr-namespace:Xamarin_Postep.Models.Meals" 
+             xmlns:meals="clr-namespace:Xamarin_Postep.ViewModels.Meals" x:DataType="meals:MealsSettingsViewModel"
              x:Class="Xamarin_Postep.Views.ListToGO.Meals.MealsSettingPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Dodaj Nowe Danie"
-                VerticalOptions="CenterAndExpedeand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout HorizontalOptions="CenterAndExpand">
+
+            <Frame>
+                <StackLayout>
+                    
+                    <Frame>
+                        <StackLayout>
+                        <Label Text="Dodaj nowe danie"/>
+                        <Entry Text="{Binding NewMealEntry}"/>
+                        </StackLayout>
+                    </Frame>
+                            <Frame>
+                                
+                                <CollectionView ItemsSource="{Binding Ingediants}"  >
+
+                                    <CollectionView.ItemsLayout>
+                                        <LinearItemsLayout Orientation="Vertical" />
+                                    </CollectionView.ItemsLayout>
+
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate x:DataType="models:Ingredient"  >
+                                            <StackLayout  Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                                <Label Text="{Binding Name}" Style="{StaticResource FontBlackAndBaldAndMediumSize}"/>
+                                                <Label HorizontalOptions="EndAndExpand" Text="{Binding Price}" Margin="0,0,10,0" TextColor="DarkOrange"/>
+                                                <CheckBox VerticalOptions="Center"></CheckBox>
+                                            </StackLayout>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>   
+                                
+                            </Frame>
+                </StackLayout>
+                
+            </Frame>
+                
+                <Frame>
+                    <StackLayout>
+                        <Label Text="Dodaj Nowy Składnik"/>
+                    <Entry  Text="{Binding NewIngredientNameEntry}"/>
+                    <Entry  Keyboard="Numeric" Text="{Binding NewIngredientPriceEntry}"/>
+                    <Button Command="{Binding AddNewIngredientBtn}" Text="Dodaj" BorderColor="Black" BorderWidth="1"/>
+                    </StackLayout>
+                </Frame>
+                
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

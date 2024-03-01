@@ -10,9 +10,13 @@
     <ContentPage.Content>
         
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Lista Obiadow"/>
+            
+            
+            
+            
         </StackLayout>
+        
     </ContentPage.Content>
+    
 </ContentPage>

@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin_Postep.ViewModels.Meals;
 
 namespace Xamarin_Postep.Views.ListToGO.Meals
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MealsSettingPage : ContentPage
 	{
-		public MealsSettingPage ()
+		MealsSettingsViewModel viewModel;
+        public MealsSettingPage ()
 		{
+			BindingContext = viewModel = new MealsSettingsViewModel ();
 			InitializeComponent ();
 		}
 	}
