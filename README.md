@@ -5,7 +5,7 @@ takich jak:
  - Monitorowanie nawyków i zadań 
  - Analiza wydatkow i przychodów
  - Tworzenie raportów i generowanie pdf ( QuestPDF)
- - Powiadomienia lokalne o zadaniach
+ - Powiadomienia lokalne 
 
 
 ![plot](./img/Xamarin_Screens.png)
