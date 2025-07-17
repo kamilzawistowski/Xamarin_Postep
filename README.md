@@ -13,7 +13,6 @@ takich jak:
  <h2>Do Dodanie</h2>
  
 - [ ] Polaczenie z API
-- [ ] Refaktoryzacja
 - [ ] Google - Azure Hub Notification
 - [ ] Login system
 - [ ] Tryb Ciemny/Jasny
